@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">RUFA App</string>
+    <string name="cell_value">Cell:</string>
+    <string name="date">Date:</string>
+    <string name="scorer">Scorer:</string>
+    <string name="herbaceous_plant">1A. 20 Herbaceous Plant Species in Combination</string>
+    <string name="northwest">NW</string>
+    <string name="northeast">NE</string>
+    <string name="southwest">SW</string>
+    <string name="southeast">SE</string>
+    <string name="sum">Sum:</string>
+    <string name="point">Point:</string>
+    <string name="tree_seedling"> 16 Tree Seedling Groups in Combination, &lt; 12\" (30cm) High</string>
+</resources>
