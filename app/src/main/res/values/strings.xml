@@ -10,5 +10,11 @@
     <string name="southeast">SE</string>
     <string name="sum">Sum:</string>
     <string name="point">Point:</string>
-    <string name="tree_seedling"> 16 Tree Seedling Groups in Combination, &lt; 12\" (30cm) High</string>
+    <string name="tree_seedling"> 1B. 16 Tree Seedling Groups in Combination, \n &lt; 12\" (30cm) High</string>
+    <string name="Shrub_saplings">2A. 120 Shrub/Saplings \n &gt; 12\" (30cm) and \n &lt; 6.5\' (2m)</string>
+    <string name="update1A">Update</string>
+    <string name="shrub_saplings_in_combo">2B. 16 Shrub/Sapling Species in Combination</string>
+    <string name="mature_trees">3A. 24 Mature Trees \n &gt; 20\" (50cm) DBH</string>
+    <string name="mature_tree_species">3B. 3 Mature Tree Species \n &gt; 20\" (50cm) DBH</string>
+    <string name="legacy_trees">4A. 7 Legacy Trees \n &gt; 32\" (80cm) DBH</string>
 </resources>
