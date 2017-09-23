@@ -17,4 +17,13 @@
     <string name="mature_trees">3A. 24 Mature Trees \n &gt; 20\" (50cm) DBH</string>
     <string name="mature_tree_species">3B. 3 Mature Tree Species \n &gt; 20\" (50cm) DBH</string>
     <string name="legacy_trees">4A. 7 Legacy Trees \n &gt; 32\" (80cm) DBH</string>
+    <string-array   name="tree_types">
+        <item>Tree Types</item>
+        <item>tree1</item>
+        <item>tree2</item>
+        <item>tree3</item>
+        <item>tree4</item>
+    </string-array>
+    <string name="add_tree">Add</string>
+    <string name="remove_tree">Remove</string>
 </resources>

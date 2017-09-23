@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 
@@ -31,11 +33,23 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView sum1AVal;
 
+    private TextView addTest;
+
     private String modifyTextSum1A;
 
     private TextView point1AVal;
 
     private String modifyTextPoint1A;
+
+    private String modifyAddTest;
+
+    private Spinner tree_types;
+
+    private Button add;
+
+    private Button remove;
+
+    private boolean addButtonPressed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +73,35 @@ public class MainActivity extends AppCompatActivity {
            }
         });
 
+        add = (Button) findViewById(R.id.addTree);
+        add.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                addButtonPressed = true;
+            }
+        });
+
+        tree_types = (Spinner) findViewById(R.id.tree_types_spinner);
+        tree_types.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if(addButtonPressed == true){
+                    addTest = (TextView) findViewById(R.id.addTest);
+                    modifyAddTest = addTest.getText().toString();
+                    modifyAddTest = adapterView.getSelectedItem().toString();
+                    addTest.setText(modifyTextSum1A);
+                    addButtonPressed = false;
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
     }
+
+
 
 
     public void herbaceousPlantScore() {

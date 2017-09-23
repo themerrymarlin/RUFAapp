@@ -317,6 +317,11 @@
                     android:layout_height="match_parent"
                     android:background="#FF000000" />
 
+                <View
+                    android:layout_width="0.5dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
                 <EditText
                     android:id="@+id/SW1B"
                     android:layout_width="wrap_content"
@@ -325,11 +330,6 @@
                     android:hint="@string/southwest"
                     android:inputType="number"
                     android:textAlignment="center" />
-
-                <View
-                    android:layout_width="0.5dip"
-                    android:layout_height="match_parent"
-                    android:background="#FF000000" />
 
                 <EditText
                     android:id="@+id/SE1B"
@@ -736,11 +736,45 @@
                     android:layout_height="match_parent"
                     android:background="#FF000000" />
 
-                <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                <Spinner
+                    android:id="@+id/tree_types_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:entries="@array/tree_types" />
+
+                <Button
+                    android:id="@+id/addTree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/add_tree" />
+
+                <Button
+                    android:id="@+id/removeTree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/remove_tree" />
 
 
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="200dp"
+                    android:layout_height="75dp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <TextView
+                    android:id="@+id/addTest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
             </TableRow>
 
 
