@@ -705,7 +705,7 @@
                     android:background="#FF000000" />
 
                 <TextView
-                    android:id="@+id/point3B"
+                    android:id="@+id/point3A"
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
                     android:layout_marginLeft="20dp"
@@ -736,22 +736,9 @@
                     android:layout_height="match_parent"
                     android:background="#FF000000" />
 
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" >
-
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="200dp"
-                    android:layout_height="75dp" />
-
-                <View
-                    android:layout_width="4dip"
-                    android:layout_height="match_parent"
-                    android:background="#FF000000" />
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
 
             </TableRow>
