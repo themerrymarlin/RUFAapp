@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button remove;
 
-    private boolean addButtonPressed;
+    private String selectedTree;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,7 +76,9 @@ public class MainActivity extends AppCompatActivity {
         add = (Button) findViewById(R.id.addTree);
         add.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                addButtonPressed = true;
+                addTest = (TextView) findViewById(R.id.addTest);
+                modifyAddTest = addTest.getText().toString();
+                addTest.setText(selectedTree);
             }
         });
 
@@ -84,25 +86,14 @@ public class MainActivity extends AppCompatActivity {
         tree_types.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if(addButtonPressed == true){
-                    addTest = (TextView) findViewById(R.id.addTest);
-                    modifyAddTest = addTest.getText().toString();
-                    modifyAddTest = adapterView.getSelectedItem().toString();
-                    addTest.setText(modifyTextSum1A);
-                    addButtonPressed = false;
-                }
+                selectedTree = adapterView.getSelectedItem().toString();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
-
     }
-
-
-
 
     public void herbaceousPlantScore() {
         threshold = 20;
@@ -155,6 +146,5 @@ public class MainActivity extends AppCompatActivity {
         else {
             point1A = 0;
         }
-
     }
 }

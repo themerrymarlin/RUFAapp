@@ -313,7 +313,7 @@
                     android:layout_height="75dp" />
 
                 <View
-                    android:layout_width="4dip"
+                    android:layout_width="3dip"
                     android:layout_height="match_parent"
                     android:background="#FF000000" />
 
@@ -330,6 +330,11 @@
                     android:hint="@string/southwest"
                     android:inputType="number"
                     android:textAlignment="center" />
+
+                <View
+                    android:layout_width="0.5dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
 
                 <EditText
                     android:id="@+id/SE1B"
@@ -773,6 +778,7 @@
 
                 <TextView
                     android:id="@+id/addTest"
+                    android:entries="@array/tree_types"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </TableRow>
