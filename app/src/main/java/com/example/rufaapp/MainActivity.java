@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView sum1AVal;
 
-    private TextView addTest;
+    private TextView addTreeToList;
 
     private String modifyTextSum1A;
 
@@ -43,16 +43,18 @@ public class MainActivity extends AppCompatActivity {
 
     private String modifyAddTest;
 
+    private String selected;
+
     private Spinner tree_types;
 
     private Button add;
 
     private Button remove;
 
-    private boolean addButtonPressed;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -76,7 +78,18 @@ public class MainActivity extends AppCompatActivity {
         add = (Button) findViewById(R.id.addTree);
         add.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
-                addButtonPressed = true;
+                addTreeToList = (TextView) findViewById(R.id.listOfTrees);
+                modifyAddTest = addTreeToList.getText().toString();
+                addTreeToList.setText(selected);
+            }
+        });
+
+        remove = (Button) findViewById(R.id.removeTreeFromList);
+        remove.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+                addTreeToList = (TextView) findViewById(R.id.listOfTrees);
+                modifyAddTest = addTreeToList.getText().toString();
+                addTreeToList.setText(selected);
             }
         });
 
@@ -84,12 +97,11 @@ public class MainActivity extends AppCompatActivity {
         tree_types.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if(addButtonPressed == true){
-                    addTest = (TextView) findViewById(R.id.addTest);
-                    modifyAddTest = addTest.getText().toString();
-                    modifyAddTest = adapterView.getSelectedItem().toString();
-                    addTest.setText(modifyTextSum1A);
-                    addButtonPressed = false;
+                if (selected == null) {
+                    selected = "";
+                }
+                else {
+                    selected = adapterView.getSelectedItem().toString() + "  " + selected;
                 }
             }
 
