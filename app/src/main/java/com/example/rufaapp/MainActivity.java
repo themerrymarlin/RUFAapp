@@ -14,41 +14,39 @@ import android.widget.TextView;
 import android.view.View.OnClickListener;
 
 public class MainActivity extends AppCompatActivity {
-
+    // define variables
     private int threshold;
-
-    private int point1A;
-
     private Button update;
 
+    // section 1A
+    private int point1A;
     private int sum1A;
-
     private EditText NW1A;
-
     private EditText NE1A;
-
     private EditText SW1A;
-
     private EditText SE1A;
-
     private TextView sum1AVal;
-
-    private TextView addTreeToList;
-
     private String modifyTextSum1A;
-
     private TextView point1AVal;
-
     private String modifyTextPoint1A;
 
+    //section 1B
+    private int point1B;
+    private int sum1B;
+    private EditText NW1B;
+    private EditText NE1B;
+    private EditText SW1B;
+    private EditText SE1B;
+    private TextView sum1BVal;
+    private String modifyTextSum1B;
+    private TextView point1BVal;
+    private String modifyTextPoint1B;
+
+    private TextView addTreeToList;
     private String modifyAddTest;
-
     private String selected;
-
     private Spinner tree_types;
-
     private Button add;
-
     private Button remove;
 
 
@@ -57,13 +55,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         update = (Button) findViewById(R.id.update1A);
         update.setOnClickListener(new View.OnClickListener(){
            public void onClick(View v) {
+               // section 1A called with button
                herbaceousPlantScore();
                sum1AVal = (TextView) findViewById(R.id.sum1AVal);
                modifyTextSum1A = sum1AVal.getText().toString();
@@ -74,6 +72,18 @@ public class MainActivity extends AppCompatActivity {
                modifyTextPoint1A = point1AVal.getText().toString();
                modifyTextPoint1A = Integer.toString(point1A);
                point1AVal.setText(modifyTextPoint1A);
+
+               // section 1B called with button
+               treeSeedlingScore();
+               sum1BVal = (TextView) findViewById(R.id.sum1B); // sum1BVal
+               modifyTextSum1B = sum1BVal.getText().toString();
+               modifyTextSum1B = Integer.toString(sum1B);
+               sum1BVal.setText(modifyTextSum1B);
+
+               point1BVal = (TextView) findViewById(R.id.point1B); // point1BVal
+               modifyTextPoint1B = point1BVal.getText().toString();
+               modifyTextPoint1B = Integer.toString(point1B);
+               point1BVal.setText(modifyTextPoint1B);
            }
         });
 
@@ -116,7 +126,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void herbaceousPlantScore() {
-        threshold = 20;
+        threshold = 20; // threshold for 1A
         int NW1Anumber;
         int NE1Anumber;
         int SW1Anumber;
@@ -165,6 +175,59 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             point1A = 0;
+        }
+    }
+
+    public void treeSeedlingScore() {
+        threshold = 16; // threshold for 1B
+        int NW1Bnumber;
+        int NE1Bnumber;
+        int SW1Bnumber;
+        int SE1Bnumber;
+
+        NW1B = (EditText) findViewById(R.id.NW1B);
+        String NW1Bnum = NW1B.getText().toString();
+        if(NW1Bnum.equals("")){
+            NW1Bnumber = 0;
+        }
+        else {
+            NW1Bnumber = Integer.parseInt(NW1Bnum);
+        }
+
+        NE1B = (EditText) findViewById(R.id.NE1B);
+        String NE1Bnum = NE1B.getText().toString();
+        if(NE1Bnum.equals("")){
+            NE1Bnumber = 0;
+        }
+        else {
+            NE1Bnumber = Integer.parseInt(NE1Bnum);
+        }
+
+        SW1B = (EditText) findViewById(R.id.SW1B);
+        String SW1Bnum = SW1B.getText().toString();
+        if(SW1Bnum.equals("")){
+            SW1Bnumber = 0;
+        }
+        else {
+            SW1Bnumber = Integer.parseInt(SW1Bnum);
+        }
+
+        SE1B = (EditText) findViewById(R.id.SE1B);
+        String SE1Bnum = SE1B.getText().toString();
+        if(SE1Bnum.equals("")){
+            SE1Bnumber = 0;
+        }
+        else {
+            SE1Bnumber = Integer.parseInt(SE1Bnum);
+        }
+
+        sum1B = NW1Bnumber + NE1Bnumber + SW1Bnumber + SE1Bnumber;
+
+        if (sum1B >= threshold) {
+            point1B = 1;
+        }
+        else {
+            point1B = 0;
         }
     }
 }
