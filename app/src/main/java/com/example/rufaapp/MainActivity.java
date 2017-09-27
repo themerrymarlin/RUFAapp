@@ -52,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
     private Button remove;
 
 
+    private String selectedTree;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -103,18 +105,15 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     selected = adapterView.getSelectedItem().toString() + "  " + selected;
                 }
+
+                selectedTree = adapterView.getSelectedItem().toString();
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
-
             }
         });
-
     }
-
-
-
 
     public void herbaceousPlantScore() {
         threshold = 20;
@@ -167,6 +166,5 @@ public class MainActivity extends AppCompatActivity {
         else {
             point1A = 0;
         }
-
     }
 }
