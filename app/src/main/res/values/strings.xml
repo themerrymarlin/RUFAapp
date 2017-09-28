@@ -17,6 +17,11 @@
     <string name="mature_trees">3A. 24 Mature Trees \n &gt; 20\" (50cm) DBH</string>
     <string name="mature_tree_species">3B. 3 Mature Tree Species \n &gt; 20\" (50cm) DBH</string>
     <string name="legacy_trees">4A. 7 Legacy Trees \n &gt; 32\" (80cm) DBH</string>
+    <string name="snags">5A. 5-12 Snags &gt; 12" \n(30cm)  DBH and &gt; 6.5' (2m) High</string>
+    <string name="woody_debris">5B. 12 Woody Debris Tree \n Units &gt; 12" (30cm) Diam. </string>
+    <string name="invasive_shrubs">6A. &lt; 80 Invasive \n Shrubs/Vines</string>
+    <string name="invasive_herbaceous">6B. &lt; 200 Invasive \n Herbaceous Plants</string>
+
     <string-array   name="tree_types">
         <item>Tree Types</item>
         <item>tree1</item>
