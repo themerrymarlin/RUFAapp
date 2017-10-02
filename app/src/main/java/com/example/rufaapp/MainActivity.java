@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -16,7 +17,8 @@ import android.view.View.OnClickListener;
 public class MainActivity extends AppCompatActivity {
     // define variables
     private int threshold;
-    private Button update;
+    private Button updateTop;
+    private Button updateBottom;
 
     // section 1A
     private int point1A;
@@ -81,11 +83,16 @@ public class MainActivity extends AppCompatActivity {
     //section 3B
     private int point3B;
     private int sum3B;
-
     private TextView sum3BVal;
     private String modifyTextSum3B;
     private TextView point3BVal;
     private String modifyTextPoint3B;
+    private TextView addTreeToList3B;
+    private String modifyAdd3B;
+    private String selected3B;
+    private Spinner tree_types3B;
+    private Button add3B;
+    private Button clear3B;
 
     //section 4A
     private int point4A;
@@ -94,23 +101,26 @@ public class MainActivity extends AppCompatActivity {
     private EditText NE4A;
     private EditText SW4A;
     private EditText SE4A;
+    private String modifyAdd4B;
     private TextView sum4AVal;
     private String modifyTextSum4A;
     private TextView point4AVal;
     private String modifyTextPoint4A;
 
-    /*section 4B
+    //section 4B
     private int point4B;
     private int sum4B;
-    private EditText NW4B;
-    private EditText NE4B;
-    private EditText SW4B;
-    private EditText SE4B;
     private TextView sum4BVal;
     private String modifyTextSum4B;
     private TextView point4BVal;
     private String modifyTextPoint4B;
-    */
+    private TextView addTreeToList4B;
+    private String selected4B;
+    private Spinner tree_types4B;
+    private Button add4B;
+    private Button clear4B;
+
+
 
     //section 5A
     private int point5A;
@@ -160,14 +170,46 @@ public class MainActivity extends AppCompatActivity {
     private TextView point6BVal;
     private String modifyTextPoint6B;
 
+    //section7
+    private int point7;
+    private TextView point7Val;
+    private String modifyTextPoint7;
+
+    //section8
+    private int point8;
+    private TextView point8Val;
+    private String modifyTextPoint8;
+
+    //section9
+    private int point9;
+    private TextView point9Val;
+    private String modifyTextPoint9;
+
+    //section10
+    private int point10;
+    private TextView point10Val;
+    private String modifyTextPoint10;
+
+    //section11
+    private int point11;
+    private TextView point11Val;
+    private String modifyTextPoint11;
+
+    //section 12
+    private int point12;
+    private int total12;
+    private TextView total12Val;
+    private String modifyTextSum12;
+    private TextView point12Val;
+    private String modifyTextPoint12;
+
+    //Total
+    private int total;
+    private TextView totalPoints;
+    private String modifyTotalPoints;
+
     // selecting trees to add
-    private TextView addTreeToList;
-    private String modifyAddTest;
-    private String selected;
-    private Spinner tree_types;
-    private Button add;
-    private Button remove;
-    private String selectedTree;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -175,8 +217,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        update = (Button) findViewById(R.id.update1A);
-        update.setOnClickListener(new View.OnClickListener() {
+        updateBottom = (Button) findViewById(R.id.updateBottom);
+        updateBottom.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 // section 1A called with button
                 herbaceousPlantScore();
@@ -262,7 +304,7 @@ public class MainActivity extends AppCompatActivity {
                 modifyTextPoint4A = Integer.toString(point4A);
                 point4AVal.setText(modifyTextPoint4A);
 
-               /* section 4B called with button
+               //section 4B called with button
                legacyTreeSpeciesScore();
                sum4BVal = (TextView) findViewById(R.id.sum4BVal); // sum4BVal
                modifyTextSum4B = sum4BVal.getText().toString();
@@ -273,7 +315,6 @@ public class MainActivity extends AppCompatActivity {
                modifyTextPoint4B = point4BVal.getText().toString();
                modifyTextPoint4B = Integer.toString(point4B);
                point4BVal.setText(modifyTextPoint4B);
-                */
 
                 // section 5A called with button
                 snagsScore();
@@ -322,38 +363,132 @@ public class MainActivity extends AppCompatActivity {
                 modifyTextPoint6B = point6BVal.getText().toString();
                 modifyTextPoint6B = Integer.toString(point6B);
                 point6BVal.setText(modifyTextPoint6B);
+
+                //section 7 called with button
+                noObservedInvasivePlants();
+                point7Val = (TextView) findViewById(R.id.point7Val);
+                modifyTextPoint7 = point7Val.getText().toString();
+                modifyTextPoint7 = Integer.toString(point7);
+                point7Val.setText(modifyTextPoint7);
+
+                //section 8 called with button
+                healthyLightGaps();
+                point8Val = (TextView) findViewById(R.id.point8Val);
+                modifyTextPoint8 = point8Val.getText().toString();
+                modifyTextPoint8 = Integer.toString(point8);
+                point8Val.setText(modifyTextPoint8);
+
+                //section 9 called with button
+                microtopography();
+                point9Val = (TextView) findViewById(R.id.point9Val);
+                modifyTextPoint9 = point9Val.getText().toString();
+                modifyTextPoint9 = Integer.toString(point9);
+                point9Val.setText(modifyTextPoint9);
+
+                //section 10 called with button
+                absenceOfHumanActivity();
+                point10Val = (TextView) findViewById(R.id.point10Val);
+                modifyTextPoint10 = point10Val.getText().toString();
+                modifyTextPoint10 = Integer.toString(point10);
+                point10Val.setText(modifyTextPoint10);
+
+                //section 11 called with button
+                absenceOfDeer();
+                point11Val = (TextView) findViewById(R.id.point11Val);
+                modifyTextPoint11 = point11Val.getText().toString();
+                modifyTextPoint11 = Integer.toString(point11);
+                point11Val.setText(modifyTextPoint11);
+
+                //section 12 called with button
+                leafFragmentCover();
+                total12Val = (TextView) findViewById(R.id.total12Val);
+                modifyTextSum12 = total12Val.getText().toString();
+                modifyTextSum12 = Integer.toString(total12);
+                total12Val.setText(modifyTextSum12);
+
+                point12Val = (TextView) findViewById(R.id.point12Val);
+                modifyTextPoint12 = point12Val.getText().toString();
+                modifyTextPoint12 = Integer.toString(point12);
+                point12Val.setText(modifyTextPoint12);
+
+                //total called with button
+                totalPoints();
+                totalPoints = (TextView) findViewById(R.id.totalPoints);
+                modifyTotalPoints = totalPoints.getText().toString();
+                modifyTotalPoints = Integer.toString(total);
+                totalPoints.setText(modifyTotalPoints);
             }
         });
 
-        add = (Button) findViewById(R.id.addTree);
-        add.setOnClickListener(new View.OnClickListener() {
+        add3B = (Button) findViewById(R.id.addTree3B);
+        add3B.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                addTreeToList = (TextView) findViewById(R.id.listOfTrees);
-                modifyAddTest = addTreeToList.getText().toString();
-                addTreeToList.setText(selected);
+                addTreeToList3B = (TextView) findViewById(R.id.listOfTrees3B);
+                modifyAdd3B = addTreeToList3B.getText().toString();
+                addTreeToList3B.setText(selected3B);
             }
         });
 
-        remove = (Button) findViewById(R.id.removeTreeFromList);
-        remove.setOnClickListener(new View.OnClickListener() {
+        clear3B = (Button) findViewById(R.id.clear3B);
+        clear3B.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                addTreeToList = (TextView) findViewById(R.id.listOfTrees);
-                modifyAddTest = addTreeToList.getText().toString();
-                addTreeToList.setText(selected);
+                addTreeToList3B = (TextView) findViewById(R.id.listOfTrees3B);
+                modifyAdd3B = addTreeToList3B.getText().toString();
+                selected3B = "";
+                sum3B = 0;
+                addTreeToList3B.setText(selected3B);
             }
         });
 
-        tree_types = (Spinner) findViewById(R.id.tree_types_spinner);
-        tree_types.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        tree_types3B = (Spinner) findViewById(R.id.tree_types_spinner3B);
+        tree_types3B.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                if (selected == null) {
-                    selected = "";
+                if (selected3B == null) {
+                    selected3B = "";
+                    sum3B = 0;
                 } else {
-                    selected = adapterView.getSelectedItem().toString() + "  " + selected;
+                    selected3B = adapterView.getSelectedItem().toString() + "  " + selected3B;
+                    sum3B = sum3B + 1;
                 }
+            }
 
-                selectedTree = adapterView.getSelectedItem().toString();
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        add4B = (Button) findViewById(R.id.addTree4B);
+        add4B.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                addTreeToList4B = (TextView) findViewById(R.id.listOfTrees4B);
+                modifyAdd4B = addTreeToList4B.getText().toString();
+                addTreeToList4B.setText(selected4B);
+            }
+        });
+
+        clear4B = (Button) findViewById(R.id.clear4B);
+        clear4B.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                addTreeToList4B = (TextView) findViewById(R.id.listOfTrees4B);
+                modifyAdd4B = addTreeToList4B.getText().toString();
+                selected4B = "";
+                sum4B = 0;
+                addTreeToList4B.setText(selected4B);
+            }
+        });
+
+        tree_types4B = (Spinner) findViewById(R.id.tree_types_spinner4B);
+        tree_types4B.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (selected4B == null) {
+                    selected4B = "";
+                    sum4B = 0;
+                } else {
+                    selected4B = adapterView.getSelectedItem().toString() + "  " + selected4B;
+                    sum4B = sum4B + 1;
+                }
             }
 
             @Override
@@ -609,10 +744,7 @@ public class MainActivity extends AppCompatActivity {
 
     // SECTION 3B
     public void matureTreeSpeciesScore() {
-        threshold = 3; // threshold for 1B
-
-        //sum3B = ;
-
+        threshold = 3;
         if (sum3B >= threshold) {
             point3B = 1;
         } else {
@@ -668,65 +800,21 @@ public class MainActivity extends AppCompatActivity {
             point4A = 0;
         }
     }
-    /* SECTION 4B
+    // SECTION 4B
     public void legacyTreeSpeciesScore() {
-        threshold = 4; // threshold for 1B
-        int NW4Bnumber;
-        int NE4Bnumber;
-        int SW4Bnumber;
-        int SE4Bnumber;
-
-        NW4B = (EditText) findViewById(R.id.NW4B);
-        String NW4Bnum = NW4B.getText().toString();
-        if(NW4Bnum.equals("")){
-            NW4Bnumber = 0;
-        }
-        else {
-            NW4Bnumber = Integer.parseInt(NW4Bnum);
-        }
-
-        NE4B = (EditText) findViewById(R.id.NE4B);
-        String NE4Bnum = NE4B.getText().toString();
-        if(NE4Bnum.equals("")){
-            NE4Bnumber = 0;
-        }
-        else {
-            NE4Bnumber = Integer.parseInt(NE4Bnum);
-        }
-
-        SW4B = (EditText) findViewById(R.id.SW4B);
-        String SW4Bnum = SW4B.getText().toString();
-        if(SW4Bnum.equals("")){
-            SW4Bnumber = 0;
-        }
-        else {
-            SW4Bnumber = Integer.parseInt(SW4Bnum);
-        }
-
-        SE4B = (EditText) findViewById(R.id.SE4B);
-        String SE4Bnum = SE4B.getText().toString();
-        if(SE4Bnum.equals("")){
-            SE4Bnumber = 0;
-        }
-        else {
-            SE4Bnumber = Integer.parseInt(SE4Bnum);
-        }
-
-        sum4B = NW4Bnumber + NE4Bnumber + SW4Bnumber + SE4Bnumber;
-
+        threshold = 2;
         if (sum4B >= threshold) {
             point4B = 1;
-        }
-        else {
+        } else {
             point4B = 0;
         }
     }
-    */
+
     // SECTION 5A
     public void snagsScore() {
         // range for 5A
-        int minThreshold = 2;
-        int maxThreshold = 5;
+        int minThreshold = 5;
+        int maxThreshold = 12;
         int NW5Anumber;
         int NE5Anumber;
         int SW5Anumber;
@@ -919,5 +1007,123 @@ public class MainActivity extends AppCompatActivity {
         } else {
             point6B = 0;
         }
+    }
+
+    //section 7
+    public void noObservedInvasivePlants(){
+        boolean isChecked = ((CheckBox) findViewById(R.id.checkBox7)).isChecked();
+        if (isChecked == true){
+            point7 = 1;
+        }
+        else{
+            point7 = 0;
+        }
+    }
+
+    //section 8
+    public void healthyLightGaps(){
+        boolean isChecked = ((CheckBox) findViewById(R.id.checkBox8)).isChecked();
+        if (isChecked == true){
+            point8 = 1;
+        }
+        else{
+            point8 = 0;
+        }
+    }
+
+    //section 9
+    public void microtopography(){
+        boolean isChecked = ((CheckBox) findViewById(R.id.checkBox9)).isChecked();
+        if (isChecked == true){
+            point9 = 1;
+        }
+        else{
+            point9 = 0;
+        }
+    }
+
+    //section 10
+    public void absenceOfHumanActivity(){
+        boolean isChecked = ((CheckBox) findViewById(R.id.checkBox10)).isChecked();
+        if (isChecked == true){
+            point10 = 1;
+        }
+        else{
+            point10 = 0;
+        }
+    }
+
+    //section 11
+    public void absenceOfDeer(){
+        boolean isChecked = ((CheckBox) findViewById(R.id.checkBox11)).isChecked();
+        if (isChecked == true){
+            point11 = 1;
+        }
+        else{
+            point11 = 0;
+        }
+    }
+
+    //section 12
+    public void leafFragmentCover(){
+        boolean isCheckedA = ((CheckBox) findViewById(R.id.checkBox12A)).isChecked();
+        int pointBoxA;
+        boolean isCheckedB = ((CheckBox) findViewById(R.id.checkBox12B)).isChecked();
+        int pointBoxB;
+        boolean isCheckedC = ((CheckBox) findViewById(R.id.checkBox12C)).isChecked();
+        int pointBoxC;
+        boolean isCheckedD = ((CheckBox) findViewById(R.id.checkBox12D)).isChecked();
+        int pointBoxD;
+        boolean isCheckedE = ((CheckBox) findViewById(R.id.checkBox12E)).isChecked();
+        int pointBoxE;
+
+        if (isCheckedA == true){
+            pointBoxA = 1;
+        }
+        else{
+            pointBoxA = 0;
+        }
+
+        if (isCheckedB == true){
+            pointBoxB = 1;
+        }
+        else{
+            pointBoxB = 0;
+        }
+
+        if (isCheckedC == true){
+            pointBoxC = 1;
+        }
+        else{
+            pointBoxC = 0;
+        }
+
+        if (isCheckedD == true){
+            pointBoxD = 1;
+        }
+        else{
+            pointBoxD = 0;
+        }
+
+        if (isCheckedE == true){
+            pointBoxE = 1;
+        }
+        else{
+            pointBoxE = 0;
+        }
+
+        total12 = pointBoxA + pointBoxB + pointBoxC + pointBoxD + pointBoxE;
+
+        if(total12 >= 4){
+            point12 = 1;
+        }
+        else{
+            point12 = 0;
+        }
+    }
+
+    //total points
+    public void totalPoints(){
+        total = point1A + point1B + point2A + point2B + point3A + point3B + point4A + point4B + point5A + point5B + point6A + point6B + point7 + point8 + point9 + point10 + point11 + point12;
     }
 }

@@ -91,7 +91,7 @@
                         android:textAlignment="center" />
 
                     <Button
-                        android:id="@+id/update1A"
+                        android:id="@+id/updateTop"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/update1A"
@@ -802,23 +802,23 @@
                     android:background="#FF000000" />
 
                 <Spinner
-                    android:id="@+id/tree_types_spinner"
+                    android:id="@+id/tree_types_spinner3B"
                     android:layout_width="wrap_content"
                     android:layout_height="50dp"
                     android:entries="@array/tree_types"
                     android:textSize="16sp" />
 
                 <Button
-                    android:id="@+id/addTree"
+                    android:id="@+id/addTree3B"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:text="@string/add_tree" />
 
                 <Button
-                    android:id="@+id/removeTreeFromList"
+                    android:id="@+id/clear3B"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:text="@string/remove_tree" />
+                    android:text="@string/clear" />
 
 
             </TableRow>
@@ -828,7 +828,7 @@
                 android:layout_height="match_parent" >
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/textView3BB"
                     android:layout_width="200dp"
                     android:layout_height="75dp" />
 
@@ -838,7 +838,7 @@
                     android:background="#FF000000" />
 
                 <TextView
-                    android:id="@+id/listOfTrees"
+                    android:id="@+id/listOfTrees3B"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
@@ -878,7 +878,8 @@
                     android:layout_width="50dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="5dp"
-                    android:textColor="@android:color/black" />
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="50dp"/>
             </TableRow>
 
             <View
@@ -1019,6 +1020,109 @@
                 android:layout_width="match_parent"
                 android:background="#FF000000" />
 
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView4B"
+                    android:layout_width="200dp"
+                    android:layout_height="75dp"
+                    android:text="@string/legacy_tree_species"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <Spinner
+                    android:id="@+id/tree_types_spinner4B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:entries="@array/tree_types"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/addTree4B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/add_tree" />
+
+                <Button
+                    android:id="@+id/clear4B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="@string/clear" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="200dp"
+                    android:layout_height="75dp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <TextView
+                    android:id="@+id/listOfTrees4B"
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/sum4B"
+                    android:entries="@array/tree_types"
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="20dp"
+                    android:text="@string/sum"
+                    android:textAlignment="viewStart"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/sum4BVal"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@android:color/black" />
+
+                <TextView
+                    android:id="@+id/point4B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="-95dp"
+                    android:text="@string/point"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/point4BVal"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@android:color/black"
+                    android:layout_marginTop="50dp"/>
+            </TableRow>
+
+            <View
+                android:layout_height="0.5dip"
+                android:layout_width="match_parent"
+                android:background="#FF000000" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="4dip"
@@ -1146,7 +1250,7 @@
 
                 <TextView
                     android:id="@+id/point5AVal"
-                    android:layout_width="50dp"
+                    android:layout_width="45dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="5dp"
                     android:textColor="@android:color/black" />
@@ -1557,9 +1661,392 @@
             </TableRow>
 
             <View
-                android:layout_height="0.5dip"
                 android:layout_width="match_parent"
+                android:layout_height="4dip"
                 android:background="#FF000000" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:text="@string/no_observed_invasive_plants"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <CheckBox
+                    android:id="@+id/checkBox7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="10dp"/>
+
+                <TextView
+                    android:id="@+id/point7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/point"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/point7Val"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dip"
+                android:background="#FF000000" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:text="@string/healthy_light_gaps"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <CheckBox
+                    android:id="@+id/checkBox8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:id="@+id/point8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/point"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/point8Val"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dip"
+                android:background="#FF000000" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:text="@string/microtopography"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <CheckBox
+                    android:id="@+id/checkBox9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:id="@+id/point9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/point"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/point9Val"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dip"
+                android:background="#FF000000" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:text="@string/absence_of_human_activity"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <CheckBox
+                    android:id="@+id/checkBox10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:id="@+id/point10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/point"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/point10Val"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dip"
+                android:background="#FF000000" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:text="@string/absence_of_deer"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <CheckBox
+                    android:id="@+id/checkBox11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="70dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:id="@+id/point11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginLeft="90dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/point"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/point11Val"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="10dp"
+                    android:textColor="@android:color/black" />
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dip"
+                android:background="#FF000000" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="200dp"
+                    android:layout_height="75dp"
+                    android:text="@string/leaf_fragment_cover"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <CheckBox
+                    android:id="@+id/checkBox12A"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="10dp" />
+
+                <CheckBox
+                    android:id="@+id/checkBox12B"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="50dp"/>
+
+                <TextView
+                    android:id="@+id/total12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="45dp"
+                    android:layout_marginTop="25dp"
+                    android:text="@string/total"
+                    android:textAlignment="viewStart"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/total12Val"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="25dp"
+                    android:textColor="@android:color/black" />
+
+                <CheckBox
+                    android:id="@+id/checkBox12C"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="-219dp"
+                    android:layout_marginTop="50dp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView17"
+                    android:layout_width="200dp"
+                    android:layout_height="75dp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <CheckBox
+                    android:id="@+id/checkBox12D"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="32dp"/>
+
+                <CheckBox
+                    android:id="@+id/checkBox12E"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"/>
+
+                <TextView
+                    android:id="@+id/point12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="45dp"
+                    android:text="@string/point"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/point12Val"
+                    android:layout_width="50dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="@android:color/black" />
+
+            </TableRow>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dip"
+                android:background="#FF000000" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:text="@string/totalPoints"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <TextView
+                    android:id="@+id/totalPoints"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/updateBottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/update1A"
+                    android:layout_marginLeft="250dp"/>
+            </TableRow>
 
         </LinearLayout>
     </ScrollView>
