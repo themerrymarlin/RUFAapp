@@ -15,12 +15,12 @@ public class RUFAdbModifier {
     private static final int NUMBER_OF_COLUMNS = 97;
     private static final String TABLE = "RUFA-DB";
 
-    public boolean insertRow(Context context, ArrayList<String> keys, ArrayList<Holder<?>> values){
+    public boolean insertRow(Context context, ArrayList<String> keys, ArrayList<Holder<Object>> values){
         RUFAdbOpenHelper openHelper = new RUFAdbOpenHelper(context);
         SQLiteDatabase db = openHelper.getWritableDatabase();
         ContentValues contentValues = new ContentValues(NUMBER_OF_COLUMNS);
         for(int i = 0; i < keys.size(); i ++){
-            Holder<?> value = values.get(i);
+            Holder<Object> value = values.get(i);
             int type = value.getTypeCode();
             if(type == 0){
                 contentValues.put(keys.get(i),value.getAsString());
