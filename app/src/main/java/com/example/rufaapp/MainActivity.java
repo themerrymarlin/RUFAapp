@@ -14,11 +14,19 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
 
+import java.util.ArrayList;
+import java.util.Objects;
+
 public class MainActivity extends AppCompatActivity {
     // define variables
     private int threshold;
     private Button updateTop;
     private Button updateBottom;
+
+    //initial input
+    private EditText cellValue;
+    private EditText dateValue;
+    private EditText scorersValue;
 
     // section 1A
     private int point1A;
@@ -495,6 +503,27 @@ public class MainActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
+    }
+
+    //get Cell value
+    public String getCellValue(){
+        cellValue = (EditText) findViewById(R.id.cell_input);
+        String cell = cellValue.getText().toString();
+        return cell;
+    }
+
+    //get Date
+    public String getDateValue(){
+        dateValue = (EditText) findViewById(R.id.date_input);
+        String date = dateValue.getText().toString();
+        return date;
+    }
+
+    //get Scorers value
+    public String getScorerValue(){
+        scorersValue = (EditText) findViewById(R.id.scorer_input);
+        String scorers = scorersValue.getText().toString();
+        return scorers;
     }
 
     // SECTION 1A
@@ -1125,5 +1154,13 @@ public class MainActivity extends AppCompatActivity {
     //total points
     public void totalPoints(){
         total = point1A + point1B + point2A + point2B + point3A + point3B + point4A + point4B + point5A + point5B + point6A + point6B + point7 + point8 + point9 + point10 + point11 + point12;
+    }
+
+    //arrayList of data
+    public ArrayList<Holder<Object>> getValues(){
+        ArrayList list = new ArrayList(97);
+        list.add(new Holder<Object>(getCellValue(),0));
+        list.add(new Holder<Object>(getDateValue(),0));
+        return null;
     }
 }

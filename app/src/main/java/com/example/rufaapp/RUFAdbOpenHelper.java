@@ -15,7 +15,7 @@ class RUFAdbOpenHelper extends SQLiteOpenHelper {
     private static final int VERSION = 1;
     private static final String CREATE_STRING = "CREATE TABLE "+TABLE_NAME+" (" +
             "Cell TEXT, " +
-            "Date INTEGER, " +
+            "Date TEXT, " +
             "Assessor TEXT," +
             "NW _Herb INTEGER," +
             "NE_Herb INTEGER, " +
