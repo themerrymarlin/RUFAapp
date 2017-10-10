@@ -4,6 +4,10 @@ import android.content.Context;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * Created by David Merriman on 10/02/2017.
  * Helper class to initialize DB inside android internal memory
@@ -17,7 +21,7 @@ class RUFAdbOpenHelper extends SQLiteOpenHelper {
             "Cell TEXT, " +
             "Date TEXT, " +
             "Assessor TEXT," +
-            "NW _Herb INTEGER," +
+            "NW_Herb INTEGER," +
             "NE_Herb INTEGER, " +
             "SE_Herb INTEGER," +
             "SW_Herb INTEGER," +
@@ -78,7 +82,7 @@ class RUFAdbOpenHelper extends SQLiteOpenHelper {
             "SE_Inv_SV INTEGER," +
             "SW_Inv_SV INTEGER," +
             "Inv_SV_Total INTEGER," +
-            "Inv_SV _Point INTEGER," +
+            "Inv_SV_Point INTEGER," +
             "NW_Inv_Herb INTEGER," +
             "NE_Inv_Herb INTEGER," +
             "SE_Inv_Herb INTEGER," +
@@ -113,6 +117,8 @@ class RUFAdbOpenHelper extends SQLiteOpenHelper {
             "EAHE_Abun TEXT," +
             "PRIMARY KEY (Cell,Date);";
 
+    private static final String[] keyList = {"Cell","Date","Assessor","NW_Herb","NE_Herb","SE_Herb","SW_Herb","Herb_Total","Herb_Point","NW_Seedl","NE_Seedl","SW_Seedl","SE_Seedl","Seedl_Total","Seedl_Point","NW_SS_Ind","NE_SS_Ind","SW_SS_Ind","SE_SS_Ind","SS_Ind_Total","SS_Ind_Point","NW_SS_Spc","NE_SS_Spc","SW_SS_Spc","SE_SS_Spc","SS_Spc_Total","SS_Spc_Point","NW_M_Tree_Ind","NE_M_Tree_Ind","SW_M_Tree_Ind","SE_M_Tree_Ind","M_Tree_Ind_Total","M_Tree_Ind_Point","M_Tree_Spc","Dom_Tree_1","Dom_Tree_2","M_Tree_Spc_Total","M_Tree_Spc_Point","NW_L_Tree_Ind","NE_L_Tree_Ind","SE_L_Tree_Ind","SW_L_Tree_Ind","L_Tree_Ind_Total","L_Tree_Ind_Point","L_Tree_Spc","L_Tree_Spc_Total","L_Tree_Spc_Point","NW_Snags","NE_Snags","SE_Snags","SW_Snags","Snags_Total","Snags_Point","NW_W_Debris","NE_W_Debris","SE_W_Debris","SW_W_Debris","W_Debris_Total","W_Debris_Point","NW_Inv_SV","NE_Inv_SV","SE_Inv_SV","SW_Inv_SV","Inv_SV_Total","Inv_SV_Point","NW_Inv_Herb","NE_Inv_Herb","SE_Inv_Herb","SW_Inv_Herb","Inv_Herb_Total","Inv_Herb_Point","Obs_inv_Plant","H_Light_Gap","Pit_Mound","Abs_Human_Activity","Abs_Deer_Browse","NW_Leaf_Frg","NE_Leaf_Frg","SE_Leaf_Frg","SW_Leaf_Frg","C_Leaf_Frg","Leaf_Frg_Total","Leaf_Frg_Point","Total","Quality_Rank","AMBE","BLD","BLD_Sever","AMBE_abun","Ash","EAB","EAB_Sever","Ash_Abun","EAHE","HWA","HWA_Sever","EAHE_Abun"};
+
     RUFAdbOpenHelper (Context context){
         super(context,TABLE_NAME,null,VERSION);
     }
@@ -126,5 +132,9 @@ class RUFAdbOpenHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db,int oldVersion, int newVersion){
         //TODO idfk
         //Not Implemented
+    }
+
+    public ArrayList<String> getKeyList(){
+        return ((ArrayList<String>)Arrays.asList(keyList));
     }
 }
