@@ -134,7 +134,7 @@ class RUFAdbOpenHelper extends SQLiteOpenHelper {
         //Not Implemented
     }
 
-    public ArrayList<String> getKeyList(){
+    public static ArrayList<String> getKeyList(){
         return ((ArrayList<String>)Arrays.asList(keyList));
     }
 }
