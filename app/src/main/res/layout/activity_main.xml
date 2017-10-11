@@ -818,7 +818,38 @@
                     android:id="@+id/clear3B"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
                     android:text="@string/clear" />
+
+                <Button
+                    android:id="@+id/addDominant3B1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="-185dp"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/add_dominant3B1" />
+
+                <Button
+                    android:id="@+id/addDominant3B2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/add_dominant2" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxDominant3B1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="50dp"/>
+
+                <CheckBox
+                    android:id="@+id/checkBoxDominant3B2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="50dp"/>
 
 
             </TableRow>
@@ -838,10 +869,28 @@
                     android:background="#FF000000" />
 
                 <TextView
+                    android:id="@+id/dominant3B1"
+                    android:layout_width="87dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dominant3B2"
+                    android:layout_width="87dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
                     android:id="@+id/listOfTrees3B"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="-175dp"
+                    android:layout_marginTop="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -851,6 +900,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
                     android:text="@string/sum"
                     android:textAlignment="viewStart"
                     android:textColor="@android:color/black"
@@ -861,13 +911,14 @@
                     android:layout_width="50dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
                     android:textColor="@android:color/black" />
 
                 <TextView
                     android:id="@+id/point3B"
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="70dp"
                     android:layout_marginLeft="-95dp"
                     android:text="@string/point"
                     android:textColor="@android:color/black"
@@ -879,7 +930,7 @@
                     android:layout_height="20dp"
                     android:layout_marginLeft="5dp"
                     android:textColor="@android:color/black"
-                    android:layout_marginTop="50dp"/>
+                    android:layout_marginTop="70dp"/>
             </TableRow>
 
             <View
@@ -1054,7 +1105,38 @@
                     android:id="@+id/clear4B"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
                     android:text="@string/clear" />
+
+                <Button
+                    android:id="@+id/addDominant4B1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="-185dp"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/add_dominant3B1" />
+
+                <Button
+                    android:id="@+id/addDominant4B2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/add_dominant2" />
+
+                <CheckBox
+                    android:id="@+id/checkBoxDominant4B1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="50dp"/>
+
+                <CheckBox
+                    android:id="@+id/checkBoxDominant4B2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="50dp"/>
 
 
             </TableRow>
@@ -1074,10 +1156,28 @@
                     android:background="#FF000000" />
 
                 <TextView
+                    android:id="@+id/dominant4B1"
+                    android:layout_width="87dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/dominant4B2"
+                    android:layout_width="87dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
                     android:id="@+id/listOfTrees4B"
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="-175dp"
+                    android:layout_marginTop="20dp"
                     android:textColor="@android:color/black"
                     android:textSize="16sp" />
 
@@ -1087,6 +1187,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
                     android:text="@string/sum"
                     android:textAlignment="viewStart"
                     android:textColor="@android:color/black"
@@ -1096,6 +1197,7 @@
                     android:id="@+id/sum4BVal"
                     android:layout_width="50dp"
                     android:layout_height="20dp"
+                    android:layout_marginTop="20dp"
                     android:layout_marginLeft="5dp"
                     android:textColor="@android:color/black" />
 
@@ -1103,7 +1205,7 @@
                     android:id="@+id/point4B"
                     android:layout_width="wrap_content"
                     android:layout_height="65dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="70dp"
                     android:layout_marginLeft="-95dp"
                     android:text="@string/point"
                     android:textColor="@android:color/black"
@@ -1115,7 +1217,7 @@
                     android:layout_height="20dp"
                     android:layout_marginLeft="5dp"
                     android:textColor="@android:color/black"
-                    android:layout_marginTop="50dp"/>
+                    android:layout_marginTop="70dp"/>
             </TableRow>
 
             <View

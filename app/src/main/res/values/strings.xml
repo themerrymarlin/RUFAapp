@@ -42,5 +42,8 @@
     <string name="total">Total:</string>
     <string name="totalPoints">Total</string>
     <string name="clear">Clear</string>
+    <string name="add_dominant">Add Dominant</string>
+    <string name="add_dominant3B1">Dom. 1</string>
+    <string name="add_dominant2">Dom. 2</string>
 
 </resources>

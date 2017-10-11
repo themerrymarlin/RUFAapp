@@ -39,6 +39,10 @@ public class MainActivity extends AppCompatActivity {
     private String modifyTextSum1A;
     private TextView point1AVal;
     private String modifyTextPoint1A;
+    private int NW1Anumber;
+    private int NE1Anumber;
+    private int SW1Anumber;
+    private int SE1Anumber;
 
     //section 1B
     private int point1B;
@@ -51,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
     private String modifyTextSum1B;
     private TextView point1BVal;
     private String modifyTextPoint1B;
+    private int NW1Bnumber;
+    private int NE1Bnumber;
+    private int SW1Bnumber;
+    private int SE1Bnumber;
 
     //section 2A
     private int point2A;
@@ -63,6 +71,10 @@ public class MainActivity extends AppCompatActivity {
     private String modifyTextSum2A;
     private TextView point2AVal;
     private String modifyTextPoint2A;
+    private int NW2Anumber;
+    private int NE2Anumber;
+    private int SW2Anumber;
+    private int SE2Anumber;
 
     //section 2B
     private int point2B;
@@ -75,6 +87,10 @@ public class MainActivity extends AppCompatActivity {
     private String modifyTextSum2B;
     private TextView point2BVal;
     private String modifyTextPoint2B;
+    private int NW2Bnumber;
+    private int NE2Bnumber;
+    private int SW2Bnumber;
+    private int SE2Bnumber;
 
     //section 3A
     private int point3A;
@@ -87,6 +103,10 @@ public class MainActivity extends AppCompatActivity {
     private String modifyTextSum3A;
     private TextView point3AVal;
     private String modifyTextPoint3A;
+    private int NW3Anumber;
+    private int NE3Anumber;
+    private int SW3Anumber;
+    private int SE3Anumber;
 
     //section 3B
     private int point3B;
@@ -96,11 +116,19 @@ public class MainActivity extends AppCompatActivity {
     private TextView point3BVal;
     private String modifyTextPoint3B;
     private TextView addTreeToList3B;
+    private TextView addTreeToDominant3B1;
+    private TextView addTreeToDominant3B2;
     private String modifyAdd3B;
     private String selected3B;
     private Spinner tree_types3B;
     private Button add3B;
     private Button clear3B;
+    private Button addDominant3B1;
+    private Button addDominant3B2;
+    private String selected3BDominant1;
+    private String selected3BDominant2;
+    private CheckBox toggle3B1;
+    private CheckBox toggle3B2;
 
     //section 4A
     private int point4A;
@@ -109,11 +137,14 @@ public class MainActivity extends AppCompatActivity {
     private EditText NE4A;
     private EditText SW4A;
     private EditText SE4A;
-    private String modifyAdd4B;
     private TextView sum4AVal;
     private String modifyTextSum4A;
     private TextView point4AVal;
     private String modifyTextPoint4A;
+    private int NW4Anumber;
+    private int NE4Anumber;
+    private int SW4Anumber;
+    private int SE4Anumber;
 
     //section 4B
     private int point4B;
@@ -127,8 +158,15 @@ public class MainActivity extends AppCompatActivity {
     private Spinner tree_types4B;
     private Button add4B;
     private Button clear4B;
-
-
+    private String modifyAdd4B;
+    private Button addDominant4B1;
+    private Button addDominant4B2;
+    private String selected4BDominant1;
+    private String selected4BDominant2;
+    private TextView addTreeToDominant4B1;
+    private TextView addTreeToDominant4B2;
+    private CheckBox toggle4B1;
+    private CheckBox toggle4B2;
 
     //section 5A
     private int point5A;
@@ -141,6 +179,10 @@ public class MainActivity extends AppCompatActivity {
     private String modifyTextSum5A;
     private TextView point5AVal;
     private String modifyTextPoint5A;
+    private int NW5Anumber;
+    private int NE5Anumber;
+    private int SW5Anumber;
+    private int SE5Anumber;
 
     //section 5B
     private int point5B;
@@ -153,6 +195,10 @@ public class MainActivity extends AppCompatActivity {
     private String modifyTextSum5B;
     private TextView point5BVal;
     private String modifyTextPoint5B;
+    private int NW5Bnumber;
+    private int NE5Bnumber;
+    private int SW5Bnumber;
+    private int SE5Bnumber;
 
     //section 6A
     private int point6A;
@@ -165,6 +211,10 @@ public class MainActivity extends AppCompatActivity {
     private String modifyTextSum6A;
     private TextView point6AVal;
     private String modifyTextPoint6A;
+    private int NW6Anumber;
+    private int NE6Anumber;
+    private int SW6Anumber;
+    private int SE6Anumber;
 
     //section 6B
     private int point6B;
@@ -177,6 +227,10 @@ public class MainActivity extends AppCompatActivity {
     private String modifyTextSum6B;
     private TextView point6BVal;
     private String modifyTextPoint6B;
+    private int NW6Bnumber;
+    private int NE6Bnumber;
+    private int SW6Bnumber;
+    private int SE6Bnumber;
 
     //section7
     private int point7;
@@ -210,13 +264,17 @@ public class MainActivity extends AppCompatActivity {
     private String modifyTextSum12;
     private TextView point12Val;
     private String modifyTextPoint12;
+    private int pointBoxA;
+    private int pointBoxB;
+    private int pointBoxC;
+    private int pointBoxD;
+    private int pointBoxE;
 
     //Total
     private int total;
     private TextView totalPoints;
     private String modifyTotalPoints;
 
-    // selecting trees to add
 
 
     @Override
@@ -228,203 +286,50 @@ public class MainActivity extends AppCompatActivity {
         updateBottom = (Button) findViewById(R.id.updateBottom);
         updateBottom.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // section 1A called with button
-                herbaceousPlantScore();
-                sum1AVal = (TextView) findViewById(R.id.sum1AVal);
-                modifyTextSum1A = sum1AVal.getText().toString();
-                modifyTextSum1A = Integer.toString(sum1A);
-                sum1AVal.setText(modifyTextSum1A);
+                updateButtonPressed();
+            }
+        });
 
-                point1AVal = (TextView) findViewById(R.id.point1AVal);
-                modifyTextPoint1A = point1AVal.getText().toString();
-                modifyTextPoint1A = Integer.toString(point1A);
-                point1AVal.setText(modifyTextPoint1A);
+        updateTop = (Button) findViewById(R.id.updateTop);
+        updateTop.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                updateButtonPressed();
+            }
+        });
 
-                // section 1B called with button
-                treeSeedlingScore();
-                sum1BVal = (TextView) findViewById(R.id.sum1BVal); // sum1BVal
-                modifyTextSum1B = sum1BVal.getText().toString();
-                modifyTextSum1B = Integer.toString(sum1B);
-                sum1BVal.setText(modifyTextSum1B);
+        addDominant3B1 = (Button) findViewById(R.id.addDominant3B1);
+        addDominant3B1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                addTreeToDominant3B1 = (TextView) findViewById(R.id.dominant3B1);
+                modifyAdd3B = addTreeToDominant3B1.getText().toString();
+                addTreeToDominant3B1.setText(selected3BDominant1);
+            }
+        });
 
-                point1BVal = (TextView) findViewById(R.id.point1BVal); // point1BVal
-                modifyTextPoint1B = point1BVal.getText().toString();
-                modifyTextPoint1B = Integer.toString(point1B);
-                point1BVal.setText(modifyTextPoint1B);
+        addDominant4B1 = (Button) findViewById(R.id.addDominant4B1);
+        addDominant4B1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                addTreeToDominant4B1 = (TextView) findViewById(R.id.dominant4B1);
+                modifyAdd4B = addTreeToDominant4B1.getText().toString();
+                addTreeToDominant4B1.setText(selected4BDominant1);
+            }
+        });
 
-                // section 2A called with button
-                shrubSaplingScore();
-                sum2AVal = (TextView) findViewById(R.id.sum2AVal);
-                modifyTextSum2A = sum2AVal.getText().toString();
-                modifyTextSum2A = Integer.toString(sum2A);
-                sum2AVal.setText(modifyTextSum2A);
+        addDominant3B2 = (Button) findViewById(R.id.addDominant3B2);
+        addDominant3B2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                addTreeToDominant3B2 = (TextView) findViewById(R.id.dominant3B2);
+                modifyAdd3B = addTreeToDominant3B2.getText().toString();
+                addTreeToDominant3B2.setText(selected3BDominant2);
+            }
+        });
 
-                point2AVal = (TextView) findViewById(R.id.point2AVal);
-                modifyTextPoint2A = point2AVal.getText().toString();
-                modifyTextPoint2A = Integer.toString(point2A);
-                point2AVal.setText(modifyTextPoint2A);
-
-                // section 2B called with button
-                comboShrubSaplingScore();
-                sum2BVal = (TextView) findViewById(R.id.sum2BVal); // sum2BVal
-                modifyTextSum2B = sum2BVal.getText().toString();
-                modifyTextSum2B = Integer.toString(sum2B);
-                sum2BVal.setText(modifyTextSum2B);
-
-                point2BVal = (TextView) findViewById(R.id.point2BVal); // point2BVal
-                modifyTextPoint2B = point2BVal.getText().toString();
-                modifyTextPoint2B = Integer.toString(point2B);
-                point2BVal.setText(modifyTextPoint2B);
-
-                // section 3A called with button
-                matureTreesScore();
-                sum3AVal = (TextView) findViewById(R.id.sum3AVal);
-                modifyTextSum3A = sum3AVal.getText().toString();
-                modifyTextSum3A = Integer.toString(sum3A);
-                sum3AVal.setText(modifyTextSum3A);
-
-                point3AVal = (TextView) findViewById(R.id.point3AVal);
-                modifyTextPoint3A = point3AVal.getText().toString();
-                modifyTextPoint3A = Integer.toString(point3A);
-                point3AVal.setText(modifyTextPoint3A);
-
-                // section 3B called with button
-                matureTreeSpeciesScore();
-                sum3BVal = (TextView) findViewById(R.id.sum3BVal); // sum3BVal
-                modifyTextSum3B = sum3BVal.getText().toString();
-                modifyTextSum3B = Integer.toString(sum3B);
-                sum3BVal.setText(modifyTextSum3B);
-
-                point3BVal = (TextView) findViewById(R.id.point3BVal); // point3BVal
-                modifyTextPoint3B = point3BVal.getText().toString();
-                modifyTextPoint3B = Integer.toString(point3B);
-                point3BVal.setText(modifyTextPoint3B);
-
-                // section 4A called with button
-                legacyTreesScore();
-                sum4AVal = (TextView) findViewById(R.id.sum4AVal);
-                modifyTextSum4A = sum4AVal.getText().toString();
-                modifyTextSum4A = Integer.toString(sum4A);
-                sum4AVal.setText(modifyTextSum4A);
-
-                point4AVal = (TextView) findViewById(R.id.point4AVal);
-                modifyTextPoint4A = point4AVal.getText().toString();
-                modifyTextPoint4A = Integer.toString(point4A);
-                point4AVal.setText(modifyTextPoint4A);
-
-               //section 4B called with button
-               legacyTreeSpeciesScore();
-               sum4BVal = (TextView) findViewById(R.id.sum4BVal); // sum4BVal
-               modifyTextSum4B = sum4BVal.getText().toString();
-               modifyTextSum4B = Integer.toString(sum4B);
-               sum4BVal.setText(modifyTextSum4B);
-
-               point4BVal = (TextView) findViewById(R.id.point4BVal); // point4BVal
-               modifyTextPoint4B = point4BVal.getText().toString();
-               modifyTextPoint4B = Integer.toString(point4B);
-               point4BVal.setText(modifyTextPoint4B);
-
-                // section 5A called with button
-                snagsScore();
-                sum5AVal = (TextView) findViewById(R.id.sum5AVal);
-                modifyTextSum5A = sum5AVal.getText().toString();
-                modifyTextSum5A = Integer.toString(sum5A);
-                sum5AVal.setText(modifyTextSum5A);
-
-                point5AVal = (TextView) findViewById(R.id.point5AVal);
-                modifyTextPoint5A = point5AVal.getText().toString();
-                modifyTextPoint5A = Integer.toString(point5A);
-                point5AVal.setText(modifyTextPoint5A);
-
-                // section 5B called with button
-                woodyDebrisScore();
-                sum5BVal = (TextView) findViewById(R.id.sum5BVal); // sum5BVal
-                modifyTextSum5B = sum5BVal.getText().toString();
-                modifyTextSum5B = Integer.toString(sum5B);
-                sum5BVal.setText(modifyTextSum5B);
-
-                point5BVal = (TextView) findViewById(R.id.point5BVal); // point5BVal
-                modifyTextPoint5B = point5BVal.getText().toString();
-                modifyTextPoint5B = Integer.toString(point5B);
-                point5BVal.setText(modifyTextPoint5B);
-
-                // section 6A called with button
-                invasiveShrubsScore();
-                sum6AVal = (TextView) findViewById(R.id.sum6AVal);
-                modifyTextSum6A = sum6AVal.getText().toString();
-                modifyTextSum6A = Integer.toString(sum6A);
-                sum6AVal.setText(modifyTextSum6A);
-
-                point6AVal = (TextView) findViewById(R.id.point6AVal);
-                modifyTextPoint6A = point6AVal.getText().toString();
-                modifyTextPoint6A = Integer.toString(point6A);
-                point6AVal.setText(modifyTextPoint6A);
-
-                // section 6B called with button
-                invasiveHerbaceousScore();
-                sum6BVal = (TextView) findViewById(R.id.sum6BVal); // sum6BVal
-                modifyTextSum6B = sum6BVal.getText().toString();
-                modifyTextSum6B = Integer.toString(sum6B);
-                sum6BVal.setText(modifyTextSum6B);
-
-                point6BVal = (TextView) findViewById(R.id.point6BVal); // point6BVal
-                modifyTextPoint6B = point6BVal.getText().toString();
-                modifyTextPoint6B = Integer.toString(point6B);
-                point6BVal.setText(modifyTextPoint6B);
-
-                //section 7 called with button
-                noObservedInvasivePlants();
-                point7Val = (TextView) findViewById(R.id.point7Val);
-                modifyTextPoint7 = point7Val.getText().toString();
-                modifyTextPoint7 = Integer.toString(point7);
-                point7Val.setText(modifyTextPoint7);
-
-                //section 8 called with button
-                healthyLightGaps();
-                point8Val = (TextView) findViewById(R.id.point8Val);
-                modifyTextPoint8 = point8Val.getText().toString();
-                modifyTextPoint8 = Integer.toString(point8);
-                point8Val.setText(modifyTextPoint8);
-
-                //section 9 called with button
-                microtopography();
-                point9Val = (TextView) findViewById(R.id.point9Val);
-                modifyTextPoint9 = point9Val.getText().toString();
-                modifyTextPoint9 = Integer.toString(point9);
-                point9Val.setText(modifyTextPoint9);
-
-                //section 10 called with button
-                absenceOfHumanActivity();
-                point10Val = (TextView) findViewById(R.id.point10Val);
-                modifyTextPoint10 = point10Val.getText().toString();
-                modifyTextPoint10 = Integer.toString(point10);
-                point10Val.setText(modifyTextPoint10);
-
-                //section 11 called with button
-                absenceOfDeer();
-                point11Val = (TextView) findViewById(R.id.point11Val);
-                modifyTextPoint11 = point11Val.getText().toString();
-                modifyTextPoint11 = Integer.toString(point11);
-                point11Val.setText(modifyTextPoint11);
-
-                //section 12 called with button
-                leafFragmentCover();
-                total12Val = (TextView) findViewById(R.id.total12Val);
-                modifyTextSum12 = total12Val.getText().toString();
-                modifyTextSum12 = Integer.toString(total12);
-                total12Val.setText(modifyTextSum12);
-
-                point12Val = (TextView) findViewById(R.id.point12Val);
-                modifyTextPoint12 = point12Val.getText().toString();
-                modifyTextPoint12 = Integer.toString(point12);
-                point12Val.setText(modifyTextPoint12);
-
-                //total called with button
-                totalPoints();
-                totalPoints = (TextView) findViewById(R.id.totalPoints);
-                modifyTotalPoints = totalPoints.getText().toString();
-                modifyTotalPoints = Integer.toString(total);
-                totalPoints.setText(modifyTotalPoints);
+        addDominant4B2 = (Button) findViewById(R.id.addDominant4B2);
+        addDominant4B2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                addTreeToDominant4B2 = (TextView) findViewById(R.id.dominant4B2);
+                modifyAdd4B = addTreeToDominant4B2.getText().toString();
+                addTreeToDominant4B2.setText(selected4BDominant2);
             }
         });
 
@@ -445,6 +350,28 @@ public class MainActivity extends AppCompatActivity {
                 selected3B = "";
                 sum3B = 0;
                 addTreeToList3B.setText(selected3B);
+
+                addTreeToDominant3B1 = (TextView) findViewById(R.id.dominant3B1);
+                modifyAdd3B = addTreeToDominant3B1.getText().toString();
+                selected3BDominant1 = " ";
+                addTreeToDominant3B1.setText(selected3BDominant1);
+
+                addTreeToDominant3B2 = (TextView) findViewById(R.id.dominant3B2);
+                modifyAdd3B = addTreeToDominant3B2.getText().toString();
+                selected3BDominant2 = " ";
+                addTreeToDominant3B2.setText(selected3BDominant2);
+
+                toggle3B1 = (CheckBox) findViewById(R.id.checkBoxDominant3B1);
+                toggle3B2 = (CheckBox) findViewById(R.id.checkBoxDominant3B2);
+                toggle3B1.setChecked(false);
+                toggle3B2.setChecked(false);
+
+                View c = findViewById(R.id.addDominant3B1);
+                c.setVisibility(View.INVISIBLE);
+                View b = findViewById(R.id.addTree3B);
+                b.setVisibility(View.VISIBLE);
+                View d = findViewById(R.id.addDominant3B2);
+                d.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -452,12 +379,39 @@ public class MainActivity extends AppCompatActivity {
         tree_types3B.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                boolean isCheckedDominant3B1 = ((CheckBox) findViewById(R.id.checkBoxDominant3B1)).isChecked();
+                boolean isCheckedDominant3B2 = ((CheckBox) findViewById(R.id.checkBoxDominant3B2)).isChecked();
+                toggle3B1 = (CheckBox) findViewById(R.id.checkBoxDominant3B1);
+                toggle3B2 = (CheckBox) findViewById(R.id.checkBoxDominant3B2);
+                View c = findViewById(R.id.addDominant3B1);
+                c.setVisibility(View.INVISIBLE);
+                View b = findViewById(R.id.addTree3B);
+                b.setVisibility(View.VISIBLE);
+                View d = findViewById(R.id.addDominant3B2);
+                d.setVisibility(View.INVISIBLE);
                 if (selected3B == null) {
                     selected3B = "";
                     sum3B = 0;
-                } else {
+                } else if (isCheckedDominant3B1 == false && isCheckedDominant3B2 == false){
                     selected3B = adapterView.getSelectedItem().toString() + "  " + selected3B;
                     sum3B = sum3B + 1;
+                    c.setVisibility(View.INVISIBLE);
+                    d.setVisibility(View.INVISIBLE);
+                    b.setVisibility(View.VISIBLE);
+                }
+                else if (isCheckedDominant3B1 == true && isCheckedDominant3B2 == false) {
+                    selected3BDominant1 = adapterView.getSelectedItem().toString();
+                    toggle3B1.setChecked(false);
+                    c.setVisibility(View.VISIBLE);
+                    d.setVisibility(View.INVISIBLE);
+                    b.setVisibility(View.INVISIBLE);
+                }
+                else if (isCheckedDominant3B1 == false && isCheckedDominant3B2 == true){
+                    selected3BDominant2 = adapterView.getSelectedItem().toString();
+                    toggle3B2.setChecked(false);
+                    c.setVisibility(View.INVISIBLE);
+                    d.setVisibility(View.VISIBLE);
+                    b.setVisibility(View.INVISIBLE);
                 }
             }
 
@@ -483,6 +437,28 @@ public class MainActivity extends AppCompatActivity {
                 selected4B = "";
                 sum4B = 0;
                 addTreeToList4B.setText(selected4B);
+
+                addTreeToDominant4B1 = (TextView) findViewById(R.id.dominant4B1);
+                modifyAdd4B = addTreeToDominant4B1.getText().toString();
+                selected4BDominant1 = " ";
+                addTreeToDominant4B1.setText(selected4BDominant1);
+
+                addTreeToDominant4B2 = (TextView) findViewById(R.id.dominant4B2);
+                modifyAdd4B = addTreeToDominant4B2.getText().toString();
+                selected4BDominant2 = " ";
+                addTreeToDominant4B2.setText(selected4BDominant2);
+
+                toggle4B1 = (CheckBox) findViewById(R.id.checkBoxDominant4B1);
+                toggle4B2 = (CheckBox) findViewById(R.id.checkBoxDominant4B2);
+                toggle4B1.setChecked(false);
+                toggle4B2.setChecked(false);
+
+                View c = findViewById(R.id.addDominant4B1);
+                c.setVisibility(View.INVISIBLE);
+                View b = findViewById(R.id.addTree4B);
+                b.setVisibility(View.VISIBLE);
+                View d = findViewById(R.id.addDominant4B2);
+                d.setVisibility(View.INVISIBLE);
             }
         });
 
@@ -490,12 +466,45 @@ public class MainActivity extends AppCompatActivity {
         tree_types4B.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                boolean isCheckedDominant4B1 = ((CheckBox) findViewById(R.id.checkBoxDominant4B1)).isChecked();
+                boolean isCheckedDominant4B2 = ((CheckBox) findViewById(R.id.checkBoxDominant4B2)).isChecked();
+                toggle4B1 = (CheckBox) findViewById(R.id.checkBoxDominant4B1);
+                toggle4B2 = (CheckBox) findViewById(R.id.checkBoxDominant4B2);
+                View c = findViewById(R.id.addDominant4B1);
+                c.setVisibility(View.INVISIBLE);
+                View b = findViewById(R.id.addTree4B);
+                b.setVisibility(View.VISIBLE);
+                View d = findViewById(R.id.addDominant4B2);
+                d.setVisibility(View.INVISIBLE);
                 if (selected4B == null) {
                     selected4B = "";
                     sum4B = 0;
-                } else {
+                } else if (isCheckedDominant4B1 == false && isCheckedDominant4B2 == false){
                     selected4B = adapterView.getSelectedItem().toString() + "  " + selected4B;
                     sum4B = sum4B + 1;
+                    c.setVisibility(View.INVISIBLE);
+                    d.setVisibility(View.INVISIBLE);
+                    b.setVisibility(View.VISIBLE);
+                } else if (isCheckedDominant4B1 == true && isCheckedDominant4B2 == true){
+                    selected4B = adapterView.getSelectedItem().toString() + "  " + selected4B;
+                    sum4B = sum4B + 1;
+                    c.setVisibility(View.INVISIBLE);
+                    d.setVisibility(View.INVISIBLE);
+                    b.setVisibility(View.VISIBLE);
+                }
+                else if (isCheckedDominant4B1 == true && isCheckedDominant4B2 == false) {
+                    selected4BDominant1 = adapterView.getSelectedItem().toString();
+                    toggle4B1.setChecked(false);
+                    c.setVisibility(View.VISIBLE);
+                    d.setVisibility(View.INVISIBLE);
+                    b.setVisibility(View.INVISIBLE);
+                }
+                else if (isCheckedDominant4B1 == false && isCheckedDominant4B2 == true){
+                    selected4BDominant2 = adapterView.getSelectedItem().toString();
+                    toggle4B2.setChecked(false);
+                    c.setVisibility(View.INVISIBLE);
+                    d.setVisibility(View.VISIBLE);
+                    b.setVisibility(View.INVISIBLE);
                 }
             }
 
@@ -503,6 +512,206 @@ public class MainActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
+    }
+
+    public void updateButtonPressed(){
+        // section 1A called with button
+        herbaceousPlantScore();
+        sum1AVal = (TextView) findViewById(R.id.sum1AVal);
+        modifyTextSum1A = sum1AVal.getText().toString();
+        modifyTextSum1A = Integer.toString(sum1A);
+        sum1AVal.setText(modifyTextSum1A);
+
+        point1AVal = (TextView) findViewById(R.id.point1AVal);
+        modifyTextPoint1A = point1AVal.getText().toString();
+        modifyTextPoint1A = Integer.toString(point1A);
+        point1AVal.setText(modifyTextPoint1A);
+
+        // section 1B called with button
+        treeSeedlingScore();
+        sum1BVal = (TextView) findViewById(R.id.sum1BVal); // sum1BVal
+        modifyTextSum1B = sum1BVal.getText().toString();
+        modifyTextSum1B = Integer.toString(sum1B);
+        sum1BVal.setText(modifyTextSum1B);
+
+        point1BVal = (TextView) findViewById(R.id.point1BVal); // point1BVal
+        modifyTextPoint1B = point1BVal.getText().toString();
+        modifyTextPoint1B = Integer.toString(point1B);
+        point1BVal.setText(modifyTextPoint1B);
+
+        // section 2A called with button
+        shrubSaplingScore();
+        sum2AVal = (TextView) findViewById(R.id.sum2AVal);
+        modifyTextSum2A = sum2AVal.getText().toString();
+        modifyTextSum2A = Integer.toString(sum2A);
+        sum2AVal.setText(modifyTextSum2A);
+
+        point2AVal = (TextView) findViewById(R.id.point2AVal);
+        modifyTextPoint2A = point2AVal.getText().toString();
+        modifyTextPoint2A = Integer.toString(point2A);
+        point2AVal.setText(modifyTextPoint2A);
+
+        // section 2B called with button
+        comboShrubSaplingScore();
+        sum2BVal = (TextView) findViewById(R.id.sum2BVal); // sum2BVal
+        modifyTextSum2B = sum2BVal.getText().toString();
+        modifyTextSum2B = Integer.toString(sum2B);
+        sum2BVal.setText(modifyTextSum2B);
+
+        point2BVal = (TextView) findViewById(R.id.point2BVal); // point2BVal
+        modifyTextPoint2B = point2BVal.getText().toString();
+        modifyTextPoint2B = Integer.toString(point2B);
+        point2BVal.setText(modifyTextPoint2B);
+
+        // section 3A called with button
+        matureTreesScore();
+        sum3AVal = (TextView) findViewById(R.id.sum3AVal);
+        modifyTextSum3A = sum3AVal.getText().toString();
+        modifyTextSum3A = Integer.toString(sum3A);
+        sum3AVal.setText(modifyTextSum3A);
+
+        point3AVal = (TextView) findViewById(R.id.point3AVal);
+        modifyTextPoint3A = point3AVal.getText().toString();
+        modifyTextPoint3A = Integer.toString(point3A);
+        point3AVal.setText(modifyTextPoint3A);
+
+        // section 3B called with button
+        matureTreeSpeciesScore();
+        sum3BVal = (TextView) findViewById(R.id.sum3BVal); // sum3BVal
+        modifyTextSum3B = sum3BVal.getText().toString();
+        modifyTextSum3B = Integer.toString(sum3B);
+        sum3BVal.setText(modifyTextSum3B);
+
+        point3BVal = (TextView) findViewById(R.id.point3BVal); // point3BVal
+        modifyTextPoint3B = point3BVal.getText().toString();
+        modifyTextPoint3B = Integer.toString(point3B);
+        point3BVal.setText(modifyTextPoint3B);
+
+        // section 4A called with button
+        legacyTreesScore();
+        sum4AVal = (TextView) findViewById(R.id.sum4AVal);
+        modifyTextSum4A = sum4AVal.getText().toString();
+        modifyTextSum4A = Integer.toString(sum4A);
+        sum4AVal.setText(modifyTextSum4A);
+
+        point4AVal = (TextView) findViewById(R.id.point4AVal);
+        modifyTextPoint4A = point4AVal.getText().toString();
+        modifyTextPoint4A = Integer.toString(point4A);
+        point4AVal.setText(modifyTextPoint4A);
+
+        //section 4B called with button
+        legacyTreeSpeciesScore();
+        sum4BVal = (TextView) findViewById(R.id.sum4BVal); // sum4BVal
+        modifyTextSum4B = sum4BVal.getText().toString();
+        modifyTextSum4B = Integer.toString(sum4B);
+        sum4BVal.setText(modifyTextSum4B);
+
+        point4BVal = (TextView) findViewById(R.id.point4BVal); // point4BVal
+        modifyTextPoint4B = point4BVal.getText().toString();
+        modifyTextPoint4B = Integer.toString(point4B);
+        point4BVal.setText(modifyTextPoint4B);
+
+        // section 5A called with button
+        snagsScore();
+        sum5AVal = (TextView) findViewById(R.id.sum5AVal);
+        modifyTextSum5A = sum5AVal.getText().toString();
+        modifyTextSum5A = Integer.toString(sum5A);
+        sum5AVal.setText(modifyTextSum5A);
+
+        point5AVal = (TextView) findViewById(R.id.point5AVal);
+        modifyTextPoint5A = point5AVal.getText().toString();
+        modifyTextPoint5A = Integer.toString(point5A);
+        point5AVal.setText(modifyTextPoint5A);
+
+        // section 5B called with button
+        woodyDebrisScore();
+        sum5BVal = (TextView) findViewById(R.id.sum5BVal); // sum5BVal
+        modifyTextSum5B = sum5BVal.getText().toString();
+        modifyTextSum5B = Integer.toString(sum5B);
+        sum5BVal.setText(modifyTextSum5B);
+
+        point5BVal = (TextView) findViewById(R.id.point5BVal); // point5BVal
+        modifyTextPoint5B = point5BVal.getText().toString();
+        modifyTextPoint5B = Integer.toString(point5B);
+        point5BVal.setText(modifyTextPoint5B);
+
+        // section 6A called with button
+        invasiveShrubsScore();
+        sum6AVal = (TextView) findViewById(R.id.sum6AVal);
+        modifyTextSum6A = sum6AVal.getText().toString();
+        modifyTextSum6A = Integer.toString(sum6A);
+        sum6AVal.setText(modifyTextSum6A);
+
+        point6AVal = (TextView) findViewById(R.id.point6AVal);
+        modifyTextPoint6A = point6AVal.getText().toString();
+        modifyTextPoint6A = Integer.toString(point6A);
+        point6AVal.setText(modifyTextPoint6A);
+
+        // section 6B called with button
+        invasiveHerbaceousScore();
+        sum6BVal = (TextView) findViewById(R.id.sum6BVal); // sum6BVal
+        modifyTextSum6B = sum6BVal.getText().toString();
+        modifyTextSum6B = Integer.toString(sum6B);
+        sum6BVal.setText(modifyTextSum6B);
+
+        point6BVal = (TextView) findViewById(R.id.point6BVal); // point6BVal
+        modifyTextPoint6B = point6BVal.getText().toString();
+        modifyTextPoint6B = Integer.toString(point6B);
+        point6BVal.setText(modifyTextPoint6B);
+
+        //section 7 called with button
+        noObservedInvasivePlants();
+        point7Val = (TextView) findViewById(R.id.point7Val);
+        modifyTextPoint7 = point7Val.getText().toString();
+        modifyTextPoint7 = Integer.toString(point7);
+        point7Val.setText(modifyTextPoint7);
+
+        //section 8 called with button
+        healthyLightGaps();
+        point8Val = (TextView) findViewById(R.id.point8Val);
+        modifyTextPoint8 = point8Val.getText().toString();
+        modifyTextPoint8 = Integer.toString(point8);
+        point8Val.setText(modifyTextPoint8);
+
+        //section 9 called with button
+        microtopography();
+        point9Val = (TextView) findViewById(R.id.point9Val);
+        modifyTextPoint9 = point9Val.getText().toString();
+        modifyTextPoint9 = Integer.toString(point9);
+        point9Val.setText(modifyTextPoint9);
+
+        //section 10 called with button
+        absenceOfHumanActivity();
+        point10Val = (TextView) findViewById(R.id.point10Val);
+        modifyTextPoint10 = point10Val.getText().toString();
+        modifyTextPoint10 = Integer.toString(point10);
+        point10Val.setText(modifyTextPoint10);
+
+        //section 11 called with button
+        absenceOfDeer();
+        point11Val = (TextView) findViewById(R.id.point11Val);
+        modifyTextPoint11 = point11Val.getText().toString();
+        modifyTextPoint11 = Integer.toString(point11);
+        point11Val.setText(modifyTextPoint11);
+
+        //section 12 called with button
+        leafFragmentCover();
+        total12Val = (TextView) findViewById(R.id.total12Val);
+        modifyTextSum12 = total12Val.getText().toString();
+        modifyTextSum12 = Integer.toString(total12);
+        total12Val.setText(modifyTextSum12);
+
+        point12Val = (TextView) findViewById(R.id.point12Val);
+        modifyTextPoint12 = point12Val.getText().toString();
+        modifyTextPoint12 = Integer.toString(point12);
+        point12Val.setText(modifyTextPoint12);
+
+        //total called with button
+        totalPoints();
+        totalPoints = (TextView) findViewById(R.id.totalPoints);
+        modifyTotalPoints = totalPoints.getText().toString();
+        modifyTotalPoints = Integer.toString(total);
+        totalPoints.setText(modifyTotalPoints);
     }
 
     //get Cell value
@@ -529,10 +738,7 @@ public class MainActivity extends AppCompatActivity {
     // SECTION 1A
     public void herbaceousPlantScore() {
         threshold = 20; // threshold for 1A
-        int NW1Anumber;
-        int NE1Anumber;
-        int SW1Anumber;
-        int SE1Anumber;
+
 
         NW1A = (EditText) findViewById(R.id.NW1A);
         String NW1Anum = NW1A.getText().toString();
@@ -578,10 +784,6 @@ public class MainActivity extends AppCompatActivity {
     // SECTION 1B
     public void treeSeedlingScore() {
         threshold = 16; // threshold for 1B
-        int NW1Bnumber;
-        int NE1Bnumber;
-        int SW1Bnumber;
-        int SE1Bnumber;
 
         NW1B = (EditText) findViewById(R.id.NW1B);
         String NW1Bnum = NW1B.getText().toString();
@@ -627,10 +829,6 @@ public class MainActivity extends AppCompatActivity {
     // SECTION 2A
     public void shrubSaplingScore() {
         threshold = 120; // threshold for 2A
-        int NW2Anumber;
-        int NE2Anumber;
-        int SW2Anumber;
-        int SE2Anumber;
 
         NW2A = (EditText) findViewById(R.id.NW2A);
         String NW2Anum = NW2A.getText().toString();
@@ -676,10 +874,6 @@ public class MainActivity extends AppCompatActivity {
     // SECTION 2B
     public void comboShrubSaplingScore() {
         threshold = 16; // threshold for 2B
-        int NW2Bnumber;
-        int NE2Bnumber;
-        int SW2Bnumber;
-        int SE2Bnumber;
 
         NW2B = (EditText) findViewById(R.id.NW2B);
         String NW2Bnum = NW2B.getText().toString();
@@ -725,10 +919,6 @@ public class MainActivity extends AppCompatActivity {
     // SECTION 3A
     public void matureTreesScore() {
         threshold = 24; // threshold for 1A
-        int NW3Anumber;
-        int NE3Anumber;
-        int SW3Anumber;
-        int SE3Anumber;
 
         NW3A = (EditText) findViewById(R.id.NW3A);
         String NW3Anum = NW3A.getText().toString();
@@ -784,10 +974,6 @@ public class MainActivity extends AppCompatActivity {
     // SECTION 4A
     public void legacyTreesScore() {
         threshold = 7; // threshold for 1A
-        int NW4Anumber;
-        int NE4Anumber;
-        int SW4Anumber;
-        int SE4Anumber;
 
         NW4A = (EditText) findViewById(R.id.NW4A);
         String NW4Anum = NW4A.getText().toString();
@@ -844,10 +1030,6 @@ public class MainActivity extends AppCompatActivity {
         // range for 5A
         int minThreshold = 5;
         int maxThreshold = 12;
-        int NW5Anumber;
-        int NE5Anumber;
-        int SW5Anumber;
-        int SE5Anumber;
 
         NW5A = (EditText) findViewById(R.id.NW5A);
         String NW5Anum = NW5A.getText().toString();
@@ -894,10 +1076,6 @@ public class MainActivity extends AppCompatActivity {
     // SECTION 5B
     public void woodyDebrisScore() {
         threshold = 12; // threshold for 5B
-        int NW5Bnumber;
-        int NE5Bnumber;
-        int SW5Bnumber;
-        int SE5Bnumber;
 
         NW5B = (EditText) findViewById(R.id.NW5B);
         String NW5Bnum = NW5B.getText().toString();
@@ -943,10 +1121,6 @@ public class MainActivity extends AppCompatActivity {
     // SECTION 6A
     public void invasiveShrubsScore() {
         threshold = 80; // threshold for 6A < 80
-        int NW6Anumber;
-        int NE6Anumber;
-        int SW6Anumber;
-        int SE6Anumber;
 
         NW6A = (EditText) findViewById(R.id.NW6A);
         String NW6Anum = NW6A.getText().toString();
@@ -992,10 +1166,6 @@ public class MainActivity extends AppCompatActivity {
     // SECTION 6B
     public void invasiveHerbaceousScore() {
         threshold = 200; // threshold for 6B < 200
-        int NW6Bnumber;
-        int NE6Bnumber;
-        int SW6Bnumber;
-        int SE6Bnumber;
 
         NW6B = (EditText) findViewById(R.id.NW6B);
         String NW6Bnum = NW6B.getText().toString();
@@ -1096,15 +1266,10 @@ public class MainActivity extends AppCompatActivity {
     //section 12
     public void leafFragmentCover(){
         boolean isCheckedA = ((CheckBox) findViewById(R.id.checkBox12A)).isChecked();
-        int pointBoxA;
         boolean isCheckedB = ((CheckBox) findViewById(R.id.checkBox12B)).isChecked();
-        int pointBoxB;
         boolean isCheckedC = ((CheckBox) findViewById(R.id.checkBox12C)).isChecked();
-        int pointBoxC;
         boolean isCheckedD = ((CheckBox) findViewById(R.id.checkBox12D)).isChecked();
-        int pointBoxD;
         boolean isCheckedE = ((CheckBox) findViewById(R.id.checkBox12E)).isChecked();
-        int pointBoxE;
 
         if (isCheckedA == true){
             pointBoxA = 1;
@@ -1161,6 +1326,101 @@ public class MainActivity extends AppCompatActivity {
         ArrayList list = new ArrayList(97);
         list.add(new Holder<Object>(getCellValue(),0));
         list.add(new Holder<Object>(getDateValue(),0));
-        return null;
+        list.add(new Holder<Object>(getScorerValue(),0));
+        list.add(new Holder<Object>(NW1Anumber,1));
+        list.add(new Holder<Object>(NE1Anumber,1));
+        list.add(new Holder<Object>(SE1Anumber,1));
+        list.add(new Holder<Object>(SW1Anumber,1));
+        list.add(new Holder<Object>(sum1A,1));
+        list.add(new Holder<Object>(point1A,1));
+        list.add(new Holder<Object>(NW1Bnumber,1));
+        list.add(new Holder<Object>(NE1Bnumber,1));
+        list.add(new Holder<Object>(SE1Bnumber,1));
+        list.add(new Holder<Object>(SW1Bnumber,1));
+        list.add(new Holder<Object>(sum1B,1));
+        list.add(new Holder<Object>(point1B,1));
+        list.add(new Holder<Object>(NW2Anumber,1));
+        list.add(new Holder<Object>(NE2Anumber,1));
+        list.add(new Holder<Object>(SE2Anumber,1));
+        list.add(new Holder<Object>(SW2Anumber,1));
+        list.add(new Holder<Object>(sum2A,1));
+        list.add(new Holder<Object>(point2A,1));
+        list.add(new Holder<Object>(NW2Bnumber,1));
+        list.add(new Holder<Object>(NE2Bnumber,1));
+        list.add(new Holder<Object>(SE2Bnumber,1));
+        list.add(new Holder<Object>(SW2Bnumber,1));
+        list.add(new Holder<Object>(sum2B,1));
+        list.add(new Holder<Object>(point2B,1));
+        list.add(new Holder<Object>(NW3Anumber,1));
+        list.add(new Holder<Object>(NE3Anumber,1));
+        list.add(new Holder<Object>(SE3Anumber,1));
+        list.add(new Holder<Object>(SW3Anumber,1));
+        list.add(new Holder<Object>(sum3A,1));
+        list.add(new Holder<Object>(point3A,1));
+        list.add(new Holder<Object>(selected3B,0));
+        list.add(new Holder<Object>(selected3BDominant1,0));
+        list.add(new Holder<Object>(selected3BDominant2,0));
+        list.add(new Holder<Object>(sum3B,1));
+        list.add(new Holder<Object>(point3B,1));
+        list.add(new Holder<Object>(NW4Anumber,1));
+        list.add(new Holder<Object>(NE4Anumber,1));
+        list.add(new Holder<Object>(SE4Anumber,1));
+        list.add(new Holder<Object>(SW4Anumber,1));
+        list.add(new Holder<Object>(sum4A,1));
+        list.add(new Holder<Object>(point4A,1));
+        list.add(new Holder<Object>(selected4B,0));
+        list.add(new Holder<Object>(sum4B,1));
+        list.add(new Holder<Object>(point4B,1));
+        list.add(new Holder<Object>(NW5Anumber,1));
+        list.add(new Holder<Object>(NE5Anumber,1));
+        list.add(new Holder<Object>(SE5Anumber,1));
+        list.add(new Holder<Object>(SW5Anumber,1));
+        list.add(new Holder<Object>(sum5A,1));
+        list.add(new Holder<Object>(point5A,1));
+        list.add(new Holder<Object>(NW5Bnumber,1));
+        list.add(new Holder<Object>(NE5Bnumber,1));
+        list.add(new Holder<Object>(SE5Bnumber,1));
+        list.add(new Holder<Object>(SW5Bnumber,1));
+        list.add(new Holder<Object>(sum5B,1));
+        list.add(new Holder<Object>(point5B,1));
+        list.add(new Holder<Object>(NW6Anumber,1));
+        list.add(new Holder<Object>(NE6Anumber,1));
+        list.add(new Holder<Object>(SE6Anumber,1));
+        list.add(new Holder<Object>(SW6Anumber,1));
+        list.add(new Holder<Object>(sum6A,1));
+        list.add(new Holder<Object>(point6A,1));
+        list.add(new Holder<Object>(NW6Bnumber,1));
+        list.add(new Holder<Object>(NE6Bnumber,1));
+        list.add(new Holder<Object>(SE6Bnumber,1));
+        list.add(new Holder<Object>(SW6Bnumber,1));
+        list.add(new Holder<Object>(sum6B,1));
+        list.add(new Holder<Object>(point6B,1));
+        list.add(new Holder<Object>(point7,1));
+        list.add(new Holder<Object>(point8,1));
+        list.add(new Holder<Object>(point9,1));
+        list.add(new Holder<Object>(point10,1));
+        list.add(new Holder<Object>(point11,1));
+        list.add(new Holder<Object>(pointBoxA,1));
+        list.add(new Holder<Object>(pointBoxB,1));
+        list.add(new Holder<Object>(pointBoxD,1));
+        list.add(new Holder<Object>(pointBoxC,1));
+        list.add(new Holder<Object>(pointBoxE,1));
+        list.add(new Holder<Object>(total12,1));
+        list.add(new Holder<Object>(point12,1));
+        list.add(new Holder<Object>(total,1));
+        list.add(null);
+        list.add(null);
+        list.add(null);
+        list.add(null);
+        list.add(null);
+        list.add(null);
+        list.add(null);
+        list.add(null);
+        list.add(null);
+        list.add(null);
+        list.add(null);
+        list.add(null);
+        list.add(null);
+        return list;
     }
 }
