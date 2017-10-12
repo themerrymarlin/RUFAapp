@@ -23,12 +23,69 @@
     <string name="invasive_shrubs">6A. &lt; 80 Invasive \nShrubs/Vines</string>
     <string name="invasive_herbaceous">6B. &lt; 200 Invasive \nHerbaceous Plants</string>
 
-    <string-array   name="tree_types">
-        <item>Tree Types</item>
-        <item>tree1</item>
-        <item>tree2</item>
-        <item>tree3</item>
-        <item>tree4</item>
+    <string-array name="tree_types">
+        <item>GRAS</item>
+        <item>WHAS</item>
+        <item>BIAS</item>
+        <item>QUAS</item>
+        <item>BALD</item>
+        <item>BASS</item>
+        <item>AMBE</item>
+        <item>BLBI</item>
+        <item>RIBI</item>
+        <item>YEBI</item>
+        <item>BOXE</item>
+        <item>BUCK</item>
+        <item>BUTT</item>
+        <item>CATA</item>
+        <item>BLCH</item>
+        <item>AMCH</item>
+        <item>COTT</item>
+        <item>CUCU</item>
+        <item>EAHE</item>
+        <item>AMEL</item>
+        <item>REEL</item>
+        <item>BIHI</item>
+        <item>PIHI</item>
+        <item>SHHI</item>
+        <item>SLHI</item>
+        <item>BLLO</item>
+        <item>HOLO</item>
+        <item>BLMA</item>
+        <item>SUMA</item>
+        <item>REMA</item>
+        <item>SIMA</item>
+        <item>BLOA</item>
+        <item>BUOA</item>
+        <item>CSOA</item>
+        <item>CHOA</item>
+        <item>PIOA</item>
+        <item>REOA</item>
+        <item>SCOA</item>
+        <item>SWOA</item>
+        <item>WHOA</item>
+        <item>OSOR</item>
+        <item>PAWP</item>
+        <item>WHPI</item>
+        <item>REDC</item>
+        <item>SASS</item>
+        <item>SWGU</item>
+        <item>SYCA</item>
+        <item>TAMA</item>
+        <item>TUPO</item>
+        <item>TUPE</item>
+        <item>BLWA</item>
+        <item>WILL</item>
+    </string-array>
+
+    <string-array name="plant_communities">
+        <item>Beech-Maple</item>
+        <item>Oak-Hickory</item>
+        <item>Hemlock-Hardwoods</item>
+        <item>Mixed Mesophytic</item>
+        <item>Mixed Floodplain</item>
+        <item>Oak-Maple</item>
+        <item>Planted Pine</item>
     </string-array>
 
     <string name="add_tree">Add</string>

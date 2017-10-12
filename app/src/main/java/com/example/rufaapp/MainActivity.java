@@ -1316,12 +1316,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    //total points
+    // total points
     public void totalPoints(){
         total = point1A + point1B + point2A + point2B + point3A + point3B + point4A + point4B + point5A + point5B + point6A + point6B + point7 + point8 + point9 + point10 + point11 + point12;
     }
 
-    //arrayList of data
+    // arrayList of data
     public ArrayList<Holder<Object>> getValues(){
         ArrayList list = new ArrayList(97);
         list.add(new Holder<Object>(getCellValue(),0));
