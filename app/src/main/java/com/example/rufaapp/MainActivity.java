@@ -275,6 +275,38 @@ public class MainActivity extends AppCompatActivity {
     private TextView totalPoints;
     private String modifyTotalPoints;
 
+    //Plant Community
+    private TextView addTreeToListPlantCommunity;
+    private String modifyCommunityType;
+    private String selectedPlantCommunity;
+    private Spinner plant_community;
+    private Button addPlantCommunity;
+
+    //Age Classes
+    private Spinner age_classes;
+    private Button addDominantAgeClasses1;
+    private Button addDominantAgeClasses2;
+    private String selectedAgeClass;
+    private TextView addTreeToDominantSapling1;
+    private TextView addTreeToDominantSapling2;
+    private CheckBox toggleSapling1;
+    private CheckBox toggleSapling2;
+    private TextView addTreeToDominantSmallPole1;
+    private TextView addTreeToDominantSmallPole2;
+    private CheckBox toggleSmallPole1;
+    private CheckBox toggleSmallPole2;
+    private TextView addTreeToDominantMedPole1;
+    private TextView addTreeToDominantMedPole2;
+    private CheckBox toggleMedPole1;
+    private CheckBox toggleMedPole2;
+    private TextView addTreeToDominantStandard1;
+    private TextView addTreeToDominantStandard2;
+    private CheckBox toggleStandard1;
+    private CheckBox toggleStandard2;
+    private TextView addTreeToDominantVeteran1;
+    private TextView addTreeToDominantVeteran2;
+    private CheckBox toggleVeteran1;
+    private CheckBox toggleVeteran2;
 
 
     @Override
@@ -508,6 +540,134 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
 
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        addPlantCommunity = (Button) findViewById(R.id.select_community_type);
+        addPlantCommunity.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                addTreeToListPlantCommunity = (TextView) findViewById(R.id.community_type_value);
+                modifyCommunityType = addTreeToListPlantCommunity.getText().toString();
+                addTreeToListPlantCommunity.setText(selectedPlantCommunity);
+            }
+        });
+
+        plant_community = (Spinner) findViewById(R.id.community_type_spinner);
+        plant_community.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (selectedPlantCommunity == null) {
+                    selectedPlantCommunity = "";
+                } else {
+                    selectedPlantCommunity = adapterView.getSelectedItem().toString();
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        addDominantAgeClasses1 = (Button) findViewById(R.id.addDominantAgeClasses1);
+        addDominantAgeClasses1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedDominantSapling1 = ((CheckBox) findViewById(R.id.checkBoxDominantSapling1)).isChecked();
+                boolean isCheckedDominantSmallPole1 = ((CheckBox) findViewById(R.id.checkBoxDominantSmallPole1)).isChecked();
+                boolean isCheckedDominantMedPole1 = ((CheckBox) findViewById(R.id.checkBoxDominantMedPole1)).isChecked();
+                boolean isCheckedDominantStandard1 = ((CheckBox) findViewById(R.id.checkBoxDominantStandard1)).isChecked();
+                boolean isCheckedDominantVeteran1 = ((CheckBox) findViewById(R.id.checkBoxDominantVeteran1)).isChecked();
+                toggleSmallPole1 = (CheckBox) findViewById(R.id.checkBoxDominantSmallPole1);
+                toggleMedPole1 = (CheckBox) findViewById(R.id.checkBoxDominantMedPole1);
+                toggleSapling1 = (CheckBox) findViewById(R.id.checkBoxDominantSapling1);
+                toggleStandard1 = (CheckBox) findViewById(R.id.checkBoxDominantStandard1);
+                toggleVeteran1 = (CheckBox) findViewById(R.id.checkBoxDominantVeteran1);
+
+
+                if (isCheckedDominantSapling1 == true) {
+                    addTreeToDominantSapling1 = (TextView) findViewById(R.id.dominantSapling1);
+                    modifyAdd4B = addTreeToDominantSapling1.getText().toString();
+                    addTreeToDominantSapling1.setText(selectedAgeClass);
+                    toggleSapling1.setChecked(false);
+                }else if (isCheckedDominantSmallPole1 == true){
+                    addTreeToDominantSmallPole1 = (TextView) findViewById(R.id.dominantSmallPole1);
+                    modifyAdd4B = addTreeToDominantSmallPole1.getText().toString();
+                    addTreeToDominantSmallPole1.setText(selectedAgeClass);
+                    toggleSmallPole1.setChecked(false);
+                }else if (isCheckedDominantMedPole1 == true){
+                    addTreeToDominantMedPole1 = (TextView) findViewById(R.id.dominantMedPole1);
+                    modifyAdd4B = addTreeToDominantMedPole1.getText().toString();
+                    addTreeToDominantMedPole1.setText(selectedAgeClass);
+                    toggleMedPole1.setChecked(false);
+                }else if (isCheckedDominantStandard1 == true){
+                    addTreeToDominantStandard1 = (TextView) findViewById(R.id.dominantStandard1);
+                    modifyAdd4B = addTreeToDominantStandard1.getText().toString();
+                    addTreeToDominantStandard1.setText(selectedAgeClass);
+                    toggleStandard1.setChecked(false);
+                }else if (isCheckedDominantVeteran1 == true){
+                    addTreeToDominantVeteran1 = (TextView) findViewById(R.id.dominantVeteran1);
+                    modifyAdd4B = addTreeToDominantVeteran1.getText().toString();
+                    addTreeToDominantVeteran1.setText(selectedAgeClass);
+                    toggleVeteran1.setChecked(false);
+                }
+
+            }
+        });
+
+        addDominantAgeClasses2 = (Button) findViewById(R.id.addDominantAgeClasses2);
+        addDominantAgeClasses2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedDominantSapling2 = ((CheckBox) findViewById(R.id.checkBoxDominantSapling2)).isChecked();
+                boolean isCheckedDominantSmallPole2 = ((CheckBox) findViewById(R.id.checkBoxDominantSmallPole2)).isChecked();
+                boolean isCheckedDominantMedPole2 = ((CheckBox) findViewById(R.id.checkBoxDominantMedPole2)).isChecked();
+                boolean isCheckedDominantStandard2 = ((CheckBox) findViewById(R.id.checkBoxDominantStandard2)).isChecked();
+                boolean isCheckedDominantVeteran2 = ((CheckBox) findViewById(R.id.checkBoxDominantVeteran2)).isChecked();
+                toggleSapling2 = (CheckBox) findViewById(R.id.checkBoxDominantSapling2);
+                toggleSmallPole2 = (CheckBox) findViewById(R.id.checkBoxDominantSmallPole2);
+                toggleMedPole2 = (CheckBox) findViewById(R.id.checkBoxDominantMedPole2);
+                toggleStandard2 = (CheckBox) findViewById(R.id.checkBoxDominantStandard2);
+                toggleVeteran2 = (CheckBox) findViewById(R.id.checkBoxDominantVeteran2);
+
+
+                if (isCheckedDominantSapling2 == true){
+                    addTreeToDominantSapling2 = (TextView) findViewById(R.id.dominantSapling2);
+                    modifyAdd4B = addTreeToDominantSapling2.getText().toString();
+                    addTreeToDominantSapling2.setText(selectedAgeClass);
+                    toggleSapling2.setChecked(false);
+                }else if (isCheckedDominantSmallPole2 == true){
+                    addTreeToDominantSmallPole2 = (TextView) findViewById(R.id.dominantSmallPole2);
+                    modifyAdd4B = addTreeToDominantSmallPole2.getText().toString();
+                    addTreeToDominantSmallPole2.setText(selectedAgeClass);
+                    toggleSmallPole2.setChecked(false);
+                }else if (isCheckedDominantMedPole2 == true){
+                    addTreeToDominantMedPole2 = (TextView) findViewById(R.id.dominantMedPole2);
+                    modifyAdd4B = addTreeToDominantMedPole2.getText().toString();
+                    addTreeToDominantMedPole2.setText(selectedAgeClass);
+                    toggleMedPole2.setChecked(false);
+                }else if (isCheckedDominantStandard2 == true){
+                    addTreeToDominantStandard2 = (TextView) findViewById(R.id.dominantStandard2);
+                    modifyAdd4B = addTreeToDominantStandard2.getText().toString();
+                    addTreeToDominantStandard2.setText(selectedAgeClass);
+                    toggleStandard2.setChecked(false);
+                }else if (isCheckedDominantVeteran2 == true){
+                    addTreeToDominantVeteran2 = (TextView) findViewById(R.id.dominantVeteran2);
+                    modifyAdd4B = addTreeToDominantVeteran2.getText().toString();
+                    addTreeToDominantVeteran2.setText(selectedAgeClass);
+                    toggleVeteran2.setChecked(false);
+                }
+            }
+        });
+
+        age_classes = (Spinner) findViewById(R.id.tree_types_spinnerAgeClasses);
+        age_classes.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                if (selectedAgeClass == null) {
+                    selectedAgeClass = "";
+                } else{
+                    selectedAgeClass = adapterView.getSelectedItem().toString();
+                }
+            }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
