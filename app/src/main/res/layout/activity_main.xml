@@ -3492,6 +3492,31 @@
 
             </TableRow>
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dip"
+                android:background="#FF000000" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/saveData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="250dp"
+                    android:text="@string/save" />
+            </TableRow>
+
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

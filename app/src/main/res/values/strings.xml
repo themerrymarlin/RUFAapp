@@ -145,5 +145,6 @@
     <string name="fifty_seventyFive">50-75%</string>
     <string name="seventyFive_ninety">75-90%</string>
     <string name="ninety">&gt; 90%</string>
+    <string name="save">Save</string>
 
 </resources>
