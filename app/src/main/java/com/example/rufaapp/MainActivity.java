@@ -1,5 +1,6 @@
 package com.example.rufaapp;
 
+import android.content.Context;
 import android.support.v7.app.AppCompatActivity;
 import android.app.Activity;
 import android.os.Bundle;
@@ -13,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
+
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -274,6 +276,7 @@ public class MainActivity extends AppCompatActivity {
     private int total;
     private TextView totalPoints;
     private String modifyTotalPoints;
+    private String qualityRank;
 
     //Plant Community
     private TextView addTreeToListPlantCommunity;
@@ -308,12 +311,48 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox toggleVeteran1;
     private CheckBox toggleVeteran2;
 
+    //Save button
+    private Button saveButton;
+
+    //Pests and Pathogens
+    private CheckBox beechPresent;
+    private CheckBox beechLow;
+    private CheckBox beechMedium;
+    private CheckBox beechHigh;
+    private CheckBox bldPresent;
+    private CheckBox bldLow;
+    private CheckBox bldModerate;
+    private CheckBox bldSevere;
+    private int beech;
+    private int bld;
+    private String beechAbundance;
+    private String bldSeverity;
+    private CheckBox ashPresent;
+    private CheckBox ashLow;
+    private CheckBox ashMedium;
+    private CheckBox ashHigh;
+    private CheckBox eabPresent;
+    private CheckBox eabLow;
+    private CheckBox eabModerate;
+    private CheckBox eabSevere;
+    private int ash;
+    private int eab;
+    private String ashAbundance;
+    private String eabSeverity;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        saveButton = (Button) findViewById(R.id.saveData);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //saveData();
+            }
+        });
 
         updateBottom = (Button) findViewById(R.id.updateBottom);
         updateBottom.setOnClickListener(new View.OnClickListener() {
@@ -672,6 +711,321 @@ public class MainActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
         });
+
+
+        //Pests and Pathogens
+        beechPresent = (CheckBox) findViewById(R.id.beechPresent);
+        beechPresent.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedBeechPresent = ((CheckBox) findViewById(R.id.beechPresent)).isChecked();
+
+                if (isCheckedBeechPresent == false) {
+                    beechLow.setChecked(false);
+                    beechMedium.setChecked(false);
+                    beechHigh.setChecked(false);
+                    beech = 0;
+                    beechAbundance = "None";
+                }
+            }
+        });
+        beechLow = (CheckBox) findViewById(R.id.beechLow);
+        beechLow.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedBeechPresent = ((CheckBox) findViewById(R.id.beechPresent)).isChecked();
+                boolean isCheckedBeechLow = ((CheckBox) findViewById(R.id.beechLow)).isChecked();
+
+                if (isCheckedBeechPresent == true && isCheckedBeechLow == true) {
+                    beechMedium.setChecked(false);
+                    beechHigh.setChecked(false);
+                    beech = 1;
+                    beechAbundance = "Low";
+                }
+                else if (isCheckedBeechPresent == false && isCheckedBeechLow == true){
+                    beechMedium.setChecked(false);
+                    beechHigh.setChecked(false);
+                    beechPresent.setChecked(true);
+                    beech = 1;
+                    beechAbundance = "Low";
+                }
+            }
+        });
+        beechMedium = (CheckBox) findViewById(R.id.beechMedium);
+        beechMedium.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedBeechPresent = ((CheckBox) findViewById(R.id.beechPresent)).isChecked();
+                boolean isCheckedBeechMedium = ((CheckBox) findViewById(R.id.beechMedium)).isChecked();
+
+                if (isCheckedBeechPresent == true && isCheckedBeechMedium == true) {
+                    beechLow.setChecked(false);
+                    beechHigh.setChecked(false);
+                    beech = 1;
+                    beechAbundance = "Medium";
+                }
+                else if (isCheckedBeechPresent == false && isCheckedBeechMedium == true){
+                    beechLow.setChecked(false);
+                    beechHigh.setChecked(false);
+                    beechPresent.setChecked(true);
+                    beech = 1;
+                    beechAbundance = "Medium";
+                }
+            }
+        });
+        beechHigh = (CheckBox) findViewById(R.id.beechHigh);
+        beechHigh.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedBeechPresent = ((CheckBox) findViewById(R.id.beechPresent)).isChecked();
+                boolean isCheckedBeechHigh = ((CheckBox) findViewById(R.id.beechHigh)).isChecked();
+
+                if (isCheckedBeechPresent == true && isCheckedBeechHigh == true) {
+                    beechMedium.setChecked(false);
+                    beechLow.setChecked(false);
+                    beech = 1;
+                    beechAbundance = "High";
+                }
+                else if (isCheckedBeechPresent == false && isCheckedBeechHigh == true){
+                    beechMedium.setChecked(false);
+                    beechLow.setChecked(false);
+                    beechPresent.setChecked(true);
+                    beech = 1;
+                    beechAbundance = "High";
+                }
+            }
+        });
+
+        bldPresent = (CheckBox) findViewById(R.id.bldPresent);
+        bldPresent.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedBldPresent = ((CheckBox) findViewById(R.id.bldPresent)).isChecked();
+
+                if (isCheckedBldPresent == false) {
+                    bldLow.setChecked(false);
+                    bldModerate.setChecked(false);
+                    bldSevere.setChecked(false);
+                    bld = 0;
+                    bldSeverity = "None";
+                }
+            }
+        });
+        bldLow = (CheckBox) findViewById(R.id.bldLow);
+        bldLow.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedBldPresent = ((CheckBox) findViewById(R.id.bldPresent)).isChecked();
+                boolean isCheckedBldLow = ((CheckBox) findViewById(R.id.bldLow)).isChecked();
+
+                if (isCheckedBldPresent == true && isCheckedBldLow == true) {
+                    bldModerate.setChecked(false);
+                    bldSevere.setChecked(false);
+                    bld = 1;
+                    bldSeverity = "Low";
+                }
+                else if (isCheckedBldPresent == false && isCheckedBldLow == true){
+                    bldModerate.setChecked(false);
+                    bldSevere.setChecked(false);
+                    bldPresent.setChecked(true);
+                    bld = 1;
+                    bldSeverity = "Low";
+                }
+            }
+        });
+        bldModerate = (CheckBox) findViewById(R.id.bldModerate);
+        bldModerate.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedBldPresent = ((CheckBox) findViewById(R.id.bldPresent)).isChecked();
+                boolean isCheckedBldModerate = ((CheckBox) findViewById(R.id.bldModerate)).isChecked();
+
+                if (isCheckedBldPresent == true && isCheckedBldModerate == true) {
+                    bldLow.setChecked(false);
+                    bldSevere.setChecked(false);
+                    bld = 1;
+                    bldSeverity = "Moderate";
+                }
+                else if (isCheckedBldPresent == false && isCheckedBldModerate == true){
+                    bldLow.setChecked(false);
+                    bldSevere.setChecked(false);
+                    bldPresent.setChecked(true);
+                    bld = 1;
+                    bldSeverity = "Moderate";
+                }
+            }
+        });
+        bldSevere = (CheckBox) findViewById(R.id.bldSevere);
+        bldSevere.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedBldPresent = ((CheckBox) findViewById(R.id.bldPresent)).isChecked();
+                boolean isCheckedBldSevere= ((CheckBox) findViewById(R.id.bldSevere)).isChecked();
+
+                if (isCheckedBldPresent == true && isCheckedBldSevere == true) {
+                    bldModerate.setChecked(false);
+                    bldLow.setChecked(false);
+                    bld = 1;
+                    bldSeverity = "Severe";
+                }
+                else if (isCheckedBldPresent == false && isCheckedBldSevere == true){
+                    bldModerate.setChecked(false);
+                    bldLow.setChecked(false);
+                    bldPresent.setChecked(true);
+                    bld = 1;
+                    bldSeverity = "Severe";
+                }
+            }
+        });
+
+        ashPresent = (CheckBox) findViewById(R.id.ashPresent);
+        ashPresent.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedashPresent = ((CheckBox) findViewById(R.id.ashPresent)).isChecked();
+
+                if (isCheckedashPresent == false) {
+                    ashLow.setChecked(false);
+                    ashMedium.setChecked(false);
+                    ashHigh.setChecked(false);
+                    ash = 0;
+                    ashAbundance = "None";
+                }
+            }
+        });
+        ashLow = (CheckBox) findViewById(R.id.ashLow);
+        ashLow.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedashPresent = ((CheckBox) findViewById(R.id.ashPresent)).isChecked();
+                boolean isCheckedashLow = ((CheckBox) findViewById(R.id.ashLow)).isChecked();
+
+                if (isCheckedashPresent == true && isCheckedashLow == true) {
+                    ashMedium.setChecked(false);
+                    ashHigh.setChecked(false);
+                    ash = 1;
+                    ashAbundance = "Low";
+                }
+                else if (isCheckedashPresent == false && isCheckedashLow == true){
+                    ashMedium.setChecked(false);
+                    ashHigh.setChecked(false);
+                    ashPresent.setChecked(true);
+                    ash = 1;
+                    ashAbundance = "Low";
+                }
+            }
+        });
+        ashMedium = (CheckBox) findViewById(R.id.ashMedium);
+        ashMedium.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedashPresent = ((CheckBox) findViewById(R.id.ashPresent)).isChecked();
+                boolean isCheckedashMedium = ((CheckBox) findViewById(R.id.ashMedium)).isChecked();
+
+                if (isCheckedashPresent == true && isCheckedashMedium == true) {
+                    ashLow.setChecked(false);
+                    ashHigh.setChecked(false);
+                    ash = 1;
+                    ashAbundance = "Medium";
+                }
+                else if (isCheckedashPresent == false && isCheckedashMedium == true){
+                    ashLow.setChecked(false);
+                    ashHigh.setChecked(false);
+                    ashPresent.setChecked(true);
+                    ash = 1;
+                    ashAbundance = "Medium";
+                }
+            }
+        });
+        ashHigh = (CheckBox) findViewById(R.id.ashHigh);
+        ashHigh.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedashPresent = ((CheckBox) findViewById(R.id.ashPresent)).isChecked();
+                boolean isCheckedashHigh = ((CheckBox) findViewById(R.id.ashHigh)).isChecked();
+
+                if (isCheckedashPresent == true && isCheckedashHigh == true) {
+                    ashMedium.setChecked(false);
+                    ashLow.setChecked(false);
+                    ash = 1;
+                    ashAbundance = "High";
+                }
+                else if (isCheckedashPresent == false && isCheckedashHigh == true){
+                    ashMedium.setChecked(false);
+                    ashLow.setChecked(false);
+                    ashPresent.setChecked(true);
+                    ash = 1;
+                    ashAbundance = "High";
+                }
+            }
+        });
+
+        eabPresent = (CheckBox) findViewById(R.id.eabPresent);
+        eabPresent.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedeabPresent = ((CheckBox) findViewById(R.id.eabPresent)).isChecked();
+
+                if (isCheckedeabPresent == false) {
+                    eabLow.setChecked(false);
+                    eabModerate.setChecked(false);
+                    eabSevere.setChecked(false);
+                    eab = 0;
+                    eabSeverity = "None";
+                }
+            }
+        });
+        eabLow = (CheckBox) findViewById(R.id.eabLow);
+        eabLow.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedeabPresent = ((CheckBox) findViewById(R.id.eabPresent)).isChecked();
+                boolean isCheckedeabLow = ((CheckBox) findViewById(R.id.eabLow)).isChecked();
+
+                if (isCheckedeabPresent == true && isCheckedeabLow == true) {
+                    eabModerate.setChecked(false);
+                    eabSevere.setChecked(false);
+                    eab = 1;
+                    eabSeverity = "Low";
+                }
+                else if (isCheckedeabPresent == false && isCheckedeabLow == true){
+                    eabModerate.setChecked(false);
+                    eabSevere.setChecked(false);
+                    eabPresent.setChecked(true);
+                    eab = 1;
+                    eabSeverity = "Low";
+                }
+            }
+        });
+        eabModerate = (CheckBox) findViewById(R.id.eabModerate);
+        eabModerate.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedeabPresent = ((CheckBox) findViewById(R.id.eabPresent)).isChecked();
+                boolean isCheckedeabModerate = ((CheckBox) findViewById(R.id.eabModerate)).isChecked();
+
+                if (isCheckedeabPresent == true && isCheckedeabModerate == true) {
+                    eabLow.setChecked(false);
+                    eabSevere.setChecked(false);
+                    eab = 1;
+                    eabSeverity = "Moderate";
+                }
+                else if (isCheckedeabPresent == false && isCheckedeabModerate == true){
+                    eabLow.setChecked(false);
+                    eabSevere.setChecked(false);
+                    eabPresent.setChecked(true);
+                    eab = 1;
+                    eabSeverity = "Moderate";
+                }
+            }
+        });
+        eabSevere = (CheckBox) findViewById(R.id.eabSevere);
+        eabSevere.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedeabPresent = ((CheckBox) findViewById(R.id.eabPresent)).isChecked();
+                boolean isCheckedeabSevere= ((CheckBox) findViewById(R.id.eabSevere)).isChecked();
+
+                if (isCheckedeabPresent == true && isCheckedeabSevere == true) {
+                    eabModerate.setChecked(false);
+                    eabLow.setChecked(false);
+                    eab = 1;
+                    eabSeverity = "Severe";
+                }
+                else if (isCheckedeabPresent == false && isCheckedeabSevere == true){
+                    eabModerate.setChecked(false);
+                    eabLow.setChecked(false);
+                    eabPresent.setChecked(true);
+                    eab = 1;
+                    eabSeverity = "Severe";
+                }
+            }
+        });
+
     }
 
     public void updateButtonPressed(){
@@ -1476,10 +1830,44 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    // total points
+    // total points and quality rank
     public void totalPoints(){
         total = point1A + point1B + point2A + point2B + point3A + point3B + point4A + point4B + point5A + point5B + point6A + point6B + point7 + point8 + point9 + point10 + point11 + point12;
+        if(total >= 0 && total <= 4){
+            qualityRank = "Low";
+        }
+        else if (total >= 5 && total <= 9){
+            qualityRank = "Medium Low";
+        }
+        else if (total >= 10 && total <= 13){
+            qualityRank = "Medium";
+        }
+        else if (total >= 14 && total <= 16){
+            qualityRank = "Medium High";
+        }
+        else if (total >= 17 && total <= 18){
+            qualityRank = "High";
+        }
     }
+
+
+    //Instance of open helper
+    //RUFAdbOpenHelper dbhelp = new RUFAdbOpenHelper(getApplicationContext());
+
+    //instance of modifier
+    //RUFAdbModifier modifier = new RUFAdbModifier();
+    //boolean ret = modifier.insertRow(getApplicationContext(),dbhelp.getKeyList(),getValues());
+
+    //public boolean saveData(){
+        //save extra data to flat file
+
+        //export to csv
+
+        //save to internal
+
+        //return modifier.insertRow(getApplicationContext(),dbhelp.getKeyList(),getValues());
+
+    //}
 
     // arrayList of data
     public ArrayList<Holder<Object>> getValues(){
@@ -1568,15 +1956,15 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Holder<Object>(total12,1));
         list.add(new Holder<Object>(point12,1));
         list.add(new Holder<Object>(total,1));
-        list.add(null);
-        list.add(null);
-        list.add(null);
-        list.add(null);
-        list.add(null);
-        list.add(null);
-        list.add(null);
-        list.add(null);
-        list.add(null);
+        list.add(new Holder<Object>(qualityRank,0));
+        list.add(new Holder<Object>(beech,1));
+        list.add(new Holder<Object>(bld,1));
+        list.add(new Holder<Object>(bldSeverity,0));
+        list.add(new Holder<Object>(beechAbundance,0));
+        list.add(new Holder<Object>(ash,1));
+        list.add(new Holder<Object>(eab,1));
+        list.add(new Holder<Object>(eabSeverity,0));
+        list.add(new Holder<Object>(ashAbundance,0));
         list.add(null);
         list.add(null);
         list.add(null);
