@@ -22,7 +22,7 @@ class Holder<T> {
     }
 
     public String getAsString(){
-        return (String)obj;
+        return obj.toString();
     }
 
     public Integer getAsInteger(){
