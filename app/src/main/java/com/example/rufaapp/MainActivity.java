@@ -285,6 +285,14 @@ public class MainActivity extends AppCompatActivity {
     private Spinner plant_community;
     private Button addPlantCommunity;
 
+    //bearing changes
+    private CheckBox yesBearingChanges;
+    private CheckBox noBearingChanges;
+
+    //canopy
+    private CheckBox canopyOpen;
+    private CheckBox canopyClosed;
+
     //Age Classes
     private Spinner age_classes;
     private Button addDominantAgeClasses1;
@@ -310,9 +318,6 @@ public class MainActivity extends AppCompatActivity {
     private TextView addTreeToDominantVeteran2;
     private CheckBox toggleVeteran1;
     private CheckBox toggleVeteran2;
-
-    //Save button
-    private Button saveButton;
 
     //Pests and Pathogens
     private CheckBox beechPresent;
@@ -340,6 +345,16 @@ public class MainActivity extends AppCompatActivity {
     private String ashAbundance;
     private String eabSeverity;
 
+    //seedling cover
+    private CheckBox ten;
+    private CheckBox tenTwentyFive;
+    private CheckBox twentyFiveFifty;
+    private CheckBox fiftySeventyFive;
+    private CheckBox seventyFiveNinety;
+    private CheckBox ninety;
+
+    //Save button
+    private Button saveButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -584,6 +599,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //plant community
         addPlantCommunity = (Button) findViewById(R.id.select_community_type);
         addPlantCommunity.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -605,6 +622,52 @@ public class MainActivity extends AppCompatActivity {
             }
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
+
+        //bearing changes
+        yesBearingChanges = (CheckBox) findViewById(R.id.checkBoxYesBearingChanged);
+        yesBearingChanges.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedYesBearingChanges = ((CheckBox) findViewById(R.id.checkBoxYesBearingChanged)).isChecked();
+
+                if (isCheckedYesBearingChanges == true) {
+                    noBearingChanges.setChecked(false);
+                }
+            }
+        });
+
+        noBearingChanges = (CheckBox) findViewById(R.id.checkBoxNoBearingChange);
+        noBearingChanges.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedNoBearingChanges = ((CheckBox) findViewById(R.id.checkBoxNoBearingChange)).isChecked();
+
+                if (isCheckedNoBearingChanges == true) {
+                    yesBearingChanges.setChecked(false);
+                }
+            }
+        });
+
+        //Canopy
+        canopyOpen = (CheckBox) findViewById(R.id.canopyOpen);
+        canopyOpen.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedCanopyOpen = ((CheckBox) findViewById(R.id.canopyOpen)).isChecked();
+
+                if (isCheckedCanopyOpen == true) {
+                    canopyClosed.setChecked(false);
+                }
+            }
+        });
+
+        canopyClosed = (CheckBox) findViewById(R.id.canopyClosed);
+        canopyClosed.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedCanopyClosed = ((CheckBox) findViewById(R.id.canopyClosed)).isChecked();
+
+                if (isCheckedCanopyClosed == true) {
+                    canopyOpen.setChecked(false);
+                }
             }
         });
 
@@ -1022,6 +1085,98 @@ public class MainActivity extends AppCompatActivity {
                     eabPresent.setChecked(true);
                     eab = 1;
                     eabSeverity = "Severe";
+                }
+            }
+        });
+
+        //seedling Cover
+        //Pests and Pathogens
+        ten = (CheckBox) findViewById(R.id.checkBoxTen);
+        ten.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedTen = ((CheckBox) findViewById(R.id.checkBoxTen)).isChecked();
+
+                if (isCheckedTen == true) {
+                    tenTwentyFive.setChecked(false);
+                    twentyFiveFifty.setChecked(false);
+                    fiftySeventyFive.setChecked(false);
+                    seventyFiveNinety.setChecked(false);
+                    ninety.setChecked(false);
+                }
+            }
+        });
+
+        tenTwentyFive = (CheckBox) findViewById(R.id.checkBoxTenTwentyFive);
+        tenTwentyFive.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedtenTwentyFive = ((CheckBox) findViewById(R.id.checkBoxTenTwentyFive)).isChecked();
+
+                if (isCheckedtenTwentyFive == true) {
+                    ten.setChecked(false);
+                    twentyFiveFifty.setChecked(false);
+                    fiftySeventyFive.setChecked(false);
+                    seventyFiveNinety.setChecked(false);
+                    ninety.setChecked(false);
+                }
+            }
+        });
+
+        twentyFiveFifty = (CheckBox) findViewById(R.id.checkBoxTwentyFiveFifty);
+        twentyFiveFifty.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedtwentyFiveFifty = ((CheckBox) findViewById(R.id.checkBoxTwentyFiveFifty)).isChecked();
+
+                if (isCheckedtwentyFiveFifty == true) {
+                    ten.setChecked(false);
+                    tenTwentyFive.setChecked(false);
+                    fiftySeventyFive.setChecked(false);
+                    seventyFiveNinety.setChecked(false);
+                    ninety.setChecked(false);
+                }
+            }
+        });
+
+        fiftySeventyFive = (CheckBox) findViewById(R.id.checkBoxFiftySeventyFive);
+        fiftySeventyFive.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedfiftySeventyFive = ((CheckBox) findViewById(R.id.checkBoxFiftySeventyFive)).isChecked();
+
+                if (isCheckedfiftySeventyFive == true) {
+                    ten.setChecked(false);
+                    tenTwentyFive.setChecked(false);
+                    twentyFiveFifty.setChecked(false);
+                    seventyFiveNinety.setChecked(false);
+                    ninety.setChecked(false);
+                }
+            }
+        });
+
+        seventyFiveNinety = (CheckBox) findViewById(R.id.checkBoxSeventyFiveNinety);
+        seventyFiveNinety.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedseventyFiveNinety = ((CheckBox) findViewById(R.id.checkBoxSeventyFiveNinety)).isChecked();
+
+                if (isCheckedseventyFiveNinety == true) {
+                    ten.setChecked(false);
+                    tenTwentyFive.setChecked(false);
+                    twentyFiveFifty.setChecked(false);
+                    fiftySeventyFive.setChecked(false);
+                    ninety.setChecked(false);
+                }
+            }
+        });
+
+        ninety = (CheckBox) findViewById(R.id.checkBoxNinety);
+        ninety.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedninety = ((CheckBox) findViewById(R.id.checkBoxNinety)).isChecked();
+
+                if (isCheckedninety == true) {
+                    ten.setChecked(false);
+                    tenTwentyFive.setChecked(false);
+                    twentyFiveFifty.setChecked(false);
+                    fiftySeventyFive.setChecked(false);
+                    seventyFiveNinety.setChecked(false);
                 }
             }
         });
