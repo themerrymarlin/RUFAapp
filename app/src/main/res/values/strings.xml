@@ -146,5 +146,17 @@
     <string name="seventyFive_ninety">75-90%</string>
     <string name="ninety">&gt; 90%</string>
     <string name="save">Save</string>
+    <string name="beech">Beech Present?</string>
+    <string name="bld">BLD Present?</string>
+    <string name="disease_severity">Disease Severity</string>
+    <string name="beech_abundance">Beech Abundance</string>
+    <string name="none">None</string>
+    <string name="low">Low</string>
+    <string name="moderate">Moderate</string>
+    <string name="severe">Severe</string>
+    <string name="medium">Medium</string>
+    <string name="high">High</string>
+    <string name="ash">Ash Present?</string>
+    <string name="eab">EAB Present?</string>
 
 </resources>
