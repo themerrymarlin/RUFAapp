@@ -3771,6 +3771,229 @@
             </TableRow>
 
             <View
+                android:layout_height="0.5dip"
+                android:layout_width="match_parent"
+                android:background="#FF000000"
+                android:layout_marginLeft="200dp"/>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/pestsAndPathogens"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <CheckBox
+                    android:id="@+id/EAHEPresent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/eastern_hemlock_tree"
+                    android:textSize="18sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/pestsAndPathogens"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <CheckBox
+                    android:id="@+id/EAHELow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/low"
+                    android:textSize="18sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/pestsAndPathogens"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <CheckBox
+                    android:id="@+id/EAHEMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/medium"
+                    android:textSize="18sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/pestsAndPathogens"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <CheckBox
+                    android:id="@+id/EAHEHigh"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/high"
+                    android:textSize="18sp" />
+
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/pestsAndPathogens"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <CheckBox
+                    android:id="@+id/HWAPresent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/hemlock_woolly_adelgid"
+                    android:textSize="18sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/pestsAndPathogens"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <CheckBox
+                    android:id="@+id/HWALow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/low"
+                    android:textSize="18sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/pestsAndPathogens"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <CheckBox
+                    android:id="@+id/HWAModerate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/moderate"
+                    android:textSize="18sp" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <TextView
+                    android:id="@+id/pestsAndPathogens"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="4dip"
+                    android:layout_height="match_parent"
+                    android:background="#FF000000" />
+
+                <CheckBox
+                    android:id="@+id/HWASevere"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/severe"
+                    android:textSize="18sp" />
+
+            </TableRow>
+
+            <View
                 android:layout_width="match_parent"
                 android:layout_height="4dip"
                 android:background="#FF000000" />

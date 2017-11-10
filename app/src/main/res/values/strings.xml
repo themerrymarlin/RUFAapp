@@ -158,5 +158,7 @@
     <string name="high">High</string>
     <string name="ash">Ash Present?</string>
     <string name="eab">EAB Present?</string>
+    <string name="eastern_hemlock_tree">EAHE Present?</string>
+    <string name="hemlock_woolly_adelgid">HWA Present?</string>
 
 </resources>
