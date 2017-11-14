@@ -294,6 +294,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        data.prevConfirmedType = (CheckBox) findViewById(R.id.checkBoxPreviouslyConfirmed);
+        data.prevConfirmedType.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedYesPrevConfirmedType = ((CheckBox) findViewById(R.id.checkBoxPreviouslyConfirmed)).isChecked();
+
+                if (isCheckedYesPrevConfirmedType == true) {
+                    data.prevConfirmed = 1;
+                }
+                else{
+                    data.prevConfirmed = 0;
+                }
+            }
+        });
+
+        data.groundTruthedType = (CheckBox) findViewById(R.id.checkBoxGroundTruthed);
+        data.groundTruthedType.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedGroundTruthed = ((CheckBox) findViewById(R.id.checkBoxGroundTruthed)).isChecked();
+
+                if (isCheckedGroundTruthed == true) {
+                    data.groundTruthed = 1;
+                }
+                else{
+                    data.groundTruthed = 0;
+                }
+            }
+        });
+
         //bearing changes
         data.yesBearingChanges = (CheckBox) findViewById(R.id.checkBoxYesBearingChanged);
         data.yesBearingChanges.setOnClickListener(new View.OnClickListener() {
@@ -302,6 +330,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedYesBearingChanges == true) {
                     data.noBearingChanges.setChecked(false);
+                    data.bearingChange = 1;
                 }
             }
         });
@@ -313,6 +342,300 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedNoBearingChanges == true) {
                     data.yesBearingChanges.setChecked(false);
+                    data.bearingChange = 0;
+                }
+            }
+        });
+
+        //light gaps
+        data.diameterA = (EditText) findViewById(R.id.lightGapInputA);
+        String diameterANum = data.diameterA.getText().toString();
+        if (diameterANum.equals("")) {
+            data.diameterAVal = 0;
+        } else {
+            data.diameterAVal = Integer.parseInt(diameterANum);
+        }
+
+        data.diameterB = (EditText) findViewById(R.id.lightGapInputB);
+        String diameterBNum = data.diameterB.getText().toString();
+        if (diameterBNum.equals("")) {
+            data.diameterBVal = 0;
+        } else {
+            data.diameterBVal = Integer.parseInt(diameterBNum);
+        }
+
+        data.diameterC = (EditText) findViewById(R.id.lightGapInputC);
+        String diameterCNum = data.diameterC.getText().toString();
+        if (diameterCNum.equals("")) {
+            data.diameterCVal = 0;
+        } else {
+            data.diameterCVal = Integer.parseInt(diameterCNum);
+        }
+
+        data.diameterD = (EditText) findViewById(R.id.lightGapInputD);
+        String diameterDNum = data.diameterD.getText().toString();
+        if (diameterDNum.equals("")) {
+            data.diameterDVal = 0;
+        } else {
+            data.diameterDVal = Integer.parseInt(diameterDNum);
+        }
+
+        data.invadedA = (CheckBox) findViewById(R.id.checkBoxInvadedA);
+        data.invadedA.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedInvadedA = ((CheckBox) findViewById(R.id.checkBoxInvadedA)).isChecked();
+
+                if (isCheckedInvadedA == true) {
+                    data.invadedAVal = 1;
+                }
+                else
+                    data.invadedAVal = 0;
+            }
+        });
+
+        data.invadedB = (CheckBox) findViewById(R.id.checkBoxInvadedB);
+        data.invadedB.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedInvadedB = ((CheckBox) findViewById(R.id.checkBoxInvadedB)).isChecked();
+
+                if (isCheckedInvadedB == true) {
+                    data.invadedBVal = 1;
+                }
+                else
+                    data.invadedBVal = 0;
+            }
+        });
+
+        data.invadedC = (CheckBox) findViewById(R.id.checkBoxInvadedC);
+        data.invadedC.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedInvadedC = ((CheckBox) findViewById(R.id.checkBoxInvadedC)).isChecked();
+
+                if (isCheckedInvadedC == true) {
+                    data.invadedCVal = 1;
+                }
+                else
+                    data.invadedCVal = 0;
+            }
+        });
+
+        data.invadedD = (CheckBox) findViewById(R.id.checkBoxInvadedD);
+        data.invadedD.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedInvadedD = ((CheckBox) findViewById(R.id.checkBoxInvadedD)).isChecked();
+
+                if (isCheckedInvadedD == true) {
+                    data.invadedDVal = 1;
+                }
+                else
+                    data.invadedDVal = 0;
+            }
+        });
+
+        data.grapevineA = (CheckBox) findViewById(R.id.checkBoxGrapevineA);
+        data.grapevineA.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedgrapevineA = ((CheckBox) findViewById(R.id.checkBoxGrapevineA)).isChecked();
+
+                if (isCheckedgrapevineA == true) {
+                    data.grapevineAVal = 1;
+                }
+                else
+                    data.grapevineAVal = 0;
+            }
+        });
+
+        data.grapevineB = (CheckBox) findViewById(R.id.checkBoxGrapevineB);
+        data.grapevineB.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedgrapevineB = ((CheckBox) findViewById(R.id.checkBoxGrapevineB)).isChecked();
+
+                if (isCheckedgrapevineB == true) {
+                    data.grapevineBVal = 1;
+                }
+                else
+                    data.grapevineBVal = 0;
+            }
+        });
+
+        data.grapevineC = (CheckBox) findViewById(R.id.checkBoxGrapevineC);
+        data.grapevineC.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedgrapevineC = ((CheckBox) findViewById(R.id.checkBoxGrapevineC)).isChecked();
+
+                if (isCheckedgrapevineC == true) {
+                    data.grapevineCVal = 1;
+                }
+                else
+                    data.grapevineCVal = 0;
+            }
+        });
+
+        data.grapevineD = (CheckBox) findViewById(R.id.checkBoxGrapevineD);
+        data.grapevineD.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedgrapevineD = ((CheckBox) findViewById(R.id.checkBoxGrapevineD)).isChecked();
+
+                if (isCheckedgrapevineD == true) {
+                    data.grapevineDVal = 1;
+                }
+                else
+                    data.grapevineDVal = 0;
+            }
+        });
+
+        data.regeneratingA = (CheckBox) findViewById(R.id.checkBoxRegeneratingA);
+        data.regeneratingA.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedregeneratingA = ((CheckBox) findViewById(R.id.checkBoxRegeneratingA)).isChecked();
+
+                if (isCheckedregeneratingA == true) {
+                    data.regeneratingAVal = 1;
+                }
+                else
+                    data.regeneratingAVal = 0;
+            }
+        });
+
+        data.regeneratingB = (CheckBox) findViewById(R.id.checkBoxRegeneratingB);
+        data.regeneratingB.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedregeneratingB = ((CheckBox) findViewById(R.id.checkBoxRegeneratingB)).isChecked();
+
+                if (isCheckedregeneratingB == true) {
+                    data.regeneratingBVal = 1;
+                }
+                else
+                    data.regeneratingBVal = 0;
+            }
+        });
+
+        data.regeneratingC = (CheckBox) findViewById(R.id.checkBoxRegeneratingC);
+        data.regeneratingC.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedregeneratingC = ((CheckBox) findViewById(R.id.checkBoxRegeneratingC)).isChecked();
+
+                if (isCheckedregeneratingC == true) {
+                    data.regeneratingCVal = 1;
+                }
+                else
+                    data.regeneratingCVal = 0;
+            }
+        });
+
+        data.regeneratingD = (CheckBox) findViewById(R.id.checkBoxRegeneratingD);
+        data.regeneratingD.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedregeneratingD = ((CheckBox) findViewById(R.id.checkBoxRegeneratingD)).isChecked();
+
+                if (isCheckedregeneratingD == true) {
+                    data.regeneratingDVal = 1;
+                }
+                else
+                    data.regeneratingDVal = 0;
+            }
+        });
+
+        //Past Land Use Evidence
+        data.noneEvident = (CheckBox) findViewById(R.id.checkBoxNone);
+        data.noneEvident.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedNone = ((CheckBox) findViewById(R.id.checkBoxNone)).isChecked();
+
+                if (isCheckedNone == true) {
+                    data.deadFurrows.setChecked(false);
+                    data.cutStumps.setChecked(false);
+                    data.dumpSite.setChecked(false);
+                    data.oldRoad.setChecked(false);
+                    data.improvedTrail.setChecked(false);
+                    data.other.setChecked(false);
+                    data.noneEvidentval = 1;
+                    data.deadFurrowsval = 0;
+                    data.cutStumpsval = 0;
+                    data.dumpSiteval = 0;
+                    data.oldRoadval = 0;
+                    data.improvedTrailval = 0;
+                    data.otherval = 0;
+                }
+            }
+        });
+
+        data.deadFurrows = (CheckBox) findViewById(R.id.checkBoxDeadFurrows);
+        data.deadFurrows.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedDeadFurrows = ((CheckBox) findViewById(R.id.checkBoxDeadFurrows)).isChecked();
+
+                if (isCheckedDeadFurrows == true) {
+                    data.noneEvident.setChecked(false);
+                    data.noneEvidentval = 0;
+                    data.deadFurrowsval = 1;
+                }
+            }
+        });
+
+        data.cutStumps = (CheckBox) findViewById(R.id.checkBoxCutStumps);
+        data.cutStumps.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedCutStumps = ((CheckBox) findViewById(R.id.checkBoxCutStumps)).isChecked();
+
+                if (isCheckedCutStumps == true) {
+                    data.noneEvident.setChecked(false);
+                    data.noneEvidentval = 0;
+                    data.cutStumpsval = 1;
+                }
+            }
+        });
+
+        data.dumpSite = (CheckBox) findViewById(R.id.checkBoxDumpSite);
+        data.dumpSite.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedDumpSite = ((CheckBox) findViewById(R.id.checkBoxDumpSite)).isChecked();
+
+                if (isCheckedDumpSite == true) {
+                    data.noneEvident.setChecked(false);
+                    data.noneEvidentval = 0;
+                    data.dumpSiteval = 1;
+                }
+            }
+        });
+
+        data.oldRoad = (CheckBox) findViewById(R.id.checkBoxoldRoad);
+        data.oldRoad.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedOldRoad = ((CheckBox) findViewById(R.id.checkBoxoldRoad)).isChecked();
+
+                if (isCheckedOldRoad == true) {
+                    data.noneEvident.setChecked(false);
+                    data.noneEvidentval = 0;
+                    data.oldRoadval = 1;
+                }
+            }
+        });
+
+        data.improvedTrail = (CheckBox) findViewById(R.id.checkBoxImprovedTrail);
+        data.improvedTrail.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedImprovedTrail = ((CheckBox) findViewById(R.id.checkBoxImprovedTrail)).isChecked();
+
+                if (isCheckedImprovedTrail == true) {
+                    data.noneEvident.setChecked(false);
+                    data.noneEvidentval = 0;
+                    data.improvedTrailval = 1;
+                }
+            }
+        });
+
+        data.other = (CheckBox) findViewById(R.id.checkBoxOther);
+        data.other.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedOther = ((CheckBox) findViewById(R.id.checkBoxOther)).isChecked();
+
+                if (isCheckedOther == true) {
+                    data.noneEvident.setChecked(false);
+                    data.noneEvidentval = 0;
+                    data.otherval = 1;
+                    data.otherInput = (EditText) findViewById(R.id.other_landUse_input);
+                    data.otherLandUseEvidence = data.otherInput.getText().toString();
                 }
             }
         });
@@ -325,6 +648,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedCanopyOpen == true) {
                     data.canopyClosed.setChecked(false);
+                    data.canopy = 1;
                 }
             }
         });
@@ -336,7 +660,74 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedCanopyClosed == true) {
                     data.canopyOpen.setChecked(false);
+                    data.canopy = 0;
                 }
+            }
+        });
+
+        //Age Classes
+        data.sapling = (CheckBox) findViewById(R.id.checkBoxSapling);
+        data.sapling.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedSapling = ((CheckBox) findViewById(R.id.checkBoxSapling)).isChecked();
+
+                if (isCheckedSapling == true) {
+                    data.saplingPresent = 1;
+                }
+                else
+                    data.saplingPresent = 0;
+            }
+        });
+
+        data.smallPole = (CheckBox) findViewById(R.id.checkBoxSmallPole);
+        data.smallPole.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedsmallPole = ((CheckBox) findViewById(R.id.checkBoxSmallPole)).isChecked();
+
+                if (isCheckedsmallPole == true) {
+                    data.smallPolePresent = 1;
+                }
+                else
+                    data.smallPolePresent = 0;
+            }
+        });
+
+        data.medPole = (CheckBox) findViewById(R.id.checkBoxMedPole);
+        data.medPole.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedmedPole = ((CheckBox) findViewById(R.id.checkBoxMedPole)).isChecked();
+
+                if (isCheckedmedPole == true) {
+                    data.medPolePresent = 1;
+                }
+                else
+                    data.medPolePresent = 0;
+            }
+        });
+
+        data.standard = (CheckBox) findViewById(R.id.checkBoxStandard);
+        data.standard.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedstandard = ((CheckBox) findViewById(R.id.checkBoxStandard)).isChecked();
+
+                if (isCheckedstandard == true) {
+                    data.standardPresent = 1;
+                }
+                else
+                    data.standardPresent = 0;
+            }
+        });
+
+        data.veteran = (CheckBox) findViewById(R.id.checkBoxVeteran);
+        data.veteran.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedveteran = ((CheckBox) findViewById(R.id.checkBoxVeteran)).isChecked();
+
+                if (isCheckedveteran == true) {
+                    data.veteranPresent = 1;
+                }
+                else
+                    data.veteranPresent = 0;
             }
         });
 
@@ -357,27 +748,27 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedDominantSapling1 == true) {
                     data.addTreeToDominantSapling1 = (TextView) findViewById(R.id.dominantSapling1);
-                    data.modifyAdd4B = data.addTreeToDominantSapling1.getText().toString();
+                    data.dominantSapling1 = data.selectedAgeClass;
                     data.addTreeToDominantSapling1.setText(data.selectedAgeClass);
                     data.toggleSapling1.setChecked(false);
                 }else if (isCheckedDominantSmallPole1 == true){
                     data.addTreeToDominantSmallPole1 = (TextView) findViewById(R.id.dominantSmallPole1);
-                    data.modifyAdd4B = data.addTreeToDominantSmallPole1.getText().toString();
+                    data.dominantSmallPole1 = data.selectedAgeClass;
                     data.addTreeToDominantSmallPole1.setText(data.selectedAgeClass);
                     data.toggleSmallPole1.setChecked(false);
                 }else if (isCheckedDominantMedPole1 == true){
                     data.addTreeToDominantMedPole1 = (TextView) findViewById(R.id.dominantMedPole1);
-                    data.modifyAdd4B = data.addTreeToDominantMedPole1.getText().toString();
+                    data.dominantMedPole1 = data.selectedAgeClass;
                     data.addTreeToDominantMedPole1.setText(data.selectedAgeClass);
                     data.toggleMedPole1.setChecked(false);
                 }else if (isCheckedDominantStandard1 == true){
                     data.addTreeToDominantStandard1 = (TextView) findViewById(R.id.dominantStandard1);
-                    data.modifyAdd4B = data.addTreeToDominantStandard1.getText().toString();
+                    data.dominantStandardPole1 = data.selectedAgeClass;
                     data.addTreeToDominantStandard1.setText(data.selectedAgeClass);
                     data.toggleStandard1.setChecked(false);
                 }else if (isCheckedDominantVeteran1 == true){
                     data.addTreeToDominantVeteran1 = (TextView) findViewById(R.id.dominantVeteran1);
-                    data.modifyAdd4B = data.addTreeToDominantVeteran1.getText().toString();
+                    data.dominantVeteran1 = data.selectedAgeClass;
                     data.addTreeToDominantVeteran1.setText(data.selectedAgeClass);
                     data.toggleVeteran1.setChecked(false);
                 }
@@ -402,27 +793,27 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedDominantSapling2 == true){
                     data.addTreeToDominantSapling2 = (TextView) findViewById(R.id.dominantSapling2);
-                    data.modifyAdd4B = data.addTreeToDominantSapling2.getText().toString();
+                    data.dominantSapling2 = data.selectedAgeClass;
                     data.addTreeToDominantSapling2.setText(data.selectedAgeClass);
                     data.toggleSapling2.setChecked(false);
                 }else if (isCheckedDominantSmallPole2 == true){
                     data.addTreeToDominantSmallPole2 = (TextView) findViewById(R.id.dominantSmallPole2);
-                    data.modifyAdd4B = data.addTreeToDominantSmallPole2.getText().toString();
+                    data.dominantSmallPole2 = data.selectedAgeClass;
                     data.addTreeToDominantSmallPole2.setText(data.selectedAgeClass);
                     data.toggleSmallPole2.setChecked(false);
                 }else if (isCheckedDominantMedPole2 == true){
                     data.addTreeToDominantMedPole2 = (TextView) findViewById(R.id.dominantMedPole2);
-                    data.modifyAdd4B = data.addTreeToDominantMedPole2.getText().toString();
+                    data.dominantMedPole2 = data.selectedAgeClass;
                     data.addTreeToDominantMedPole2.setText(data.selectedAgeClass);
                     data.toggleMedPole2.setChecked(false);
                 }else if (isCheckedDominantStandard2 == true){
                     data.addTreeToDominantStandard2 = (TextView) findViewById(R.id.dominantStandard2);
-                    data.modifyAdd4B = data.addTreeToDominantStandard2.getText().toString();
+                    data.dominantStandardPole2 = data.selectedAgeClass;
                     data.addTreeToDominantStandard2.setText(data.selectedAgeClass);
                     data.toggleStandard2.setChecked(false);
                 }else if (isCheckedDominantVeteran2 == true){
                     data.addTreeToDominantVeteran2 = (TextView) findViewById(R.id.dominantVeteran2);
-                    data.modifyAdd4B = data.addTreeToDominantVeteran2.getText().toString();
+                    data.dominantVeteran2 = data.selectedAgeClass;
                     data.addTreeToDominantVeteran2.setText(data.selectedAgeClass);
                     data.toggleVeteran2.setChecked(false);
                 }
@@ -926,6 +1317,7 @@ public class MainActivity extends AppCompatActivity {
                     data.fiftySeventyFive.setChecked(false);
                     data.seventyFiveNinety.setChecked(false);
                     data.ninety.setChecked(false);
+                    data.tenVal = 1;
                 }
             }
         });
@@ -941,6 +1333,7 @@ public class MainActivity extends AppCompatActivity {
                     data.fiftySeventyFive.setChecked(false);
                     data.seventyFiveNinety.setChecked(false);
                     data.ninety.setChecked(false);
+                    data.tenTwentyFiveVal = 1;
                 }
             }
         });
@@ -956,6 +1349,7 @@ public class MainActivity extends AppCompatActivity {
                     data.fiftySeventyFive.setChecked(false);
                     data.seventyFiveNinety.setChecked(false);
                     data.ninety.setChecked(false);
+                    data.twentyFiveFiftyVal = 1;
                 }
             }
         });
@@ -971,6 +1365,7 @@ public class MainActivity extends AppCompatActivity {
                     data.twentyFiveFifty.setChecked(false);
                     data.seventyFiveNinety.setChecked(false);
                     data.ninety.setChecked(false);
+                    data.fiftySeventyFiveVal = 1;
                 }
             }
         });
@@ -986,6 +1381,7 @@ public class MainActivity extends AppCompatActivity {
                     data.twentyFiveFifty.setChecked(false);
                     data.fiftySeventyFive.setChecked(false);
                     data.ninety.setChecked(false);
+                    data.seventyFiveNinetyVal = 1;
                 }
             }
         });
@@ -1001,6 +1397,7 @@ public class MainActivity extends AppCompatActivity {
                     data.twentyFiveFifty.setChecked(false);
                     data.fiftySeventyFive.setChecked(false);
                     data.seventyFiveNinety.setChecked(false);
+                    data.ninetyVal = 1;
                 }
             }
         });
@@ -1763,42 +2160,36 @@ public class MainActivity extends AppCompatActivity {
         boolean isCheckedC = ((CheckBox) findViewById(R.id.checkBox12C)).isChecked();
         boolean isCheckedD = ((CheckBox) findViewById(R.id.checkBox12D)).isChecked();
         boolean isCheckedE = ((CheckBox) findViewById(R.id.checkBox12E)).isChecked();
-
         if (isCheckedA == true){
             data.pointBoxA = 1;
         }
         else{
             data.pointBoxA = 0;
         }
-
         if (isCheckedB == true){
             data.pointBoxB = 1;
         }
         else{
             data.pointBoxB = 0;
         }
-
         if (isCheckedC == true){
             data.pointBoxC = 1;
         }
         else{
             data.pointBoxC = 0;
         }
-
         if (isCheckedD == true){
             data.pointBoxD = 1;
         }
         else{
             data.pointBoxD = 0;
         }
-
         if (isCheckedE == true){
             data.pointBoxE = 1;
         }
         else{
             data.pointBoxE = 0;
         }
-
         data.total12 = data.pointBoxA + data.pointBoxB + data.pointBoxC + data.pointBoxD + data.pointBoxE;
 
         if(data.total12 >= 4){
@@ -1828,7 +2219,6 @@ public class MainActivity extends AppCompatActivity {
             data.qualityRank = "High";
         }
     }
-
 
     // arrayList of data
     public ArrayList<Holder<Object>> getValues(){

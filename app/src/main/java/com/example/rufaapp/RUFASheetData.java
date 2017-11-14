@@ -16,7 +16,7 @@ public class RUFASheetData {
     Button updateTop;
     Button updateBottom;
 
-    //initial input
+    //Scorer input
     EditText cellValue;
     EditText dateValue;
     EditText scorersValue;
@@ -275,14 +275,73 @@ public class RUFASheetData {
     String selectedPlantCommunity;
     Spinner plant_community;
     Button addPlantCommunity;
+    CheckBox prevConfirmedType;
+    CheckBox groundTruthedType;
+    int prevConfirmed;
+    int groundTruthed;
 
     //bearing changes
     CheckBox yesBearingChanges;
     CheckBox noBearingChanges;
+    int bearingChange;
+
+    //light gaps
+    int diameterAVal;
+    int diameterBVal;
+    int diameterCVal;
+    int diameterDVal;
+    int invadedAVal;
+    int invadedBVal;
+    int invadedCVal;
+    int invadedDVal;
+    int grapevineAVal;
+    int grapevineBVal;
+    int grapevineCVal;
+    int grapevineDVal;
+    int regeneratingAVal;
+    int regeneratingBVal;
+    int regeneratingCVal;
+    int regeneratingDVal;
+    EditText diameterA;
+    EditText diameterB;
+    EditText diameterC;
+    EditText diameterD;
+    CheckBox invadedA;
+    CheckBox invadedB;
+    CheckBox invadedC;
+    CheckBox invadedD;
+    CheckBox grapevineA;
+    CheckBox grapevineB;
+    CheckBox grapevineC;
+    CheckBox grapevineD;
+    CheckBox regeneratingA;
+    CheckBox regeneratingB;
+    CheckBox regeneratingC;
+    CheckBox regeneratingD;
+
+    //Past Land Use Evidence
+    CheckBox noneEvident;
+    CheckBox deadFurrows;
+    CheckBox cutStumps;
+    CheckBox dumpSite;
+    CheckBox oldRoad;
+    CheckBox improvedTrail;
+    CheckBox other;
+    int noneEvidentval;
+    int deadFurrowsval;
+    int cutStumpsval;
+    int dumpSiteval;
+    int oldRoadval;
+    int improvedTrailval;
+    int otherval;
+    EditText otherInput;
+    String otherLandUseEvidence;
+
 
     //canopy
     CheckBox canopyOpen;
     CheckBox canopyClosed;
+    int canopy;
 
     //Age Classes
     Spinner age_classes;
@@ -309,6 +368,26 @@ public class RUFASheetData {
     TextView addTreeToDominantVeteran2;
     CheckBox toggleVeteran1;
     CheckBox toggleVeteran2;
+    String dominantSapling1;
+    String dominantSapling2;
+    String dominantSmallPole1;
+    String dominantSmallPole2;
+    String dominantMedPole1;
+    String dominantMedPole2;
+    String dominantStandardPole1;
+    String dominantStandardPole2;
+    String dominantVeteran1;
+    String dominantVeteran2;
+    CheckBox sapling;
+    CheckBox smallPole;
+    CheckBox medPole;
+    CheckBox standard;
+    CheckBox veteran;
+    int saplingPresent;
+    int smallPolePresent;
+    int medPolePresent;
+    int standardPresent;
+    int veteranPresent;
 
     //Pests and Pathogens
     CheckBox beechPresent;
@@ -355,4 +434,10 @@ public class RUFASheetData {
     CheckBox fiftySeventyFive;
     CheckBox seventyFiveNinety;
     CheckBox ninety;
+    int tenVal;
+    int tenTwentyFiveVal;
+    int twentyFiveFiftyVal;
+    int fiftySeventyFiveVal;
+    int seventyFiveNinetyVal;
+    int ninetyVal;
 }
