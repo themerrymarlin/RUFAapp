@@ -20,6 +20,9 @@ public class RUFASheetData {
     EditText cellValue;
     EditText dateValue;
     EditText scorersValue;
+    String cell;
+    String date;
+    String scorers;
 
     // section 1A
     int point1A;

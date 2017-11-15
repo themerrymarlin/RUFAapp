@@ -1405,6 +1405,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateButtonPressed(){
+        //cell
+        data.cell = getCellValue();
+
+        //date
+        data.date = getDateValue();
+
+        //scorers
+        data.scorers = getScorerValue();
+
         // section 1A called with button
         herbaceousPlantScore();
         data.sum1AVal = (TextView) findViewById(R.id.sum1AVal);
