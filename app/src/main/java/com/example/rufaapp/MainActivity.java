@@ -1317,7 +1317,7 @@ public class MainActivity extends AppCompatActivity {
                     data.fiftySeventyFive.setChecked(false);
                     data.seventyFiveNinety.setChecked(false);
                     data.ninety.setChecked(false);
-                    data.tenVal = 1;
+                    data.seedlingCover = "<10%";
                 }
             }
         });
@@ -1333,7 +1333,7 @@ public class MainActivity extends AppCompatActivity {
                     data.fiftySeventyFive.setChecked(false);
                     data.seventyFiveNinety.setChecked(false);
                     data.ninety.setChecked(false);
-                    data.tenTwentyFiveVal = 1;
+                    data.seedlingCover = "10-25%";
                 }
             }
         });
@@ -1349,7 +1349,7 @@ public class MainActivity extends AppCompatActivity {
                     data.fiftySeventyFive.setChecked(false);
                     data.seventyFiveNinety.setChecked(false);
                     data.ninety.setChecked(false);
-                    data.twentyFiveFiftyVal = 1;
+                    data.seedlingCover = "25-50%";
                 }
             }
         });
@@ -1365,7 +1365,7 @@ public class MainActivity extends AppCompatActivity {
                     data.twentyFiveFifty.setChecked(false);
                     data.seventyFiveNinety.setChecked(false);
                     data.ninety.setChecked(false);
-                    data.fiftySeventyFiveVal = 1;
+                    data.seedlingCover = "50-75%";
                 }
             }
         });
@@ -1381,7 +1381,7 @@ public class MainActivity extends AppCompatActivity {
                     data.twentyFiveFifty.setChecked(false);
                     data.fiftySeventyFive.setChecked(false);
                     data.ninety.setChecked(false);
-                    data.seventyFiveNinetyVal = 1;
+                    data.seedlingCover = "75-90%";
                 }
             }
         });
@@ -1397,7 +1397,7 @@ public class MainActivity extends AppCompatActivity {
                     data.twentyFiveFifty.setChecked(false);
                     data.fiftySeventyFive.setChecked(false);
                     data.seventyFiveNinety.setChecked(false);
-                    data.ninetyVal = 1;
+                    data.seedlingCover = ">90%";
                 }
             }
         });

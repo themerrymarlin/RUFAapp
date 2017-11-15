@@ -434,10 +434,5 @@ public class RUFASheetData {
     CheckBox fiftySeventyFive;
     CheckBox seventyFiveNinety;
     CheckBox ninety;
-    int tenVal;
-    int tenTwentyFiveVal;
-    int twentyFiveFiftyVal;
-    int fiftySeventyFiveVal;
-    int seventyFiveNinetyVal;
-    int ninetyVal;
+    String seedlingCover;
 }
