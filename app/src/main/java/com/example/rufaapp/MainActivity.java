@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
     //Save button
     private Button saveButton;
-
+    //load button
+    private Button loadButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -37,7 +38,14 @@ public class MainActivity extends AppCompatActivity {
         saveButton = (Button) findViewById(R.id.saveData);
         saveButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //saveData();
+                saveSheetData(data);
+            }
+        });
+
+        loadButton = (Button) findViewById(R.id.loadData);
+        loadButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                loadSheetData(data.cell,data.date);
             }
         });
 
