@@ -16,6 +16,9 @@ import android.widget.TextView;
 import android.view.View.OnClickListener;
 
 
+import com.google.gson.JsonObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -2231,7 +2234,7 @@ public class MainActivity extends AppCompatActivity {
 
     // arrayList of data
     public ArrayList<Holder<Object>> getValues(){
-        ArrayList list = new ArrayList(97);
+        ArrayList<Holder<Object>> list = new ArrayList<>(97);
         list.add(new Holder<Object>(getCellValue(),0));
         list.add(new Holder<Object>(getDateValue(),0));
         list.add(new Holder<Object>(getScorerValue(),0));
@@ -2330,5 +2333,29 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Holder<Object>(data.hwaSeverity,0));
         list.add(new Holder<Object>(data.eaheAbundance,0));
         return list;
+    }
+
+    public boolean saveSheetData(RUFASheetData sheetData){
+        JsonObject obj = JsonSerializer.serialize(data);
+        String jsonString = obj.getAsString();
+        try {
+            InternalStorageAccessor.writeToFile(getApplicationContext(), sheetData.cell + ":" + sheetData.date, jsonString);
+            return true;
+        }catch(IOException e){
+            //Storage failed
+            return false;
+        }
+    }
+
+    public boolean loadSheetData(String cell, String date){
+        try {
+            JsonObject obj = InternalStorageAccessor.readFromFile(getApplicationContext(),cell + ":" + date);
+            RUFASheetData loadData = JsonSerializer.deserialize(obj);
+            this.data = loadData;
+            //TODO figure out if we need to update checkboxes and the like
+        } catch (IOException e){
+            return false;
+        }
+        return true;
     }
 }
