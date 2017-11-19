@@ -33,7 +33,7 @@ public class ExternalStorageAccessor {
         return r || rw;
     }
 
-    public void writeToCsv(ArrayList<String> keyList, ArrayList<Holder> values) throws IOException {
+    public void writeToCsv(ArrayList<String> keyList, ArrayList<Holder<Object>> values) throws IOException {
         CSVWriter writer = new CSVWriter(new FileWriter(dir));
         String fileName = values.get(0).getAsString() + values.get(1).getAsString() + ".csv";
         String path = dir + File.separator + fileName;

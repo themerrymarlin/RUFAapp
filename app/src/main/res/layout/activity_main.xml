@@ -4183,6 +4183,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="250dp"
                     android:text="@string/save" />
+
+                <Button
+                    android:id="@+id/SaveCSV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="250dp"
+                    android:text="@string/saveCSV" />
             </TableRow>
 
         </LinearLayout>

@@ -161,5 +161,6 @@
     <string name="eastern_hemlock_tree">EAHE Present?</string>
     <string name="hemlock_woolly_adelgid">HWA Present?</string>
     <string name="load">Load</string>
+    <string name="saveCSV">Save to SD Card</string>
 
 </resources>

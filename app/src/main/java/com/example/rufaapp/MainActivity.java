@@ -1,6 +1,9 @@
 package com.example.rufaapp;
 
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.app.Activity;
 import android.os.Bundle;
@@ -21,6 +24,7 @@ import com.google.gson.JsonObject;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
+import java.util.jar.Manifest;
 
 public class MainActivity extends AppCompatActivity {
     private RUFASheetData data = new RUFASheetData();
@@ -29,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     private Button saveButton;
     //load button
     private Button loadButton;
+    //save to csv button
+    private Button saveToSDCard;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -46,6 +52,19 @@ public class MainActivity extends AppCompatActivity {
         loadButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 loadSheetData(data.cell,data.date);
+            }
+        });
+
+        saveToSDCard = (Button) findViewById(R.id.SaveCSV);
+        saveToSDCard.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v){
+                int permCheck = ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                int permGranted = PackageManager.PERMISSION_GRANTED;
+                if(permCheck != permGranted){
+                    ActivityCompat.requestPermissions(getParent(),new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},5);
+                }else{
+                    saveToCSV();
+                }
             }
         });
 
@@ -2345,12 +2364,13 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean saveSheetData(RUFASheetData sheetData){
         JsonObject obj = JsonSerializer.serialize(data);
-        String jsonString = obj.getAsString();
+        String jsonString = obj.toString();
+        Log.i("json string",jsonString);
         try {
             InternalStorageAccessor.writeToFile(getApplicationContext(), sheetData.cell + ":" + sheetData.date, jsonString);
             return true;
         }catch(IOException e){
-            //Storage failed
+
             return false;
         }
     }
@@ -2360,10 +2380,40 @@ public class MainActivity extends AppCompatActivity {
             JsonObject obj = InternalStorageAccessor.readFromFile(getApplicationContext(),cell + ":" + date);
             RUFASheetData loadData = JsonSerializer.deserialize(obj);
             this.data = loadData;
+            Log.i("load","data loaded");
             //TODO figure out if we need to update checkboxes and the like
         } catch (IOException e){
             return false;
         }
         return true;
+    }
+
+    public boolean saveToCSV(){
+        //TODO move permission to button
+        ExternalStorageAccessor ea = new ExternalStorageAccessor();
+        if(ea.isStorageWriteable()){
+            try {
+                ea.writeToCsv(RUFAdbOpenHelper.getKeyList(), getValues());
+                return true;
+            }catch (IOException e){
+                return false;
+            }
+        }else {
+            return false;
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        switch(requestCode){
+            case 5: {
+                if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    saveToCSV();
+                }else{
+                    //TODO show dialog, need permission to save
+                }
+                return;
+            }
+        }
     }
 }
