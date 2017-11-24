@@ -229,85 +229,35 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        data.toggle3B1 = (CheckBox) findViewById(R.id.checkBoxDominant3B1);
-        data.toggle3B1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                boolean isCheckedToggle3B1 = ((CheckBox) findViewById(R.id.checkBoxDominant3B1)).isChecked();
-
-                if (isCheckedToggle3B1 == true) {
-                    data.addDominant3B1.setVisibility(View.VISIBLE);
-                    data.add3B.setVisibility(View.INVISIBLE);
-                    data.toggle3B2.setVisibility(View.INVISIBLE);
-                    data.clear3B.setVisibility(View.INVISIBLE);
-                }
-            }
-        });
-
-        data.toggle3B2 = (CheckBox) findViewById(R.id.checkBoxDominant3B2);
-        data.toggle3B2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                boolean isCheckedToggle3B2 = ((CheckBox) findViewById(R.id.checkBoxDominant3B2)).isChecked();
-
-                if (isCheckedToggle3B2 == true) {
-                    data.addDominant3B2.setVisibility(View.VISIBLE);
-                    data.add3B.setVisibility(View.INVISIBLE);
-                    data.toggle3B1.setVisibility(View.INVISIBLE);
-                    data.clear3B.setVisibility(View.INVISIBLE);
-                }
-            }
-        });
-
         data.addDominant3B1 = (Button) findViewById(R.id.addDominant3B1);
         data.addDominant3B1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                boolean isCheckedDominant3B1 = ((CheckBox) findViewById(R.id.checkBoxDominant3B1)).isChecked();
-
-                if (isCheckedDominant3B1 == true) {
-                    data.addTreeToDominant3B1 = (TextView) findViewById(R.id.dominant3B1);
-                    data.modifyAdd3B = data.addTreeToDominant3B1.getText().toString();
-                    data.addTreeToDominant3B1.setText(data.selected3B);
-                    data.dominant3B1 = data.selected3B;
-                    data.addDominant3B1.setVisibility(View.INVISIBLE);
-                    data.add3B.setVisibility(View.VISIBLE);
-                    data.toggle3B1.setChecked(false);
-                    data.toggle3B2.setVisibility(View.VISIBLE);
-                    data.clear3B.setVisibility(View.VISIBLE);
-                }
+                data.addTreeToDominant3B1 = (TextView) findViewById(R.id.dominant3B1);
+                data.modifyAdd3B = data.addTreeToDominant3B1.getText().toString();
+                data.addTreeToDominant3B1.setText(data.selected3B);
+                data.dominant3B1 = data.selected3B;
             }
         });
 
         data.addDominant3B2 = (Button) findViewById(R.id.addDominant3B2);
         data.addDominant3B2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                boolean isCheckedDominant3B2 = ((CheckBox) findViewById(R.id.checkBoxDominant3B2)).isChecked();
-
-                if (isCheckedDominant3B2 == true) {
-                    data.addTreeToDominant3B2 = (TextView) findViewById(R.id.dominant3B2);
-                    data.modifyAdd3B = data.addTreeToDominant3B2.getText().toString();
-                    data.addTreeToDominant3B2.setText(data.selected3B);
-                    data.dominant3B2 = data.selected3B;
-                    data.addDominant3B2.setVisibility(View.INVISIBLE);
-                    data.add3B.setVisibility(View.VISIBLE);
-                    data.toggle3B2.setChecked(false);
-                    data.toggle3B1.setVisibility(View.VISIBLE);
-                    data.clear3B.setVisibility(View.VISIBLE);
-                }
+                data.addTreeToDominant3B2 = (TextView) findViewById(R.id.dominant3B2);
+                data.modifyAdd3B = data.addTreeToDominant3B2.getText().toString();
+                data.addTreeToDominant3B2.setText(data.selected3B);
+                data.dominant3B2 = data.selected3B;
             }
         });
 
         data.add3B = (Button) findViewById(R.id.addTree3B);
         data.add3B.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                boolean isCheckedDominant3B1 = ((CheckBox) findViewById(R.id.checkBoxDominant3B1)).isChecked();
-                boolean isCheckedDominant3B2 = ((CheckBox) findViewById(R.id.checkBoxDominant3B2)).isChecked();
-                if(isCheckedDominant3B1 == false && isCheckedDominant3B2 == false) {
                     data.addTreeToList3B = (TextView) findViewById(R.id.listOfTrees3B);
                     data.modifyAdd3B = data.addTreeToList3B.getText().toString();
                     data.addTreeToList3B.setText(data.selected3B + " " + data.modifyAdd3B);
                     data.list3B = data.addTreeToList3B.getText().toString();
                     data.sum3B++;
                     updateButtonPressed();
-                }
             }
         });
 
@@ -330,18 +280,6 @@ public class MainActivity extends AppCompatActivity {
                 data.dominant3B2 = "";
                 data.addTreeToDominant3B2.setText(data.dominant3B2);
 
-                data.toggle3B1 = (CheckBox) findViewById(R.id.checkBoxDominant3B1);
-                data.toggle3B2 = (CheckBox) findViewById(R.id.checkBoxDominant3B2);
-                data.toggle3B1.setChecked(false);
-                data.toggle3B2.setChecked(false);
-
-                data.add3B.setVisibility(View.VISIBLE);
-                data.addDominant3B1.setVisibility(View.INVISIBLE);
-                data.addDominant3B2.setVisibility(View.INVISIBLE);
-
-                data.toggle3B1.setVisibility(View.VISIBLE);
-                data.toggle3B2.setVisibility(View.VISIBLE);
-
                 updateButtonPressed();
             }
         });
@@ -352,10 +290,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
                 if (data.selected3B == null) {
-                    data.selected3B = "";
+                    data.selected3B = "AMBE";
                     data.sum3B = 0;
-                    data.addDominant3B1.setVisibility(View.INVISIBLE);
-                    data.addDominant3B2.setVisibility(View.INVISIBLE);
                 } else{
                     data.selected3B = adapterView.getSelectedItem().toString();
                 }
@@ -363,6 +299,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
 
@@ -398,85 +335,37 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        data.toggle4B1 = (CheckBox) findViewById(R.id.checkBoxDominant4B1);
-        data.toggle4B1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                boolean isCheckedToggle4B1 = ((CheckBox) findViewById(R.id.checkBoxDominant4B1)).isChecked();
-
-                if (isCheckedToggle4B1 == true) {
-                    data.addDominant4B1.setVisibility(View.VISIBLE);
-                    data.add4B.setVisibility(View.INVISIBLE);
-                    data.toggle4B2.setVisibility(View.INVISIBLE);
-                    data.clear4B.setVisibility(View.INVISIBLE);
-                }
-            }
-        });
-
-        data.toggle4B2 = (CheckBox) findViewById(R.id.checkBoxDominant4B2);
-        data.toggle4B2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                boolean isCheckedToggle4B2 = ((CheckBox) findViewById(R.id.checkBoxDominant4B2)).isChecked();
-
-                if (isCheckedToggle4B2 == true) {
-                    data.addDominant4B2.setVisibility(View.VISIBLE);
-                    data.add4B.setVisibility(View.INVISIBLE);
-                    data.toggle4B1.setVisibility(View.INVISIBLE);
-                    data.clear4B.setVisibility(View.INVISIBLE);
-                }
-            }
-        });
-
         data.addDominant4B1 = (Button) findViewById(R.id.addDominant4B1);
         data.addDominant4B1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                boolean isCheckedDominant4B1 = ((CheckBox) findViewById(R.id.checkBoxDominant4B1)).isChecked();
-
-                if (isCheckedDominant4B1 == true) {
-                    data.addTreeToDominant4B1 = (TextView) findViewById(R.id.dominant4B1);
-                    data.modifyAdd4B = data.addTreeToDominant4B1.getText().toString();
-                    data.addTreeToDominant4B1.setText(data.selected4B);
-                    data.dominant4B1 = data.selected4B;
-                    data.addDominant4B1.setVisibility(View.INVISIBLE);
-                    data.add4B.setVisibility(View.VISIBLE);
-                    data.toggle4B1.setChecked(false);
-                    data.toggle4B2.setVisibility(View.VISIBLE);
-                    data.clear4B.setVisibility(View.VISIBLE);
-                }
+                data.addTreeToDominant4B1 = (TextView) findViewById(R.id.dominant4B1);
+                data.modifyAdd4B = data.addTreeToDominant4B1.getText().toString();
+                data.addTreeToDominant4B1.setText(data.selected4B);
+                data.dominant4B1 = data.selected4B;
             }
         });
 
         data.addDominant4B2 = (Button) findViewById(R.id.addDominant4B2);
         data.addDominant4B2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                boolean isCheckedDominant4B2 = ((CheckBox) findViewById(R.id.checkBoxDominant4B2)).isChecked();
+                data.addTreeToDominant4B2 = (TextView) findViewById(R.id.dominant4B2);
+                data.modifyAdd4B = data.addTreeToDominant4B2.getText().toString();
+                data.addTreeToDominant4B2.setText(data.selected4B);
+                data.dominant4B2 = data.selected4B;
 
-                if (isCheckedDominant4B2 == true) {
-                    data.addTreeToDominant4B2 = (TextView) findViewById(R.id.dominant4B2);
-                    data.modifyAdd4B = data.addTreeToDominant4B2.getText().toString();
-                    data.addTreeToDominant4B2.setText(data.selected4B);
-                    data.dominant4B2 = data.selected4B;
-                    data.addDominant4B2.setVisibility(View.INVISIBLE);
-                    data.add4B.setVisibility(View.VISIBLE);
-                    data.toggle4B2.setChecked(false);
-                    data.toggle4B1.setVisibility(View.VISIBLE);
-                    data.clear4B.setVisibility(View.VISIBLE);
-                }
             }
         });
 
         data.add4B = (Button) findViewById(R.id.addTree4B);
         data.add4B.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                boolean isCheckedDominant4B1 = ((CheckBox) findViewById(R.id.checkBoxDominant4B1)).isChecked();
-                boolean isCheckedDominant4B2 = ((CheckBox) findViewById(R.id.checkBoxDominant4B2)).isChecked();
-                if(isCheckedDominant4B1 == false && isCheckedDominant4B2 == false) {
-                    data.addTreeToList4B = (TextView) findViewById(R.id.listOfTrees4B);
-                    data.modifyAdd4B = data.addTreeToList4B.getText().toString();
-                    data.addTreeToList4B.setText(data.selected4B + " " + data.modifyAdd4B);
-                    data.list4B = data.addTreeToList4B.getText().toString();
-                    data.sum4B++;
-                    updateButtonPressed();
-                }
+                data.addTreeToList4B = (TextView) findViewById(R.id.listOfTrees4B);
+                data.modifyAdd4B = data.addTreeToList4B.getText().toString();
+                data.addTreeToList4B.setText(data.selected4B + " " + data.modifyAdd4B);
+                data.list4B = data.addTreeToList4B.getText().toString();
+                data.sum4B++;
+                updateButtonPressed();
+
             }
         });
 
@@ -499,18 +388,6 @@ public class MainActivity extends AppCompatActivity {
                 data.dominant4B2 = "";
                 data.addTreeToDominant4B2.setText(data.dominant4B2);
 
-                data.toggle4B1 = (CheckBox) findViewById(R.id.checkBoxDominant4B1);
-                data.toggle4B2 = (CheckBox) findViewById(R.id.checkBoxDominant4B2);
-                data.toggle4B1.setChecked(false);
-                data.toggle4B2.setChecked(false);
-
-                data.add4B.setVisibility(View.VISIBLE);
-                data.addDominant4B1.setVisibility(View.INVISIBLE);
-                data.addDominant4B2.setVisibility(View.INVISIBLE);
-
-                data.toggle4B1.setVisibility(View.VISIBLE);
-                data.toggle4B2.setVisibility(View.VISIBLE);
-
                 updateButtonPressed();
             }
         });
@@ -521,10 +398,8 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
                 if (data.selected4B == null) {
-                    data.selected4B = "";
+                    data.selected4B = "AMBE";
                     data.sum4B = 0;
-                    data.addDominant4B1.setVisibility(View.INVISIBLE);
-                    data.addDominant4B2.setVisibility(View.INVISIBLE);
                 } else{
                     data.selected4B = adapterView.getSelectedItem().toString();
                 }
@@ -775,7 +650,7 @@ public class MainActivity extends AppCompatActivity {
                 data.addTreeToListPlantCommunity = (TextView) findViewById(R.id.community_type_value);
 
                 if (data.selectedPlantCommunity == null) {
-                    data.selectedPlantCommunity = "";
+                    data.selectedPlantCommunity = "Beech-Maple";
                     data.otherPlantCommunity.setVisibility(View.INVISIBLE);
                     data.addTreeToListPlantCommunity.setVisibility(View.INVISIBLE);
                 } else {
@@ -1197,6 +1072,21 @@ public class MainActivity extends AppCompatActivity {
                     data.addDominantAgeClasses2.setVisibility(View.INVISIBLE);
                     data.clearAgeClassData.setVisibility(View.INVISIBLE);
                 }
+                else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -1217,6 +1107,20 @@ public class MainActivity extends AppCompatActivity {
                     data.toggleSapling1.setVisibility(View.INVISIBLE);
                     data.addDominantAgeClasses1.setVisibility(View.INVISIBLE);
                     data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1256,6 +1160,20 @@ public class MainActivity extends AppCompatActivity {
                     data.toggleSapling2.setVisibility(View.INVISIBLE);
                     data.addDominantAgeClasses2.setVisibility(View.INVISIBLE);
                     data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1277,6 +1195,20 @@ public class MainActivity extends AppCompatActivity {
                     data.toggleSapling2.setVisibility(View.INVISIBLE);
                     data.addDominantAgeClasses1.setVisibility(View.INVISIBLE);
                     data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1316,6 +1248,20 @@ public class MainActivity extends AppCompatActivity {
                     data.toggleSapling2.setVisibility(View.INVISIBLE);
                     data.addDominantAgeClasses2.setVisibility(View.INVISIBLE);
                     data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1337,6 +1283,20 @@ public class MainActivity extends AppCompatActivity {
                     data.toggleSapling2.setVisibility(View.INVISIBLE);
                     data.addDominantAgeClasses1.setVisibility(View.INVISIBLE);
                     data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1376,6 +1336,20 @@ public class MainActivity extends AppCompatActivity {
                     data.toggleSapling2.setVisibility(View.INVISIBLE);
                     data.addDominantAgeClasses2.setVisibility(View.INVISIBLE);
                     data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1397,6 +1371,20 @@ public class MainActivity extends AppCompatActivity {
                     data.toggleSapling2.setVisibility(View.INVISIBLE);
                     data.addDominantAgeClasses1.setVisibility(View.INVISIBLE);
                     data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1436,6 +1424,20 @@ public class MainActivity extends AppCompatActivity {
                     data.toggleSapling2.setVisibility(View.INVISIBLE);
                     data.addDominantAgeClasses2.setVisibility(View.INVISIBLE);
                     data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1457,6 +1459,20 @@ public class MainActivity extends AppCompatActivity {
                     data.toggleSapling2.setVisibility(View.INVISIBLE);
                     data.addDominantAgeClasses1.setVisibility(View.INVISIBLE);
                     data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1650,7 +1666,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (data.selectedAgeClass == null) {
-                    data.selectedAgeClass = "";
+                    data.selectedAgeClass = "AMBE";
                 } else{
                     data.selectedAgeClass = adapterView.getSelectedItem().toString();
                 }

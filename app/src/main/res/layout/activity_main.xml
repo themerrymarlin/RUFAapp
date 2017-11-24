@@ -808,6 +808,7 @@
                     android:id="@+id/addTree3B"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
+                    android:layout_marginLeft="100dp"
                     android:text="@string/add_tree" />
 
                 <Button
@@ -822,7 +823,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginLeft="-185dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="45dp"
                     android:text="@string/add_dominant3B1" />
 
                 <Button
@@ -830,22 +831,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="45dp"
                     android:text="@string/add_dominant2" />
-
-                <CheckBox
-                    android:id="@+id/checkBoxDominant3B1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="50dp"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxDominant3B2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="50dp"/>
 
 
             </TableRow>
@@ -1095,6 +1082,7 @@
                     android:id="@+id/addTree4B"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
+                    android:layout_marginLeft="100dp"
                     android:text="@string/add_tree" />
 
                 <Button
@@ -1109,7 +1097,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginLeft="-185dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="45dp"
                     android:text="@string/add_dominant3B1" />
 
                 <Button
@@ -1117,22 +1105,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginTop="50dp"
+                    android:layout_marginTop="45dp"
                     android:text="@string/add_dominant2" />
-
-                <CheckBox
-                    android:id="@+id/checkBoxDominant4B1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="50dp"/>
-
-                <CheckBox
-                    android:id="@+id/checkBoxDominant4B2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="50dp"/>
 
 
             </TableRow>
