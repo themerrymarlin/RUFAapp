@@ -2,7 +2,7 @@
     <string name="app_name">RUFA App</string>
     <string name="cell_value">Cell:</string>
     <string name="date">Date:</string>
-    <string name="scorer">Scorer:</string>
+    <string name="scorer">Scorer(s):</string>
     <string name="herbaceous_plant">1A. 20 Herbaceous Plant Species in Combination</string>
     <string name="northwest">NW</string>
     <string name="northeast">NE</string>
@@ -86,6 +86,7 @@
         <item>Mixed Floodplain</item>
         <item>Oak-Maple</item>
         <item>Planted Pine</item>
+        <item>Other</item>
     </string-array>
 
     <string name="add_tree">Add</string>
@@ -97,7 +98,7 @@
     <string name="absence_of_deer">11. Absence of Deer Browse Line</string>
     <string name="leaf_fragment_cover">12. 4 out of 5 Transects \n &gt; 50% Leaf Fragment Cover</string>
     <string name="total">Total:</string>
-    <string name="totalPoints">Total</string>
+    <string name="totalPoints">Total and Rank</string>
     <string name="clear">Clear</string>
     <string name="add_dominant">Add Dominant</string>
     <string name="add_dominant3B1">Dom. 1</string>
@@ -162,5 +163,8 @@
     <string name="hemlock_woolly_adelgid">HWA Present?</string>
     <string name="load">Load</string>
     <string name="saveCSV">Save to SD Card</string>
+    <string name="clear_all">Clear All</string>
+    <string name="notes">Additional Notes</string>
+
 
 </resources>
