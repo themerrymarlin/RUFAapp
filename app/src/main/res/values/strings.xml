@@ -2,7 +2,7 @@
     <string name="app_name">RUFA App</string>
     <string name="cell_value">Cell:</string>
     <string name="date">Date:</string>
-    <string name="scorer">Scorer:</string>
+    <string name="scorer">Scorer(s):</string>
     <string name="herbaceous_plant">1A. 20 Herbaceous Plant Species in Combination</string>
     <string name="northwest">NW</string>
     <string name="northeast">NE</string>
@@ -24,68 +24,69 @@
     <string name="invasive_herbaceous">6B. &lt; 200 Invasive \nHerbaceous Plants</string>
 
     <string-array name="tree_types">
-        <item>GRAS</item>
-        <item>WHAS</item>
-        <item>BIAS</item>
-        <item>QUAS</item>
+        <item>AMBE</item>
+        <item>AMCH</item>
+        <item>AMEL</item>
         <item>BALD</item>
         <item>BASS</item>
-        <item>AMBE</item>
+        <item>BIAS</item>
+        <item>BIHI</item>
         <item>BLBI</item>
-        <item>RIBI</item>
-        <item>YEBI</item>
+        <item>BLCH</item>
+        <item>BLLO</item>
+        <item>BLMA</item>
+        <item>BLOA</item>
+        <item>BLWA</item>
         <item>BOXE</item>
-        <item>BUCK</item>
+        <item>BUCH</item>
+        <item>BUOA</item>
         <item>BUTT</item>
         <item>CATA</item>
-        <item>BLCH</item>
-        <item>AMCH</item>
+        <item>CHOA</item>
         <item>COTT</item>
+        <item>CSOA</item>
         <item>CUCU</item>
         <item>EAHE</item>
-        <item>AMEL</item>
-        <item>REEL</item>
-        <item>BIHI</item>
-        <item>PIHI</item>
-        <item>SHHI</item>
-        <item>SLHI</item>
-        <item>BLLO</item>
+        <item>GRAS</item>
         <item>HOLO</item>
-        <item>BLMA</item>
-        <item>SUMA</item>
-        <item>REMA</item>
-        <item>SIMA</item>
-        <item>BLOA</item>
-        <item>BUOA</item>
-        <item>CSOA</item>
-        <item>CHOA</item>
-        <item>PIOA</item>
-        <item>REOA</item>
-        <item>SCOA</item>
-        <item>SWOA</item>
-        <item>WHOA</item>
         <item>OSOR</item>
         <item>PAWP</item>
-        <item>WHPI</item>
+        <item>PIHI</item>
+        <item>PIOA</item>
+        <item>QUAS</item>
         <item>REDC</item>
+        <item>REEL</item>
+        <item>REMA</item>
+        <item>REOA</item>
+        <item>RIBI</item>
         <item>SASS</item>
+        <item>SCOA</item>
+        <item>SHHI</item>
+        <item>SIMA</item>
+        <item>SLHI</item>
+        <item>SUMA</item>
         <item>SWGU</item>
+        <item>SWOA</item>
         <item>SYCA</item>
         <item>TAMA</item>
-        <item>TUPO</item>
         <item>TUPE</item>
-        <item>BLWA</item>
+        <item>TUPO</item>
+        <item>WHAS</item>
+        <item>WHOA</item>
+        <item>WHPI</item>
         <item>WILL</item>
+        <item>YEBI</item>
     </string-array>
 
     <string-array name="plant_communities">
         <item>Beech-Maple</item>
-        <item>Oak-Hickory</item>
         <item>Hemlock-Hardwoods</item>
-        <item>Mixed Mesophytic</item>
         <item>Mixed Floodplain</item>
+        <item>Mixed Mesophytic</item>
+        <item>Oak-Hickory</item>
         <item>Oak-Maple</item>
         <item>Planted Pine</item>
+        <item>Other</item>
     </string-array>
 
     <string name="add_tree">Add</string>
@@ -97,7 +98,7 @@
     <string name="absence_of_deer">11. Absence of Deer Browse Line</string>
     <string name="leaf_fragment_cover">12. 4 out of 5 Transects \n &gt; 50% Leaf Fragment Cover</string>
     <string name="total">Total:</string>
-    <string name="totalPoints">Total</string>
+    <string name="totalPoints">Total and Rank</string>
     <string name="clear">Clear</string>
     <string name="add_dominant">Add Dominant</string>
     <string name="add_dominant3B1">Dom. 1</string>
@@ -162,5 +163,8 @@
     <string name="hemlock_woolly_adelgid">HWA Present?</string>
     <string name="load">Load</string>
     <string name="saveCSV">Save to SD Card</string>
+    <string name="clear_all">Clear All</string>
+    <string name="notes">Additional Notes</string>
+
 
 </resources>

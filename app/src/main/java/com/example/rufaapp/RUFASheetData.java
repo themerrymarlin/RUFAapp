@@ -13,8 +13,6 @@ import android.widget.TextView;
 public class RUFASheetData {
     // define variables
     int threshold;
-    transient Button updateTop;
-    transient Button updateBottom;
 
     //Scorer input
     transient EditText cellValue;
@@ -32,9 +30,9 @@ public class RUFASheetData {
     transient EditText SW1A;
     transient EditText SE1A;
     transient TextView sum1AVal;
-    String modifyTextSum1A;
+    transient String modifyTextSum1A;
     transient TextView point1AVal;
-    String modifyTextPoint1A;
+    transient String modifyTextPoint1A;
     int NW1Anumber;
     int NE1Anumber;
     int SW1Anumber;
@@ -48,9 +46,9 @@ public class RUFASheetData {
     transient EditText SW1B;
     transient EditText SE1B;
     transient TextView sum1BVal;
-    String modifyTextSum1B;
+    transient String modifyTextSum1B;
     transient TextView point1BVal;
-    String modifyTextPoint1B;
+    transient String modifyTextPoint1B;
     int NW1Bnumber;
     int NE1Bnumber;
     int SW1Bnumber;
@@ -64,9 +62,9 @@ public class RUFASheetData {
     transient EditText SW2A;
     transient EditText SE2A;
     transient TextView sum2AVal;
-    String modifyTextSum2A;
+    transient String modifyTextSum2A;
     transient TextView point2AVal;
-    String modifyTextPoint2A;
+    transient String modifyTextPoint2A;
     int NW2Anumber;
     int NE2Anumber;
     int SW2Anumber;
@@ -80,9 +78,9 @@ public class RUFASheetData {
     transient EditText SW2B;
     transient EditText SE2B;
     transient TextView sum2BVal;
-    String modifyTextSum2B;
+    transient String modifyTextSum2B;
     transient TextView point2BVal;
-    String modifyTextPoint2B;
+    transient String modifyTextPoint2B;
     int NW2Bnumber;
     int NE2Bnumber;
     int SW2Bnumber;
@@ -96,9 +94,9 @@ public class RUFASheetData {
     transient EditText SW3A;
     transient EditText SE3A;
     transient TextView sum3AVal;
-    String modifyTextSum3A;
+    transient String modifyTextSum3A;
     transient TextView point3AVal;
-    String modifyTextPoint3A;
+    transient String modifyTextPoint3A;
     int NW3Anumber;
     int NE3Anumber;
     int SW3Anumber;
@@ -108,23 +106,22 @@ public class RUFASheetData {
     int point3B;
     int sum3B;
     transient TextView sum3BVal;
-    String modifyTextSum3B;
+    transient String modifyTextSum3B;
     transient TextView point3BVal;
-    String modifyTextPoint3B;
+    transient String modifyTextPoint3B;
     transient TextView addTreeToList3B;
     transient TextView addTreeToDominant3B1;
     transient TextView addTreeToDominant3B2;
-    String modifyAdd3B;
-    String selected3B;
+    transient String modifyAdd3B;
+    transient String selected3B;
+    String list3B;
     transient Spinner tree_types3B;
     transient Button add3B;
     transient Button clear3B;
     transient Button addDominant3B1;
     transient Button addDominant3B2;
-    String selected3BDominant1;
-    String selected3BDominant2;
-    transient CheckBox toggle3B1;
-    transient CheckBox toggle3B2;
+    String dominant3B1;
+    String dominant3B2;
 
     //section 4A
     int point4A;
@@ -134,9 +131,9 @@ public class RUFASheetData {
     transient EditText SW4A;
     transient EditText SE4A;
     transient TextView sum4AVal;
-    String modifyTextSum4A;
+    transient String modifyTextSum4A;
     transient TextView point4AVal;
-    String modifyTextPoint4A;
+    transient String modifyTextPoint4A;
     int NW4Anumber;
     int NE4Anumber;
     int SW4Anumber;
@@ -146,23 +143,22 @@ public class RUFASheetData {
     int point4B;
     int sum4B;
     transient TextView sum4BVal;
-    String modifyTextSum4B;
+    transient String modifyTextSum4B;
     transient TextView point4BVal;
-    String modifyTextPoint4B;
+    transient String modifyTextPoint4B;
     transient TextView addTreeToList4B;
-    String selected4B;
+    String list4B;
     transient Spinner tree_types4B;
     transient Button add4B;
     transient Button clear4B;
-    String modifyAdd4B;
+    transient String modifyAdd4B;
+    transient String selected4B;
     transient Button addDominant4B1;
     transient Button addDominant4B2;
-    String selected4BDominant1;
-    String selected4BDominant2;
+    String dominant4B1;
+    String dominant4B2;
     transient TextView addTreeToDominant4B1;
     transient TextView addTreeToDominant4B2;
-    transient CheckBox toggle4B1;
-    transient CheckBox toggle4B2;
 
     //section 5A
     int point5A;
@@ -172,9 +168,9 @@ public class RUFASheetData {
     transient EditText SW5A;
     transient EditText SE5A;
     transient TextView sum5AVal;
-    String modifyTextSum5A;
+    transient String modifyTextSum5A;
     transient TextView point5AVal;
-    String modifyTextPoint5A;
+    transient String modifyTextPoint5A;
     int NW5Anumber;
     int NE5Anumber;
     int SW5Anumber;
@@ -188,9 +184,9 @@ public class RUFASheetData {
     transient EditText SW5B;
     transient EditText SE5B;
     transient TextView sum5BVal;
-    String modifyTextSum5B;
+    transient String modifyTextSum5B;
     transient TextView point5BVal;
-    String modifyTextPoint5B;
+    transient String modifyTextPoint5B;
     int NW5Bnumber;
     int NE5Bnumber;
     int SW5Bnumber;
@@ -204,9 +200,9 @@ public class RUFASheetData {
     transient EditText SW6A;
     transient EditText SE6A;
     transient TextView sum6AVal;
-    String modifyTextSum6A;
+    transient String modifyTextSum6A;
     transient TextView point6AVal;
-    String modifyTextPoint6A;
+    transient String modifyTextPoint6A;
     int NW6Anumber;
     int NE6Anumber;
     int SW6Anumber;
@@ -220,9 +216,9 @@ public class RUFASheetData {
     transient EditText SW6B;
     transient EditText SE6B;
     transient TextView sum6BVal;
-    String modifyTextSum6B;
+    transient String modifyTextSum6B;
     transient TextView point6BVal;
-    String modifyTextPoint6B;
+    transient String modifyTextPoint6B;
     int NW6Bnumber;
     int NE6Bnumber;
     int SW6Bnumber;
@@ -231,55 +227,68 @@ public class RUFASheetData {
     //section7
     int point7;
     transient TextView point7Val;
-    String modifyTextPoint7;
+    transient String modifyTextPoint7;
+    transient CheckBox noObservedInvasivePlants;
 
     //section8
     int point8;
     transient TextView point8Val;
-    String modifyTextPoint8;
+    transient String modifyTextPoint8;
+    transient CheckBox healthyLightGaps;
 
     //section9
     int point9;
     transient TextView point9Val;
-    String modifyTextPoint9;
+    transient String modifyTextPoint9;
+    transient CheckBox microtopography;
 
     //section10
     int point10;
     transient TextView point10Val;
-    String modifyTextPoint10;
+    transient String modifyTextPoint10;
+    transient CheckBox absenceOfHumanActivity;
 
     //section11
     int point11;
     transient TextView point11Val;
-    String modifyTextPoint11;
+    transient String modifyTextPoint11;
+    transient CheckBox absenceOfDeerBrowseLine;
 
     //section 12
     int point12;
     int total12;
     transient TextView total12Val;
-    String modifyTextSum12;
+    transient String modifyTextSum12;
     transient TextView point12Val;
-    String modifyTextPoint12;
+    transient String modifyTextPoint12;
     int pointBoxA;
     int pointBoxB;
     int pointBoxC;
     int pointBoxD;
     int pointBoxE;
+    transient CheckBox a12;
+    transient CheckBox b12;
+    transient CheckBox c12;
+    transient CheckBox d12;
+    transient CheckBox e12;
 
     //Total
     int total;
     transient TextView totalPoints;
-    String modifyTotalPoints;
+    transient String modifyTotalPoints;
     String qualityRank;
 
     //Plant Community
     transient TextView addTreeToListPlantCommunity;
-    String modifyCommunityType;
+    transient String modifyCommunityType;
     String selectedPlantCommunity;
     transient Spinner plant_community;
     transient Button addPlantCommunity;
+    transient Button clearPlantCommunity;
     transient CheckBox prevConfirmedType;
     transient CheckBox groundTruthedType;
+    transient EditText otherPlantCommunity;
+    String otherPlantCommunityInput;
     int prevConfirmed;
     int groundTruthed;
 
@@ -287,6 +296,8 @@ public class RUFASheetData {
     transient CheckBox yesBearingChanges;
     transient CheckBox noBearingChanges;
     int bearingChange;
+    transient EditText bearingChangeAndRationale;
+    String changeAndRationale;
 
     //light gaps
     int diameterAVal;
@@ -348,9 +359,10 @@ public class RUFASheetData {
 
     //Age Classes
     transient Spinner age_classes;
+    transient Button clearAgeClassData;
     transient Button addDominantAgeClasses1;
     transient Button addDominantAgeClasses2;
-    String selectedAgeClass;
+    transient String selectedAgeClass;
     transient TextView addTreeToDominantSapling1;
     transient TextView addTreeToDominantSapling2;
     transient CheckBox toggleSapling1;
@@ -394,10 +406,12 @@ public class RUFASheetData {
 
     //Pests and Pathogens
     transient CheckBox beechPresent;
+    transient CheckBox beechNone;
     transient CheckBox beechLow;
     transient CheckBox beechMedium;
     transient CheckBox beechHigh;
     transient CheckBox bldPresent;
+    transient CheckBox bldNone;
     transient CheckBox bldLow;
     transient CheckBox bldModerate;
     transient CheckBox bldSevere;
@@ -406,10 +420,12 @@ public class RUFASheetData {
     String beechAbundance;
     String bldSeverity;
     transient CheckBox ashPresent;
+    transient CheckBox ashNone;
     transient CheckBox ashLow;
     transient CheckBox ashMedium;
     transient CheckBox ashHigh;
     transient CheckBox eabPresent;
+    transient CheckBox eabNone;
     transient CheckBox eabLow;
     transient CheckBox eabModerate;
     transient CheckBox eabSevere;
@@ -418,10 +434,12 @@ public class RUFASheetData {
     String ashAbundance;
     String eabSeverity;
     transient CheckBox eahePresent;
+    transient CheckBox eaheNone;
     transient CheckBox eaheLow;
     transient CheckBox eaheMedium;
     transient CheckBox eaheHigh;
     transient CheckBox hwaPresent;
+    transient CheckBox hwaNone;
     transient CheckBox hwaLow;
     transient CheckBox hwaModerate;
     transient CheckBox hwaSevere;
@@ -438,4 +456,10 @@ public class RUFASheetData {
     transient CheckBox seventyFiveNinety;
     transient CheckBox ninety;
     String seedlingCover;
+
+    //notes section
+    transient EditText notes1;
+    transient EditText notes2;
+    transient EditText notes3;
+    String notes;
 }

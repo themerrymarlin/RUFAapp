@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         saveButton = (Button) findViewById(R.id.saveData);
         saveButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                updateButtonPressed();
                 saveSheetData(data);
             }
         });
@@ -68,16 +69,162 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        data.updateBottom = (Button) findViewById(R.id.updateBottom);
-        data.updateBottom.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+        data.NW1A = (EditText) findViewById(R.id.NW1A);
+        data.NW1A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
                 updateButtonPressed();
             }
         });
 
-        data.updateTop = (Button) findViewById(R.id.updateTop);
-        data.updateTop.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
+        data.SW1A = (EditText) findViewById(R.id.SW1A);
+        data.SW1A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NE1A = (EditText) findViewById(R.id.NE1A);
+        data.NE1A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SE1A = (EditText) findViewById(R.id.SE1A);
+        data.SE1A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NW1B = (EditText) findViewById(R.id.NW1B);
+        data.NW1B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SW1B = (EditText) findViewById(R.id.SW1B);
+        data.SW1B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NE1B = (EditText) findViewById(R.id.NE1B);
+        data.NE1B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SE1B = (EditText) findViewById(R.id.SE1B);
+        data.SE1B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NW2A = (EditText) findViewById(R.id.NW2A);
+        data.NW2A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SW2A = (EditText) findViewById(R.id.SW2A);
+        data.SW2A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NE2A = (EditText) findViewById(R.id.NE2A);
+        data.NE2A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SE2A = (EditText) findViewById(R.id.SE2A);
+        data.SE2A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NW2B = (EditText) findViewById(R.id.NW2B);
+        data.NW2B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SW2B = (EditText) findViewById(R.id.SW2B);
+        data.SW2B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NE2B = (EditText) findViewById(R.id.NE2B);
+        data.NE2B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SE2B = (EditText) findViewById(R.id.SE2B);
+        data.SE2B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NW3A = (EditText) findViewById(R.id.NW3A);
+        data.NW3A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SW3A = (EditText) findViewById(R.id.SW3A);
+        data.SW3A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NE3A = (EditText) findViewById(R.id.NE3A);
+        data.NE3A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SE3A = (EditText) findViewById(R.id.SE3A);
+        data.SE3A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
                 updateButtonPressed();
             }
         });
@@ -87,16 +234,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 data.addTreeToDominant3B1 = (TextView) findViewById(R.id.dominant3B1);
                 data.modifyAdd3B = data.addTreeToDominant3B1.getText().toString();
-                data.addTreeToDominant3B1.setText(data.selected3BDominant1);
-            }
-        });
-
-        data.addDominant4B1 = (Button) findViewById(R.id.addDominant4B1);
-        data.addDominant4B1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                data.addTreeToDominant4B1 = (TextView) findViewById(R.id.dominant4B1);
-                data.modifyAdd4B = data.addTreeToDominant4B1.getText().toString();
-                data.addTreeToDominant4B1.setText(data.selected4BDominant1);
+                data.addTreeToDominant3B1.setText(data.selected3B);
+                data.dominant3B1 = data.selected3B;
             }
         });
 
@@ -105,25 +244,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 data.addTreeToDominant3B2 = (TextView) findViewById(R.id.dominant3B2);
                 data.modifyAdd3B = data.addTreeToDominant3B2.getText().toString();
-                data.addTreeToDominant3B2.setText(data.selected3BDominant2);
-            }
-        });
-
-        data.addDominant4B2 = (Button) findViewById(R.id.addDominant4B2);
-        data.addDominant4B2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                data.addTreeToDominant4B2 = (TextView) findViewById(R.id.dominant4B2);
-                data.modifyAdd4B = data.addTreeToDominant4B2.getText().toString();
-                data.addTreeToDominant4B2.setText(data.selected4BDominant2);
+                data.addTreeToDominant3B2.setText(data.selected3B);
+                data.dominant3B2 = data.selected3B;
             }
         });
 
         data.add3B = (Button) findViewById(R.id.addTree3B);
         data.add3B.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                data.addTreeToList3B = (TextView) findViewById(R.id.listOfTrees3B);
-                data.modifyAdd3B = data.addTreeToList3B.getText().toString();
-                data.addTreeToList3B.setText(data.selected3B);
+                    data.addTreeToList3B = (TextView) findViewById(R.id.listOfTrees3B);
+                    data.modifyAdd3B = data.addTreeToList3B.getText().toString();
+                    data.addTreeToList3B.setText(data.selected3B + " " + data.modifyAdd3B);
+                    data.list3B = data.addTreeToList3B.getText().toString();
+                    data.sum3B++;
+                    updateButtonPressed();
             }
         });
 
@@ -132,31 +266,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 data.addTreeToList3B = (TextView) findViewById(R.id.listOfTrees3B);
                 data.modifyAdd3B = data.addTreeToList3B.getText().toString();
-                data.selected3B = "";
+                data.list3B = "";
                 data.sum3B = 0;
-                data.addTreeToList3B.setText(data.selected3B);
+                data.addTreeToList3B.setText(data.list3B);
 
                 data.addTreeToDominant3B1 = (TextView) findViewById(R.id.dominant3B1);
                 data.modifyAdd3B = data.addTreeToDominant3B1.getText().toString();
-                data.selected3BDominant1 = " ";
-                data.addTreeToDominant3B1.setText(data.selected3BDominant1);
+                data.dominant3B1 = "";
+                data.addTreeToDominant3B1.setText(data.dominant3B1);
 
                 data.addTreeToDominant3B2 = (TextView) findViewById(R.id.dominant3B2);
                 data.modifyAdd3B = data.addTreeToDominant3B2.getText().toString();
-                data.selected3BDominant2 = " ";
-                data.addTreeToDominant3B2.setText(data.selected3BDominant2);
+                data.dominant3B2 = "";
+                data.addTreeToDominant3B2.setText(data.dominant3B2);
 
-                data.toggle3B1 = (CheckBox) findViewById(R.id.checkBoxDominant3B1);
-                data.toggle3B2 = (CheckBox) findViewById(R.id.checkBoxDominant3B2);
-                data.toggle3B1.setChecked(false);
-                data.toggle3B2.setChecked(false);
-
-                View c = findViewById(R.id.addDominant3B1);
-                c.setVisibility(View.INVISIBLE);
-                View b = findViewById(R.id.addTree3B);
-                b.setVisibility(View.VISIBLE);
-                View d = findViewById(R.id.addDominant3B2);
-                d.setVisibility(View.INVISIBLE);
+                updateButtonPressed();
             }
         });
 
@@ -164,44 +288,71 @@ public class MainActivity extends AppCompatActivity {
         data.tree_types3B.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                boolean isCheckedDominant3B1 = ((CheckBox) findViewById(R.id.checkBoxDominant3B1)).isChecked();
-                boolean isCheckedDominant3B2 = ((CheckBox) findViewById(R.id.checkBoxDominant3B2)).isChecked();
-                data.toggle3B1 = (CheckBox) findViewById(R.id.checkBoxDominant3B1);
-                data.toggle3B2 = (CheckBox) findViewById(R.id.checkBoxDominant3B2);
-                View c = findViewById(R.id.addDominant3B1);
-                c.setVisibility(View.INVISIBLE);
-                View b = findViewById(R.id.addTree3B);
-                b.setVisibility(View.VISIBLE);
-                View d = findViewById(R.id.addDominant3B2);
-                d.setVisibility(View.INVISIBLE);
+
                 if (data.selected3B == null) {
-                    data.selected3B = "";
+                    data.selected3B = "AMBE";
                     data.sum3B = 0;
-                } else if (isCheckedDominant3B1 == false && isCheckedDominant3B2 == false){
-                    data.selected3B = adapterView.getSelectedItem().toString() + "  " + data.selected3B;
-                    data.sum3B ++;
-                    c.setVisibility(View.INVISIBLE);
-                    d.setVisibility(View.INVISIBLE);
-                    b.setVisibility(View.VISIBLE);
-                }
-                else if (isCheckedDominant3B1 == true && isCheckedDominant3B2 == false) {
-                    data.selected3BDominant1 = adapterView.getSelectedItem().toString();
-                    data.toggle3B1.setChecked(false);
-                    c.setVisibility(View.VISIBLE);
-                    d.setVisibility(View.INVISIBLE);
-                    b.setVisibility(View.INVISIBLE);
-                }
-                else if (isCheckedDominant3B1 == false && isCheckedDominant3B2 == true){
-                    data.selected3BDominant2 = adapterView.getSelectedItem().toString();
-                    data.toggle3B2.setChecked(false);
-                    c.setVisibility(View.INVISIBLE);
-                    d.setVisibility(View.VISIBLE);
-                    b.setVisibility(View.INVISIBLE);
+                } else{
+                    data.selected3B = adapterView.getSelectedItem().toString();
                 }
             }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+        data.NW4A = (EditText) findViewById(R.id.NW4A);
+        data.NW4A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SW4A = (EditText) findViewById(R.id.SW4A);
+        data.SW4A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NE4A = (EditText) findViewById(R.id.NE4A);
+        data.NE4A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SE4A = (EditText) findViewById(R.id.SE4A);
+        data.SE4A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.addDominant4B1 = (Button) findViewById(R.id.addDominant4B1);
+        data.addDominant4B1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                data.addTreeToDominant4B1 = (TextView) findViewById(R.id.dominant4B1);
+                data.modifyAdd4B = data.addTreeToDominant4B1.getText().toString();
+                data.addTreeToDominant4B1.setText(data.selected4B);
+                data.dominant4B1 = data.selected4B;
+            }
+        });
+
+        data.addDominant4B2 = (Button) findViewById(R.id.addDominant4B2);
+        data.addDominant4B2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                data.addTreeToDominant4B2 = (TextView) findViewById(R.id.dominant4B2);
+                data.modifyAdd4B = data.addTreeToDominant4B2.getText().toString();
+                data.addTreeToDominant4B2.setText(data.selected4B);
+                data.dominant4B2 = data.selected4B;
+
             }
         });
 
@@ -210,7 +361,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 data.addTreeToList4B = (TextView) findViewById(R.id.listOfTrees4B);
                 data.modifyAdd4B = data.addTreeToList4B.getText().toString();
-                data.addTreeToList4B.setText(data.selected4B);
+                data.addTreeToList4B.setText(data.selected4B + " " + data.modifyAdd4B);
+                data.list4B = data.addTreeToList4B.getText().toString();
+                data.sum4B++;
+                updateButtonPressed();
+
             }
         });
 
@@ -219,31 +374,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 data.addTreeToList4B = (TextView) findViewById(R.id.listOfTrees4B);
                 data.modifyAdd4B = data.addTreeToList4B.getText().toString();
-                data.selected4B = "";
+                data.list4B = "";
                 data.sum4B = 0;
-                data.addTreeToList4B.setText(data.selected4B);
+                data.addTreeToList4B.setText(data.list4B);
 
                 data.addTreeToDominant4B1 = (TextView) findViewById(R.id.dominant4B1);
                 data.modifyAdd4B = data.addTreeToDominant4B1.getText().toString();
-                data.selected4BDominant1 = " ";
-                data.addTreeToDominant4B1.setText(data.selected4BDominant1);
+                data.dominant4B1 = "";
+                data.addTreeToDominant4B1.setText(data.dominant4B1);
 
                 data.addTreeToDominant4B2 = (TextView) findViewById(R.id.dominant4B2);
                 data.modifyAdd4B = data.addTreeToDominant4B2.getText().toString();
-                data.selected4BDominant2 = " ";
-                data.addTreeToDominant4B2.setText(data.selected4BDominant2);
+                data.dominant4B2 = "";
+                data.addTreeToDominant4B2.setText(data.dominant4B2);
 
-                data.toggle4B1 = (CheckBox) findViewById(R.id.checkBoxDominant4B1);
-                data.toggle4B2 = (CheckBox) findViewById(R.id.checkBoxDominant4B2);
-                data.toggle4B1.setChecked(false);
-                data.toggle4B2.setChecked(false);
-
-                View c = findViewById(R.id.addDominant4B1);
-                c.setVisibility(View.INVISIBLE);
-                View b = findViewById(R.id.addTree4B);
-                b.setVisibility(View.VISIBLE);
-                View d = findViewById(R.id.addDominant4B2);
-                d.setVisibility(View.INVISIBLE);
+                updateButtonPressed();
             }
         });
 
@@ -251,45 +396,12 @@ public class MainActivity extends AppCompatActivity {
         data.tree_types4B.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                boolean isCheckedDominant4B1 = ((CheckBox) findViewById(R.id.checkBoxDominant4B1)).isChecked();
-                boolean isCheckedDominant4B2 = ((CheckBox) findViewById(R.id.checkBoxDominant4B2)).isChecked();
-                data.toggle4B1 = (CheckBox) findViewById(R.id.checkBoxDominant4B1);
-                data.toggle4B2 = (CheckBox) findViewById(R.id.checkBoxDominant4B2);
-                View c = findViewById(R.id.addDominant4B1);
-                c.setVisibility(View.INVISIBLE);
-                View b = findViewById(R.id.addTree4B);
-                b.setVisibility(View.VISIBLE);
-                View d = findViewById(R.id.addDominant4B2);
-                d.setVisibility(View.INVISIBLE);
+
                 if (data.selected4B == null) {
-                    data.selected4B = "";
+                    data.selected4B = "AMBE";
                     data.sum4B = 0;
-                } else if (isCheckedDominant4B1 == false && isCheckedDominant4B2 == false){
-                    data.selected4B = adapterView.getSelectedItem().toString() + "  " + data.selected4B;
-                    data.sum4B++;
-                    c.setVisibility(View.INVISIBLE);
-                    d.setVisibility(View.INVISIBLE);
-                    b.setVisibility(View.VISIBLE);
-                } else if (isCheckedDominant4B1 == true && isCheckedDominant4B2 == true){
-                    data.selected4B = adapterView.getSelectedItem().toString() + "  " + data.selected4B;
-                    data.sum4B++;
-                    c.setVisibility(View.INVISIBLE);
-                    d.setVisibility(View.INVISIBLE);
-                    b.setVisibility(View.VISIBLE);
-                }
-                else if (isCheckedDominant4B1 == true && isCheckedDominant4B2 == false) {
-                    data.selected4BDominant1 = adapterView.getSelectedItem().toString();
-                    data.toggle4B1.setChecked(false);
-                    c.setVisibility(View.VISIBLE);
-                    d.setVisibility(View.INVISIBLE);
-                    b.setVisibility(View.INVISIBLE);
-                }
-                else if (isCheckedDominant4B1 == false && isCheckedDominant4B2 == true){
-                    data.selected4BDominant2 = adapterView.getSelectedItem().toString();
-                    data.toggle4B2.setChecked(false);
-                    c.setVisibility(View.INVISIBLE);
-                    d.setVisibility(View.VISIBLE);
-                    b.setVisibility(View.INVISIBLE);
+                } else{
+                    data.selected4B = adapterView.getSelectedItem().toString();
                 }
             }
 
@@ -298,14 +410,235 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        data.NW5A = (EditText) findViewById(R.id.NW5A);
+        data.NW5A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SW5A = (EditText) findViewById(R.id.SW5A);
+        data.SW5A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NE5A = (EditText) findViewById(R.id.NE5A);
+        data.NE5A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SE5A = (EditText) findViewById(R.id.SE5A);
+        data.SE5A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NW5B = (EditText) findViewById(R.id.NW5B);
+        data.NW5B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SW5B = (EditText) findViewById(R.id.SW5B);
+        data.SW5B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NE5B = (EditText) findViewById(R.id.NE5B);
+        data.NE5B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SE5B = (EditText) findViewById(R.id.SE5B);
+        data.SE5B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NW6A = (EditText) findViewById(R.id.NW6A);
+        data.NW6A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SW6A = (EditText) findViewById(R.id.SW6A);
+        data.SW6A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NE6A = (EditText) findViewById(R.id.NE6A);
+        data.NE6A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SE6A = (EditText) findViewById(R.id.SE6A);
+        data.SE6A.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NW6B = (EditText) findViewById(R.id.NW6B);
+        data.NW6B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SW6B = (EditText) findViewById(R.id.SW6B);
+        data.SW6B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.NE6B = (EditText) findViewById(R.id.NE6B);
+        data.NE6B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        data.SE6B = (EditText) findViewById(R.id.SE6B);
+        data.SE6B.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View view, boolean b) {
+                updateButtonPressed();
+            }
+        });
+
+        //No observed invasive plants
+        data.noObservedInvasivePlants = (CheckBox) findViewById(R.id.checkBox7);
+        data.noObservedInvasivePlants.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                updateButtonPressed();
+            }
+        });
+
+        //healthy light gaps
+        data.healthyLightGaps = (CheckBox) findViewById(R.id.checkBox8);
+        data.healthyLightGaps.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                updateButtonPressed();
+            }
+        });
+
+        //microtopography
+        data.microtopography = (CheckBox) findViewById(R.id.checkBox9);
+        data.microtopography.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                updateButtonPressed();
+            }
+        });
+
+        //absence of human activity
+        data.absenceOfHumanActivity = (CheckBox) findViewById(R.id.checkBox10);
+        data.absenceOfHumanActivity.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                updateButtonPressed();
+            }
+        });
+
+        //absence of deer browse line
+        data.absenceOfDeerBrowseLine = (CheckBox) findViewById(R.id.checkBox11);
+        data.absenceOfDeerBrowseLine.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                updateButtonPressed();
+            }
+        });
+
+        //section 12
+        data.a12 = (CheckBox) findViewById(R.id.checkBox12A);
+        data.a12.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                updateButtonPressed();
+            }
+        });
+        data.b12 = (CheckBox) findViewById(R.id.checkBox12B);
+        data.b12.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                updateButtonPressed();
+            }
+        });
+        data.c12 = (CheckBox) findViewById(R.id.checkBox12C);
+        data.c12.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                updateButtonPressed();
+            }
+        });
+        data.d12 = (CheckBox) findViewById(R.id.checkBox12D);
+        data.d12.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                updateButtonPressed();
+            }
+        });
+        data.e12 = (CheckBox) findViewById(R.id.checkBox12E);
+        data.e12.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                updateButtonPressed();
+            }
+        });
 
         //plant community
         data.addPlantCommunity = (Button) findViewById(R.id.select_community_type);
         data.addPlantCommunity.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                data.otherPlantCommunity = (EditText) findViewById(R.id.otherPlantCommunity);
                 data.addTreeToListPlantCommunity = (TextView) findViewById(R.id.community_type_value);
-                data.modifyCommunityType = data.addTreeToListPlantCommunity.getText().toString();
-                data.addTreeToListPlantCommunity.setText(data.selectedPlantCommunity);
+
+                if (data.selectedPlantCommunity.equals("Other")){
+                    data.otherPlantCommunity.setVisibility(View.VISIBLE);
+                    data.addTreeToListPlantCommunity.setVisibility(View.INVISIBLE);
+                    data.otherPlantCommunityInput = data.otherPlantCommunity.getText().toString();
+                }else {
+                    data.addTreeToListPlantCommunity.setVisibility(View.VISIBLE);
+                    data.otherPlantCommunity.setVisibility(View.INVISIBLE);
+                    data.modifyCommunityType = data.addTreeToListPlantCommunity.getText().toString();
+                    data.addTreeToListPlantCommunity.setText(data.selectedPlantCommunity);
+                }
+            }
+        });
+
+        data.clearPlantCommunity = (Button) findViewById(R.id.clear_community_type);
+        data.clearPlantCommunity.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                data.otherPlantCommunity = (EditText) findViewById(R.id.otherPlantCommunity);
+                data.addTreeToListPlantCommunity = (TextView) findViewById(R.id.community_type_value);
+                data.otherPlantCommunity.setVisibility(View.INVISIBLE);
+                data.addTreeToListPlantCommunity.setVisibility(View.INVISIBLE);
+                data.otherPlantCommunity.setText("");
+                data.otherPlantCommunityInput = "";
             }
         });
 
@@ -313,8 +646,13 @@ public class MainActivity extends AppCompatActivity {
         data.plant_community.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                data.otherPlantCommunity = (EditText) findViewById(R.id.otherPlantCommunity);
+                data.addTreeToListPlantCommunity = (TextView) findViewById(R.id.community_type_value);
+
                 if (data.selectedPlantCommunity == null) {
-                    data.selectedPlantCommunity = "";
+                    data.selectedPlantCommunity = "Beech-Maple";
+                    data.otherPlantCommunity.setVisibility(View.INVISIBLE);
+                    data.addTreeToListPlantCommunity.setVisibility(View.INVISIBLE);
                 } else {
                     data.selectedPlantCommunity = adapterView.getSelectedItem().toString();
                 }
@@ -361,6 +699,8 @@ public class MainActivity extends AppCompatActivity {
                 if (isCheckedYesBearingChanges == true) {
                     data.noBearingChanges.setChecked(false);
                     data.bearingChange = 1;
+                    data.bearingChangeAndRationale = (EditText) findViewById(R.id.bearings_rationale_input);
+                    data.changeAndRationale = data.bearingChangeAndRationale.getText().toString();
                 }
             }
         });
@@ -704,8 +1044,84 @@ public class MainActivity extends AppCompatActivity {
                 if (isCheckedSapling == true) {
                     data.saplingPresent = 1;
                 }
-                else
+                else {
                     data.saplingPresent = 0;
+                    data.addTreeToDominantSapling1 = (TextView) findViewById(R.id.dominantSapling1);
+                    data.addTreeToDominantSapling1.setText("");
+                    data.addTreeToDominantSapling2 = (TextView) findViewById(R.id.dominantSapling2);
+                    data.addTreeToDominantSapling2.setText("");
+                }
+            }
+        });
+
+        data.toggleSapling1 = (CheckBox) findViewById(R.id.checkBoxDominantSapling1);
+        data.toggleSapling1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedSapling1 = ((CheckBox) findViewById(R.id.checkBoxDominantSapling1)).isChecked();
+
+                if (isCheckedSapling1 == true) {
+                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
+                    data.toggleStandard1.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
+                    data.toggleStandard2.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
+                    data.toggleSapling2.setVisibility(View.INVISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.INVISIBLE);
+                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }
+                else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        data.toggleSapling2 = (CheckBox) findViewById(R.id.checkBoxDominantSapling2);
+        data.toggleSapling2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedSapling2 = ((CheckBox) findViewById(R.id.checkBoxDominantSapling2)).isChecked();
+
+                if (isCheckedSapling2 == true) {
+                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
+                    data.toggleStandard1.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
+                    data.toggleStandard2.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
+                    data.toggleSapling1.setVisibility(View.INVISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.INVISIBLE);
+                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -717,8 +1133,83 @@ public class MainActivity extends AppCompatActivity {
                 if (isCheckedsmallPole == true) {
                     data.smallPolePresent = 1;
                 }
-                else
+                else {
                     data.smallPolePresent = 0;
+                    data.addTreeToDominantSmallPole1 = (TextView) findViewById(R.id.dominantSmallPole1);
+                    data.addTreeToDominantSmallPole1.setText("");
+                    data.addTreeToDominantSmallPole2 = (TextView) findViewById(R.id.dominantSmallPole2);
+                    data.addTreeToDominantSmallPole2.setText("");
+                }
+            }
+        });
+
+        data.toggleSmallPole1 = (CheckBox) findViewById(R.id.checkBoxDominantSmallPole1);
+        data.toggleSmallPole1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedSmallPole1 = ((CheckBox) findViewById(R.id.checkBoxDominantSmallPole1)).isChecked();
+
+                if (isCheckedSmallPole1 == true) {
+                    data.toggleSapling1.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
+                    data.toggleStandard1.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
+                    data.toggleStandard2.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
+                    data.toggleSapling2.setVisibility(View.INVISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.INVISIBLE);
+                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        data.toggleSmallPole2 = (CheckBox) findViewById(R.id.checkBoxDominantSmallPole2);
+        data.toggleSmallPole2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedSmallPole2 = ((CheckBox) findViewById(R.id.checkBoxDominantSmallPole2)).isChecked();
+
+                if (isCheckedSmallPole2 == true) {
+                    data.toggleSapling1.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
+                    data.toggleStandard1.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
+                    data.toggleStandard2.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
+                    data.toggleSapling2.setVisibility(View.INVISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.INVISIBLE);
+                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -730,8 +1221,83 @@ public class MainActivity extends AppCompatActivity {
                 if (isCheckedmedPole == true) {
                     data.medPolePresent = 1;
                 }
-                else
+                else {
                     data.medPolePresent = 0;
+                    data.addTreeToDominantMedPole1 = (TextView) findViewById(R.id.dominantMedPole1);
+                    data.addTreeToDominantMedPole1.setText("");
+                    data.addTreeToDominantMedPole2 = (TextView) findViewById(R.id.dominantMedPole2);
+                    data.addTreeToDominantMedPole2.setText("");
+                }
+            }
+        });
+
+        data.toggleMedPole1 = (CheckBox) findViewById(R.id.checkBoxDominantMedPole1);
+        data.toggleMedPole1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedMedPole1 = ((CheckBox) findViewById(R.id.checkBoxDominantMedPole1)).isChecked();
+
+                if (isCheckedMedPole1 == true) {
+                    data.toggleSapling1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
+                    data.toggleStandard1.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
+                    data.toggleStandard2.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
+                    data.toggleSapling2.setVisibility(View.INVISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.INVISIBLE);
+                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        data.toggleMedPole2 = (CheckBox) findViewById(R.id.checkBoxDominantMedPole2);
+        data.toggleMedPole2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedMedPole2 = ((CheckBox) findViewById(R.id.checkBoxDominantMedPole2)).isChecked();
+
+                if (isCheckedMedPole2 == true) {
+                    data.toggleSapling1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
+                    data.toggleStandard1.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
+                    data.toggleStandard2.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
+                    data.toggleSapling2.setVisibility(View.INVISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.INVISIBLE);
+                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -743,8 +1309,83 @@ public class MainActivity extends AppCompatActivity {
                 if (isCheckedstandard == true) {
                     data.standardPresent = 1;
                 }
-                else
+                else {
                     data.standardPresent = 0;
+                    data.addTreeToDominantStandard1 = (TextView) findViewById(R.id.dominantStandard1);
+                    data.addTreeToDominantStandard1.setText("");
+                    data.addTreeToDominantStandard2 = (TextView) findViewById(R.id.dominantStandard2);
+                    data.addTreeToDominantStandard2.setText("");
+                }
+            }
+        });
+
+        data.toggleStandard1 = (CheckBox) findViewById(R.id.checkBoxDominantStandard1);
+        data.toggleStandard1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedStandard1 = ((CheckBox) findViewById(R.id.checkBoxDominantStandard1)).isChecked();
+
+                if (isCheckedStandard1 == true) {
+                    data.toggleSapling1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
+                    data.toggleStandard2.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
+                    data.toggleSapling2.setVisibility(View.INVISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.INVISIBLE);
+                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        data.toggleStandard2 = (CheckBox) findViewById(R.id.checkBoxDominantStandard2);
+        data.toggleStandard2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedStandard2 = ((CheckBox) findViewById(R.id.checkBoxDominantStandard2)).isChecked();
+
+                if (isCheckedStandard2 == true) {
+                    data.toggleSapling1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
+                    data.toggleStandard1.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
+                    data.toggleSapling2.setVisibility(View.INVISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.INVISIBLE);
+                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -756,8 +1397,136 @@ public class MainActivity extends AppCompatActivity {
                 if (isCheckedveteran == true) {
                     data.veteranPresent = 1;
                 }
-                else
+                else {
                     data.veteranPresent = 0;
+                    data.addTreeToDominantVeteran1 = (TextView) findViewById(R.id.dominantVeteran1);
+                    data.addTreeToDominantVeteran1.setText("");
+                    data.addTreeToDominantVeteran2 = (TextView) findViewById(R.id.dominantVeteran2);
+                    data.addTreeToDominantVeteran2.setText("");
+                }
+            }
+        });
+
+        data.toggleVeteran1 = (CheckBox) findViewById(R.id.checkBoxDominantVeteran1);
+        data.toggleVeteran1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedVeteran1 = ((CheckBox) findViewById(R.id.checkBoxDominantVeteran1)).isChecked();
+
+                if (isCheckedVeteran1 == true) {
+                    data.toggleSapling1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
+                    data.toggleStandard1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
+                    data.toggleStandard2.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
+                    data.toggleSapling2.setVisibility(View.INVISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.INVISIBLE);
+                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        data.toggleVeteran2 = (CheckBox) findViewById(R.id.checkBoxDominantVeteran2);
+        data.toggleVeteran2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedVeteran2 = ((CheckBox) findViewById(R.id.checkBoxDominantVeteran2)).isChecked();
+
+                if (isCheckedVeteran2 == true) {
+                    data.toggleSapling1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
+                    data.toggleStandard1.setVisibility(View.INVISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
+                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
+                    data.toggleStandard2.setVisibility(View.INVISIBLE);
+                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
+                    data.toggleSapling2.setVisibility(View.INVISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.INVISIBLE);
+                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
+                }else{
+                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                    data.toggleMedPole1.setVisibility(View.VISIBLE);
+                    data.toggleStandard1.setVisibility(View.VISIBLE);
+                    data.toggleVeteran1.setVisibility(View.VISIBLE);
+                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                    data.toggleMedPole2.setVisibility(View.VISIBLE);
+                    data.toggleStandard2.setVisibility(View.VISIBLE);
+                    data.toggleVeteran2.setVisibility(View.VISIBLE);
+                    data.toggleSapling2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                    data.clearAgeClassData.setVisibility(View.VISIBLE);
+                    data.toggleSapling1.setVisibility(View.VISIBLE);
+                }
+            }
+        });
+
+        data.clearAgeClassData = (Button) findViewById(R.id.clearAgeClassData);
+        data.clearAgeClassData.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                data.toggleSmallPole1 = (CheckBox) findViewById(R.id.checkBoxDominantSmallPole1);
+                data.toggleMedPole1 = (CheckBox) findViewById(R.id.checkBoxDominantMedPole1);
+                data.toggleSapling1 = (CheckBox) findViewById(R.id.checkBoxDominantSapling1);
+                data.toggleStandard1 = (CheckBox) findViewById(R.id.checkBoxDominantStandard1);
+                data.toggleVeteran1 = (CheckBox) findViewById(R.id.checkBoxDominantVeteran1);
+                data.toggleSapling2 = (CheckBox) findViewById(R.id.checkBoxDominantSapling2);
+                data.toggleSmallPole2 = (CheckBox) findViewById(R.id.checkBoxDominantSmallPole2);
+                data.toggleMedPole2 = (CheckBox) findViewById(R.id.checkBoxDominantMedPole2);
+                data.toggleStandard2 = (CheckBox) findViewById(R.id.checkBoxDominantStandard2);
+                data.toggleVeteran2 = (CheckBox) findViewById(R.id.checkBoxDominantVeteran2);
+
+                data.toggleSapling1.setChecked(false);
+                data.toggleSapling2.setChecked(false);
+                data.toggleSmallPole1.setChecked(false);
+                data.toggleSmallPole2.setChecked(false);
+                data.toggleMedPole1.setChecked(false);
+                data.toggleMedPole2.setChecked(false);
+                data.toggleStandard1.setChecked(false);
+                data.toggleStandard2.setChecked(false);
+                data.toggleVeteran1.setChecked(false);
+                data.toggleVeteran2.setChecked(false);
+                data.sapling.setChecked(false);
+                data.smallPole.setChecked(false);
+                data.medPole.setChecked(false);
+                data.standard.setChecked(false);
+                data.veteran.setChecked(false);
+
+                data.addTreeToDominantSapling1 = (TextView) findViewById(R.id.dominantSapling1);
+                data.addTreeToDominantSapling1.setText("");
+                data.addTreeToDominantSmallPole1 = (TextView) findViewById(R.id.dominantSmallPole1);
+                data.addTreeToDominantSmallPole1.setText("");
+                data.addTreeToDominantMedPole1 = (TextView) findViewById(R.id.dominantMedPole1);
+                data.addTreeToDominantMedPole1.setText("");
+                data.addTreeToDominantStandard1 = (TextView) findViewById(R.id.dominantStandard1);
+                data.addTreeToDominantStandard1.setText("");
+                data.addTreeToDominantVeteran1 = (TextView) findViewById(R.id.dominantVeteran1);
+                data.addTreeToDominantVeteran1.setText("");
+                data.addTreeToDominantSapling2 = (TextView) findViewById(R.id.dominantSapling2);
+                data.addTreeToDominantSapling2.setText("");
+                data.addTreeToDominantSmallPole2 = (TextView) findViewById(R.id.dominantSmallPole2);
+                data.addTreeToDominantSmallPole2.setText("");
+                data.addTreeToDominantMedPole2 = (TextView) findViewById(R.id.dominantMedPole2);
+                data.addTreeToDominantMedPole2.setText("");
+                data.addTreeToDominantStandard2 = (TextView) findViewById(R.id.dominantStandard2);
+                data.addTreeToDominantStandard2.setText("");
+                data.addTreeToDominantVeteran2 = (TextView) findViewById(R.id.dominantVeteran2);
+                data.addTreeToDominantVeteran2.setText("");
             }
         });
 
@@ -774,33 +1543,54 @@ public class MainActivity extends AppCompatActivity {
                 data.toggleSapling1 = (CheckBox) findViewById(R.id.checkBoxDominantSapling1);
                 data.toggleStandard1 = (CheckBox) findViewById(R.id.checkBoxDominantStandard1);
                 data.toggleVeteran1 = (CheckBox) findViewById(R.id.checkBoxDominantVeteran1);
-
+                View saplingDom2 = findViewById(R.id.checkBoxDominantSapling2);
+                View smallPoleDom2 = findViewById(R.id.checkBoxDominantSmallPole2);
+                View medPoleDom2 = findViewById(R.id.checkBoxDominantMedPole2);
+                View standardPoleDom2 = findViewById(R.id.checkBoxDominantStandard2);
+                View veteranPoleDom2 = findViewById(R.id.checkBoxDominantVeteran2);
+                data.toggleSapling1.setVisibility(View.VISIBLE);
+                data.toggleSmallPole1.setVisibility(View.VISIBLE);
+                data.toggleMedPole1.setVisibility(View.VISIBLE);
+                data.toggleStandard1.setVisibility(View.VISIBLE);
+                data.toggleVeteran1.setVisibility(View.VISIBLE);
+                saplingDom2.setVisibility(View.VISIBLE);
+                smallPoleDom2.setVisibility(View.VISIBLE);
+                medPoleDom2.setVisibility(View.VISIBLE);
+                standardPoleDom2.setVisibility(View.VISIBLE);
+                veteranPoleDom2.setVisibility(View.VISIBLE);
+                data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
+                data.clearAgeClassData.setVisibility(View.VISIBLE);
 
                 if (isCheckedDominantSapling1 == true) {
                     data.addTreeToDominantSapling1 = (TextView) findViewById(R.id.dominantSapling1);
                     data.dominantSapling1 = data.selectedAgeClass;
                     data.addTreeToDominantSapling1.setText(data.selectedAgeClass);
                     data.toggleSapling1.setChecked(false);
+                    data.sapling.setChecked(true);
                 }else if (isCheckedDominantSmallPole1 == true){
                     data.addTreeToDominantSmallPole1 = (TextView) findViewById(R.id.dominantSmallPole1);
                     data.dominantSmallPole1 = data.selectedAgeClass;
                     data.addTreeToDominantSmallPole1.setText(data.selectedAgeClass);
                     data.toggleSmallPole1.setChecked(false);
+                    data.smallPole.setChecked(true);
                 }else if (isCheckedDominantMedPole1 == true){
                     data.addTreeToDominantMedPole1 = (TextView) findViewById(R.id.dominantMedPole1);
                     data.dominantMedPole1 = data.selectedAgeClass;
                     data.addTreeToDominantMedPole1.setText(data.selectedAgeClass);
                     data.toggleMedPole1.setChecked(false);
+                    data.medPole.setChecked(true);
                 }else if (isCheckedDominantStandard1 == true){
                     data.addTreeToDominantStandard1 = (TextView) findViewById(R.id.dominantStandard1);
                     data.dominantStandardPole1 = data.selectedAgeClass;
                     data.addTreeToDominantStandard1.setText(data.selectedAgeClass);
                     data.toggleStandard1.setChecked(false);
+                    data.standard.setChecked(true);
                 }else if (isCheckedDominantVeteran1 == true){
                     data.addTreeToDominantVeteran1 = (TextView) findViewById(R.id.dominantVeteran1);
                     data.dominantVeteran1 = data.selectedAgeClass;
                     data.addTreeToDominantVeteran1.setText(data.selectedAgeClass);
                     data.toggleVeteran1.setChecked(false);
+                    data.veteran.setChecked(true);
                 }
 
             }
@@ -819,33 +1609,54 @@ public class MainActivity extends AppCompatActivity {
                 data.toggleMedPole2 = (CheckBox) findViewById(R.id.checkBoxDominantMedPole2);
                 data.toggleStandard2 = (CheckBox) findViewById(R.id.checkBoxDominantStandard2);
                 data.toggleVeteran2 = (CheckBox) findViewById(R.id.checkBoxDominantVeteran2);
-
+                View saplingDom1 = findViewById(R.id.checkBoxDominantSapling1);
+                View smallPoleDom1 = findViewById(R.id.checkBoxDominantSmallPole1);
+                View medPoleDom1 = findViewById(R.id.checkBoxDominantMedPole1);
+                View standardPoleDom1 = findViewById(R.id.checkBoxDominantStandard1);
+                View veteranPoleDom1 = findViewById(R.id.checkBoxDominantVeteran1);
+                data.toggleSapling2.setVisibility(View.VISIBLE);
+                data.toggleSmallPole2.setVisibility(View.VISIBLE);
+                data.toggleMedPole2.setVisibility(View.VISIBLE);
+                data.toggleStandard2.setVisibility(View.VISIBLE);
+                data.toggleVeteran2.setVisibility(View.VISIBLE);
+                saplingDom1.setVisibility(View.VISIBLE);
+                smallPoleDom1.setVisibility(View.VISIBLE);
+                medPoleDom1.setVisibility(View.VISIBLE);
+                standardPoleDom1.setVisibility(View.VISIBLE);
+                veteranPoleDom1.setVisibility(View.VISIBLE);
+                data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
+                data.clearAgeClassData.setVisibility(View.VISIBLE);
 
                 if (isCheckedDominantSapling2 == true){
                     data.addTreeToDominantSapling2 = (TextView) findViewById(R.id.dominantSapling2);
                     data.dominantSapling2 = data.selectedAgeClass;
                     data.addTreeToDominantSapling2.setText(data.selectedAgeClass);
                     data.toggleSapling2.setChecked(false);
+                    data.sapling.setChecked(true);
                 }else if (isCheckedDominantSmallPole2 == true){
                     data.addTreeToDominantSmallPole2 = (TextView) findViewById(R.id.dominantSmallPole2);
                     data.dominantSmallPole2 = data.selectedAgeClass;
                     data.addTreeToDominantSmallPole2.setText(data.selectedAgeClass);
                     data.toggleSmallPole2.setChecked(false);
+                    data.smallPole.setChecked(true);
                 }else if (isCheckedDominantMedPole2 == true){
                     data.addTreeToDominantMedPole2 = (TextView) findViewById(R.id.dominantMedPole2);
                     data.dominantMedPole2 = data.selectedAgeClass;
                     data.addTreeToDominantMedPole2.setText(data.selectedAgeClass);
                     data.toggleMedPole2.setChecked(false);
+                    data.medPole.setChecked(true);
                 }else if (isCheckedDominantStandard2 == true){
                     data.addTreeToDominantStandard2 = (TextView) findViewById(R.id.dominantStandard2);
                     data.dominantStandardPole2 = data.selectedAgeClass;
                     data.addTreeToDominantStandard2.setText(data.selectedAgeClass);
                     data.toggleStandard2.setChecked(false);
+                    data.standard.setChecked(true);
                 }else if (isCheckedDominantVeteran2 == true){
                     data.addTreeToDominantVeteran2 = (TextView) findViewById(R.id.dominantVeteran2);
                     data.dominantVeteran2 = data.selectedAgeClass;
                     data.addTreeToDominantVeteran2.setText(data.selectedAgeClass);
                     data.toggleVeteran2.setChecked(false);
+                    data.veteran.setChecked(true);
                 }
             }
         });
@@ -855,7 +1666,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (data.selectedAgeClass == null) {
-                    data.selectedAgeClass = "";
+                    data.selectedAgeClass = "AMBE";
                 } else{
                     data.selectedAgeClass = adapterView.getSelectedItem().toString();
                 }
@@ -873,6 +1684,28 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBeechPresent = ((CheckBox) findViewById(R.id.beechPresent)).isChecked();
 
                 if (isCheckedBeechPresent == false) {
+                    data.beechNone.setChecked(true);
+                    data.beechLow.setChecked(false);
+                    data.beechMedium.setChecked(false);
+                    data.beechHigh.setChecked(false);
+                    data.beech = 0;
+                    data.beechAbundance = "None";
+                }
+                else{
+                    data.beechNone.setChecked(false);
+                    data.beechLow.setChecked(true);
+                    data.beech = 1;
+                    data.beechAbundance = "Low";
+                }
+            }
+        });
+        data.beechNone = (CheckBox) findViewById(R.id.beechNone);
+        data.beechNone.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedBeechNone = ((CheckBox) findViewById(R.id.beechNone)).isChecked();
+
+                if (isCheckedBeechNone == true) {
+                    data.beechPresent.setChecked(false);
                     data.beechLow.setChecked(false);
                     data.beechMedium.setChecked(false);
                     data.beechHigh.setChecked(false);
@@ -888,12 +1721,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBeechLow = ((CheckBox) findViewById(R.id.beechLow)).isChecked();
 
                 if (isCheckedBeechPresent == true && isCheckedBeechLow == true) {
+                    data.beechNone.setChecked(false);
                     data.beechMedium.setChecked(false);
                     data.beechHigh.setChecked(false);
                     data.beech = 1;
                     data.beechAbundance = "Low";
                 }
                 else if (isCheckedBeechPresent == false && isCheckedBeechLow == true){
+                    data.beechNone.setChecked(false);
                     data.beechMedium.setChecked(false);
                     data.beechHigh.setChecked(false);
                     data.beechPresent.setChecked(true);
@@ -909,12 +1744,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBeechMedium = ((CheckBox) findViewById(R.id.beechMedium)).isChecked();
 
                 if (isCheckedBeechPresent == true && isCheckedBeechMedium == true) {
+                    data.beechNone.setChecked(false);
                     data.beechLow.setChecked(false);
                     data.beechHigh.setChecked(false);
                     data.beech = 1;
                     data.beechAbundance = "Medium";
                 }
                 else if (isCheckedBeechPresent == false && isCheckedBeechMedium == true){
+                    data.beechNone.setChecked(false);
                     data.beechLow.setChecked(false);
                     data.beechHigh.setChecked(false);
                     data.beechPresent.setChecked(true);
@@ -930,12 +1767,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBeechHigh = ((CheckBox) findViewById(R.id.beechHigh)).isChecked();
 
                 if (isCheckedBeechPresent == true && isCheckedBeechHigh == true) {
+                    data.beechNone.setChecked(false);
                     data.beechMedium.setChecked(false);
                     data.beechLow.setChecked(false);
                     data.beech = 1;
                     data.beechAbundance = "High";
                 }
                 else if (isCheckedBeechPresent == false && isCheckedBeechHigh == true){
+                    data.beechNone.setChecked(false);
                     data.beechMedium.setChecked(false);
                     data.beechLow.setChecked(false);
                     data.beechPresent.setChecked(true);
@@ -951,6 +1790,28 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBldPresent = ((CheckBox) findViewById(R.id.bldPresent)).isChecked();
 
                 if (isCheckedBldPresent == false) {
+                    data.bldNone.setChecked(true);
+                    data.bldLow.setChecked(false);
+                    data.bldModerate.setChecked(false);
+                    data.bldSevere.setChecked(false);
+                    data.bld = 0;
+                    data.bldSeverity = "None";
+                }
+                else{
+                    data.bldNone.setChecked(false);
+                    data.bldLow.setChecked(true);
+                    data.bld = 1;
+                    data.bldSeverity = "Low";
+                }
+            }
+        });
+        data.bldNone = (CheckBox) findViewById(R.id.bldNone);
+        data.bldNone.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedBldNone = ((CheckBox) findViewById(R.id.bldNone)).isChecked();
+
+                if (isCheckedBldNone == true) {
+                    data.bldPresent.setChecked(false);
                     data.bldLow.setChecked(false);
                     data.bldModerate.setChecked(false);
                     data.bldSevere.setChecked(false);
@@ -966,12 +1827,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBldLow = ((CheckBox) findViewById(R.id.bldLow)).isChecked();
 
                 if (isCheckedBldPresent == true && isCheckedBldLow == true) {
+                    data.bldNone.setChecked(false);
                     data.bldModerate.setChecked(false);
                     data.bldSevere.setChecked(false);
                     data.bld = 1;
                     data.bldSeverity = "Low";
                 }
                 else if (isCheckedBldPresent == false && isCheckedBldLow == true){
+                    data.bldNone.setChecked(false);
                     data.bldModerate.setChecked(false);
                     data.bldSevere.setChecked(false);
                     data.bldPresent.setChecked(true);
@@ -987,12 +1850,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBldModerate = ((CheckBox) findViewById(R.id.bldModerate)).isChecked();
 
                 if (isCheckedBldPresent == true && isCheckedBldModerate == true) {
+                    data.bldNone.setChecked(false);
                     data.bldLow.setChecked(false);
                     data.bldSevere.setChecked(false);
                     data.bld = 1;
                     data.bldSeverity = "Moderate";
                 }
                 else if (isCheckedBldPresent == false && isCheckedBldModerate == true){
+                    data.bldNone.setChecked(false);
                     data.bldLow.setChecked(false);
                     data.bldSevere.setChecked(false);
                     data.bldPresent.setChecked(true);
@@ -1008,12 +1873,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBldSevere= ((CheckBox) findViewById(R.id.bldSevere)).isChecked();
 
                 if (isCheckedBldPresent == true && isCheckedBldSevere == true) {
+                    data.bldNone.setChecked(false);
                     data.bldModerate.setChecked(false);
                     data.bldLow.setChecked(false);
                     data.bld = 1;
                     data.bldSeverity = "Severe";
                 }
                 else if (isCheckedBldPresent == false && isCheckedBldSevere == true){
+                    data.bldNone.setChecked(false);
                     data.bldModerate.setChecked(false);
                     data.bldLow.setChecked(false);
                     data.bldPresent.setChecked(true);
@@ -1029,6 +1896,28 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedashPresent = ((CheckBox) findViewById(R.id.ashPresent)).isChecked();
 
                 if (isCheckedashPresent == false) {
+                    data.ashNone.setChecked(true);
+                    data.ashLow.setChecked(false);
+                    data.ashMedium.setChecked(false);
+                    data.ashHigh.setChecked(false);
+                    data.ash = 0;
+                    data.ashAbundance = "None";
+                }
+                else{
+                    data.ashNone.setChecked(false);
+                    data.ashLow.setChecked(true);
+                    data.ash = 1;
+                    data.ashAbundance = "Low";
+                }
+            }
+        });
+        data.ashNone = (CheckBox) findViewById(R.id.ashNone);
+        data.ashNone.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedashNone = ((CheckBox) findViewById(R.id.ashNone)).isChecked();
+
+                if (isCheckedashNone == true) {
+                    data.ashPresent.setChecked(false);
                     data.ashLow.setChecked(false);
                     data.ashMedium.setChecked(false);
                     data.ashHigh.setChecked(false);
@@ -1044,12 +1933,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedashLow = ((CheckBox) findViewById(R.id.ashLow)).isChecked();
 
                 if (isCheckedashPresent == true && isCheckedashLow == true) {
+                    data.ashNone.setChecked(false);
                     data.ashMedium.setChecked(false);
                     data.ashHigh.setChecked(false);
                     data.ash = 1;
                     data.ashAbundance = "Low";
                 }
                 else if (isCheckedashPresent == false && isCheckedashLow == true){
+                    data.ashNone.setChecked(false);
                     data.ashMedium.setChecked(false);
                     data.ashHigh.setChecked(false);
                     data.ashPresent.setChecked(true);
@@ -1065,12 +1956,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedashMedium = ((CheckBox) findViewById(R.id.ashMedium)).isChecked();
 
                 if (isCheckedashPresent == true && isCheckedashMedium == true) {
+                    data.ashNone.setChecked(false);
                     data.ashLow.setChecked(false);
                     data.ashHigh.setChecked(false);
                     data.ash = 1;
                     data.ashAbundance = "Medium";
                 }
                 else if (isCheckedashPresent == false && isCheckedashMedium == true){
+                    data.ashNone.setChecked(false);
                     data.ashLow.setChecked(false);
                     data.ashHigh.setChecked(false);
                     data.ashPresent.setChecked(true);
@@ -1086,12 +1979,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedashHigh = ((CheckBox) findViewById(R.id.ashHigh)).isChecked();
 
                 if (isCheckedashPresent == true && isCheckedashHigh == true) {
+                    data.ashNone.setChecked(false);
                     data.ashMedium.setChecked(false);
                     data.ashLow.setChecked(false);
                     data.ash = 1;
                     data.ashAbundance = "High";
                 }
                 else if (isCheckedashPresent == false && isCheckedashHigh == true){
+                    data.ashNone.setChecked(false);
                     data.ashMedium.setChecked(false);
                     data.ashLow.setChecked(false);
                     data.ashPresent.setChecked(true);
@@ -1107,6 +2002,28 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeabPresent = ((CheckBox) findViewById(R.id.eabPresent)).isChecked();
 
                 if (isCheckedeabPresent == false) {
+                    data.eabNone.setChecked(true);
+                    data.eabLow.setChecked(false);
+                    data.eabModerate.setChecked(false);
+                    data.eabSevere.setChecked(false);
+                    data.eab = 0;
+                    data.eabSeverity = "None";
+                }
+                else{
+                    data.eabNone.setChecked(false);
+                    data.eabLow.setChecked(true);
+                    data.eab = 1;
+                    data.eabSeverity = "Low";
+                }
+            }
+        });
+        data.eabNone = (CheckBox) findViewById(R.id.eabNone);
+        data.eabNone.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedeabNone = ((CheckBox) findViewById(R.id.eabNone)).isChecked();
+
+                if (isCheckedeabNone == true) {
+                    data.eabPresent.setChecked(false);
                     data.eabLow.setChecked(false);
                     data.eabModerate.setChecked(false);
                     data.eabSevere.setChecked(false);
@@ -1122,12 +2039,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeabLow = ((CheckBox) findViewById(R.id.eabLow)).isChecked();
 
                 if (isCheckedeabPresent == true && isCheckedeabLow == true) {
+                    data.eabNone.setChecked(false);
                     data.eabModerate.setChecked(false);
                     data.eabSevere.setChecked(false);
                     data.eab = 1;
                     data.eabSeverity = "Low";
                 }
                 else if (isCheckedeabPresent == false && isCheckedeabLow == true){
+                    data.eabNone.setChecked(false);
                     data.eabModerate.setChecked(false);
                     data.eabSevere.setChecked(false);
                     data.eabPresent.setChecked(true);
@@ -1143,12 +2062,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeabModerate = ((CheckBox) findViewById(R.id.eabModerate)).isChecked();
 
                 if (isCheckedeabPresent == true && isCheckedeabModerate == true) {
+                    data.eabNone.setChecked(false);
                     data.eabLow.setChecked(false);
                     data.eabSevere.setChecked(false);
                     data.eab = 1;
                     data.eabSeverity = "Moderate";
                 }
                 else if (isCheckedeabPresent == false && isCheckedeabModerate == true){
+                    data.eabNone.setChecked(false);
                     data.eabLow.setChecked(false);
                     data.eabSevere.setChecked(false);
                     data.eabPresent.setChecked(true);
@@ -1164,12 +2085,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeabSevere= ((CheckBox) findViewById(R.id.eabSevere)).isChecked();
 
                 if (isCheckedeabPresent == true && isCheckedeabSevere == true) {
+                    data.eabNone.setChecked(false);
                     data.eabModerate.setChecked(false);
                     data.eabLow.setChecked(false);
                     data.eab = 1;
                     data.eabSeverity = "Severe";
                 }
                 else if (isCheckedeabPresent == false && isCheckedeabSevere == true){
+                    data.eabNone.setChecked(false);
                     data.eabModerate.setChecked(false);
                     data.eabLow.setChecked(false);
                     data.eabPresent.setChecked(true);
@@ -1185,6 +2108,28 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeahePresent = ((CheckBox) findViewById(R.id.EAHEPresent)).isChecked();
 
                 if (isCheckedeahePresent == false) {
+                    data.eaheNone.setChecked(true);
+                    data.eaheLow.setChecked(false);
+                    data.eaheMedium.setChecked(false);
+                    data.eaheHigh.setChecked(false);
+                    data.eahe = 0;
+                    data.eaheAbundance = "None";
+                }
+                else{
+                    data.eaheNone.setChecked(false);
+                    data.eaheLow.setChecked(true);
+                    data.eahe = 1;
+                    data.eaheAbundance = "Low";
+                }
+            }
+        });
+        data.eaheNone = (CheckBox) findViewById(R.id.EAHENone);
+        data.eaheNone.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedashNone = ((CheckBox) findViewById(R.id.EAHENone)).isChecked();
+
+                if (isCheckedashNone == true) {
+                    data.eahePresent.setChecked(false);
                     data.eaheLow.setChecked(false);
                     data.eaheMedium.setChecked(false);
                     data.eaheHigh.setChecked(false);
@@ -1200,12 +2145,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeaheLow = ((CheckBox) findViewById(R.id.EAHELow)).isChecked();
 
                 if (isCheckedeahePresent == true && isCheckedeaheLow == true) {
+                    data.eaheNone.setChecked(false);
                     data.eaheMedium.setChecked(false);
                     data.eaheHigh.setChecked(false);
                     data.eahe = 1;
                     data.eaheAbundance = "Low";
                 }
                 else if (isCheckedeahePresent == false && isCheckedeaheLow == true){
+                    data.eaheNone.setChecked(false);
                     data.eaheMedium.setChecked(false);
                     data.eaheHigh.setChecked(false);
                     data.eahePresent.setChecked(true);
@@ -1221,12 +2168,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeaheMedium = ((CheckBox) findViewById(R.id.EAHEMedium)).isChecked();
 
                 if (isCheckedeahePresent == true && isCheckedeaheMedium == true) {
+                    data.eaheNone.setChecked(false);
                     data.eaheLow.setChecked(false);
                     data.eaheHigh.setChecked(false);
                     data.eahe = 1;
                     data.eaheAbundance = "Medium";
                 }
                 else if (isCheckedeahePresent == false && isCheckedeaheMedium == true){
+                    data.eaheNone.setChecked(false);
                     data.eaheLow.setChecked(false);
                     data.eaheHigh.setChecked(false);
                     data.eahePresent.setChecked(true);
@@ -1242,12 +2191,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeaheHigh = ((CheckBox) findViewById(R.id.EAHEHigh)).isChecked();
 
                 if (isCheckedeahePresent == true && isCheckedeaheHigh == true) {
+                    data.eaheNone.setChecked(false);
                     data.eaheMedium.setChecked(false);
                     data.eaheLow.setChecked(false);
                     data.eahe = 1;
                     data.eaheAbundance = "High";
                 }
                 else if (isCheckedeahePresent == false && isCheckedeaheHigh == true){
+                    data.eaheNone.setChecked(false);
                     data.eaheMedium.setChecked(false);
                     data.eaheLow.setChecked(false);
                     data.eahePresent.setChecked(true);
@@ -1263,6 +2214,28 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedhwaPresent = ((CheckBox) findViewById(R.id.HWAPresent)).isChecked();
 
                 if (isCheckedhwaPresent == false) {
+                    data.hwaNone.setChecked(true);
+                    data.hwaLow.setChecked(false);
+                    data.hwaModerate.setChecked(false);
+                    data.hwaSevere.setChecked(false);
+                    data.hwa = 0;
+                    data.hwaSeverity = "None";
+                }
+                else{
+                    data.hwaNone.setChecked(false);
+                    data.hwaLow.setChecked(true);
+                    data.hwa = 1;
+                    data.hwaSeverity = "Low";
+                }
+            }
+        });
+        data.hwaNone = (CheckBox) findViewById(R.id.HWANone);
+        data.hwaNone.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                boolean isCheckedeabNone = ((CheckBox) findViewById(R.id.HWANone)).isChecked();
+
+                if (isCheckedeabNone == true) {
+                    data.hwaPresent.setChecked(false);
                     data.hwaLow.setChecked(false);
                     data.hwaModerate.setChecked(false);
                     data.hwaSevere.setChecked(false);
@@ -1278,12 +2251,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedhwaLow = ((CheckBox) findViewById(R.id.HWALow)).isChecked();
 
                 if (isCheckedhwaPresent == true && isCheckedhwaLow == true) {
+                    data.hwaNone.setChecked(false);
                     data.hwaModerate.setChecked(false);
                     data.hwaSevere.setChecked(false);
                     data.hwa = 1;
                     data.hwaSeverity = "Low";
                 }
                 else if (isCheckedhwaPresent == false && isCheckedhwaLow == true){
+                    data.hwaNone.setChecked(false);
                     data.hwaModerate.setChecked(false);
                     data.hwaSevere.setChecked(false);
                     data.hwaPresent.setChecked(true);
@@ -1299,12 +2274,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedhwaModerate = ((CheckBox) findViewById(R.id.HWAModerate)).isChecked();
 
                 if (isCheckedhwaPresent == true && isCheckedhwaModerate == true) {
+                    data.hwaNone.setChecked(false);
                     data.hwaLow.setChecked(false);
                     data.hwaSevere.setChecked(false);
                     data.hwa = 1;
                     data.hwaSeverity = "Moderate";
                 }
                 else if (isCheckedhwaPresent == false && isCheckedhwaModerate == true){
+                    data.hwaNone.setChecked(false);
                     data.hwaLow.setChecked(false);
                     data.hwaSevere.setChecked(false);
                     data.hwaPresent.setChecked(true);
@@ -1320,12 +2297,14 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedhwaSevere= ((CheckBox) findViewById(R.id.HWASevere)).isChecked();
 
                 if (isCheckedhwaPresent == true && isCheckedhwaSevere == true) {
+                    data.hwaNone.setChecked(false);
                     data.hwaModerate.setChecked(false);
                     data.hwaLow.setChecked(false);
                     data.hwa = 1;
                     data.hwaSeverity = "Severe";
                 }
                 else if (isCheckedhwaPresent == false && isCheckedhwaSevere == true){
+                    data.hwaNone.setChecked(false);
                     data.hwaModerate.setChecked(false);
                     data.hwaLow.setChecked(false);
                     data.hwaPresent.setChecked(true);
@@ -1639,8 +2618,14 @@ public class MainActivity extends AppCompatActivity {
         totalPoints();
         data.totalPoints = (TextView) findViewById(R.id.totalPoints);
         data.modifyTotalPoints = data.totalPoints.getText().toString();
-        data.modifyTotalPoints = Integer.toString(data.total);
+        data.modifyTotalPoints = "Points:" + " " + Integer.toString(data.total) +  "   " + "Integrity Rank:" + " " + data.qualityRank;
         data.totalPoints.setText(data.modifyTotalPoints);
+
+        //notes saved
+        data.notes1 = (EditText) findViewById(R.id.notesInput1);
+        data.notes2 = (EditText) findViewById(R.id.notesInput2);
+        data.notes3 = (EditText) findViewById(R.id.notesInput3);
+        data.notes = data.notes1.getText().toString() + " " + data.notes2.getText().toString() + " " + data.notes3.getText().toString();
     }
 
     //get Cell value
@@ -2295,9 +3280,9 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Holder<Object>(data.SW3Anumber,1));
         list.add(new Holder<Object>(data.sum3A,1));
         list.add(new Holder<Object>(data.point3A,1));
-        list.add(new Holder<Object>(data.selected3B,0));
-        list.add(new Holder<Object>(data.selected3BDominant1,0));
-        list.add(new Holder<Object>(data.selected3BDominant2,0));
+        list.add(new Holder<Object>(data.list3B,0));
+        list.add(new Holder<Object>(data.dominant3B1,0));
+        list.add(new Holder<Object>(data.dominant3B2,0));
         list.add(new Holder<Object>(data.sum3B,1));
         list.add(new Holder<Object>(data.point3B,1));
         list.add(new Holder<Object>(data.NW4Anumber,1));
@@ -2306,7 +3291,7 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Holder<Object>(data.SW4Anumber,1));
         list.add(new Holder<Object>(data.sum4A,1));
         list.add(new Holder<Object>(data.point4A,1));
-        list.add(new Holder<Object>(data.selected4B,0));
+        list.add(new Holder<Object>(data.list4B,0));
         list.add(new Holder<Object>(data.sum4B,1));
         list.add(new Holder<Object>(data.point4B,1));
         list.add(new Holder<Object>(data.NW5Anumber,1));
