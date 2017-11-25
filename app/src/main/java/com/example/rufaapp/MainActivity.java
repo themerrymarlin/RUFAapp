@@ -2393,7 +2393,7 @@ public class MainActivity extends AppCompatActivity {
         ExternalStorageAccessor ea = new ExternalStorageAccessor();
         if(ea.isStorageWriteable()){
             try {
-                ea.writeToCsv(RUFAdbOpenHelper.getKeyList(), getValues());
+                ea.writeToCsv(getApplicationContext(), RUFAdbOpenHelper.getKeyList(), getValues());
                 return true;
             }catch (IOException e){
                 return false;

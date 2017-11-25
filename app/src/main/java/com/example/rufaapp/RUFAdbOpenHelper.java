@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.google.gson.Gson;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -135,6 +137,10 @@ class RUFAdbOpenHelper extends SQLiteOpenHelper {
     }
 
     public static ArrayList<String> getKeyList(){
-        return ((ArrayList<String>)Arrays.asList(keyList));
+        ArrayList<String> ret = new ArrayList<>(keyList.length);
+        for(String s : keyList){
+            ret.add(s);
+        }
+        return ret;
     }
 }
