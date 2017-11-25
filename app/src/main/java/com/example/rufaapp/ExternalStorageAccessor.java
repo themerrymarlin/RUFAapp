@@ -1,6 +1,7 @@
 package com.example.rufaapp;
 
 import android.content.Context;
+import android.media.MediaScannerConnection;
 import android.os.Environment;
 import android.util.Log;
 
@@ -38,7 +39,6 @@ public class ExternalStorageAccessor {
     }
 
     public void writeToCsv(Context context, ArrayList<String> keyList, ArrayList<Holder<Object>> values) throws IOException {
-        Log.i("csv","writing to csv");
         Log.i("csv","writeable: " + isStorageWriteable());
         File[] fs = context.getExternalFilesDirs(null);
         if(fs != null && fs.length > 1){
@@ -52,7 +52,16 @@ public class ExternalStorageAccessor {
         String path = dir + File.separator + fileName;
         Log.i("csv","opening file");
         Log.i("csv",path);
-        File f = new File(path);
+        File p = new File(dir);
+        Log.i("csv",p.getAbsolutePath());
+        if(!p.mkdirs()) {
+            Log.i("csv","dir failure");
+        }else{
+            Log.i("csv","dirs made");
+        }
+        File f = new File(p,"data.csv");
+        boolean newFile = f.createNewFile();
+        Log.i("csv",f.getAbsolutePath());
         String[] row1 = new String[keyList.size()];
         row1 = keyList.toArray(row1);
         String[] row2 = new String[keyList.size()];
@@ -66,14 +75,14 @@ public class ExternalStorageAccessor {
         Log.i("csv","can write " + f.canWrite());
         Log.i("csv","f:"+f.getAbsolutePath());
         Log.i("csv","new" + f.createNewFile());
-        //if(f.createNewFile()) {
-          //  Log.i("csv","create file");
+        if(newFile) {
+            Log.i("csv","create file");
             writer.writeNext(row1);
-        //}
+        }
         writer.writeNext(row2);
         writer.close();
-        Log.i("csv",row1[0]);
-        Log.i("csv",row2[0]);
         Log.i("csv","writer close");
+        MediaScannerConnection.scanFile(context,new String[]{f.getAbsolutePath()},new String[]{"text/csv"},null);
+        Log.i("csv","index updated");
     }
 }
