@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 if(permCheck != permGranted){
                     ActivityCompat.requestPermissions(getParent(),new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},5);
                 }else{
+                    updateButtonPressed();
                     saveToCSV();
                 }
             }
@@ -699,8 +700,6 @@ public class MainActivity extends AppCompatActivity {
                 if (isCheckedYesBearingChanges == true) {
                     data.noBearingChanges.setChecked(false);
                     data.bearingChange = 1;
-                    data.bearingChangeAndRationale = (EditText) findViewById(R.id.bearings_rationale_input);
-                    data.changeAndRationale = data.bearingChangeAndRationale.getText().toString();
                 }
             }
         });
@@ -1004,8 +1003,6 @@ public class MainActivity extends AppCompatActivity {
                     data.noneEvident.setChecked(false);
                     data.noneEvidentval = 0;
                     data.otherval = 1;
-                    data.otherInput = (EditText) findViewById(R.id.other_landUse_input);
-                    data.otherLandUseEvidence = data.otherInput.getText().toString();
                 }
             }
         });
@@ -1054,77 +1051,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        data.toggleSapling1 = (CheckBox) findViewById(R.id.checkBoxDominantSapling1);
-        data.toggleSapling1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                boolean isCheckedSapling1 = ((CheckBox) findViewById(R.id.checkBoxDominantSapling1)).isChecked();
-
-                if (isCheckedSapling1 == true) {
-                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
-                    data.toggleStandard1.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
-                    data.toggleStandard2.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
-                    data.toggleSapling2.setVisibility(View.INVISIBLE);
-                    data.addDominantAgeClasses2.setVisibility(View.INVISIBLE);
-                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
-                }
-                else{
-                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
-                    data.toggleMedPole1.setVisibility(View.VISIBLE);
-                    data.toggleStandard1.setVisibility(View.VISIBLE);
-                    data.toggleVeteran1.setVisibility(View.VISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
-                    data.toggleMedPole2.setVisibility(View.VISIBLE);
-                    data.toggleStandard2.setVisibility(View.VISIBLE);
-                    data.toggleVeteran2.setVisibility(View.VISIBLE);
-                    data.toggleSapling2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
-                    data.clearAgeClassData.setVisibility(View.VISIBLE);
-                    data.toggleSapling1.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
-        data.toggleSapling2 = (CheckBox) findViewById(R.id.checkBoxDominantSapling2);
-        data.toggleSapling2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                boolean isCheckedSapling2 = ((CheckBox) findViewById(R.id.checkBoxDominantSapling2)).isChecked();
-
-                if (isCheckedSapling2 == true) {
-                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
-                    data.toggleStandard1.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
-                    data.toggleStandard2.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
-                    data.toggleSapling1.setVisibility(View.INVISIBLE);
-                    data.addDominantAgeClasses1.setVisibility(View.INVISIBLE);
-                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
-                }else{
-                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
-                    data.toggleMedPole1.setVisibility(View.VISIBLE);
-                    data.toggleStandard1.setVisibility(View.VISIBLE);
-                    data.toggleVeteran1.setVisibility(View.VISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
-                    data.toggleMedPole2.setVisibility(View.VISIBLE);
-                    data.toggleStandard2.setVisibility(View.VISIBLE);
-                    data.toggleVeteran2.setVisibility(View.VISIBLE);
-                    data.toggleSapling2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
-                    data.clearAgeClassData.setVisibility(View.VISIBLE);
-                    data.toggleSapling1.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
         data.smallPole = (CheckBox) findViewById(R.id.checkBoxSmallPole);
         data.smallPole.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -1139,76 +1065,6 @@ public class MainActivity extends AppCompatActivity {
                     data.addTreeToDominantSmallPole1.setText("");
                     data.addTreeToDominantSmallPole2 = (TextView) findViewById(R.id.dominantSmallPole2);
                     data.addTreeToDominantSmallPole2.setText("");
-                }
-            }
-        });
-
-        data.toggleSmallPole1 = (CheckBox) findViewById(R.id.checkBoxDominantSmallPole1);
-        data.toggleSmallPole1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                boolean isCheckedSmallPole1 = ((CheckBox) findViewById(R.id.checkBoxDominantSmallPole1)).isChecked();
-
-                if (isCheckedSmallPole1 == true) {
-                    data.toggleSapling1.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
-                    data.toggleStandard1.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
-                    data.toggleStandard2.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
-                    data.toggleSapling2.setVisibility(View.INVISIBLE);
-                    data.addDominantAgeClasses2.setVisibility(View.INVISIBLE);
-                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
-                }else{
-                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
-                    data.toggleMedPole1.setVisibility(View.VISIBLE);
-                    data.toggleStandard1.setVisibility(View.VISIBLE);
-                    data.toggleVeteran1.setVisibility(View.VISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
-                    data.toggleMedPole2.setVisibility(View.VISIBLE);
-                    data.toggleStandard2.setVisibility(View.VISIBLE);
-                    data.toggleVeteran2.setVisibility(View.VISIBLE);
-                    data.toggleSapling2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
-                    data.clearAgeClassData.setVisibility(View.VISIBLE);
-                    data.toggleSapling1.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
-        data.toggleSmallPole2 = (CheckBox) findViewById(R.id.checkBoxDominantSmallPole2);
-        data.toggleSmallPole2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                boolean isCheckedSmallPole2 = ((CheckBox) findViewById(R.id.checkBoxDominantSmallPole2)).isChecked();
-
-                if (isCheckedSmallPole2 == true) {
-                    data.toggleSapling1.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
-                    data.toggleStandard1.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
-                    data.toggleStandard2.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
-                    data.toggleSapling2.setVisibility(View.INVISIBLE);
-                    data.addDominantAgeClasses1.setVisibility(View.INVISIBLE);
-                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
-                }else{
-                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
-                    data.toggleMedPole1.setVisibility(View.VISIBLE);
-                    data.toggleStandard1.setVisibility(View.VISIBLE);
-                    data.toggleVeteran1.setVisibility(View.VISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
-                    data.toggleMedPole2.setVisibility(View.VISIBLE);
-                    data.toggleStandard2.setVisibility(View.VISIBLE);
-                    data.toggleVeteran2.setVisibility(View.VISIBLE);
-                    data.toggleSapling2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
-                    data.clearAgeClassData.setVisibility(View.VISIBLE);
-                    data.toggleSapling1.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1231,76 +1087,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        data.toggleMedPole1 = (CheckBox) findViewById(R.id.checkBoxDominantMedPole1);
-        data.toggleMedPole1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                boolean isCheckedMedPole1 = ((CheckBox) findViewById(R.id.checkBoxDominantMedPole1)).isChecked();
-
-                if (isCheckedMedPole1 == true) {
-                    data.toggleSapling1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
-                    data.toggleStandard1.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
-                    data.toggleStandard2.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
-                    data.toggleSapling2.setVisibility(View.INVISIBLE);
-                    data.addDominantAgeClasses2.setVisibility(View.INVISIBLE);
-                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
-                }else{
-                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
-                    data.toggleMedPole1.setVisibility(View.VISIBLE);
-                    data.toggleStandard1.setVisibility(View.VISIBLE);
-                    data.toggleVeteran1.setVisibility(View.VISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
-                    data.toggleMedPole2.setVisibility(View.VISIBLE);
-                    data.toggleStandard2.setVisibility(View.VISIBLE);
-                    data.toggleVeteran2.setVisibility(View.VISIBLE);
-                    data.toggleSapling2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
-                    data.clearAgeClassData.setVisibility(View.VISIBLE);
-                    data.toggleSapling1.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
-        data.toggleMedPole2 = (CheckBox) findViewById(R.id.checkBoxDominantMedPole2);
-        data.toggleMedPole2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                boolean isCheckedMedPole2 = ((CheckBox) findViewById(R.id.checkBoxDominantMedPole2)).isChecked();
-
-                if (isCheckedMedPole2 == true) {
-                    data.toggleSapling1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
-                    data.toggleStandard1.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
-                    data.toggleStandard2.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
-                    data.toggleSapling2.setVisibility(View.INVISIBLE);
-                    data.addDominantAgeClasses1.setVisibility(View.INVISIBLE);
-                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
-                }else{
-                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
-                    data.toggleMedPole1.setVisibility(View.VISIBLE);
-                    data.toggleStandard1.setVisibility(View.VISIBLE);
-                    data.toggleVeteran1.setVisibility(View.VISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
-                    data.toggleMedPole2.setVisibility(View.VISIBLE);
-                    data.toggleStandard2.setVisibility(View.VISIBLE);
-                    data.toggleVeteran2.setVisibility(View.VISIBLE);
-                    data.toggleSapling2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
-                    data.clearAgeClassData.setVisibility(View.VISIBLE);
-                    data.toggleSapling1.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
         data.standard = (CheckBox) findViewById(R.id.checkBoxStandard);
         data.standard.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -1315,76 +1101,6 @@ public class MainActivity extends AppCompatActivity {
                     data.addTreeToDominantStandard1.setText("");
                     data.addTreeToDominantStandard2 = (TextView) findViewById(R.id.dominantStandard2);
                     data.addTreeToDominantStandard2.setText("");
-                }
-            }
-        });
-
-        data.toggleStandard1 = (CheckBox) findViewById(R.id.checkBoxDominantStandard1);
-        data.toggleStandard1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                boolean isCheckedStandard1 = ((CheckBox) findViewById(R.id.checkBoxDominantStandard1)).isChecked();
-
-                if (isCheckedStandard1 == true) {
-                    data.toggleSapling1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
-                    data.toggleStandard2.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
-                    data.toggleSapling2.setVisibility(View.INVISIBLE);
-                    data.addDominantAgeClasses2.setVisibility(View.INVISIBLE);
-                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
-                }else{
-                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
-                    data.toggleMedPole1.setVisibility(View.VISIBLE);
-                    data.toggleStandard1.setVisibility(View.VISIBLE);
-                    data.toggleVeteran1.setVisibility(View.VISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
-                    data.toggleMedPole2.setVisibility(View.VISIBLE);
-                    data.toggleStandard2.setVisibility(View.VISIBLE);
-                    data.toggleVeteran2.setVisibility(View.VISIBLE);
-                    data.toggleSapling2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
-                    data.clearAgeClassData.setVisibility(View.VISIBLE);
-                    data.toggleSapling1.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
-        data.toggleStandard2 = (CheckBox) findViewById(R.id.checkBoxDominantStandard2);
-        data.toggleStandard2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                boolean isCheckedStandard2 = ((CheckBox) findViewById(R.id.checkBoxDominantStandard2)).isChecked();
-
-                if (isCheckedStandard2 == true) {
-                    data.toggleSapling1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
-                    data.toggleStandard1.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
-                    data.toggleSapling2.setVisibility(View.INVISIBLE);
-                    data.addDominantAgeClasses1.setVisibility(View.INVISIBLE);
-                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
-                }else{
-                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
-                    data.toggleMedPole1.setVisibility(View.VISIBLE);
-                    data.toggleStandard1.setVisibility(View.VISIBLE);
-                    data.toggleVeteran1.setVisibility(View.VISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
-                    data.toggleMedPole2.setVisibility(View.VISIBLE);
-                    data.toggleStandard2.setVisibility(View.VISIBLE);
-                    data.toggleVeteran2.setVisibility(View.VISIBLE);
-                    data.toggleSapling2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
-                    data.clearAgeClassData.setVisibility(View.VISIBLE);
-                    data.toggleSapling1.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -1407,105 +1123,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        data.toggleVeteran1 = (CheckBox) findViewById(R.id.checkBoxDominantVeteran1);
-        data.toggleVeteran1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                boolean isCheckedVeteran1 = ((CheckBox) findViewById(R.id.checkBoxDominantVeteran1)).isChecked();
-
-                if (isCheckedVeteran1 == true) {
-                    data.toggleSapling1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
-                    data.toggleStandard1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
-                    data.toggleStandard2.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran2.setVisibility(View.INVISIBLE);
-                    data.toggleSapling2.setVisibility(View.INVISIBLE);
-                    data.addDominantAgeClasses2.setVisibility(View.INVISIBLE);
-                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
-                }else{
-                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
-                    data.toggleMedPole1.setVisibility(View.VISIBLE);
-                    data.toggleStandard1.setVisibility(View.VISIBLE);
-                    data.toggleVeteran1.setVisibility(View.VISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
-                    data.toggleMedPole2.setVisibility(View.VISIBLE);
-                    data.toggleStandard2.setVisibility(View.VISIBLE);
-                    data.toggleVeteran2.setVisibility(View.VISIBLE);
-                    data.toggleSapling2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
-                    data.clearAgeClassData.setVisibility(View.VISIBLE);
-                    data.toggleSapling1.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
-        data.toggleVeteran2 = (CheckBox) findViewById(R.id.checkBoxDominantVeteran2);
-        data.toggleVeteran2.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                boolean isCheckedVeteran2 = ((CheckBox) findViewById(R.id.checkBoxDominantVeteran2)).isChecked();
-
-                if (isCheckedVeteran2 == true) {
-                    data.toggleSapling1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole1.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole1.setVisibility(View.INVISIBLE);
-                    data.toggleStandard1.setVisibility(View.INVISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.INVISIBLE);
-                    data.toggleMedPole2.setVisibility(View.INVISIBLE);
-                    data.toggleStandard2.setVisibility(View.INVISIBLE);
-                    data.toggleVeteran1.setVisibility(View.INVISIBLE);
-                    data.toggleSapling2.setVisibility(View.INVISIBLE);
-                    data.addDominantAgeClasses1.setVisibility(View.INVISIBLE);
-                    data.clearAgeClassData.setVisibility(View.INVISIBLE);
-                }else{
-                    data.toggleSmallPole1.setVisibility(View.VISIBLE);
-                    data.toggleMedPole1.setVisibility(View.VISIBLE);
-                    data.toggleStandard1.setVisibility(View.VISIBLE);
-                    data.toggleVeteran1.setVisibility(View.VISIBLE);
-                    data.toggleSmallPole2.setVisibility(View.VISIBLE);
-                    data.toggleMedPole2.setVisibility(View.VISIBLE);
-                    data.toggleStandard2.setVisibility(View.VISIBLE);
-                    data.toggleVeteran2.setVisibility(View.VISIBLE);
-                    data.toggleSapling2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
-                    data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
-                    data.clearAgeClassData.setVisibility(View.VISIBLE);
-                    data.toggleSapling1.setVisibility(View.VISIBLE);
-                }
-            }
-        });
-
         data.clearAgeClassData = (Button) findViewById(R.id.clearAgeClassData);
         data.clearAgeClassData.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                data.toggleSmallPole1 = (CheckBox) findViewById(R.id.checkBoxDominantSmallPole1);
-                data.toggleMedPole1 = (CheckBox) findViewById(R.id.checkBoxDominantMedPole1);
-                data.toggleSapling1 = (CheckBox) findViewById(R.id.checkBoxDominantSapling1);
-                data.toggleStandard1 = (CheckBox) findViewById(R.id.checkBoxDominantStandard1);
-                data.toggleVeteran1 = (CheckBox) findViewById(R.id.checkBoxDominantVeteran1);
-                data.toggleSapling2 = (CheckBox) findViewById(R.id.checkBoxDominantSapling2);
-                data.toggleSmallPole2 = (CheckBox) findViewById(R.id.checkBoxDominantSmallPole2);
-                data.toggleMedPole2 = (CheckBox) findViewById(R.id.checkBoxDominantMedPole2);
-                data.toggleStandard2 = (CheckBox) findViewById(R.id.checkBoxDominantStandard2);
-                data.toggleVeteran2 = (CheckBox) findViewById(R.id.checkBoxDominantVeteran2);
 
-                data.toggleSapling1.setChecked(false);
-                data.toggleSapling2.setChecked(false);
-                data.toggleSmallPole1.setChecked(false);
-                data.toggleSmallPole2.setChecked(false);
-                data.toggleMedPole1.setChecked(false);
-                data.toggleMedPole2.setChecked(false);
-                data.toggleStandard1.setChecked(false);
-                data.toggleStandard2.setChecked(false);
-                data.toggleVeteran1.setChecked(false);
-                data.toggleVeteran2.setChecked(false);
                 data.sapling.setChecked(false);
                 data.smallPole.setChecked(false);
                 data.medPole.setChecked(false);
                 data.standard.setChecked(false);
                 data.veteran.setChecked(false);
+
+                data.saplingPresent = 0;
+                data.smallPolePresent = 0;
+                data.medPolePresent = 0;
+                data.standardPresent = 0;
+                data.veteranPresent = 0;
 
                 data.addTreeToDominantSapling1 = (TextView) findViewById(R.id.dominantSapling1);
                 data.addTreeToDominantSapling1.setText("");
@@ -1530,134 +1162,113 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        data.addDominantAgeClasses1 = (Button) findViewById(R.id.addDominantAgeClasses1);
-        data.addDominantAgeClasses1.setOnClickListener(new View.OnClickListener() {
+        data.addDominantSapling1 = (Button) findViewById(R.id.addDominantSapling1);
+        data.addDominantSapling1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                boolean isCheckedDominantSapling1 = ((CheckBox) findViewById(R.id.checkBoxDominantSapling1)).isChecked();
-                boolean isCheckedDominantSmallPole1 = ((CheckBox) findViewById(R.id.checkBoxDominantSmallPole1)).isChecked();
-                boolean isCheckedDominantMedPole1 = ((CheckBox) findViewById(R.id.checkBoxDominantMedPole1)).isChecked();
-                boolean isCheckedDominantStandard1 = ((CheckBox) findViewById(R.id.checkBoxDominantStandard1)).isChecked();
-                boolean isCheckedDominantVeteran1 = ((CheckBox) findViewById(R.id.checkBoxDominantVeteran1)).isChecked();
-                data.toggleSmallPole1 = (CheckBox) findViewById(R.id.checkBoxDominantSmallPole1);
-                data.toggleMedPole1 = (CheckBox) findViewById(R.id.checkBoxDominantMedPole1);
-                data.toggleSapling1 = (CheckBox) findViewById(R.id.checkBoxDominantSapling1);
-                data.toggleStandard1 = (CheckBox) findViewById(R.id.checkBoxDominantStandard1);
-                data.toggleVeteran1 = (CheckBox) findViewById(R.id.checkBoxDominantVeteran1);
-                View saplingDom2 = findViewById(R.id.checkBoxDominantSapling2);
-                View smallPoleDom2 = findViewById(R.id.checkBoxDominantSmallPole2);
-                View medPoleDom2 = findViewById(R.id.checkBoxDominantMedPole2);
-                View standardPoleDom2 = findViewById(R.id.checkBoxDominantStandard2);
-                View veteranPoleDom2 = findViewById(R.id.checkBoxDominantVeteran2);
-                data.toggleSapling1.setVisibility(View.VISIBLE);
-                data.toggleSmallPole1.setVisibility(View.VISIBLE);
-                data.toggleMedPole1.setVisibility(View.VISIBLE);
-                data.toggleStandard1.setVisibility(View.VISIBLE);
-                data.toggleVeteran1.setVisibility(View.VISIBLE);
-                saplingDom2.setVisibility(View.VISIBLE);
-                smallPoleDom2.setVisibility(View.VISIBLE);
-                medPoleDom2.setVisibility(View.VISIBLE);
-                standardPoleDom2.setVisibility(View.VISIBLE);
-                veteranPoleDom2.setVisibility(View.VISIBLE);
-                data.addDominantAgeClasses2.setVisibility(View.VISIBLE);
-                data.clearAgeClassData.setVisibility(View.VISIBLE);
-
-                if (isCheckedDominantSapling1 == true) {
-                    data.addTreeToDominantSapling1 = (TextView) findViewById(R.id.dominantSapling1);
-                    data.dominantSapling1 = data.selectedAgeClass;
-                    data.addTreeToDominantSapling1.setText(data.selectedAgeClass);
-                    data.toggleSapling1.setChecked(false);
-                    data.sapling.setChecked(true);
-                }else if (isCheckedDominantSmallPole1 == true){
-                    data.addTreeToDominantSmallPole1 = (TextView) findViewById(R.id.dominantSmallPole1);
-                    data.dominantSmallPole1 = data.selectedAgeClass;
-                    data.addTreeToDominantSmallPole1.setText(data.selectedAgeClass);
-                    data.toggleSmallPole1.setChecked(false);
-                    data.smallPole.setChecked(true);
-                }else if (isCheckedDominantMedPole1 == true){
-                    data.addTreeToDominantMedPole1 = (TextView) findViewById(R.id.dominantMedPole1);
-                    data.dominantMedPole1 = data.selectedAgeClass;
-                    data.addTreeToDominantMedPole1.setText(data.selectedAgeClass);
-                    data.toggleMedPole1.setChecked(false);
-                    data.medPole.setChecked(true);
-                }else if (isCheckedDominantStandard1 == true){
-                    data.addTreeToDominantStandard1 = (TextView) findViewById(R.id.dominantStandard1);
-                    data.dominantStandardPole1 = data.selectedAgeClass;
-                    data.addTreeToDominantStandard1.setText(data.selectedAgeClass);
-                    data.toggleStandard1.setChecked(false);
-                    data.standard.setChecked(true);
-                }else if (isCheckedDominantVeteran1 == true){
-                    data.addTreeToDominantVeteran1 = (TextView) findViewById(R.id.dominantVeteran1);
-                    data.dominantVeteran1 = data.selectedAgeClass;
-                    data.addTreeToDominantVeteran1.setText(data.selectedAgeClass);
-                    data.toggleVeteran1.setChecked(false);
-                    data.veteran.setChecked(true);
-                }
-
+                data.addTreeToDominantSapling1 = (TextView) findViewById(R.id.dominantSapling1);
+                data.dominantSapling1 = data.selectedAgeClass;
+                data.addTreeToDominantSapling1.setText(data.selectedAgeClass);
+                data.sapling.setChecked(true);
+                data.saplingPresent = 1;
             }
         });
 
-        data.addDominantAgeClasses2 = (Button) findViewById(R.id.addDominantAgeClasses2);
-        data.addDominantAgeClasses2.setOnClickListener(new View.OnClickListener() {
+        data.addDominantSapling2 = (Button) findViewById(R.id.addDominantSapling2);
+        data.addDominantSapling2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                boolean isCheckedDominantSapling2 = ((CheckBox) findViewById(R.id.checkBoxDominantSapling2)).isChecked();
-                boolean isCheckedDominantSmallPole2 = ((CheckBox) findViewById(R.id.checkBoxDominantSmallPole2)).isChecked();
-                boolean isCheckedDominantMedPole2 = ((CheckBox) findViewById(R.id.checkBoxDominantMedPole2)).isChecked();
-                boolean isCheckedDominantStandard2 = ((CheckBox) findViewById(R.id.checkBoxDominantStandard2)).isChecked();
-                boolean isCheckedDominantVeteran2 = ((CheckBox) findViewById(R.id.checkBoxDominantVeteran2)).isChecked();
-                data.toggleSapling2 = (CheckBox) findViewById(R.id.checkBoxDominantSapling2);
-                data.toggleSmallPole2 = (CheckBox) findViewById(R.id.checkBoxDominantSmallPole2);
-                data.toggleMedPole2 = (CheckBox) findViewById(R.id.checkBoxDominantMedPole2);
-                data.toggleStandard2 = (CheckBox) findViewById(R.id.checkBoxDominantStandard2);
-                data.toggleVeteran2 = (CheckBox) findViewById(R.id.checkBoxDominantVeteran2);
-                View saplingDom1 = findViewById(R.id.checkBoxDominantSapling1);
-                View smallPoleDom1 = findViewById(R.id.checkBoxDominantSmallPole1);
-                View medPoleDom1 = findViewById(R.id.checkBoxDominantMedPole1);
-                View standardPoleDom1 = findViewById(R.id.checkBoxDominantStandard1);
-                View veteranPoleDom1 = findViewById(R.id.checkBoxDominantVeteran1);
-                data.toggleSapling2.setVisibility(View.VISIBLE);
-                data.toggleSmallPole2.setVisibility(View.VISIBLE);
-                data.toggleMedPole2.setVisibility(View.VISIBLE);
-                data.toggleStandard2.setVisibility(View.VISIBLE);
-                data.toggleVeteran2.setVisibility(View.VISIBLE);
-                saplingDom1.setVisibility(View.VISIBLE);
-                smallPoleDom1.setVisibility(View.VISIBLE);
-                medPoleDom1.setVisibility(View.VISIBLE);
-                standardPoleDom1.setVisibility(View.VISIBLE);
-                veteranPoleDom1.setVisibility(View.VISIBLE);
-                data.addDominantAgeClasses1.setVisibility(View.VISIBLE);
-                data.clearAgeClassData.setVisibility(View.VISIBLE);
+                data.addTreeToDominantSapling2 = (TextView) findViewById(R.id.dominantSapling2);
+                data.dominantSapling2 = data.selectedAgeClass;
+                data.addTreeToDominantSapling2.setText(data.selectedAgeClass);
+                data.sapling.setChecked(true);
+                data.saplingPresent = 1;
+            }
+        });
 
-                if (isCheckedDominantSapling2 == true){
-                    data.addTreeToDominantSapling2 = (TextView) findViewById(R.id.dominantSapling2);
-                    data.dominantSapling2 = data.selectedAgeClass;
-                    data.addTreeToDominantSapling2.setText(data.selectedAgeClass);
-                    data.toggleSapling2.setChecked(false);
-                    data.sapling.setChecked(true);
-                }else if (isCheckedDominantSmallPole2 == true){
-                    data.addTreeToDominantSmallPole2 = (TextView) findViewById(R.id.dominantSmallPole2);
-                    data.dominantSmallPole2 = data.selectedAgeClass;
-                    data.addTreeToDominantSmallPole2.setText(data.selectedAgeClass);
-                    data.toggleSmallPole2.setChecked(false);
-                    data.smallPole.setChecked(true);
-                }else if (isCheckedDominantMedPole2 == true){
-                    data.addTreeToDominantMedPole2 = (TextView) findViewById(R.id.dominantMedPole2);
-                    data.dominantMedPole2 = data.selectedAgeClass;
-                    data.addTreeToDominantMedPole2.setText(data.selectedAgeClass);
-                    data.toggleMedPole2.setChecked(false);
-                    data.medPole.setChecked(true);
-                }else if (isCheckedDominantStandard2 == true){
-                    data.addTreeToDominantStandard2 = (TextView) findViewById(R.id.dominantStandard2);
-                    data.dominantStandardPole2 = data.selectedAgeClass;
-                    data.addTreeToDominantStandard2.setText(data.selectedAgeClass);
-                    data.toggleStandard2.setChecked(false);
-                    data.standard.setChecked(true);
-                }else if (isCheckedDominantVeteran2 == true){
-                    data.addTreeToDominantVeteran2 = (TextView) findViewById(R.id.dominantVeteran2);
-                    data.dominantVeteran2 = data.selectedAgeClass;
-                    data.addTreeToDominantVeteran2.setText(data.selectedAgeClass);
-                    data.toggleVeteran2.setChecked(false);
-                    data.veteran.setChecked(true);
-                }
+        data.addDominantSmallPole1 = (Button) findViewById(R.id.addDominantSmallPole1);
+        data.addDominantSmallPole1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                data.addTreeToDominantSmallPole1 = (TextView) findViewById(R.id.dominantSmallPole1);
+                data.dominantSmallPole1 = data.selectedAgeClass;
+                data.addTreeToDominantSmallPole1.setText(data.selectedAgeClass);
+                data.smallPole.setChecked(true);
+                data.smallPolePresent = 1;
+            }
+        });
+
+        data.addDominantSmallPole2 = (Button) findViewById(R.id.addDominantSmallPole2);
+        data.addDominantSmallPole2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                data.addTreeToDominantSmallPole2 = (TextView) findViewById(R.id.dominantSmallPole2);
+                data.dominantSmallPole2 = data.selectedAgeClass;
+                data.addTreeToDominantSmallPole2.setText(data.selectedAgeClass);
+                data.smallPole.setChecked(true);
+                data.smallPolePresent = 1;
+            }
+        });
+
+        data.addDominantMedPole1 = (Button) findViewById(R.id.addDominantMedPole1);
+        data.addDominantMedPole1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                data.addTreeToDominantMedPole1 = (TextView) findViewById(R.id.dominantMedPole1);
+                data.dominantMedPole1 = data.selectedAgeClass;
+                data.addTreeToDominantMedPole1.setText(data.selectedAgeClass);
+                data.medPole.setChecked(true);
+                data.medPolePresent = 1;
+            }
+        });
+
+        data.addDominantMedPole2 = (Button) findViewById(R.id.addDominantMedPole2);
+        data.addDominantMedPole2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                data.addTreeToDominantMedPole2 = (TextView) findViewById(R.id.dominantMedPole2);
+                data.dominantMedPole2 = data.selectedAgeClass;
+                data.addTreeToDominantMedPole2.setText(data.selectedAgeClass);
+                data.medPole.setChecked(true);
+                data.medPolePresent = 1;
+            }
+        });
+
+        data.addDominantStandard1 = (Button) findViewById(R.id.addDominantStandard1);
+        data.addDominantStandard1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                data.addTreeToDominantStandard1 = (TextView) findViewById(R.id.dominantStandard1);
+                data.dominantStandardPole1 = data.selectedAgeClass;
+                data.addTreeToDominantStandard1.setText(data.selectedAgeClass);
+                data.standard.setChecked(true);
+                data.standardPresent = 1;
+            }
+        });
+
+        data.addDominantStandard2 = (Button) findViewById(R.id.addDominantStandard2);
+        data.addDominantStandard2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                data.addTreeToDominantStandard2 = (TextView) findViewById(R.id.dominantStandard2);
+                data.dominantStandardPole2 = data.selectedAgeClass;
+                data.addTreeToDominantStandard2.setText(data.selectedAgeClass);
+                data.standard.setChecked(true);
+                data.standardPresent = 1;
+            }
+        });
+
+        data.addDominantVeteran1 = (Button) findViewById(R.id.addDominantVeteran1);
+        data.addDominantVeteran1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                data.addTreeToDominantVeteran1 = (TextView) findViewById(R.id.dominantVeteran1);
+                data.dominantVeteran1 = data.selectedAgeClass;
+                data.addTreeToDominantVeteran1.setText(data.selectedAgeClass);
+                data.veteran.setChecked(true);
+                data.veteranPresent = 1;
+            }
+        });
+
+        data.addDominantVeteran2 = (Button) findViewById(R.id.addDominantVeteran2);
+        data.addDominantVeteran2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                data.addTreeToDominantVeteran2 = (TextView) findViewById(R.id.dominantVeteran2);
+                data.dominantVeteran2 = data.selectedAgeClass;
+                data.addTreeToDominantVeteran2.setText(data.selectedAgeClass);
+                data.veteran.setChecked(true);
+                data.veteranPresent = 1;
             }
         });
 
@@ -2620,6 +2231,14 @@ public class MainActivity extends AppCompatActivity {
         data.modifyTotalPoints = data.totalPoints.getText().toString();
         data.modifyTotalPoints = "Points:" + " " + Integer.toString(data.total) +  "   " + "Integrity Rank:" + " " + data.qualityRank;
         data.totalPoints.setText(data.modifyTotalPoints);
+
+        //bearing changes saved
+        data.bearingChangeAndRationale = (EditText) findViewById(R.id.bearings_rationale_input);
+        data.changeAndRationale = data.bearingChangeAndRationale.getText().toString();
+
+        //other past land use evidence saved
+        data.otherInput = (EditText) findViewById(R.id.other_landUse_input);
+        data.otherLandUseEvidence = data.otherInput.getText().toString();
 
         //notes saved
         data.notes1 = (EditText) findViewById(R.id.notesInput1);
