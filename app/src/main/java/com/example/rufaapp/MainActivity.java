@@ -3350,9 +3350,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean saveSheetData(RUFASheetData sheetData){
         JsonObject obj = JsonSerializer.serialize(data);
         String jsonString = obj.toString();
-        Log.i("json string",jsonString);
+        String name = sheetData.cell + ":" + sheetData.date;
+        Log.i("int",jsonString);
+        Log.i("int",name);
         try {
-            InternalStorageAccessor.writeToFile(getApplicationContext(), sheetData.cell + ":" + sheetData.date, jsonString);
+            InternalStorageAccessor.writeToFile(getApplicationContext(), name, jsonString);
             return true;
         }catch(IOException e){
 
@@ -3365,6 +3367,7 @@ public class MainActivity extends AppCompatActivity {
             JsonObject obj = InternalStorageAccessor.readFromFile(getApplicationContext(),cell + ":" + date);
             RUFASheetData loadData = JsonSerializer.deserialize(obj);
             this.data = loadData;
+            Log.i("load",obj.toString());
             Log.i("load","data loaded");
             //TODO figure out if we need to update checkboxes and the like
         } catch (IOException e){
