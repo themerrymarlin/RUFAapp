@@ -1,9 +1,13 @@
 package com.example.rufaapp;
 
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Entity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.app.Activity;
 import android.os.Bundle;
@@ -11,6 +15,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -21,6 +26,7 @@ import android.view.View.OnClickListener;
 
 import com.google.gson.JsonObject;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -35,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
     private Button loadButton;
     //save to csv button
     private Button saveToSDCard;
+    //file selection
+    private String fileName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -52,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
         loadButton = (Button) findViewById(R.id.loadData);
         loadButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                loadSheetData(data.cell,data.date);
+                loadSheetData(v);
             }
         });
 
@@ -3362,18 +3370,38 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public boolean loadSheetData(String cell, String date){
-        try {
-            JsonObject obj = InternalStorageAccessor.readFromFile(getApplicationContext(),cell + ":" + date);
-            RUFASheetData loadData = JsonSerializer.deserialize(obj);
-            this.data = loadData;
-            Log.i("load",obj.toString());
-            Log.i("load","data loaded");
-            //TODO figure out if we need to update checkboxes and the like
-        } catch (IOException e){
-            return false;
+    public void loadSheetData(View v){
+        String cell = data.cell;
+        String date = data.date;
+        //get list of files and select
+        File[] files = InternalStorageAccessor.getFileList(getApplicationContext());
+        final String[] fileNames = new String[files.length];
+        for(int i = 0; i < files.length; i ++){
+            fileNames[i] = files[i].getName();
         }
-        return true;
+
+        AlertDialog diag = new AlertDialog.Builder(MainActivity.this).setTitle("Choose a file").setItems(fileNames, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                fileName = fileNames[i];
+                Log.i("load","file name acquired");
+                Log.i("load",fileName);
+                try {
+                    //load file data
+                    JsonObject obj = InternalStorageAccessor.readFromFile(getApplicationContext(),fileName);
+                    RUFASheetData loadData = JsonSerializer.deserialize(obj);
+                    MainActivity.this.data = loadData;
+                    Log.i("load",obj.toString());
+                    Log.i("load","data loaded");
+                    //TODO figure out if we need to update checkboxes and the like
+                } catch (IOException e){
+                    e.printStackTrace();
+                    Log.e("load","io exception",e);
+                }
+            }
+        }).create();
+        diag.show();
+        Log.i("load","dialog shown");
     }
 
     public boolean saveToCSV(){

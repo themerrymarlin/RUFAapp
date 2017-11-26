@@ -39,7 +39,7 @@ public class ExternalStorageAccessor {
     }
 
     public void writeToCsv(Context context, ArrayList<String> keyList, ArrayList<Holder<Object>> values) throws IOException {
-        Log.i("csv","writeable: " + isStorageWriteable());
+        Log.i("csv","writable: " + isStorageWriteable());
         File[] fs = context.getExternalFilesDirs(null);
         if(fs != null && fs.length > 1){
             dir = fs[1].getAbsolutePath();
@@ -48,10 +48,7 @@ public class ExternalStorageAccessor {
             dir = "/";
             Log.i("csv","path fail");
         }
-        String fileName = values.get(0).getAsString() + "_" + values.get(1).getAsString() + ".csv";
-        String path = dir + File.separator + fileName;
         Log.i("csv","opening file");
-        Log.i("csv",path);
         File p = new File(dir);
         Log.i("csv",p.getAbsolutePath());
         if(!p.mkdirs()) {

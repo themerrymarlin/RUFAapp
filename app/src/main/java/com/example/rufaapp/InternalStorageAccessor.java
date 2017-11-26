@@ -23,9 +23,19 @@ import java.io.InputStreamReader;
 
 public class InternalStorageAccessor {
 
+    public static File[] getFileList(Context context){
+        File[] fs = context.getExternalFilesDirs(null);
+        if(fs != null){
+            Log.i("load","listing files");
+            return fs[0].listFiles();
+        }else{
+            Log.i("load","returning empty");
+            return new File[]{};
+        }
+    }
+
     public static void writeToFile(Context context,String fileName,String jsonString) throws IOException{
         String dir;
-        Log.i("int", Environment.getExternalStorageDirectory().getAbsolutePath());
         File[] fs = context.getExternalFilesDirs(null);
         if(fs != null){
             dir = fs[0].getAbsolutePath();
@@ -69,7 +79,7 @@ public class InternalStorageAccessor {
             Log.i("load","path fail");
         }
 
-        File f = new File(dir,fileName + ".txt");
+        File f = new File(dir,fileName);
         Log.i("load",f.getAbsolutePath());
         if(!f.createNewFile()){
             Log.i("load","file exists");
