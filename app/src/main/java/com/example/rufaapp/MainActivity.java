@@ -725,38 +725,6 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //light gaps
-        data.diameterA = (EditText) findViewById(R.id.lightGapInputA);
-        String diameterANum = data.diameterA.getText().toString();
-        if (diameterANum.equals("")) {
-            data.diameterAVal = 0;
-        } else {
-            data.diameterAVal = Integer.parseInt(diameterANum);
-        }
-
-        data.diameterB = (EditText) findViewById(R.id.lightGapInputB);
-        String diameterBNum = data.diameterB.getText().toString();
-        if (diameterBNum.equals("")) {
-            data.diameterBVal = 0;
-        } else {
-            data.diameterBVal = Integer.parseInt(diameterBNum);
-        }
-
-        data.diameterC = (EditText) findViewById(R.id.lightGapInputC);
-        String diameterCNum = data.diameterC.getText().toString();
-        if (diameterCNum.equals("")) {
-            data.diameterCVal = 0;
-        } else {
-            data.diameterCVal = Integer.parseInt(diameterCNum);
-        }
-
-        data.diameterD = (EditText) findViewById(R.id.lightGapInputD);
-        String diameterDNum = data.diameterD.getText().toString();
-        if (diameterDNum.equals("")) {
-            data.diameterDVal = 0;
-        } else {
-            data.diameterDVal = Integer.parseInt(diameterDNum);
-        }
-
         data.invadedA = (CheckBox) findViewById(R.id.checkBoxInvadedA);
         data.invadedA.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -2204,6 +2172,39 @@ public class MainActivity extends AppCompatActivity {
         data.bearingChangeAndRationale = (EditText) findViewById(R.id.bearings_rationale_input);
         data.changeAndRationale = data.bearingChangeAndRationale.getText().toString();
 
+        //light gaps
+        data.diameterA = (EditText) findViewById(R.id.lightGapInputA);
+        String diameterANum = data.diameterA.getText().toString();
+        if (diameterANum.equals("")) {
+            data.diameterAVal = 0;
+        } else {
+            data.diameterAVal = Integer.parseInt(diameterANum);
+        }
+
+        data.diameterB = (EditText) findViewById(R.id.lightGapInputB);
+        String diameterBNum = data.diameterB.getText().toString();
+        if (diameterBNum.equals("")) {
+            data.diameterBVal = 0;
+        } else {
+            data.diameterBVal = Integer.parseInt(diameterBNum);
+        }
+
+        data.diameterC = (EditText) findViewById(R.id.lightGapInputC);
+        String diameterCNum = data.diameterC.getText().toString();
+        if (diameterCNum.equals("")) {
+            data.diameterCVal = 0;
+        } else {
+            data.diameterCVal = Integer.parseInt(diameterCNum);
+        }
+
+        data.diameterD = (EditText) findViewById(R.id.lightGapInputD);
+        String diameterDNum = data.diameterD.getText().toString();
+        if (diameterDNum.equals("")) {
+            data.diameterDVal = 0;
+        } else {
+            data.diameterDVal = Integer.parseInt(diameterDNum);
+        }
+
         //other past land use evidence saved
         data.otherInput = (EditText) findViewById(R.id.other_landUse_input);
         data.otherLandUseEvidence = data.otherInput.getText().toString();
@@ -3061,12 +3062,12 @@ public class MainActivity extends AppCompatActivity {
         ((EditText) findViewById(R.id.SE6A)).setText(Integer.toString(d.SE6Anumber));
         ((TextView) findViewById(R.id.point6AVal)).setText(Integer.toString(d.point6A));
         //6B
-        ((EditText) findViewById(R.id.NW5B)).setText(Integer.toString(d.NW5Bnumber));
-        ((EditText) findViewById(R.id.NE5B)).setText(Integer.toString(d.NE5Bnumber));
-        ((TextView) findViewById(R.id.sum5BVal)).setText(Integer.toString(d.sum5B));
-        ((EditText) findViewById(R.id.SW5B)).setText(Integer.toString(d.SW5Bnumber));
-        ((EditText) findViewById(R.id.SE5B)).setText(Integer.toString(d.SE5Bnumber));
-        ((TextView) findViewById(R.id.point5BVal)).setText(Integer.toString(d.point5B));
+        ((EditText) findViewById(R.id.NW6B)).setText(Integer.toString(d.NW6Bnumber));
+        ((EditText) findViewById(R.id.NE6B)).setText(Integer.toString(d.NE6Bnumber));
+        ((TextView) findViewById(R.id.sum6BVal)).setText(Integer.toString(d.sum6B));
+        ((EditText) findViewById(R.id.SW6B)).setText(Integer.toString(d.SW6Bnumber));
+        ((EditText) findViewById(R.id.SE6B)).setText(Integer.toString(d.SE6Bnumber));
+        ((TextView) findViewById(R.id.point6BVal)).setText(Integer.toString(d.point6B));
         //section 7
         ((CheckBox) findViewById(R.id.checkBox7)).setChecked(d.point7 == 1);
         ((TextView) findViewById(R.id.point7Val)).setText(Integer.toString(d.point7));
@@ -3090,12 +3091,24 @@ public class MainActivity extends AppCompatActivity {
         ((CheckBox) findViewById(R.id.checkBox12E)).setChecked(d.pointBoxE == 1);
         ((TextView) findViewById(R.id.total12Val)).setText(Integer.toString(d.total12));
         ((TextView) findViewById(R.id.point12Val)).setText(Integer.toString(d.point12));
-        //Total and Rank -- blank for now
+        //Total and Rank -- blank for now TODO make this update
         //plant community TODO figure out if this works correctly
         ((CheckBox) findViewById(R.id.checkBoxPreviouslyConfirmed)).setChecked(d.prevConfirmed == 1);
         ((CheckBox) findViewById(R.id.checkBoxGroundTruthed)).setChecked(d.groundTruthed == 1);
+        //fill in other text if other
+        if(d.selectedPlantCommunity.equalsIgnoreCase("other")){
+            ((Spinner)findViewById(R.id.community_type_spinner)).setSelection(7);
+            findViewById(R.id.otherPlantCommunity).setVisibility(View.VISIBLE);
+            ((EditText)findViewById(R.id.otherPlantCommunity)).setText(d.otherPlantCommunityInput);
+        }else{
+            ((Spinner)findViewById(R.id.community_type_spinner)).setSelection(0);
+            findViewById(R.id.community_type_value).setVisibility(View.VISIBLE);
+            ((TextView)findViewById(R.id.community_type_value)).setText(d.selectedPlantCommunity);
+        }
+
         ((TextView) findViewById(R.id.community_type_value)).setText(d.selectedPlantCommunity);
         ((EditText) findViewById(R.id.otherPlantCommunity)).setText(d.otherPlantCommunityInput);
+
         //bearing changes
         if (d.bearingChange == 1) {
             ((CheckBox) findViewById(R.id.checkBoxYesBearingChanged)).setChecked(true);
@@ -3132,8 +3145,10 @@ public class MainActivity extends AppCompatActivity {
         //canopy
         if (d.canopy == 1) {
             ((CheckBox) findViewById(R.id.canopyOpen)).setChecked(true);
+            ((CheckBox) findViewById(R.id.canopyClosed)).setChecked(false);
         } else {
             ((CheckBox) findViewById(R.id.canopyClosed)).setChecked(true);
+            ((CheckBox) findViewById(R.id.canopyOpen)).setChecked(false);
         }
         //Age classes
         ((CheckBox) findViewById(R.id.checkBoxSapling)).setChecked(d.saplingPresent == 1);
