@@ -3393,7 +3393,8 @@ public class MainActivity extends AppCompatActivity {
                     MainActivity.this.data = loadData;
                     Log.i("load",obj.toString());
                     Log.i("load","data loaded");
-                    //TODO figure out if we need to update checkboxes and the like
+                    //TODO checkboxes and the like
+                    updateSheet(loadData);
                 } catch (IOException e){
                     e.printStackTrace();
                     Log.e("load","io exception",e);
@@ -3402,6 +3403,129 @@ public class MainActivity extends AppCompatActivity {
         }).create();
         diag.show();
         Log.i("load","dialog shown");
+    }
+
+    public void updateSheet(RUFASheetData d){
+        ((EditText)findViewById(R.id.cell_input)).setText(d.cell);
+        ((EditText)findViewById(R.id.date_input)).setText(d.date);
+        ((EditText)findViewById(R.id.scorer_input)).setText(d.scorers);
+        //SECTION 1
+        ((EditText)findViewById(R.id.NW1A)).setText(d.NW1Anumber);
+        ((EditText)findViewById(R.id.NE1A)).setText(d.NE1Anumber);
+        ((TextView)findViewById(R.id.sum1AVal)).setText(d.sum1A);
+        ((EditText)findViewById(R.id.SW1A)).setText(d.SW1Anumber);
+        ((EditText)findViewById(R.id.SE1A)).setText(d.SE1Anumber);
+        ((TextView)findViewById(R.id.point1AVal)).setText(d.point1A);
+        //1B
+        ((EditText)findViewById(R.id.NW1B)).setText(d.NW1Bnumber);
+        ((EditText)findViewById(R.id.NE1B)).setText(d.NE1Bnumber);
+        ((TextView)findViewById(R.id.sum1BVal)).setText(d.sum1B);
+        ((EditText)findViewById(R.id.SW1B)).setText(d.SW1Bnumber);
+        ((EditText)findViewById(R.id.SE1B)).setText(d.SE1Bnumber);
+        ((TextView)findViewById(R.id.point2BVal)).setText(d.point1B);
+        //SECTION 2
+        ((EditText)findViewById(R.id.NW2A)).setText(d.NW2Anumber);
+        ((EditText)findViewById(R.id.NE2A)).setText(d.NE2Anumber);
+        ((TextView)findViewById(R.id.sum2AVal)).setText(d.sum2A);
+        ((EditText)findViewById(R.id.SW2A)).setText(d.SW2Anumber);
+        ((EditText)findViewById(R.id.SE2A)).setText(d.SE2Anumber);
+        ((TextView)findViewById(R.id.point2AVal)).setText(d.point2A);
+        //2B
+        ((EditText)findViewById(R.id.NW2B)).setText(d.NW2Bnumber);
+        ((EditText)findViewById(R.id.NE2B)).setText(d.NE2Bnumber);
+        ((TextView)findViewById(R.id.sum2BVal)).setText(d.sum2B);
+        ((EditText)findViewById(R.id.SW2B)).setText(d.SW2Bnumber);
+        ((EditText)findViewById(R.id.SE2B)).setText(d.SE2Bnumber);
+        ((TextView)findViewById(R.id.point2BVal)).setText(d.point2B);
+        //SECTION 3A
+        ((EditText)findViewById(R.id.NW3A)).setText(d.NW3Anumber);
+        ((EditText)findViewById(R.id.NE3A)).setText(d.NE3Anumber);
+        ((TextView)findViewById(R.id.sum3AVal)).setText(d.sum3A);
+        ((EditText)findViewById(R.id.SW3A)).setText(d.SW3Anumber);
+        ((EditText)findViewById(R.id.SE3A)).setText(d.SE3Anumber);
+        ((TextView)findViewById(R.id.point3AVal)).setText(d.point3A);
+        //3B
+        ((TextView)findViewById(R.id.dominant3B1)).setText(d.dominant3B1);
+        ((TextView)findViewById(R.id.dominant3B2)).setText(d.dominant3B2);
+        ((TextView)findViewById(R.id.listOfTrees3B)).setText(d.list3B);
+        //SECTION 3A
+        ((EditText)findViewById(R.id.NW3A)).setText(d.NW3Anumber);
+        ((EditText)findViewById(R.id.NE3A)).setText(d.NE3Anumber);
+        ((TextView)findViewById(R.id.sum3AVal)).setText(d.sum3A);
+        ((EditText)findViewById(R.id.SW3A)).setText(d.SW3Anumber);
+        ((EditText)findViewById(R.id.SE3A)).setText(d.SE3Anumber);
+        ((TextView)findViewById(R.id.point3AVal)).setText(d.point3A);
+        //3B
+        ((TextView)findViewById(R.id.dominant3B1)).setText(d.dominant3B1);
+        ((TextView)findViewById(R.id.dominant3B2)).setText(d.dominant3B2);
+        ((TextView)findViewById(R.id.listOfTrees3B)).setText(d.list3B);
+        ((TextView)findViewById(R.id.point3BVal)).setText(d.point3B);
+        ((TextView)findViewById(R.id.sum3BVal)).setText(d.sum3B);
+        //SECTION 4A
+        ((EditText)findViewById(R.id.NW4A)).setText(d.NW4Anumber);
+        ((EditText)findViewById(R.id.NE4A)).setText(d.NE4Anumber);
+        ((TextView)findViewById(R.id.sum4AVal)).setText(d.sum4A);
+        ((EditText)findViewById(R.id.SW4A)).setText(d.SW4Anumber);
+        ((EditText)findViewById(R.id.SE4A)).setText(d.SE4Anumber);
+        ((TextView)findViewById(R.id.point4AVal)).setText(d.point4A);
+        //4B
+        ((TextView)findViewById(R.id.dominant4B1)).setText(d.dominant4B1);
+        ((TextView)findViewById(R.id.dominant4B2)).setText(d.dominant4B2);
+        ((TextView)findViewById(R.id.listOfTrees4B)).setText(d.list4B);
+        ((TextView)findViewById(R.id.point4BVal)).setText(d.point4B);
+        ((TextView)findViewById(R.id.sum4BVal)).setText(d.sum4B);
+        //SECTION 5
+        ((EditText)findViewById(R.id.NW5A)).setText(d.NW5Anumber);
+        ((EditText)findViewById(R.id.NE5A)).setText(d.NE5Anumber);
+        ((TextView)findViewById(R.id.sum5AVal)).setText(d.sum5A);
+        ((EditText)findViewById(R.id.SW5A)).setText(d.SW5Anumber);
+        ((EditText)findViewById(R.id.SE5A)).setText(d.SE5Anumber);
+        ((TextView)findViewById(R.id.point5AVal)).setText(d.point5A);
+        //5B
+        ((EditText)findViewById(R.id.NW5B)).setText(d.NW5Bnumber);
+        ((EditText)findViewById(R.id.NE5B)).setText(d.NE5Bnumber);
+        ((TextView)findViewById(R.id.sum5BVal)).setText(d.sum5B);
+        ((EditText)findViewById(R.id.SW5B)).setText(d.SW5Bnumber);
+        ((EditText)findViewById(R.id.SE5B)).setText(d.SE5Bnumber);
+        ((TextView)findViewById(R.id.point5BVal)).setText(d.point5B);
+        //SECTION 6
+        ((EditText)findViewById(R.id.NW6A)).setText(d.NW6Anumber);
+        ((EditText)findViewById(R.id.NE6A)).setText(d.NE6Anumber);
+        ((TextView)findViewById(R.id.sum6AVal)).setText(d.sum6A);
+        ((EditText)findViewById(R.id.SW6A)).setText(d.SW6Anumber);
+        ((EditText)findViewById(R.id.SE6A)).setText(d.SE6Anumber);
+        ((TextView)findViewById(R.id.point6AVal)).setText(d.point6A);
+        //6B
+        ((EditText)findViewById(R.id.NW5B)).setText(d.NW5Bnumber);
+        ((EditText)findViewById(R.id.NE5B)).setText(d.NE5Bnumber);
+        ((TextView)findViewById(R.id.sum5BVal)).setText(d.sum5B);
+        ((EditText)findViewById(R.id.SW5B)).setText(d.SW5Bnumber);
+        ((EditText)findViewById(R.id.SE5B)).setText(d.SE5Bnumber);
+        ((TextView)findViewById(R.id.point5BVal)).setText(d.point5B);
+        //section 7
+        ((CheckBox)findViewById(R.id.checkBox7)).setChecked(d.point7 == 1);
+        ((TextView)findViewById(R.id.point7Val)).setText(d.point7);
+        //section 8
+        ((CheckBox)findViewById(R.id.checkBox8)).setChecked(d.point8 == 1);
+        ((TextView)findViewById(R.id.point8Val)).setText(d.point8);
+        //section 9
+        ((CheckBox)findViewById(R.id.checkBox9)).setChecked(d.point9 == 1);
+        ((TextView)findViewById(R.id.point9Val)).setText(d.point9);
+        //section 10
+        ((CheckBox)findViewById(R.id.checkBox10)).setChecked(d.point10 == 1);
+        ((TextView)findViewById(R.id.point10Val)).setText(d.point10);
+        //section 11
+        ((CheckBox)findViewById(R.id.checkBox11)).setChecked(d.point11 == 1);
+        ((TextView)findViewById(R.id.point11Val)).setText(d.point11);
+        //section 12
+        ((CheckBox)findViewById(R.id.checkBox12A)).setChecked(d.pointBoxA == 1);
+        ((CheckBox)findViewById(R.id.checkBox12B)).setChecked(d.pointBoxB == 1);
+        ((CheckBox)findViewById(R.id.checkBox12C)).setChecked(d.pointBoxC == 1);
+        ((CheckBox)findViewById(R.id.checkBox12D)).setChecked(d.pointBoxD == 1);
+        ((CheckBox)findViewById(R.id.checkBox12E)).setChecked(d.pointBoxE == 1);
+        ((TextView)findViewById(R.id.total12Val)).setText(d.total12);
+        ((TextView)findViewById(R.id.point12Val)).setText(d.point12);
+        //Total and Rank
     }
 
     public boolean saveToCSV(){
