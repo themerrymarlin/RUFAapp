@@ -453,7 +453,7 @@ public class RUFASheetData {
     transient CheckBox fiftySeventyFive;
     transient CheckBox seventyFiveNinety;
     transient CheckBox ninety;
-    String seedlingCover;
+    String seedlingCover = "";
 
     //notes section
     transient EditText notes1;

@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private Button saveToSDCard;
     //file selection
     private String fileName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -66,12 +67,12 @@ public class MainActivity extends AppCompatActivity {
 
         saveToSDCard = (Button) findViewById(R.id.SaveCSV);
         saveToSDCard.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v){
+            public void onClick(View v) {
                 int permCheck = ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 int permGranted = PackageManager.PERMISSION_GRANTED;
-                if(permCheck != permGranted){
-                    ActivityCompat.requestPermissions(getParent(),new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE},5);
-                }else{
+                if (permCheck != permGranted) {
+                    ActivityCompat.requestPermissions(getParent(), new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 5);
+                } else {
                     updateButtonPressed();
                     saveToCSV();
                 }
@@ -261,12 +262,12 @@ public class MainActivity extends AppCompatActivity {
         data.add3B = (Button) findViewById(R.id.addTree3B);
         data.add3B.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                    data.addTreeToList3B = (TextView) findViewById(R.id.listOfTrees3B);
-                    data.modifyAdd3B = data.addTreeToList3B.getText().toString();
-                    data.addTreeToList3B.setText(data.selected3B + " " + data.modifyAdd3B);
-                    data.list3B = data.addTreeToList3B.getText().toString();
-                    data.sum3B++;
-                    updateButtonPressed();
+                data.addTreeToList3B = (TextView) findViewById(R.id.listOfTrees3B);
+                data.modifyAdd3B = data.addTreeToList3B.getText().toString();
+                data.addTreeToList3B.setText(data.selected3B + " " + data.modifyAdd3B);
+                data.list3B = data.addTreeToList3B.getText().toString();
+                data.sum3B++;
+                updateButtonPressed();
             }
         });
 
@@ -301,7 +302,7 @@ public class MainActivity extends AppCompatActivity {
                 if (data.selected3B == null) {
                     data.selected3B = "AMBE";
                     data.sum3B = 0;
-                } else{
+                } else {
                     data.selected3B = adapterView.getSelectedItem().toString();
                 }
             }
@@ -409,7 +410,7 @@ public class MainActivity extends AppCompatActivity {
                 if (data.selected4B == null) {
                     data.selected4B = "AMBE";
                     data.sum4B = 0;
-                } else{
+                } else {
                     data.selected4B = adapterView.getSelectedItem().toString();
                 }
             }
@@ -626,11 +627,11 @@ public class MainActivity extends AppCompatActivity {
                 data.otherPlantCommunity = (EditText) findViewById(R.id.otherPlantCommunity);
                 data.addTreeToListPlantCommunity = (TextView) findViewById(R.id.community_type_value);
 
-                if (data.selectedPlantCommunity.equals("Other")){
+                if (data.selectedPlantCommunity.equals("Other")) {
                     data.otherPlantCommunity.setVisibility(View.VISIBLE);
                     data.addTreeToListPlantCommunity.setVisibility(View.INVISIBLE);
                     data.otherPlantCommunityInput = data.otherPlantCommunity.getText().toString();
-                }else {
+                } else {
                     data.addTreeToListPlantCommunity.setVisibility(View.VISIBLE);
                     data.otherPlantCommunity.setVisibility(View.INVISIBLE);
                     data.modifyCommunityType = data.addTreeToListPlantCommunity.getText().toString();
@@ -666,6 +667,7 @@ public class MainActivity extends AppCompatActivity {
                     data.selectedPlantCommunity = adapterView.getSelectedItem().toString();
                 }
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
@@ -678,8 +680,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedYesPrevConfirmedType == true) {
                     data.prevConfirmed = 1;
-                }
-                else{
+                } else {
                     data.prevConfirmed = 0;
                 }
             }
@@ -692,8 +693,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedGroundTruthed == true) {
                     data.groundTruthed = 1;
-                }
-                else{
+                } else {
                     data.groundTruthed = 0;
                 }
             }
@@ -764,8 +764,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedInvadedA == true) {
                     data.invadedAVal = 1;
-                }
-                else
+                } else
                     data.invadedAVal = 0;
             }
         });
@@ -777,8 +776,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedInvadedB == true) {
                     data.invadedBVal = 1;
-                }
-                else
+                } else
                     data.invadedBVal = 0;
             }
         });
@@ -790,8 +788,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedInvadedC == true) {
                     data.invadedCVal = 1;
-                }
-                else
+                } else
                     data.invadedCVal = 0;
             }
         });
@@ -803,8 +800,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedInvadedD == true) {
                     data.invadedDVal = 1;
-                }
-                else
+                } else
                     data.invadedDVal = 0;
             }
         });
@@ -816,8 +812,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedgrapevineA == true) {
                     data.grapevineAVal = 1;
-                }
-                else
+                } else
                     data.grapevineAVal = 0;
             }
         });
@@ -829,8 +824,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedgrapevineB == true) {
                     data.grapevineBVal = 1;
-                }
-                else
+                } else
                     data.grapevineBVal = 0;
             }
         });
@@ -842,8 +836,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedgrapevineC == true) {
                     data.grapevineCVal = 1;
-                }
-                else
+                } else
                     data.grapevineCVal = 0;
             }
         });
@@ -855,8 +848,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedgrapevineD == true) {
                     data.grapevineDVal = 1;
-                }
-                else
+                } else
                     data.grapevineDVal = 0;
             }
         });
@@ -868,8 +860,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedregeneratingA == true) {
                     data.regeneratingAVal = 1;
-                }
-                else
+                } else
                     data.regeneratingAVal = 0;
             }
         });
@@ -881,8 +872,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedregeneratingB == true) {
                     data.regeneratingBVal = 1;
-                }
-                else
+                } else
                     data.regeneratingBVal = 0;
             }
         });
@@ -894,8 +884,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedregeneratingC == true) {
                     data.regeneratingCVal = 1;
-                }
-                else
+                } else
                     data.regeneratingCVal = 0;
             }
         });
@@ -907,8 +896,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedregeneratingD == true) {
                     data.regeneratingDVal = 1;
-                }
-                else
+                } else
                     data.regeneratingDVal = 0;
             }
         });
@@ -1048,8 +1036,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedSapling == true) {
                     data.saplingPresent = 1;
-                }
-                else {
+                } else {
                     data.saplingPresent = 0;
                     data.addTreeToDominantSapling1 = (TextView) findViewById(R.id.dominantSapling1);
                     data.addTreeToDominantSapling1.setText("");
@@ -1066,8 +1053,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedsmallPole == true) {
                     data.smallPolePresent = 1;
-                }
-                else {
+                } else {
                     data.smallPolePresent = 0;
                     data.addTreeToDominantSmallPole1 = (TextView) findViewById(R.id.dominantSmallPole1);
                     data.addTreeToDominantSmallPole1.setText("");
@@ -1084,8 +1070,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedmedPole == true) {
                     data.medPolePresent = 1;
-                }
-                else {
+                } else {
                     data.medPolePresent = 0;
                     data.addTreeToDominantMedPole1 = (TextView) findViewById(R.id.dominantMedPole1);
                     data.addTreeToDominantMedPole1.setText("");
@@ -1102,8 +1087,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedstandard == true) {
                     data.standardPresent = 1;
-                }
-                else {
+                } else {
                     data.standardPresent = 0;
                     data.addTreeToDominantStandard1 = (TextView) findViewById(R.id.dominantStandard1);
                     data.addTreeToDominantStandard1.setText("");
@@ -1120,8 +1104,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (isCheckedveteran == true) {
                     data.veteranPresent = 1;
-                }
-                else {
+                } else {
                     data.veteranPresent = 0;
                     data.addTreeToDominantVeteran1 = (TextView) findViewById(R.id.dominantVeteran1);
                     data.addTreeToDominantVeteran1.setText("");
@@ -1286,10 +1269,11 @@ public class MainActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 if (data.selectedAgeClass == null) {
                     data.selectedAgeClass = "AMBE";
-                } else{
+                } else {
                     data.selectedAgeClass = adapterView.getSelectedItem().toString();
                 }
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {
             }
@@ -1309,8 +1293,7 @@ public class MainActivity extends AppCompatActivity {
                     data.beechHigh.setChecked(false);
                     data.beech = 0;
                     data.beechAbundance = "None";
-                }
-                else{
+                } else {
                     data.beechNone.setChecked(false);
                     data.beechLow.setChecked(true);
                     data.beech = 1;
@@ -1345,8 +1328,7 @@ public class MainActivity extends AppCompatActivity {
                     data.beechHigh.setChecked(false);
                     data.beech = 1;
                     data.beechAbundance = "Low";
-                }
-                else if (isCheckedBeechPresent == false && isCheckedBeechLow == true){
+                } else if (isCheckedBeechPresent == false && isCheckedBeechLow == true) {
                     data.beechNone.setChecked(false);
                     data.beechMedium.setChecked(false);
                     data.beechHigh.setChecked(false);
@@ -1368,8 +1350,7 @@ public class MainActivity extends AppCompatActivity {
                     data.beechHigh.setChecked(false);
                     data.beech = 1;
                     data.beechAbundance = "Medium";
-                }
-                else if (isCheckedBeechPresent == false && isCheckedBeechMedium == true){
+                } else if (isCheckedBeechPresent == false && isCheckedBeechMedium == true) {
                     data.beechNone.setChecked(false);
                     data.beechLow.setChecked(false);
                     data.beechHigh.setChecked(false);
@@ -1391,8 +1372,7 @@ public class MainActivity extends AppCompatActivity {
                     data.beechLow.setChecked(false);
                     data.beech = 1;
                     data.beechAbundance = "High";
-                }
-                else if (isCheckedBeechPresent == false && isCheckedBeechHigh == true){
+                } else if (isCheckedBeechPresent == false && isCheckedBeechHigh == true) {
                     data.beechNone.setChecked(false);
                     data.beechMedium.setChecked(false);
                     data.beechLow.setChecked(false);
@@ -1415,8 +1395,7 @@ public class MainActivity extends AppCompatActivity {
                     data.bldSevere.setChecked(false);
                     data.bld = 0;
                     data.bldSeverity = "None";
-                }
-                else{
+                } else {
                     data.bldNone.setChecked(false);
                     data.bldLow.setChecked(true);
                     data.bld = 1;
@@ -1451,8 +1430,7 @@ public class MainActivity extends AppCompatActivity {
                     data.bldSevere.setChecked(false);
                     data.bld = 1;
                     data.bldSeverity = "Low";
-                }
-                else if (isCheckedBldPresent == false && isCheckedBldLow == true){
+                } else if (isCheckedBldPresent == false && isCheckedBldLow == true) {
                     data.bldNone.setChecked(false);
                     data.bldModerate.setChecked(false);
                     data.bldSevere.setChecked(false);
@@ -1474,8 +1452,7 @@ public class MainActivity extends AppCompatActivity {
                     data.bldSevere.setChecked(false);
                     data.bld = 1;
                     data.bldSeverity = "Moderate";
-                }
-                else if (isCheckedBldPresent == false && isCheckedBldModerate == true){
+                } else if (isCheckedBldPresent == false && isCheckedBldModerate == true) {
                     data.bldNone.setChecked(false);
                     data.bldLow.setChecked(false);
                     data.bldSevere.setChecked(false);
@@ -1489,7 +1466,7 @@ public class MainActivity extends AppCompatActivity {
         data.bldSevere.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 boolean isCheckedBldPresent = ((CheckBox) findViewById(R.id.bldPresent)).isChecked();
-                boolean isCheckedBldSevere= ((CheckBox) findViewById(R.id.bldSevere)).isChecked();
+                boolean isCheckedBldSevere = ((CheckBox) findViewById(R.id.bldSevere)).isChecked();
 
                 if (isCheckedBldPresent == true && isCheckedBldSevere == true) {
                     data.bldNone.setChecked(false);
@@ -1497,8 +1474,7 @@ public class MainActivity extends AppCompatActivity {
                     data.bldLow.setChecked(false);
                     data.bld = 1;
                     data.bldSeverity = "Severe";
-                }
-                else if (isCheckedBldPresent == false && isCheckedBldSevere == true){
+                } else if (isCheckedBldPresent == false && isCheckedBldSevere == true) {
                     data.bldNone.setChecked(false);
                     data.bldModerate.setChecked(false);
                     data.bldLow.setChecked(false);
@@ -1521,8 +1497,7 @@ public class MainActivity extends AppCompatActivity {
                     data.ashHigh.setChecked(false);
                     data.ash = 0;
                     data.ashAbundance = "None";
-                }
-                else{
+                } else {
                     data.ashNone.setChecked(false);
                     data.ashLow.setChecked(true);
                     data.ash = 1;
@@ -1557,8 +1532,7 @@ public class MainActivity extends AppCompatActivity {
                     data.ashHigh.setChecked(false);
                     data.ash = 1;
                     data.ashAbundance = "Low";
-                }
-                else if (isCheckedashPresent == false && isCheckedashLow == true){
+                } else if (isCheckedashPresent == false && isCheckedashLow == true) {
                     data.ashNone.setChecked(false);
                     data.ashMedium.setChecked(false);
                     data.ashHigh.setChecked(false);
@@ -1580,8 +1554,7 @@ public class MainActivity extends AppCompatActivity {
                     data.ashHigh.setChecked(false);
                     data.ash = 1;
                     data.ashAbundance = "Medium";
-                }
-                else if (isCheckedashPresent == false && isCheckedashMedium == true){
+                } else if (isCheckedashPresent == false && isCheckedashMedium == true) {
                     data.ashNone.setChecked(false);
                     data.ashLow.setChecked(false);
                     data.ashHigh.setChecked(false);
@@ -1603,8 +1576,7 @@ public class MainActivity extends AppCompatActivity {
                     data.ashLow.setChecked(false);
                     data.ash = 1;
                     data.ashAbundance = "High";
-                }
-                else if (isCheckedashPresent == false && isCheckedashHigh == true){
+                } else if (isCheckedashPresent == false && isCheckedashHigh == true) {
                     data.ashNone.setChecked(false);
                     data.ashMedium.setChecked(false);
                     data.ashLow.setChecked(false);
@@ -1627,8 +1599,7 @@ public class MainActivity extends AppCompatActivity {
                     data.eabSevere.setChecked(false);
                     data.eab = 0;
                     data.eabSeverity = "None";
-                }
-                else{
+                } else {
                     data.eabNone.setChecked(false);
                     data.eabLow.setChecked(true);
                     data.eab = 1;
@@ -1663,8 +1634,7 @@ public class MainActivity extends AppCompatActivity {
                     data.eabSevere.setChecked(false);
                     data.eab = 1;
                     data.eabSeverity = "Low";
-                }
-                else if (isCheckedeabPresent == false && isCheckedeabLow == true){
+                } else if (isCheckedeabPresent == false && isCheckedeabLow == true) {
                     data.eabNone.setChecked(false);
                     data.eabModerate.setChecked(false);
                     data.eabSevere.setChecked(false);
@@ -1686,8 +1656,7 @@ public class MainActivity extends AppCompatActivity {
                     data.eabSevere.setChecked(false);
                     data.eab = 1;
                     data.eabSeverity = "Moderate";
-                }
-                else if (isCheckedeabPresent == false && isCheckedeabModerate == true){
+                } else if (isCheckedeabPresent == false && isCheckedeabModerate == true) {
                     data.eabNone.setChecked(false);
                     data.eabLow.setChecked(false);
                     data.eabSevere.setChecked(false);
@@ -1701,7 +1670,7 @@ public class MainActivity extends AppCompatActivity {
         data.eabSevere.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 boolean isCheckedeabPresent = ((CheckBox) findViewById(R.id.eabPresent)).isChecked();
-                boolean isCheckedeabSevere= ((CheckBox) findViewById(R.id.eabSevere)).isChecked();
+                boolean isCheckedeabSevere = ((CheckBox) findViewById(R.id.eabSevere)).isChecked();
 
                 if (isCheckedeabPresent == true && isCheckedeabSevere == true) {
                     data.eabNone.setChecked(false);
@@ -1709,8 +1678,7 @@ public class MainActivity extends AppCompatActivity {
                     data.eabLow.setChecked(false);
                     data.eab = 1;
                     data.eabSeverity = "Severe";
-                }
-                else if (isCheckedeabPresent == false && isCheckedeabSevere == true){
+                } else if (isCheckedeabPresent == false && isCheckedeabSevere == true) {
                     data.eabNone.setChecked(false);
                     data.eabModerate.setChecked(false);
                     data.eabLow.setChecked(false);
@@ -1733,8 +1701,7 @@ public class MainActivity extends AppCompatActivity {
                     data.eaheHigh.setChecked(false);
                     data.eahe = 0;
                     data.eaheAbundance = "None";
-                }
-                else{
+                } else {
                     data.eaheNone.setChecked(false);
                     data.eaheLow.setChecked(true);
                     data.eahe = 1;
@@ -1769,8 +1736,7 @@ public class MainActivity extends AppCompatActivity {
                     data.eaheHigh.setChecked(false);
                     data.eahe = 1;
                     data.eaheAbundance = "Low";
-                }
-                else if (isCheckedeahePresent == false && isCheckedeaheLow == true){
+                } else if (isCheckedeahePresent == false && isCheckedeaheLow == true) {
                     data.eaheNone.setChecked(false);
                     data.eaheMedium.setChecked(false);
                     data.eaheHigh.setChecked(false);
@@ -1792,8 +1758,7 @@ public class MainActivity extends AppCompatActivity {
                     data.eaheHigh.setChecked(false);
                     data.eahe = 1;
                     data.eaheAbundance = "Medium";
-                }
-                else if (isCheckedeahePresent == false && isCheckedeaheMedium == true){
+                } else if (isCheckedeahePresent == false && isCheckedeaheMedium == true) {
                     data.eaheNone.setChecked(false);
                     data.eaheLow.setChecked(false);
                     data.eaheHigh.setChecked(false);
@@ -1815,8 +1780,7 @@ public class MainActivity extends AppCompatActivity {
                     data.eaheLow.setChecked(false);
                     data.eahe = 1;
                     data.eaheAbundance = "High";
-                }
-                else if (isCheckedeahePresent == false && isCheckedeaheHigh == true){
+                } else if (isCheckedeahePresent == false && isCheckedeaheHigh == true) {
                     data.eaheNone.setChecked(false);
                     data.eaheMedium.setChecked(false);
                     data.eaheLow.setChecked(false);
@@ -1839,8 +1803,7 @@ public class MainActivity extends AppCompatActivity {
                     data.hwaSevere.setChecked(false);
                     data.hwa = 0;
                     data.hwaSeverity = "None";
-                }
-                else{
+                } else {
                     data.hwaNone.setChecked(false);
                     data.hwaLow.setChecked(true);
                     data.hwa = 1;
@@ -1875,8 +1838,7 @@ public class MainActivity extends AppCompatActivity {
                     data.hwaSevere.setChecked(false);
                     data.hwa = 1;
                     data.hwaSeverity = "Low";
-                }
-                else if (isCheckedhwaPresent == false && isCheckedhwaLow == true){
+                } else if (isCheckedhwaPresent == false && isCheckedhwaLow == true) {
                     data.hwaNone.setChecked(false);
                     data.hwaModerate.setChecked(false);
                     data.hwaSevere.setChecked(false);
@@ -1898,8 +1860,7 @@ public class MainActivity extends AppCompatActivity {
                     data.hwaSevere.setChecked(false);
                     data.hwa = 1;
                     data.hwaSeverity = "Moderate";
-                }
-                else if (isCheckedhwaPresent == false && isCheckedhwaModerate == true){
+                } else if (isCheckedhwaPresent == false && isCheckedhwaModerate == true) {
                     data.hwaNone.setChecked(false);
                     data.hwaLow.setChecked(false);
                     data.hwaSevere.setChecked(false);
@@ -1913,7 +1874,7 @@ public class MainActivity extends AppCompatActivity {
         data.hwaSevere.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 boolean isCheckedhwaPresent = ((CheckBox) findViewById(R.id.HWAPresent)).isChecked();
-                boolean isCheckedhwaSevere= ((CheckBox) findViewById(R.id.HWASevere)).isChecked();
+                boolean isCheckedhwaSevere = ((CheckBox) findViewById(R.id.HWASevere)).isChecked();
 
                 if (isCheckedhwaPresent == true && isCheckedhwaSevere == true) {
                     data.hwaNone.setChecked(false);
@@ -1921,8 +1882,7 @@ public class MainActivity extends AppCompatActivity {
                     data.hwaLow.setChecked(false);
                     data.hwa = 1;
                     data.hwaSeverity = "Severe";
-                }
-                else if (isCheckedhwaPresent == false && isCheckedhwaSevere == true){
+                } else if (isCheckedhwaPresent == false && isCheckedhwaSevere == true) {
                     data.hwaNone.setChecked(false);
                     data.hwaModerate.setChecked(false);
                     data.hwaLow.setChecked(false);
@@ -2032,7 +1992,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void updateButtonPressed(){
+    public void updateButtonPressed() {
         //cell
         data.cell = getCellValue();
 
@@ -2237,7 +2197,7 @@ public class MainActivity extends AppCompatActivity {
         totalPoints();
         data.totalPoints = (TextView) findViewById(R.id.totalPoints);
         data.modifyTotalPoints = data.totalPoints.getText().toString();
-        data.modifyTotalPoints = "Points:" + " " + Integer.toString(data.total) +  "   " + "Integrity Rank:" + " " + data.qualityRank;
+        data.modifyTotalPoints = "Points:" + " " + Integer.toString(data.total) + "   " + "Integrity Rank:" + " " + data.qualityRank;
         data.totalPoints.setText(data.modifyTotalPoints);
 
         //bearing changes saved
@@ -2256,21 +2216,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //get Cell value
-    public String getCellValue(){
+    public String getCellValue() {
         data.cellValue = (EditText) findViewById(R.id.cell_input);
         String cell = data.cellValue.getText().toString();
         return cell;
     }
 
     //get Date
-    public String getDateValue(){
+    public String getDateValue() {
         data.dateValue = (EditText) findViewById(R.id.date_input);
         String date = data.dateValue.getText().toString();
         return date;
     }
 
     //get Scorers value
-    public String getScorerValue(){
+    public String getScorerValue() {
         data.scorersValue = (EditText) findViewById(R.id.scorer_input);
         String scorers = data.scorersValue.getText().toString();
         return scorers;
@@ -2556,6 +2516,7 @@ public class MainActivity extends AppCompatActivity {
             data.point4A = 0;
         }
     }
+
     // SECTION 4B
     public void legacyTreeSpeciesScore() {
         data.threshold = 2;
@@ -2607,7 +2568,7 @@ public class MainActivity extends AppCompatActivity {
         data.sum5A = data.NW5Anumber + data.NE5Anumber + data.SW5Anumber + data.SE5Anumber;
 
         // gets point if within range
-        if (data.sum5A >= minThreshold && data.sum5A<= maxThreshold) {
+        if (data.sum5A >= minThreshold && data.sum5A <= maxThreshold) {
             data.point5A = 1;
         } else {
             data.point5A = 0;
@@ -2750,252 +2711,237 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //section 7
-    public void noObservedInvasivePlants(){
+    public void noObservedInvasivePlants() {
         boolean isChecked = ((CheckBox) findViewById(R.id.checkBox7)).isChecked();
-        if (isChecked == true){
+        if (isChecked == true) {
             data.point7 = 1;
-        }
-        else{
+        } else {
             data.point7 = 0;
         }
     }
 
     //section 8
-    public void healthyLightGaps(){
+    public void healthyLightGaps() {
         boolean isChecked = ((CheckBox) findViewById(R.id.checkBox8)).isChecked();
-        if (isChecked == true){
+        if (isChecked == true) {
             data.point8 = 1;
-        }
-        else{
+        } else {
             data.point8 = 0;
         }
     }
 
     //section 9
-    public void microtopography(){
+    public void microtopography() {
         boolean isChecked = ((CheckBox) findViewById(R.id.checkBox9)).isChecked();
-        if (isChecked == true){
+        if (isChecked == true) {
             data.point9 = 1;
-        }
-        else{
+        } else {
             data.point9 = 0;
         }
     }
 
     //section 10
-    public void absenceOfHumanActivity(){
+    public void absenceOfHumanActivity() {
         boolean isChecked = ((CheckBox) findViewById(R.id.checkBox10)).isChecked();
-        if (isChecked == true){
+        if (isChecked == true) {
             data.point10 = 1;
-        }
-        else{
+        } else {
             data.point10 = 0;
         }
     }
 
     //section 11
-    public void absenceOfDeer(){
+    public void absenceOfDeer() {
         boolean isChecked = ((CheckBox) findViewById(R.id.checkBox11)).isChecked();
-        if (isChecked == true){
+        if (isChecked == true) {
             data.point11 = 1;
-        }
-        else{
+        } else {
             data.point11 = 0;
         }
     }
 
     //section 12
-    public void leafFragmentCover(){
+    public void leafFragmentCover() {
         boolean isCheckedA = ((CheckBox) findViewById(R.id.checkBox12A)).isChecked();
         boolean isCheckedB = ((CheckBox) findViewById(R.id.checkBox12B)).isChecked();
         boolean isCheckedC = ((CheckBox) findViewById(R.id.checkBox12C)).isChecked();
         boolean isCheckedD = ((CheckBox) findViewById(R.id.checkBox12D)).isChecked();
         boolean isCheckedE = ((CheckBox) findViewById(R.id.checkBox12E)).isChecked();
-        if (isCheckedA == true){
+        if (isCheckedA == true) {
             data.pointBoxA = 1;
-        }
-        else{
+        } else {
             data.pointBoxA = 0;
         }
-        if (isCheckedB == true){
+        if (isCheckedB == true) {
             data.pointBoxB = 1;
-        }
-        else{
+        } else {
             data.pointBoxB = 0;
         }
-        if (isCheckedC == true){
+        if (isCheckedC == true) {
             data.pointBoxC = 1;
-        }
-        else{
+        } else {
             data.pointBoxC = 0;
         }
-        if (isCheckedD == true){
+        if (isCheckedD == true) {
             data.pointBoxD = 1;
-        }
-        else{
+        } else {
             data.pointBoxD = 0;
         }
-        if (isCheckedE == true){
+        if (isCheckedE == true) {
             data.pointBoxE = 1;
-        }
-        else{
+        } else {
             data.pointBoxE = 0;
         }
         data.total12 = data.pointBoxA + data.pointBoxB + data.pointBoxC + data.pointBoxD + data.pointBoxE;
 
-        if(data.total12 >= 4){
+        if (data.total12 >= 4) {
             data.point12 = 1;
-        }
-        else{
+        } else {
             data.point12 = 0;
         }
     }
 
     // total points and quality rank
-    public void totalPoints(){
+    public void totalPoints() {
         data.total = data.point1A + data.point1B + data.point2A + data.point2B + data.point3A + data.point3B + data.point4A + data.point4B + data.point5A + data.point5B + data.point6A + data.point6B + data.point7 + data.point8 + data.point9 + data.point10 + data.point11 + data.point12;
-        if(data.total >= 0 && data.total <= 4){
+        if (data.total >= 0 && data.total <= 4) {
             data.qualityRank = "Low";
-        }
-        else if (data.total >= 5 && data.total <= 9){
+        } else if (data.total >= 5 && data.total <= 9) {
             data.qualityRank = "Medium Low";
-        }
-        else if (data.total >= 10 && data.total <= 13){
+        } else if (data.total >= 10 && data.total <= 13) {
             data.qualityRank = "Medium";
-        }
-        else if (data.total >= 14 && data.total <= 16){
+        } else if (data.total >= 14 && data.total <= 16) {
             data.qualityRank = "Medium High";
-        }
-        else if (data.total >= 17 && data.total <= 18){
+        } else if (data.total >= 17 && data.total <= 18) {
             data.qualityRank = "High";
         }
     }
 
     // arrayList of data
-    public ArrayList<Holder<Object>> getValues(){
+    public ArrayList<Holder<Object>> getValues() {
         ArrayList<Holder<Object>> list = new ArrayList<>(97);
-        list.add(new Holder<Object>(getCellValue(),0));
-        list.add(new Holder<Object>(getDateValue(),0));
-        list.add(new Holder<Object>(getScorerValue(),0));
-        list.add(new Holder<Object>(data.NW1Anumber,1));
-        list.add(new Holder<Object>(data.NE1Anumber,1));
-        list.add(new Holder<Object>(data.SE1Anumber,1));
-        list.add(new Holder<Object>(data.SW1Anumber,1));
-        list.add(new Holder<Object>(data.sum1A,1));
-        list.add(new Holder<Object>(data.point1A,1));
-        list.add(new Holder<Object>(data.NW1Bnumber,1));
-        list.add(new Holder<Object>(data.NE1Bnumber,1));
-        list.add(new Holder<Object>(data.SE1Bnumber,1));
-        list.add(new Holder<Object>(data.SW1Bnumber,1));
-        list.add(new Holder<Object>(data.sum1B,1));
-        list.add(new Holder<Object>(data.point1B,1));
-        list.add(new Holder<Object>(data.NE2Anumber,1));
-        list.add(new Holder<Object>(data.SE2Anumber,1));
-        list.add(new Holder<Object>(data.NW2Anumber,1));
-        list.add(new Holder<Object>(data.SW2Anumber,1));
-        list.add(new Holder<Object>(data.sum2A,1));
-        list.add(new Holder<Object>(data.point2A,1));
-        list.add(new Holder<Object>(data.NW2Bnumber,1));
-        list.add(new Holder<Object>(data.NE2Bnumber,1));
-        list.add(new Holder<Object>(data.SE2Bnumber,1));
-        list.add(new Holder<Object>(data.SW2Bnumber,1));
-        list.add(new Holder<Object>(data.sum2B,1));
-        list.add(new Holder<Object>(data.point2B,1));
-        list.add(new Holder<Object>(data.NW3Anumber,1));
-        list.add(new Holder<Object>(data.NE3Anumber,1));
-        list.add(new Holder<Object>(data.SE3Anumber,1));
-        list.add(new Holder<Object>(data.SW3Anumber,1));
-        list.add(new Holder<Object>(data.sum3A,1));
-        list.add(new Holder<Object>(data.point3A,1));
-        list.add(new Holder<Object>(data.list3B,0));
-        list.add(new Holder<Object>(data.dominant3B1,0));
-        list.add(new Holder<Object>(data.dominant3B2,0));
-        list.add(new Holder<Object>(data.sum3B,1));
-        list.add(new Holder<Object>(data.point3B,1));
-        list.add(new Holder<Object>(data.NW4Anumber,1));
-        list.add(new Holder<Object>(data.NE4Anumber,1));
-        list.add(new Holder<Object>(data.SE4Anumber,1));
-        list.add(new Holder<Object>(data.SW4Anumber,1));
-        list.add(new Holder<Object>(data.sum4A,1));
-        list.add(new Holder<Object>(data.point4A,1));
-        list.add(new Holder<Object>(data.list4B,0));
-        list.add(new Holder<Object>(data.sum4B,1));
-        list.add(new Holder<Object>(data.point4B,1));
-        list.add(new Holder<Object>(data.NW5Anumber,1));
-        list.add(new Holder<Object>(data.NE5Anumber,1));
-        list.add(new Holder<Object>(data.SE5Anumber,1));
-        list.add(new Holder<Object>(data.SW5Anumber,1));
-        list.add(new Holder<Object>(data.sum5A,1));
-        list.add(new Holder<Object>(data.point5A,1));
-        list.add(new Holder<Object>(data.NW5Bnumber,1));
-        list.add(new Holder<Object>(data.NE5Bnumber,1));
-        list.add(new Holder<Object>(data.SE5Bnumber,1));
-        list.add(new Holder<Object>(data.SW5Bnumber,1));
-        list.add(new Holder<Object>(data.sum5B,1));
-        list.add(new Holder<Object>(data.point5B,1));
-        list.add(new Holder<Object>(data.NW6Anumber,1));
-        list.add(new Holder<Object>(data.NE6Anumber,1));
-        list.add(new Holder<Object>(data.SE6Anumber,1));
-        list.add(new Holder<Object>(data.SW6Anumber,1));
-        list.add(new Holder<Object>(data.sum6A,1));
-        list.add(new Holder<Object>(data.point6A,1));
-        list.add(new Holder<Object>(data.NW6Bnumber,1));
-        list.add(new Holder<Object>(data.NE6Bnumber,1));
-        list.add(new Holder<Object>(data.SE6Bnumber,1));
-        list.add(new Holder<Object>(data.SW6Bnumber,1));
-        list.add(new Holder<Object>(data.sum6B,1));
-        list.add(new Holder<Object>(data.point6B,1));
-        list.add(new Holder<Object>(data.point7,1));
-        list.add(new Holder<Object>(data.point8,1));
-        list.add(new Holder<Object>(data.point9,1));
-        list.add(new Holder<Object>(data.point10,1));
-        list.add(new Holder<Object>(data.point11,1));
-        list.add(new Holder<Object>(data.pointBoxA,1));
-        list.add(new Holder<Object>(data.pointBoxB,1));
-        list.add(new Holder<Object>(data.pointBoxD,1));
-        list.add(new Holder<Object>(data.pointBoxC,1));
-        list.add(new Holder<Object>(data.pointBoxE,1));
-        list.add(new Holder<Object>(data.total12,1));
-        list.add(new Holder<Object>(data.point12,1));
-        list.add(new Holder<Object>(data.total,1));
-        list.add(new Holder<Object>(data.qualityRank,0));
-        list.add(new Holder<Object>(data.beech,1));
-        list.add(new Holder<Object>(data.bld,1));
-        list.add(new Holder<Object>(data.bldSeverity,0));
-        list.add(new Holder<Object>(data.beechAbundance,0));
-        list.add(new Holder<Object>(data.ash,1));
-        list.add(new Holder<Object>(data.eab,1));
-        list.add(new Holder<Object>(data.eabSeverity,0));
-        list.add(new Holder<Object>(data.ashAbundance,0));
-        list.add(new Holder<Object>(data.eahe,1));
-        list.add(new Holder<Object>(data.hwa,1));
-        list.add(new Holder<Object>(data.hwaSeverity,0));
-        list.add(new Holder<Object>(data.eaheAbundance,0));
+        list.add(new Holder<Object>(getCellValue(), 0));
+        list.add(new Holder<Object>(getDateValue(), 0));
+        list.add(new Holder<Object>(getScorerValue(), 0));
+        list.add(new Holder<Object>(data.NW1Anumber, 1));
+        list.add(new Holder<Object>(data.NE1Anumber, 1));
+        list.add(new Holder<Object>(data.SE1Anumber, 1));
+        list.add(new Holder<Object>(data.SW1Anumber, 1));
+        list.add(new Holder<Object>(data.sum1A, 1));
+        list.add(new Holder<Object>(data.point1A, 1));
+        list.add(new Holder<Object>(data.NW1Bnumber, 1));
+        list.add(new Holder<Object>(data.NE1Bnumber, 1));
+        list.add(new Holder<Object>(data.SE1Bnumber, 1));
+        list.add(new Holder<Object>(data.SW1Bnumber, 1));
+        list.add(new Holder<Object>(data.sum1B, 1));
+        list.add(new Holder<Object>(data.point1B, 1));
+        list.add(new Holder<Object>(data.NE2Anumber, 1));
+        list.add(new Holder<Object>(data.SE2Anumber, 1));
+        list.add(new Holder<Object>(data.NW2Anumber, 1));
+        list.add(new Holder<Object>(data.SW2Anumber, 1));
+        list.add(new Holder<Object>(data.sum2A, 1));
+        list.add(new Holder<Object>(data.point2A, 1));
+        list.add(new Holder<Object>(data.NW2Bnumber, 1));
+        list.add(new Holder<Object>(data.NE2Bnumber, 1));
+        list.add(new Holder<Object>(data.SE2Bnumber, 1));
+        list.add(new Holder<Object>(data.SW2Bnumber, 1));
+        list.add(new Holder<Object>(data.sum2B, 1));
+        list.add(new Holder<Object>(data.point2B, 1));
+        list.add(new Holder<Object>(data.NW3Anumber, 1));
+        list.add(new Holder<Object>(data.NE3Anumber, 1));
+        list.add(new Holder<Object>(data.SE3Anumber, 1));
+        list.add(new Holder<Object>(data.SW3Anumber, 1));
+        list.add(new Holder<Object>(data.sum3A, 1));
+        list.add(new Holder<Object>(data.point3A, 1));
+        list.add(new Holder<Object>(data.list3B, 0));
+        list.add(new Holder<Object>(data.dominant3B1, 0));
+        list.add(new Holder<Object>(data.dominant3B2, 0));
+        list.add(new Holder<Object>(data.sum3B, 1));
+        list.add(new Holder<Object>(data.point3B, 1));
+        list.add(new Holder<Object>(data.NW4Anumber, 1));
+        list.add(new Holder<Object>(data.NE4Anumber, 1));
+        list.add(new Holder<Object>(data.SE4Anumber, 1));
+        list.add(new Holder<Object>(data.SW4Anumber, 1));
+        list.add(new Holder<Object>(data.sum4A, 1));
+        list.add(new Holder<Object>(data.point4A, 1));
+        list.add(new Holder<Object>(data.list4B, 0));
+        list.add(new Holder<Object>(data.sum4B, 1));
+        list.add(new Holder<Object>(data.point4B, 1));
+        list.add(new Holder<Object>(data.NW5Anumber, 1));
+        list.add(new Holder<Object>(data.NE5Anumber, 1));
+        list.add(new Holder<Object>(data.SE5Anumber, 1));
+        list.add(new Holder<Object>(data.SW5Anumber, 1));
+        list.add(new Holder<Object>(data.sum5A, 1));
+        list.add(new Holder<Object>(data.point5A, 1));
+        list.add(new Holder<Object>(data.NW5Bnumber, 1));
+        list.add(new Holder<Object>(data.NE5Bnumber, 1));
+        list.add(new Holder<Object>(data.SE5Bnumber, 1));
+        list.add(new Holder<Object>(data.SW5Bnumber, 1));
+        list.add(new Holder<Object>(data.sum5B, 1));
+        list.add(new Holder<Object>(data.point5B, 1));
+        list.add(new Holder<Object>(data.NW6Anumber, 1));
+        list.add(new Holder<Object>(data.NE6Anumber, 1));
+        list.add(new Holder<Object>(data.SE6Anumber, 1));
+        list.add(new Holder<Object>(data.SW6Anumber, 1));
+        list.add(new Holder<Object>(data.sum6A, 1));
+        list.add(new Holder<Object>(data.point6A, 1));
+        list.add(new Holder<Object>(data.NW6Bnumber, 1));
+        list.add(new Holder<Object>(data.NE6Bnumber, 1));
+        list.add(new Holder<Object>(data.SE6Bnumber, 1));
+        list.add(new Holder<Object>(data.SW6Bnumber, 1));
+        list.add(new Holder<Object>(data.sum6B, 1));
+        list.add(new Holder<Object>(data.point6B, 1));
+        list.add(new Holder<Object>(data.point7, 1));
+        list.add(new Holder<Object>(data.point8, 1));
+        list.add(new Holder<Object>(data.point9, 1));
+        list.add(new Holder<Object>(data.point10, 1));
+        list.add(new Holder<Object>(data.point11, 1));
+        list.add(new Holder<Object>(data.pointBoxA, 1));
+        list.add(new Holder<Object>(data.pointBoxB, 1));
+        list.add(new Holder<Object>(data.pointBoxD, 1));
+        list.add(new Holder<Object>(data.pointBoxC, 1));
+        list.add(new Holder<Object>(data.pointBoxE, 1));
+        list.add(new Holder<Object>(data.total12, 1));
+        list.add(new Holder<Object>(data.point12, 1));
+        list.add(new Holder<Object>(data.total, 1));
+        list.add(new Holder<Object>(data.qualityRank, 0));
+        list.add(new Holder<Object>(data.beech, 1));
+        list.add(new Holder<Object>(data.bld, 1));
+        list.add(new Holder<Object>(data.bldSeverity, 0));
+        list.add(new Holder<Object>(data.beechAbundance, 0));
+        list.add(new Holder<Object>(data.ash, 1));
+        list.add(new Holder<Object>(data.eab, 1));
+        list.add(new Holder<Object>(data.eabSeverity, 0));
+        list.add(new Holder<Object>(data.ashAbundance, 0));
+        list.add(new Holder<Object>(data.eahe, 1));
+        list.add(new Holder<Object>(data.hwa, 1));
+        list.add(new Holder<Object>(data.hwaSeverity, 0));
+        list.add(new Holder<Object>(data.eaheAbundance, 0));
         return list;
     }
 
-    public boolean saveSheetData(RUFASheetData sheetData){
+    public boolean saveSheetData(RUFASheetData sheetData) {
         JsonObject obj = JsonSerializer.serialize(data);
         String jsonString = obj.toString();
         String name = sheetData.cell + ":" + sheetData.date;
-        Log.i("int",jsonString);
-        Log.i("int",name);
+        Log.i("int", jsonString);
+        Log.i("int", name);
         try {
             InternalStorageAccessor.writeToFile(getApplicationContext(), name, jsonString);
             return true;
-        }catch(IOException e){
+        } catch (IOException e) {
 
             return false;
         }
     }
 
-    public void loadSheetData(View v){
+    public void loadSheetData(View v) {
         String cell = data.cell;
         String date = data.date;
         //get list of files and select
         File[] files = InternalStorageAccessor.getFileList(getApplicationContext());
         final String[] fileNames = new String[files.length];
-        for(int i = 0; i < files.length; i ++){
+        for (int i = 0; i < files.length; i++) {
             fileNames[i] = files[i].getName();
         }
 
@@ -3003,364 +2949,359 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 fileName = fileNames[i];
-                Log.i("load","file name acquired");
-                Log.i("load",fileName);
+                Log.i("load", "file name acquired");
+                Log.i("load", fileName);
                 try {
                     //load file data
-                    JsonObject obj = InternalStorageAccessor.readFromFile(getApplicationContext(),fileName);
+                    JsonObject obj = InternalStorageAccessor.readFromFile(getApplicationContext(), fileName);
                     RUFASheetData loadData = JsonSerializer.deserialize(obj);
                     MainActivity.this.data = loadData;
-                    Log.i("load",obj.toString());
-                    Log.i("load","data loaded");
+                    Log.i("load", obj.toString());
+                    Log.i("load", "data loaded");
                     //TODO checkboxes and the like
                     updateSheet(loadData);
-                } catch (IOException e){
+                } catch (IOException e) {
                     e.printStackTrace();
-                    Log.e("load","io exception",e);
+                    Log.e("load", "io exception", e);
                 }
             }
         }).create();
         diag.show();
-        Log.i("load","dialog shown");
+        Log.i("load", "dialog shown");
     }
 
-    public void updateSheet(RUFASheetData d){
-        ((EditText)findViewById(R.id.cell_input)).setText(d.cell);
-        ((EditText)findViewById(R.id.date_input)).setText(d.date);
-        ((EditText)findViewById(R.id.scorer_input)).setText(d.scorers);
+    public void updateSheet(RUFASheetData d) {
+        ((EditText) findViewById(R.id.cell_input)).setText(d.cell);
+        ((EditText) findViewById(R.id.date_input)).setText(d.date);
+        ((EditText) findViewById(R.id.scorer_input)).setText(d.scorers);
         //SECTION 1
-        ((EditText)findViewById(R.id.NW1A)).setText(d.NW1Anumber);
-        ((EditText)findViewById(R.id.NE1A)).setText(d.NE1Anumber);
-        ((TextView)findViewById(R.id.sum1AVal)).setText(d.sum1A);
-        ((EditText)findViewById(R.id.SW1A)).setText(d.SW1Anumber);
-        ((EditText)findViewById(R.id.SE1A)).setText(d.SE1Anumber);
-        ((TextView)findViewById(R.id.point1AVal)).setText(d.point1A);
+        ((EditText) findViewById(R.id.NW1A)).setText(Integer.toString(d.NW1Anumber));
+        ((EditText) findViewById(R.id.NE1A)).setText(Integer.toString(d.NE1Anumber));
+        ((TextView) findViewById(R.id.sum1AVal)).setText(Integer.toString(d.sum1A));
+        ((EditText) findViewById(R.id.SW1A)).setText(Integer.toString(d.SW1Anumber));
+        ((EditText) findViewById(R.id.SE1A)).setText(Integer.toString(d.SE1Anumber));
+        ((TextView) findViewById(R.id.point1AVal)).setText(Integer.toString(d.point1A));
         //1B
-        ((EditText)findViewById(R.id.NW1B)).setText(d.NW1Bnumber);
-        ((EditText)findViewById(R.id.NE1B)).setText(d.NE1Bnumber);
-        ((TextView)findViewById(R.id.sum1BVal)).setText(d.sum1B);
-        ((EditText)findViewById(R.id.SW1B)).setText(d.SW1Bnumber);
-        ((EditText)findViewById(R.id.SE1B)).setText(d.SE1Bnumber);
-        ((TextView)findViewById(R.id.point2BVal)).setText(d.point1B);
+        ((EditText) findViewById(R.id.NW1B)).setText(Integer.toString(d.NW1Bnumber));
+        ((EditText) findViewById(R.id.NE1B)).setText(Integer.toString(d.NE1Bnumber));
+        ((TextView) findViewById(R.id.sum1BVal)).setText(Integer.toString(d.sum1B));
+        ((EditText) findViewById(R.id.SW1B)).setText(Integer.toString(d.SW1Bnumber));
+        ((EditText) findViewById(R.id.SE1B)).setText(Integer.toString(d.SE1Bnumber));
+        ((TextView) findViewById(R.id.point2BVal)).setText(Integer.toString(d.point1B));
         //SECTION 2
-        ((EditText)findViewById(R.id.NW2A)).setText(d.NW2Anumber);
-        ((EditText)findViewById(R.id.NE2A)).setText(d.NE2Anumber);
-        ((TextView)findViewById(R.id.sum2AVal)).setText(d.sum2A);
-        ((EditText)findViewById(R.id.SW2A)).setText(d.SW2Anumber);
-        ((EditText)findViewById(R.id.SE2A)).setText(d.SE2Anumber);
-        ((TextView)findViewById(R.id.point2AVal)).setText(d.point2A);
+        ((EditText) findViewById(R.id.NW2A)).setText(Integer.toString(d.NW2Anumber));
+        ((EditText) findViewById(R.id.NE2A)).setText(Integer.toString(d.NE2Anumber));
+        ((TextView) findViewById(R.id.sum2AVal)).setText(Integer.toString(d.sum2A));
+        ((EditText) findViewById(R.id.SW2A)).setText(Integer.toString(d.SW2Anumber));
+        ((EditText) findViewById(R.id.SE2A)).setText(Integer.toString(d.SE2Anumber));
+        ((TextView) findViewById(R.id.point2AVal)).setText(Integer.toString(d.point2A));
         //2B
-        ((EditText)findViewById(R.id.NW2B)).setText(d.NW2Bnumber);
-        ((EditText)findViewById(R.id.NE2B)).setText(d.NE2Bnumber);
-        ((TextView)findViewById(R.id.sum2BVal)).setText(d.sum2B);
-        ((EditText)findViewById(R.id.SW2B)).setText(d.SW2Bnumber);
-        ((EditText)findViewById(R.id.SE2B)).setText(d.SE2Bnumber);
-        ((TextView)findViewById(R.id.point2BVal)).setText(d.point2B);
+        ((EditText) findViewById(R.id.NW2B)).setText(Integer.toString(d.NW2Bnumber));
+        ((EditText) findViewById(R.id.NE2B)).setText(Integer.toString(d.NE2Bnumber));
+        ((TextView) findViewById(R.id.sum2BVal)).setText(Integer.toString(d.sum2B));
+        ((EditText) findViewById(R.id.SW2B)).setText(Integer.toString(d.SW2Bnumber));
+        ((EditText) findViewById(R.id.SE2B)).setText(Integer.toString(d.SE2Bnumber));
+        ((TextView) findViewById(R.id.point2BVal)).setText(Integer.toString(d.point2B));
         //SECTION 3A
-        ((EditText)findViewById(R.id.NW3A)).setText(d.NW3Anumber);
-        ((EditText)findViewById(R.id.NE3A)).setText(d.NE3Anumber);
-        ((TextView)findViewById(R.id.sum3AVal)).setText(d.sum3A);
-        ((EditText)findViewById(R.id.SW3A)).setText(d.SW3Anumber);
-        ((EditText)findViewById(R.id.SE3A)).setText(d.SE3Anumber);
-        ((TextView)findViewById(R.id.point3AVal)).setText(d.point3A);
+        ((EditText) findViewById(R.id.NW3A)).setText(Integer.toString(d.NW3Anumber));
+        ((EditText) findViewById(R.id.NE3A)).setText(Integer.toString(d.NE3Anumber));
+        ((TextView) findViewById(R.id.sum3AVal)).setText(Integer.toString(d.sum3A));
+        ((EditText) findViewById(R.id.SW3A)).setText(Integer.toString(d.SW3Anumber));
+        ((EditText) findViewById(R.id.SE3A)).setText(Integer.toString(d.SE3Anumber));
+        ((TextView) findViewById(R.id.point3AVal)).setText(Integer.toString(d.point3A));
         //3B
-        ((TextView)findViewById(R.id.dominant3B1)).setText(d.dominant3B1);
-        ((TextView)findViewById(R.id.dominant3B2)).setText(d.dominant3B2);
-        ((TextView)findViewById(R.id.listOfTrees3B)).setText(d.list3B);
+        ((TextView) findViewById(R.id.dominant3B1)).setText(d.dominant3B1);
+        ((TextView) findViewById(R.id.dominant3B2)).setText(d.dominant3B2);
+        ((TextView) findViewById(R.id.listOfTrees3B)).setText(d.list3B);
         //SECTION 3A
-        ((EditText)findViewById(R.id.NW3A)).setText(d.NW3Anumber);
-        ((EditText)findViewById(R.id.NE3A)).setText(d.NE3Anumber);
-        ((TextView)findViewById(R.id.sum3AVal)).setText(d.sum3A);
-        ((EditText)findViewById(R.id.SW3A)).setText(d.SW3Anumber);
-        ((EditText)findViewById(R.id.SE3A)).setText(d.SE3Anumber);
-        ((TextView)findViewById(R.id.point3AVal)).setText(d.point3A);
+        ((EditText) findViewById(R.id.NW3A)).setText(Integer.toString(d.NW3Anumber));
+        ((EditText) findViewById(R.id.NE3A)).setText(Integer.toString(d.NE3Anumber));
+        ((TextView) findViewById(R.id.sum3AVal)).setText(Integer.toString(d.sum3A));
+        ((EditText) findViewById(R.id.SW3A)).setText(Integer.toString(d.SW3Anumber));
+        ((EditText) findViewById(R.id.SE3A)).setText(Integer.toString(d.SE3Anumber));
+        ((TextView) findViewById(R.id.point3AVal)).setText(Integer.toString(d.point3A));
         //3B
-        ((TextView)findViewById(R.id.dominant3B1)).setText(d.dominant3B1);
-        ((TextView)findViewById(R.id.dominant3B2)).setText(d.dominant3B2);
-        ((TextView)findViewById(R.id.listOfTrees3B)).setText(d.list3B);
-        ((TextView)findViewById(R.id.point3BVal)).setText(d.point3B);
-        ((TextView)findViewById(R.id.sum3BVal)).setText(d.sum3B);
+        ((TextView) findViewById(R.id.dominant3B1)).setText(d.dominant3B1);
+        ((TextView) findViewById(R.id.dominant3B2)).setText(d.dominant3B2);
+        ((TextView) findViewById(R.id.listOfTrees3B)).setText(d.list3B);
+        ((TextView) findViewById(R.id.point3BVal)).setText(Integer.toString(d.point3B));
+        ((TextView) findViewById(R.id.sum3BVal)).setText(Integer.toString(d.sum3B));
         //SECTION 4A
-        ((EditText)findViewById(R.id.NW4A)).setText(d.NW4Anumber);
-        ((EditText)findViewById(R.id.NE4A)).setText(d.NE4Anumber);
-        ((TextView)findViewById(R.id.sum4AVal)).setText(d.sum4A);
-        ((EditText)findViewById(R.id.SW4A)).setText(d.SW4Anumber);
-        ((EditText)findViewById(R.id.SE4A)).setText(d.SE4Anumber);
-        ((TextView)findViewById(R.id.point4AVal)).setText(d.point4A);
+        ((EditText) findViewById(R.id.NW4A)).setText(Integer.toString(d.NW4Anumber));
+        ((EditText) findViewById(R.id.NE4A)).setText(Integer.toString(d.NE4Anumber));
+        ((TextView) findViewById(R.id.sum4AVal)).setText(Integer.toString(d.sum4A));
+        ((EditText) findViewById(R.id.SW4A)).setText(Integer.toString(d.SW4Anumber));
+        ((EditText) findViewById(R.id.SE4A)).setText(Integer.toString(d.SE4Anumber));
+        ((TextView) findViewById(R.id.point4AVal)).setText(Integer.toString(d.point4A));
         //4B
-        ((TextView)findViewById(R.id.dominant4B1)).setText(d.dominant4B1);
-        ((TextView)findViewById(R.id.dominant4B2)).setText(d.dominant4B2);
-        ((TextView)findViewById(R.id.listOfTrees4B)).setText(d.list4B);
-        ((TextView)findViewById(R.id.point4BVal)).setText(d.point4B);
-        ((TextView)findViewById(R.id.sum4BVal)).setText(d.sum4B);
+        ((TextView) findViewById(R.id.dominant4B1)).setText(d.dominant4B1);
+        ((TextView) findViewById(R.id.dominant4B2)).setText(d.dominant4B2);
+        ((TextView) findViewById(R.id.listOfTrees4B)).setText(d.list4B);
+        ((TextView) findViewById(R.id.point4BVal)).setText(Integer.toString(d.point4B));
+        ((TextView) findViewById(R.id.sum4BVal)).setText(Integer.toString(d.sum4B));
         //SECTION 5
-        ((EditText)findViewById(R.id.NW5A)).setText(d.NW5Anumber);
-        ((EditText)findViewById(R.id.NE5A)).setText(d.NE5Anumber);
-        ((TextView)findViewById(R.id.sum5AVal)).setText(d.sum5A);
-        ((EditText)findViewById(R.id.SW5A)).setText(d.SW5Anumber);
-        ((EditText)findViewById(R.id.SE5A)).setText(d.SE5Anumber);
-        ((TextView)findViewById(R.id.point5AVal)).setText(d.point5A);
+        ((EditText) findViewById(R.id.NW5A)).setText(Integer.toString(d.NW5Anumber));
+        ((EditText) findViewById(R.id.NE5A)).setText(Integer.toString(d.NE5Anumber));
+        ((TextView) findViewById(R.id.sum5AVal)).setText(Integer.toString(d.sum5A));
+        ((EditText) findViewById(R.id.SW5A)).setText(Integer.toString(d.SW5Anumber));
+        ((EditText) findViewById(R.id.SE5A)).setText(Integer.toString(d.SE5Anumber));
+        ((TextView) findViewById(R.id.point5AVal)).setText(Integer.toString(d.point5A));
         //5B
-        ((EditText)findViewById(R.id.NW5B)).setText(d.NW5Bnumber);
-        ((EditText)findViewById(R.id.NE5B)).setText(d.NE5Bnumber);
-        ((TextView)findViewById(R.id.sum5BVal)).setText(d.sum5B);
-        ((EditText)findViewById(R.id.SW5B)).setText(d.SW5Bnumber);
-        ((EditText)findViewById(R.id.SE5B)).setText(d.SE5Bnumber);
-        ((TextView)findViewById(R.id.point5BVal)).setText(d.point5B);
+        ((EditText) findViewById(R.id.NW5B)).setText(Integer.toString(d.NW5Bnumber));
+        ((EditText) findViewById(R.id.NE5B)).setText(Integer.toString(d.NE5Bnumber));
+        ((TextView) findViewById(R.id.sum5BVal)).setText(Integer.toString(d.sum5B));
+        ((EditText) findViewById(R.id.SW5B)).setText(Integer.toString(d.SW5Bnumber));
+        ((EditText) findViewById(R.id.SE5B)).setText(Integer.toString(d.SE5Bnumber));
+        ((TextView) findViewById(R.id.point5BVal)).setText(Integer.toString(d.point5B));
         //SECTION 6
-        ((EditText)findViewById(R.id.NW6A)).setText(d.NW6Anumber);
-        ((EditText)findViewById(R.id.NE6A)).setText(d.NE6Anumber);
-        ((TextView)findViewById(R.id.sum6AVal)).setText(d.sum6A);
-        ((EditText)findViewById(R.id.SW6A)).setText(d.SW6Anumber);
-        ((EditText)findViewById(R.id.SE6A)).setText(d.SE6Anumber);
-        ((TextView)findViewById(R.id.point6AVal)).setText(d.point6A);
+        ((EditText) findViewById(R.id.NW6A)).setText(Integer.toString(d.NW6Anumber));
+        ((EditText) findViewById(R.id.NE6A)).setText(Integer.toString(d.NE6Anumber));
+        ((TextView) findViewById(R.id.sum6AVal)).setText(Integer.toString(d.sum6A));
+        ((EditText) findViewById(R.id.SW6A)).setText(Integer.toString(d.SW6Anumber));
+        ((EditText) findViewById(R.id.SE6A)).setText(Integer.toString(d.SE6Anumber));
+        ((TextView) findViewById(R.id.point6AVal)).setText(Integer.toString(d.point6A));
         //6B
-        ((EditText)findViewById(R.id.NW5B)).setText(d.NW5Bnumber);
-        ((EditText)findViewById(R.id.NE5B)).setText(d.NE5Bnumber);
-        ((TextView)findViewById(R.id.sum5BVal)).setText(d.sum5B);
-        ((EditText)findViewById(R.id.SW5B)).setText(d.SW5Bnumber);
-        ((EditText)findViewById(R.id.SE5B)).setText(d.SE5Bnumber);
-        ((TextView)findViewById(R.id.point5BVal)).setText(d.point5B);
+        ((EditText) findViewById(R.id.NW5B)).setText(Integer.toString(d.NW5Bnumber));
+        ((EditText) findViewById(R.id.NE5B)).setText(Integer.toString(d.NE5Bnumber));
+        ((TextView) findViewById(R.id.sum5BVal)).setText(Integer.toString(d.sum5B));
+        ((EditText) findViewById(R.id.SW5B)).setText(Integer.toString(d.SW5Bnumber));
+        ((EditText) findViewById(R.id.SE5B)).setText(Integer.toString(d.SE5Bnumber));
+        ((TextView) findViewById(R.id.point5BVal)).setText(Integer.toString(d.point5B));
         //section 7
-        ((CheckBox)findViewById(R.id.checkBox7)).setChecked(d.point7 == 1);
-        ((TextView)findViewById(R.id.point7Val)).setText(d.point7);
+        ((CheckBox) findViewById(R.id.checkBox7)).setChecked(d.point7 == 1);
+        ((TextView) findViewById(R.id.point7Val)).setText(Integer.toString(d.point7));
         //section 8
-        ((CheckBox)findViewById(R.id.checkBox8)).setChecked(d.point8 == 1);
-        ((TextView)findViewById(R.id.point8Val)).setText(d.point8);
+        ((CheckBox) findViewById(R.id.checkBox8)).setChecked(d.point8 == 1);
+        ((TextView) findViewById(R.id.point8Val)).setText(Integer.toString(d.point8));
         //section 9
-        ((CheckBox)findViewById(R.id.checkBox9)).setChecked(d.point9 == 1);
-        ((TextView)findViewById(R.id.point9Val)).setText(d.point9);
+        ((CheckBox) findViewById(R.id.checkBox9)).setChecked(d.point9 == 1);
+        ((TextView) findViewById(R.id.point9Val)).setText(Integer.toString(d.point9));
         //section 10
-        ((CheckBox)findViewById(R.id.checkBox10)).setChecked(d.point10 == 1);
-        ((TextView)findViewById(R.id.point10Val)).setText(d.point10);
+        ((CheckBox) findViewById(R.id.checkBox10)).setChecked(d.point10 == 1);
+        ((TextView) findViewById(R.id.point10Val)).setText(Integer.toString(d.point10));
         //section 11
-        ((CheckBox)findViewById(R.id.checkBox11)).setChecked(d.point11 == 1);
-        ((TextView)findViewById(R.id.point11Val)).setText(d.point11);
+        ((CheckBox) findViewById(R.id.checkBox11)).setChecked(d.point11 == 1);
+        ((TextView) findViewById(R.id.point11Val)).setText(Integer.toString(d.point11));
         //section 12
-        ((CheckBox)findViewById(R.id.checkBox12A)).setChecked(d.pointBoxA == 1);
-        ((CheckBox)findViewById(R.id.checkBox12B)).setChecked(d.pointBoxB == 1);
-        ((CheckBox)findViewById(R.id.checkBox12C)).setChecked(d.pointBoxC == 1);
-        ((CheckBox)findViewById(R.id.checkBox12D)).setChecked(d.pointBoxD == 1);
-        ((CheckBox)findViewById(R.id.checkBox12E)).setChecked(d.pointBoxE == 1);
-        ((TextView)findViewById(R.id.total12Val)).setText(d.total12);
-        ((TextView)findViewById(R.id.point12Val)).setText(d.point12);
+        ((CheckBox) findViewById(R.id.checkBox12A)).setChecked(d.pointBoxA == 1);
+        ((CheckBox) findViewById(R.id.checkBox12B)).setChecked(d.pointBoxB == 1);
+        ((CheckBox) findViewById(R.id.checkBox12C)).setChecked(d.pointBoxC == 1);
+        ((CheckBox) findViewById(R.id.checkBox12D)).setChecked(d.pointBoxD == 1);
+        ((CheckBox) findViewById(R.id.checkBox12E)).setChecked(d.pointBoxE == 1);
+        ((TextView) findViewById(R.id.total12Val)).setText(Integer.toString(d.total12));
+        ((TextView) findViewById(R.id.point12Val)).setText(Integer.toString(d.point12));
         //Total and Rank -- blank for now
         //plant community TODO figure out if this works correctly
-        ((CheckBox)findViewById(R.id.checkBoxPreviouslyConfirmed)).setChecked(d.prevConfirmed == 1);
-        ((CheckBox)findViewById(R.id.checkBoxGroundTruthed)).setChecked(d.groundTruthed == 1);
-        ((TextView)findViewById(R.id.community_type_value)).setText(d.selectedPlantCommunity);
-        ((EditText)findViewById(R.id.otherPlantCommunity)).setText(d.otherPlantCommunityInput);
+        ((CheckBox) findViewById(R.id.checkBoxPreviouslyConfirmed)).setChecked(d.prevConfirmed == 1);
+        ((CheckBox) findViewById(R.id.checkBoxGroundTruthed)).setChecked(d.groundTruthed == 1);
+        ((TextView) findViewById(R.id.community_type_value)).setText(d.selectedPlantCommunity);
+        ((EditText) findViewById(R.id.otherPlantCommunity)).setText(d.otherPlantCommunityInput);
         //bearing changes
-        if(d.bearingChange == 1) {
+        if (d.bearingChange == 1) {
             ((CheckBox) findViewById(R.id.checkBoxYesBearingChanged)).setChecked(true);
-        }else{
-            ((CheckBox)findViewById(R.id.checkBoxNoBearingChange)).setChecked(true);
+        } else {
+            ((CheckBox) findViewById(R.id.checkBoxNoBearingChange)).setChecked(true);
         }
-        ((EditText)findViewById(R.id.bearings_rationale_input)).setText(d.changeAndRationale);
+        ((EditText) findViewById(R.id.bearings_rationale_input)).setText(d.changeAndRationale);
         //light gaps
-        ((EditText)findViewById(R.id.lightGapInputA)).setText(d.diameterAVal);
-        ((CheckBox)findViewById(R.id.checkBoxInvadedA)).setChecked(d.invadedAVal == 1);
-        ((CheckBox)findViewById(R.id.checkBoxGrapevineA)).setChecked(d.grapevineAVal == 1);
-        ((CheckBox)findViewById(R.id.checkBoxRegeneratingA)).setChecked(d.regeneratingAVal == 1);
-        ((EditText)findViewById(R.id.lightGapInputB)).setText(d.diameterBVal);
-        ((CheckBox)findViewById(R.id.checkBoxInvadedB)).setChecked(d.invadedBVal == 1);
-        ((CheckBox)findViewById(R.id.checkBoxGrapevineB)).setChecked(d.grapevineBVal == 1);
-        ((CheckBox)findViewById(R.id.checkBoxRegeneratingB)).setChecked(d.regeneratingBVal == 1);
-        ((EditText)findViewById(R.id.lightGapInputC)).setText(d.diameterCVal);
-        ((CheckBox)findViewById(R.id.checkBoxInvadedC)).setChecked(d.invadedCVal == 1);
-        ((CheckBox)findViewById(R.id.checkBoxGrapevineC)).setChecked(d.grapevineCVal == 1);
-        ((CheckBox)findViewById(R.id.checkBoxRegeneratingC)).setChecked(d.regeneratingCVal == 1);
-        ((EditText)findViewById(R.id.lightGapInputD)).setText(d.diameterDVal);
-        ((CheckBox)findViewById(R.id.checkBoxInvadedD)).setChecked(d.invadedDVal == 1);
-        ((CheckBox)findViewById(R.id.checkBoxGrapevineD)).setChecked(d.grapevineDVal == 1);
-        ((CheckBox)findViewById(R.id.checkBoxRegeneratingD)).setChecked(d.regeneratingDVal == 1);
+        ((EditText) findViewById(R.id.lightGapInputA)).setText(Integer.toString(d.diameterAVal));
+        ((CheckBox) findViewById(R.id.checkBoxInvadedA)).setChecked(d.invadedAVal == 1);
+        ((CheckBox) findViewById(R.id.checkBoxGrapevineA)).setChecked(d.grapevineAVal == 1);
+        ((CheckBox) findViewById(R.id.checkBoxRegeneratingA)).setChecked(d.regeneratingAVal == 1);
+        ((EditText) findViewById(R.id.lightGapInputB)).setText(Integer.toString(d.diameterBVal));
+        ((CheckBox) findViewById(R.id.checkBoxInvadedB)).setChecked(d.invadedBVal == 1);
+        ((CheckBox) findViewById(R.id.checkBoxGrapevineB)).setChecked(d.grapevineBVal == 1);
+        ((CheckBox) findViewById(R.id.checkBoxRegeneratingB)).setChecked(d.regeneratingBVal == 1);
+        ((EditText) findViewById(R.id.lightGapInputC)).setText(Integer.toString(d.diameterCVal));
+        ((CheckBox) findViewById(R.id.checkBoxInvadedC)).setChecked(d.invadedCVal == 1);
+        ((CheckBox) findViewById(R.id.checkBoxGrapevineC)).setChecked(d.grapevineCVal == 1);
+        ((CheckBox) findViewById(R.id.checkBoxRegeneratingC)).setChecked(d.regeneratingCVal == 1);
+        ((EditText) findViewById(R.id.lightGapInputD)).setText(Integer.toString(d.diameterDVal));
+        ((CheckBox) findViewById(R.id.checkBoxInvadedD)).setChecked(d.invadedDVal == 1);
+        ((CheckBox) findViewById(R.id.checkBoxGrapevineD)).setChecked(d.grapevineDVal == 1);
+        ((CheckBox) findViewById(R.id.checkBoxRegeneratingD)).setChecked(d.regeneratingDVal == 1);
         //Past land use
-        ((CheckBox)findViewById(R.id.checkBoxNone)).setChecked(d.noneEvidentval == 1);
-        ((CheckBox)findViewById(R.id.checkBoxDeadFurrows)).setChecked(d.deadFurrowsval == 1);
-        ((CheckBox)findViewById(R.id.checkBoxCutStumps)).setChecked(d.cutStumpsval == 1);
-        ((CheckBox)findViewById(R.id.checkBoxDumpSite)).setChecked(d.dumpSiteval == 1);
-        ((CheckBox)findViewById(R.id.checkBoxoldRoad)).setChecked(d.oldRoadval == 1);
-        ((CheckBox)findViewById(R.id.checkBoxImprovedTrail)).setChecked(d.improvedTrailval == 1);
-        ((CheckBox)findViewById(R.id.checkBoxOther)).setChecked(d.otherval == 1);
-        ((EditText)findViewById(R.id.other_landUse_input)).setText(d.otherLandUseEvidence);
+        ((CheckBox) findViewById(R.id.checkBoxNone)).setChecked(d.noneEvidentval == 1);
+        ((CheckBox) findViewById(R.id.checkBoxDeadFurrows)).setChecked(d.deadFurrowsval == 1);
+        ((CheckBox) findViewById(R.id.checkBoxCutStumps)).setChecked(d.cutStumpsval == 1);
+        ((CheckBox) findViewById(R.id.checkBoxDumpSite)).setChecked(d.dumpSiteval == 1);
+        ((CheckBox) findViewById(R.id.checkBoxoldRoad)).setChecked(d.oldRoadval == 1);
+        ((CheckBox) findViewById(R.id.checkBoxImprovedTrail)).setChecked(d.improvedTrailval == 1);
+        ((CheckBox) findViewById(R.id.checkBoxOther)).setChecked(d.otherval == 1);
+        ((EditText) findViewById(R.id.other_landUse_input)).setText(d.otherLandUseEvidence);
         //canopy
-        if(d.canopy == 1){
-            ((CheckBox)findViewById(R.id.canopyOpen)).setChecked(true);
-        }else{
-            ((CheckBox)findViewById(R.id.canopyClosed)).setChecked(true);
+        if (d.canopy == 1) {
+            ((CheckBox) findViewById(R.id.canopyOpen)).setChecked(true);
+        } else {
+            ((CheckBox) findViewById(R.id.canopyClosed)).setChecked(true);
         }
         //Age classes
-        ((CheckBox)findViewById(R.id.checkBoxSapling)).setChecked(d.saplingPresent == 1);
-        ((TextView)findViewById(R.id.dominantSapling1)).setText(d.dominantSapling1);
-        ((TextView)findViewById(R.id.dominantSapling2)).setText(d.dominantSapling2);
-        ((CheckBox)findViewById(R.id.checkBoxSmallPole)).setChecked(d.smallPolePresent == 1);
-        ((TextView)findViewById(R.id.dominantSmallPole1)).setText(d.dominantSmallPole1);
-        ((TextView)findViewById(R.id.dominantSmallPole2)).setText(d.dominantSmallPole2);
-        ((CheckBox)findViewById(R.id.checkBoxMedPole)).setChecked(d.medPolePresent == 1);
-        ((TextView)findViewById(R.id.dominantMedPole1)).setText(d.dominantMedPole1);
-        ((TextView)findViewById(R.id.dominantMedPole2)).setText(d.dominantMedPole2);
-        ((CheckBox)findViewById(R.id.checkBoxStandard)).setChecked(d.standardPresent == 1);
-        ((TextView)findViewById(R.id.dominantStandard1)).setText(d.dominantStandardPole1);
-        ((TextView)findViewById(R.id.dominantStandard2)).setText(d.dominantStandardPole2);
-        ((CheckBox)findViewById(R.id.checkBoxVeteran)).setChecked(d.veteranPresent == 1);
-        ((TextView)findViewById(R.id.dominantVeteran1)).setText(d.dominantVeteran1);
-        ((TextView)findViewById(R.id.dominantVeteran2)).setText(d.dominantVeteran2);
+        ((CheckBox) findViewById(R.id.checkBoxSapling)).setChecked(d.saplingPresent == 1);
+        ((TextView) findViewById(R.id.dominantSapling1)).setText(d.dominantSapling1);
+        ((TextView) findViewById(R.id.dominantSapling2)).setText(d.dominantSapling2);
+        ((CheckBox) findViewById(R.id.checkBoxSmallPole)).setChecked(d.smallPolePresent == 1);
+        ((TextView) findViewById(R.id.dominantSmallPole1)).setText(d.dominantSmallPole1);
+        ((TextView) findViewById(R.id.dominantSmallPole2)).setText(d.dominantSmallPole2);
+        ((CheckBox) findViewById(R.id.checkBoxMedPole)).setChecked(d.medPolePresent == 1);
+        ((TextView) findViewById(R.id.dominantMedPole1)).setText(d.dominantMedPole1);
+        ((TextView) findViewById(R.id.dominantMedPole2)).setText(d.dominantMedPole2);
+        ((CheckBox) findViewById(R.id.checkBoxStandard)).setChecked(d.standardPresent == 1);
+        ((TextView) findViewById(R.id.dominantStandard1)).setText(d.dominantStandardPole1);
+        ((TextView) findViewById(R.id.dominantStandard2)).setText(d.dominantStandardPole2);
+        ((CheckBox) findViewById(R.id.checkBoxVeteran)).setChecked(d.veteranPresent == 1);
+        ((TextView) findViewById(R.id.dominantVeteran1)).setText(d.dominantVeteran1);
+        ((TextView) findViewById(R.id.dominantVeteran2)).setText(d.dominantVeteran2);
         //pests and pathogens
         //beech abundance
-        ((CheckBox)findViewById(R.id.beechPresent)).setChecked(d.beech == 1);
-        if(d.beech == 1){
-            switch(d.beechAbundance){
+        ((CheckBox) findViewById(R.id.beechPresent)).setChecked(d.beech == 1);
+        if (d.beech == 1) {
+            switch (d.beechAbundance) {
                 case "None":
-                    ((CheckBox)findViewById(R.id.beechNone)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.beechNone)).setChecked(true);
                     break;
                 case "Low":
-                    ((CheckBox)findViewById(R.id.beechLow)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.beechLow)).setChecked(true);
                     break;
                 case "Medium":
-                    ((CheckBox)findViewById(R.id.beechMedium)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.beechMedium)).setChecked(true);
                     break;
                 case "High":
-                    ((CheckBox)findViewById(R.id.beechHigh)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.beechHigh)).setChecked(true);
                     break;
             }
         }
         //bld severity
-        ((CheckBox)findViewById(R.id.bldPresent)).setChecked(d.bld == 1);
-        if(d.bld == 1){
-            switch(d.bldSeverity){
+        ((CheckBox) findViewById(R.id.bldPresent)).setChecked(d.bld == 1);
+        if (d.bld == 1) {
+            switch (d.bldSeverity) {
                 case "None":
-                    ((CheckBox)findViewById(R.id.bldNone)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.bldNone)).setChecked(true);
                     break;
                 case "Low":
-                    ((CheckBox)findViewById(R.id.bldLow)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.bldLow)).setChecked(true);
                     break;
                 case "Moderate":
-                    ((CheckBox)findViewById(R.id.bldModerate)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.bldModerate)).setChecked(true);
                     break;
                 case "Severe":
-                    ((CheckBox)findViewById(R.id.bldSevere)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.bldSevere)).setChecked(true);
                     break;
             }
         }
         //ash abundance
-        ((CheckBox)findViewById(R.id.ashPresent)).setChecked(d.ash == 1);
-        if(d.ash == 1){
-            switch(d.ashAbundance){
+        ((CheckBox) findViewById(R.id.ashPresent)).setChecked(d.ash == 1);
+        if (d.ash == 1) {
+            switch (d.ashAbundance) {
                 case "None":
-                    ((CheckBox)findViewById(R.id.ashNone)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.ashNone)).setChecked(true);
                     break;
                 case "Low":
-                    ((CheckBox)findViewById(R.id.ashLow)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.ashLow)).setChecked(true);
                     break;
                 case "Medium":
-                    ((CheckBox)findViewById(R.id.ashMedium)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.ashMedium)).setChecked(true);
                     break;
                 case "High":
-                    ((CheckBox)findViewById(R.id.ashHigh)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.ashHigh)).setChecked(true);
                     break;
             }
         }
         //eab severity
-        ((CheckBox)findViewById(R.id.eabPresent)).setChecked(d.eab == 1);
-        if(d.eab == 1){
-            switch(d.eabSeverity){
+        ((CheckBox) findViewById(R.id.eabPresent)).setChecked(d.eab == 1);
+        if (d.eab == 1) {
+            switch (d.eabSeverity) {
                 case "None":
-                    ((CheckBox)findViewById(R.id.eabNone)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.eabNone)).setChecked(true);
                     break;
                 case "Low":
-                    ((CheckBox)findViewById(R.id.eabLow)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.eabLow)).setChecked(true);
                     break;
                 case "Moderate":
-                    ((CheckBox)findViewById(R.id.eabModerate)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.eabModerate)).setChecked(true);
                     break;
                 case "Severe":
-                    ((CheckBox)findViewById(R.id.eabSevere)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.eabSevere)).setChecked(true);
                     break;
             }
         }
         //EAHE abundance
-        ((CheckBox)findViewById(R.id.EAHEPresent)).setChecked(d.eahe == 1);
-        if(d.eahe == 1){
-            switch(d.eaheAbundance){
+        ((CheckBox) findViewById(R.id.EAHEPresent)).setChecked(d.eahe == 1);
+        if (d.eahe == 1) {
+            switch (d.eaheAbundance) {
                 case "None":
-                    ((CheckBox)findViewById(R.id.EAHENone)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.EAHENone)).setChecked(true);
                     break;
                 case "Low":
-                    ((CheckBox)findViewById(R.id.EAHELow)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.EAHELow)).setChecked(true);
                     break;
                 case "Medium":
-                    ((CheckBox)findViewById(R.id.EAHEMedium)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.EAHEMedium)).setChecked(true);
                     break;
                 case "High":
-                    ((CheckBox)findViewById(R.id.EAHEHigh)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.EAHEHigh)).setChecked(true);
                     break;
             }
         }
         //HWA severity
-        ((CheckBox)findViewById(R.id.HWAPresent)).setChecked(d.hwa == 1);
-        if(d.hwa == 1){
-            switch(d.hwaSeverity){
+        ((CheckBox) findViewById(R.id.HWAPresent)).setChecked(d.hwa == 1);
+        if (d.hwa == 1) {
+            switch (d.hwaSeverity) {
                 case "None":
-                    ((CheckBox)findViewById(R.id.HWANone)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.HWANone)).setChecked(true);
                     break;
                 case "Low":
-                    ((CheckBox)findViewById(R.id.HWALow)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.HWALow)).setChecked(true);
                     break;
                 case "Moderate":
-                    ((CheckBox)findViewById(R.id.HWAModerate)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.HWAModerate)).setChecked(true);
                     break;
                 case "Severe":
-                    ((CheckBox)findViewById(R.id.HWASevere)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.HWASevere)).setChecked(true);
                     break;
             }
         }
         //seedling cover
-        switch(d.seedlingCover){
-            case "<10%":
-                ((CheckBox)findViewById(R.id.checkBoxTen)).setChecked(true);
-                break;
-            case "10-25%":
-                ((CheckBox)findViewById(R.id.checkBoxTenTwentyFive)).setChecked(true);
-                break;
-            case "25-50%":
-                ((CheckBox)findViewById(R.id.checkBoxTwentyFiveFifty)).setChecked(true);
-                break;
-            case "50-75%":
-                ((CheckBox)findViewById(R.id.checkBoxFiftySeventyFive)).setChecked(true);
-                break;
-            case "75-90%":
-                ((CheckBox)findViewById(R.id.checkBoxSeventyFiveNinety)).setChecked(true);
-                break;
-            case ">90%":
-                ((CheckBox)findViewById(R.id.checkBoxNinety)).setChecked(true);
-                break;
+
+        if (d.seedlingCover.equalsIgnoreCase("<10%")) {
+            ((CheckBox) findViewById(R.id.checkBoxTen)).setChecked(true);
+        } else if (d.seedlingCover.equalsIgnoreCase("10-25%")) {
+            ((CheckBox) findViewById(R.id.checkBoxTenTwentyFive)).setChecked(true);
+        } else if (d.seedlingCover.equalsIgnoreCase("25-50%")) {
+            ((CheckBox) findViewById(R.id.checkBoxTwentyFiveFifty)).setChecked(true);
+        } else if (d.seedlingCover.equalsIgnoreCase("50-75%")) {
+            ((CheckBox) findViewById(R.id.checkBoxFiftySeventyFive)).setChecked(true);
+        } else if (d.seedlingCover.equalsIgnoreCase("75-90%")) {
+            ((CheckBox) findViewById(R.id.checkBoxSeventyFiveNinety)).setChecked(true);
+        } else if (d.seedlingCover.equalsIgnoreCase(">90%")) {
+            ((CheckBox) findViewById(R.id.checkBoxNinety)).setChecked(true);
         }
+
         //additional notes
-        ((EditText)findViewById(R.id.notesInput1)).setText(d.notes);
+        ((EditText) findViewById(R.id.notesInput1)).setText(d.notes);
     }
 
-    public boolean saveToCSV(){
+    public boolean saveToCSV() {
         //TODO move permission to button
         ExternalStorageAccessor ea = new ExternalStorageAccessor();
-        if(ea.isStorageWriteable()){
+        if (ea.isStorageWriteable()) {
             try {
                 ea.writeToCsv(getApplicationContext(), RUFAdbOpenHelper.getKeyList(), getValues());
                 return true;
-            }catch (IOException e){
+            } catch (IOException e) {
                 return false;
             }
-        }else {
+        } else {
             return false;
         }
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        switch(requestCode){
+        switch (requestCode) {
             case 5: {
-                if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     saveToCSV();
-                }else{
+                } else {
                     //TODO show dialog, need permission to save
                 }
                 return;
