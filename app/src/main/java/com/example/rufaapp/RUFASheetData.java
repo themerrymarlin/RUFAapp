@@ -288,7 +288,6 @@ public class RUFASheetData {
     transient CheckBox prevConfirmedType;
     transient CheckBox groundTruthedType;
     transient EditText otherPlantCommunity;
-    String otherPlantCommunityInput;
     int prevConfirmed;
     int groundTruthed;
 

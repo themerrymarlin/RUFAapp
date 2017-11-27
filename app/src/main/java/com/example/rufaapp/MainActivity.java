@@ -630,7 +630,6 @@ public class MainActivity extends AppCompatActivity {
                 if (data.selectedPlantCommunity.equals("Other")) {
                     data.otherPlantCommunity.setVisibility(View.VISIBLE);
                     data.addTreeToListPlantCommunity.setVisibility(View.INVISIBLE);
-                    data.otherPlantCommunityInput = data.otherPlantCommunity.getText().toString();
                 } else {
                     data.addTreeToListPlantCommunity.setVisibility(View.VISIBLE);
                     data.otherPlantCommunity.setVisibility(View.INVISIBLE);
@@ -648,7 +647,7 @@ public class MainActivity extends AppCompatActivity {
                 data.otherPlantCommunity.setVisibility(View.INVISIBLE);
                 data.addTreeToListPlantCommunity.setVisibility(View.INVISIBLE);
                 data.otherPlantCommunity.setText("");
-                data.otherPlantCommunityInput = "";
+                data.selectedPlantCommunity = "";
             }
         });
 
@@ -663,7 +662,8 @@ public class MainActivity extends AppCompatActivity {
                     data.selectedPlantCommunity = "Beech-Maple";
                     data.otherPlantCommunity.setVisibility(View.INVISIBLE);
                     data.addTreeToListPlantCommunity.setVisibility(View.INVISIBLE);
-                } else {
+                }
+                    else{
                     data.selectedPlantCommunity = adapterView.getSelectedItem().toString();
                 }
             }
@@ -1249,6 +1249,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Pests and Pathogens
+        data.beechAbundance = "None";
+        data.bldSeverity = "None";
+        data.ashAbundance = "None";
+        data.eabSeverity = "None";
+        data.eaheAbundance = "None";
+        data.hwaSeverity = "None";
         data.beechPresent = (CheckBox) findViewById(R.id.beechPresent);
         data.beechPresent.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -2167,6 +2173,11 @@ public class MainActivity extends AppCompatActivity {
         data.modifyTotalPoints = data.totalPoints.getText().toString();
         data.modifyTotalPoints = "Points:" + " " + Integer.toString(data.total) + "   " + "Integrity Rank:" + " " + data.qualityRank;
         data.totalPoints.setText(data.modifyTotalPoints);
+
+        //plant community
+        if (data.selectedPlantCommunity.equals("Other")){
+            data.selectedPlantCommunity = data.otherPlantCommunity.getText().toString();
+        }
 
         //bearing changes saved
         data.bearingChangeAndRationale = (EditText) findViewById(R.id.bearings_rationale_input);
@@ -3099,15 +3110,12 @@ public class MainActivity extends AppCompatActivity {
         if(d.selectedPlantCommunity.equalsIgnoreCase("other")){
             ((Spinner)findViewById(R.id.community_type_spinner)).setSelection(7);
             findViewById(R.id.otherPlantCommunity).setVisibility(View.VISIBLE);
-            ((EditText)findViewById(R.id.otherPlantCommunity)).setText(d.otherPlantCommunityInput);
+            ((EditText)findViewById(R.id.otherPlantCommunity)).setText(d.selectedPlantCommunity);
         }else{
             ((Spinner)findViewById(R.id.community_type_spinner)).setSelection(0);
             findViewById(R.id.community_type_value).setVisibility(View.VISIBLE);
             ((TextView)findViewById(R.id.community_type_value)).setText(d.selectedPlantCommunity);
         }
-
-        ((TextView) findViewById(R.id.community_type_value)).setText(d.selectedPlantCommunity);
-        ((EditText) findViewById(R.id.otherPlantCommunity)).setText(d.otherPlantCommunityInput);
 
         //bearing changes
         if (d.bearingChange == 1) {
