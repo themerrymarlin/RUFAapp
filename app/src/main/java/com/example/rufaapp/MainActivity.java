@@ -3144,7 +3144,199 @@ public class MainActivity extends AppCompatActivity {
         ((CheckBox)findViewById(R.id.checkBox12E)).setChecked(d.pointBoxE == 1);
         ((TextView)findViewById(R.id.total12Val)).setText(d.total12);
         ((TextView)findViewById(R.id.point12Val)).setText(d.point12);
-        //Total and Rank
+        //Total and Rank -- blank for now
+        //plant community TODO figure out if this works correctly
+        ((CheckBox)findViewById(R.id.checkBoxPreviouslyConfirmed)).setChecked(d.prevConfirmed == 1);
+        ((CheckBox)findViewById(R.id.checkBoxGroundTruthed)).setChecked(d.groundTruthed == 1);
+        ((TextView)findViewById(R.id.community_type_value)).setText(d.selectedPlantCommunity);
+        ((EditText)findViewById(R.id.otherPlantCommunity)).setText(d.otherPlantCommunityInput);
+        //bearing changes
+        if(d.bearingChange == 1) {
+            ((CheckBox) findViewById(R.id.checkBoxYesBearingChanged)).setChecked(true);
+        }else{
+            ((CheckBox)findViewById(R.id.checkBoxNoBearingChange)).setChecked(true);
+        }
+        ((EditText)findViewById(R.id.bearings_rationale_input)).setText(d.changeAndRationale);
+        //light gaps
+        ((EditText)findViewById(R.id.lightGapInputA)).setText(d.diameterAVal);
+        ((CheckBox)findViewById(R.id.checkBoxInvadedA)).setChecked(d.invadedAVal == 1);
+        ((CheckBox)findViewById(R.id.checkBoxGrapevineA)).setChecked(d.grapevineAVal == 1);
+        ((CheckBox)findViewById(R.id.checkBoxRegeneratingA)).setChecked(d.regeneratingAVal == 1);
+        ((EditText)findViewById(R.id.lightGapInputB)).setText(d.diameterBVal);
+        ((CheckBox)findViewById(R.id.checkBoxInvadedB)).setChecked(d.invadedBVal == 1);
+        ((CheckBox)findViewById(R.id.checkBoxGrapevineB)).setChecked(d.grapevineBVal == 1);
+        ((CheckBox)findViewById(R.id.checkBoxRegeneratingB)).setChecked(d.regeneratingBVal == 1);
+        ((EditText)findViewById(R.id.lightGapInputC)).setText(d.diameterCVal);
+        ((CheckBox)findViewById(R.id.checkBoxInvadedC)).setChecked(d.invadedCVal == 1);
+        ((CheckBox)findViewById(R.id.checkBoxGrapevineC)).setChecked(d.grapevineCVal == 1);
+        ((CheckBox)findViewById(R.id.checkBoxRegeneratingC)).setChecked(d.regeneratingCVal == 1);
+        ((EditText)findViewById(R.id.lightGapInputD)).setText(d.diameterDVal);
+        ((CheckBox)findViewById(R.id.checkBoxInvadedD)).setChecked(d.invadedDVal == 1);
+        ((CheckBox)findViewById(R.id.checkBoxGrapevineD)).setChecked(d.grapevineDVal == 1);
+        ((CheckBox)findViewById(R.id.checkBoxRegeneratingD)).setChecked(d.regeneratingDVal == 1);
+        //Past land use
+        ((CheckBox)findViewById(R.id.checkBoxNone)).setChecked(d.noneEvidentval == 1);
+        ((CheckBox)findViewById(R.id.checkBoxDeadFurrows)).setChecked(d.deadFurrowsval == 1);
+        ((CheckBox)findViewById(R.id.checkBoxCutStumps)).setChecked(d.cutStumpsval == 1);
+        ((CheckBox)findViewById(R.id.checkBoxDumpSite)).setChecked(d.dumpSiteval == 1);
+        ((CheckBox)findViewById(R.id.checkBoxoldRoad)).setChecked(d.oldRoadval == 1);
+        ((CheckBox)findViewById(R.id.checkBoxImprovedTrail)).setChecked(d.improvedTrailval == 1);
+        ((CheckBox)findViewById(R.id.checkBoxOther)).setChecked(d.otherval == 1);
+        ((EditText)findViewById(R.id.other_landUse_input)).setText(d.otherLandUseEvidence);
+        //canopy
+        if(d.canopy == 1){
+            ((CheckBox)findViewById(R.id.canopyOpen)).setChecked(true);
+        }else{
+            ((CheckBox)findViewById(R.id.canopyClosed)).setChecked(true);
+        }
+        //Age classes
+        ((CheckBox)findViewById(R.id.checkBoxSapling)).setChecked(d.saplingPresent == 1);
+        ((TextView)findViewById(R.id.dominantSapling1)).setText(d.dominantSapling1);
+        ((TextView)findViewById(R.id.dominantSapling2)).setText(d.dominantSapling2);
+        ((CheckBox)findViewById(R.id.checkBoxSmallPole)).setChecked(d.smallPolePresent == 1);
+        ((TextView)findViewById(R.id.dominantSmallPole1)).setText(d.dominantSmallPole1);
+        ((TextView)findViewById(R.id.dominantSmallPole2)).setText(d.dominantSmallPole2);
+        ((CheckBox)findViewById(R.id.checkBoxMedPole)).setChecked(d.medPolePresent == 1);
+        ((TextView)findViewById(R.id.dominantMedPole1)).setText(d.dominantMedPole1);
+        ((TextView)findViewById(R.id.dominantMedPole2)).setText(d.dominantMedPole2);
+        ((CheckBox)findViewById(R.id.checkBoxStandard)).setChecked(d.standardPresent == 1);
+        ((TextView)findViewById(R.id.dominantStandard1)).setText(d.dominantStandardPole1);
+        ((TextView)findViewById(R.id.dominantStandard2)).setText(d.dominantStandardPole2);
+        ((CheckBox)findViewById(R.id.checkBoxVeteran)).setChecked(d.veteranPresent == 1);
+        ((TextView)findViewById(R.id.dominantVeteran1)).setText(d.dominantVeteran1);
+        ((TextView)findViewById(R.id.dominantVeteran2)).setText(d.dominantVeteran2);
+        //pests and pathogens
+        //beech abundance
+        ((CheckBox)findViewById(R.id.beechPresent)).setChecked(d.beech == 1);
+        if(d.beech == 1){
+            switch(d.beechAbundance){
+                case "None":
+                    ((CheckBox)findViewById(R.id.beechNone)).setChecked(true);
+                    break;
+                case "Low":
+                    ((CheckBox)findViewById(R.id.beechLow)).setChecked(true);
+                    break;
+                case "Medium":
+                    ((CheckBox)findViewById(R.id.beechMedium)).setChecked(true);
+                    break;
+                case "High":
+                    ((CheckBox)findViewById(R.id.beechHigh)).setChecked(true);
+                    break;
+            }
+        }
+        //bld severity
+        ((CheckBox)findViewById(R.id.bldPresent)).setChecked(d.bld == 1);
+        if(d.bld == 1){
+            switch(d.bldSeverity){
+                case "None":
+                    ((CheckBox)findViewById(R.id.bldNone)).setChecked(true);
+                    break;
+                case "Low":
+                    ((CheckBox)findViewById(R.id.bldLow)).setChecked(true);
+                    break;
+                case "Moderate":
+                    ((CheckBox)findViewById(R.id.bldModerate)).setChecked(true);
+                    break;
+                case "Severe":
+                    ((CheckBox)findViewById(R.id.bldSevere)).setChecked(true);
+                    break;
+            }
+        }
+        //ash abundance
+        ((CheckBox)findViewById(R.id.ashPresent)).setChecked(d.ash == 1);
+        if(d.ash == 1){
+            switch(d.ashAbundance){
+                case "None":
+                    ((CheckBox)findViewById(R.id.ashNone)).setChecked(true);
+                    break;
+                case "Low":
+                    ((CheckBox)findViewById(R.id.ashLow)).setChecked(true);
+                    break;
+                case "Medium":
+                    ((CheckBox)findViewById(R.id.ashMedium)).setChecked(true);
+                    break;
+                case "High":
+                    ((CheckBox)findViewById(R.id.ashHigh)).setChecked(true);
+                    break;
+            }
+        }
+        //eab severity
+        ((CheckBox)findViewById(R.id.eabPresent)).setChecked(d.eab == 1);
+        if(d.eab == 1){
+            switch(d.eabSeverity){
+                case "None":
+                    ((CheckBox)findViewById(R.id.eabNone)).setChecked(true);
+                    break;
+                case "Low":
+                    ((CheckBox)findViewById(R.id.eabLow)).setChecked(true);
+                    break;
+                case "Moderate":
+                    ((CheckBox)findViewById(R.id.eabModerate)).setChecked(true);
+                    break;
+                case "Severe":
+                    ((CheckBox)findViewById(R.id.eabSevere)).setChecked(true);
+                    break;
+            }
+        }
+        //EAHE abundance
+        ((CheckBox)findViewById(R.id.EAHEPresent)).setChecked(d.eahe == 1);
+        if(d.eahe == 1){
+            switch(d.eaheAbundance){
+                case "None":
+                    ((CheckBox)findViewById(R.id.EAHENone)).setChecked(true);
+                    break;
+                case "Low":
+                    ((CheckBox)findViewById(R.id.EAHELow)).setChecked(true);
+                    break;
+                case "Medium":
+                    ((CheckBox)findViewById(R.id.EAHEMedium)).setChecked(true);
+                    break;
+                case "High":
+                    ((CheckBox)findViewById(R.id.EAHEHigh)).setChecked(true);
+                    break;
+            }
+        }
+        //HWA severity
+        ((CheckBox)findViewById(R.id.HWAPresent)).setChecked(d.hwa == 1);
+        if(d.hwa == 1){
+            switch(d.hwaSeverity){
+                case "None":
+                    ((CheckBox)findViewById(R.id.HWANone)).setChecked(true);
+                    break;
+                case "Low":
+                    ((CheckBox)findViewById(R.id.HWALow)).setChecked(true);
+                    break;
+                case "Moderate":
+                    ((CheckBox)findViewById(R.id.HWAModerate)).setChecked(true);
+                    break;
+                case "Severe":
+                    ((CheckBox)findViewById(R.id.HWASevere)).setChecked(true);
+                    break;
+            }
+        }
+        //seedling cover
+        switch(d.seedlingCover){
+            case "<10%":
+                ((CheckBox)findViewById(R.id.checkBoxTen)).setChecked(true);
+                break;
+            case "10-25%":
+                ((CheckBox)findViewById(R.id.checkBoxTenTwentyFive)).setChecked(true);
+                break;
+            case "25-50%":
+                ((CheckBox)findViewById(R.id.checkBoxTwentyFiveFifty)).setChecked(true);
+                break;
+            case "50-75%":
+                ((CheckBox)findViewById(R.id.checkBoxFiftySeventyFive)).setChecked(true);
+                break;
+            case "75-90%":
+                ((CheckBox)findViewById(R.id.checkBoxSeventyFiveNinety)).setChecked(true);
+                break;
+            case ">90%":
+                ((CheckBox)findViewById(R.id.checkBoxNinety)).setChecked(true);
+                break;
+        }
+        //additional notes
+        ((EditText)findViewById(R.id.notesInput1)).setText(d.notes);
     }
 
     public boolean saveToCSV(){
