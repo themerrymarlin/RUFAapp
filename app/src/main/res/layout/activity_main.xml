@@ -2846,25 +2846,9 @@
                     android:id="@+id/clearAgeClassData"
                     android:layout_width="wrap_content"
                     android:layout_height="40dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
                     android:text="@string/clear_all" />
-
-                <Button
-                    android:id="@+id/addDominantAgeClasses1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="17dp"
-                    android:layout_marginTop="0dp"
-                    android:text="@string/add_dominant3B1" />
-
-                <Button
-                    android:id="@+id/addDominantAgeClasses2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="40dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="0dp"
-                    android:text="@string/add_dominant2" />
 
             </TableRow>
 
@@ -2907,19 +2891,21 @@
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
-                <CheckBox
-                    android:id="@+id/checkBoxDominantSapling1"
+                <Button
+                    android:id="@+id/addDominantSapling1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="65dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/add_dominant3B1" />
 
-                <CheckBox
-                    android:id="@+id/checkBoxDominantSapling2"
+                <Button
+                    android:id="@+id/addDominantSapling2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/add_dominant2" />
             </TableRow>
 
             <TableRow
@@ -2996,19 +2982,21 @@
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
-                <CheckBox
-                    android:id="@+id/checkBoxDominantSmallPole1"
+                <Button
+                    android:id="@+id/addDominantSmallPole1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="43dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/add_dominant3B1" />
 
-                <CheckBox
-                    android:id="@+id/checkBoxDominantSmallPole2"
+                <Button
+                    android:id="@+id/addDominantSmallPole2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/add_dominant2" />
             </TableRow>
 
             <TableRow
@@ -3085,19 +3073,21 @@
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
-                <CheckBox
-                    android:id="@+id/checkBoxDominantMedPole1"
+                <Button
+                    android:id="@+id/addDominantMedPole1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="36dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/add_dominant3B1" />
 
-                <CheckBox
-                    android:id="@+id/checkBoxDominantMedPole2"
+                <Button
+                    android:id="@+id/addDominantMedPole2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/add_dominant2" />
             </TableRow>
 
             <TableRow
@@ -3174,19 +3164,21 @@
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
-                <CheckBox
-                    android:id="@+id/checkBoxDominantStandard1"
+                <Button
+                    android:id="@+id/addDominantStandard1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="35dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/add_dominant3B1" />
 
-                <CheckBox
-                    android:id="@+id/checkBoxDominantStandard2"
+                <Button
+                    android:id="@+id/addDominantStandard2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/add_dominant2" />
             </TableRow>
 
             <TableRow
@@ -3263,19 +3255,21 @@
                     android:textColor="@android:color/black"
                     android:textSize="18sp" />
 
-                <CheckBox
-                    android:id="@+id/checkBoxDominantVeteran1"
+                <Button
+                    android:id="@+id/addDominantVeteran1"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="73dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="42dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/add_dominant3B1" />
 
-                <CheckBox
-                    android:id="@+id/checkBoxDominantVeteran2"
+                <Button
+                    android:id="@+id/addDominantVeteran2"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="60dp"
-                    android:layout_marginTop="10dp"/>
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/add_dominant2" />
             </TableRow>
 
             <TableRow
