@@ -3095,8 +3095,9 @@ public class MainActivity extends AppCompatActivity {
         ((CheckBox) findViewById(R.id.checkBox12E)).setChecked(d.pointBoxE == 1);
         ((TextView) findViewById(R.id.total12Val)).setText(Integer.toString(d.total12));
         ((TextView) findViewById(R.id.point12Val)).setText(Integer.toString(d.point12));
-        //Total and Rank -- blank for now TODO make this update
-        //plant community TODO figure out if this works correctly
+        //Total and Rank -- blank for now
+        ((TextView) findViewById(R.id.totalPoints)).setText("Points:" + " " + Integer.toString(d.total) + "   " + "Integrity Rank:" + " " + d.qualityRank);
+        //plant community
         ((CheckBox) findViewById(R.id.checkBoxPreviouslyConfirmed)).setChecked(d.prevConfirmed == 1);
         ((CheckBox) findViewById(R.id.checkBoxGroundTruthed)).setChecked(d.groundTruthed == 1);
         //fill in other text if other
