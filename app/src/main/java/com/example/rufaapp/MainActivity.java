@@ -701,24 +701,23 @@ public class MainActivity extends AppCompatActivity {
 
         //bearing changes
         data.yesBearingChanges = (CheckBox) findViewById(R.id.checkBoxYesBearingChanged);
+        data.noBearingChanges = (CheckBox) findViewById(R.id.checkBoxNoBearingChange);
         data.yesBearingChanges.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 boolean isCheckedYesBearingChanges = ((CheckBox) findViewById(R.id.checkBoxYesBearingChanged)).isChecked();
 
                 if (isCheckedYesBearingChanges == true) {
-                    data.noBearingChanges.setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxNoBearingChange)).setChecked(false);
                     data.bearingChange = 1;
                 }
             }
         });
-
-        data.noBearingChanges = (CheckBox) findViewById(R.id.checkBoxNoBearingChange);
         data.noBearingChanges.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 boolean isCheckedNoBearingChanges = ((CheckBox) findViewById(R.id.checkBoxNoBearingChange)).isChecked();
 
                 if (isCheckedNoBearingChanges == true) {
-                    data.yesBearingChanges.setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxYesBearingChanged)).setChecked(false);
                     data.bearingChange = 0;
                 }
             }
@@ -876,12 +875,12 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedNone = ((CheckBox) findViewById(R.id.checkBoxNone)).isChecked();
 
                 if (isCheckedNone == true) {
-                    data.deadFurrows.setChecked(false);
-                    data.cutStumps.setChecked(false);
-                    data.dumpSite.setChecked(false);
-                    data.oldRoad.setChecked(false);
-                    data.improvedTrail.setChecked(false);
-                    data.other.setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxDeadFurrows)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxCutStumps)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxDumpSite)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxoldRoad)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxImprovedTrail)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxOther)).setChecked(false);
                     data.noneEvidentval = 1;
                     data.deadFurrowsval = 0;
                     data.cutStumpsval = 0;
@@ -899,7 +898,7 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedDeadFurrows = ((CheckBox) findViewById(R.id.checkBoxDeadFurrows)).isChecked();
 
                 if (isCheckedDeadFurrows == true) {
-                    data.noneEvident.setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxNone)).setChecked(false);
                     data.noneEvidentval = 0;
                     data.deadFurrowsval = 1;
                 }
@@ -912,7 +911,7 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedCutStumps = ((CheckBox) findViewById(R.id.checkBoxCutStumps)).isChecked();
 
                 if (isCheckedCutStumps == true) {
-                    data.noneEvident.setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxNone)).setChecked(false);
                     data.noneEvidentval = 0;
                     data.cutStumpsval = 1;
                 }
@@ -925,7 +924,7 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedDumpSite = ((CheckBox) findViewById(R.id.checkBoxDumpSite)).isChecked();
 
                 if (isCheckedDumpSite == true) {
-                    data.noneEvident.setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxNone)).setChecked(false);
                     data.noneEvidentval = 0;
                     data.dumpSiteval = 1;
                 }
@@ -938,7 +937,7 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedOldRoad = ((CheckBox) findViewById(R.id.checkBoxoldRoad)).isChecked();
 
                 if (isCheckedOldRoad == true) {
-                    data.noneEvident.setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxNone)).setChecked(false);
                     data.noneEvidentval = 0;
                     data.oldRoadval = 1;
                 }
@@ -951,7 +950,7 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedImprovedTrail = ((CheckBox) findViewById(R.id.checkBoxImprovedTrail)).isChecked();
 
                 if (isCheckedImprovedTrail == true) {
-                    data.noneEvident.setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxNone)).setChecked(false);
                     data.noneEvidentval = 0;
                     data.improvedTrailval = 1;
                 }
@@ -964,7 +963,7 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedOther = ((CheckBox) findViewById(R.id.checkBoxOther)).isChecked();
 
                 if (isCheckedOther == true) {
-                    data.noneEvident.setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxNone)).setChecked(false);
                     data.noneEvidentval = 0;
                     data.otherval = 1;
                 }
@@ -973,24 +972,24 @@ public class MainActivity extends AppCompatActivity {
 
         //Canopy
         data.canopyOpen = (CheckBox) findViewById(R.id.canopyOpen);
+        data.canopyClosed = (CheckBox) findViewById(R.id.canopyClosed);
         data.canopyOpen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 boolean isCheckedCanopyOpen = ((CheckBox) findViewById(R.id.canopyOpen)).isChecked();
 
                 if (isCheckedCanopyOpen == true) {
-                    data.canopyClosed.setChecked(false);
+                    ((CheckBox) findViewById(R.id.canopyClosed)).setChecked(false);
                     data.canopy = 1;
                 }
             }
         });
 
-        data.canopyClosed = (CheckBox) findViewById(R.id.canopyClosed);
         data.canopyClosed.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 boolean isCheckedCanopyClosed = ((CheckBox) findViewById(R.id.canopyClosed)).isChecked();
 
                 if (isCheckedCanopyClosed == true) {
-                    data.canopyOpen.setChecked(false);
+                    ((CheckBox) findViewById(R.id.canopyOpen)).setChecked(false);
                     data.canopy = 0;
                 }
             }
@@ -1006,10 +1005,8 @@ public class MainActivity extends AppCompatActivity {
                     data.saplingPresent = 1;
                 } else {
                     data.saplingPresent = 0;
-                    data.addTreeToDominantSapling1 = (TextView) findViewById(R.id.dominantSapling1);
-                    data.addTreeToDominantSapling1.setText("");
-                    data.addTreeToDominantSapling2 = (TextView) findViewById(R.id.dominantSapling2);
-                    data.addTreeToDominantSapling2.setText("");
+                    ((TextView) findViewById(R.id.dominantSapling1)).setText("");
+                    ((TextView) findViewById(R.id.dominantSapling2)).setText("");
                 }
             }
         });
@@ -1023,10 +1020,8 @@ public class MainActivity extends AppCompatActivity {
                     data.smallPolePresent = 1;
                 } else {
                     data.smallPolePresent = 0;
-                    data.addTreeToDominantSmallPole1 = (TextView) findViewById(R.id.dominantSmallPole1);
-                    data.addTreeToDominantSmallPole1.setText("");
-                    data.addTreeToDominantSmallPole2 = (TextView) findViewById(R.id.dominantSmallPole2);
-                    data.addTreeToDominantSmallPole2.setText("");
+                    ((TextView) findViewById(R.id.dominantSmallPole1)).setText("");
+                    ((TextView) findViewById(R.id.dominantSmallPole2)).setText("");
                 }
             }
         });
@@ -1040,10 +1035,8 @@ public class MainActivity extends AppCompatActivity {
                     data.medPolePresent = 1;
                 } else {
                     data.medPolePresent = 0;
-                    data.addTreeToDominantMedPole1 = (TextView) findViewById(R.id.dominantMedPole1);
-                    data.addTreeToDominantMedPole1.setText("");
-                    data.addTreeToDominantMedPole2 = (TextView) findViewById(R.id.dominantMedPole2);
-                    data.addTreeToDominantMedPole2.setText("");
+                    ((TextView) findViewById(R.id.dominantMedPole1)).setText("");
+                    ((TextView) findViewById(R.id.dominantMedPole2)).setText("");
                 }
             }
         });
@@ -1057,10 +1050,8 @@ public class MainActivity extends AppCompatActivity {
                     data.standardPresent = 1;
                 } else {
                     data.standardPresent = 0;
-                    data.addTreeToDominantStandard1 = (TextView) findViewById(R.id.dominantStandard1);
-                    data.addTreeToDominantStandard1.setText("");
-                    data.addTreeToDominantStandard2 = (TextView) findViewById(R.id.dominantStandard2);
-                    data.addTreeToDominantStandard2.setText("");
+                    ((TextView) findViewById(R.id.dominantStandard1)).setText("");
+                    ((TextView) findViewById(R.id.dominantStandard2)).setText("");
                 }
             }
         });
@@ -1074,10 +1065,8 @@ public class MainActivity extends AppCompatActivity {
                     data.veteranPresent = 1;
                 } else {
                     data.veteranPresent = 0;
-                    data.addTreeToDominantVeteran1 = (TextView) findViewById(R.id.dominantVeteran1);
-                    data.addTreeToDominantVeteran1.setText("");
-                    data.addTreeToDominantVeteran2 = (TextView) findViewById(R.id.dominantVeteran2);
-                    data.addTreeToDominantVeteran2.setText("");
+                    ((TextView) findViewById(R.id.dominantVeteran1)).setText("");
+                    ((TextView) findViewById(R.id.dominantVeteran2)).setText("");
                 }
             }
         });
@@ -1086,11 +1075,11 @@ public class MainActivity extends AppCompatActivity {
         data.clearAgeClassData.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                data.sapling.setChecked(false);
-                data.smallPole.setChecked(false);
-                data.medPole.setChecked(false);
-                data.standard.setChecked(false);
-                data.veteran.setChecked(false);
+                ((CheckBox) findViewById(R.id.checkBoxSapling)).setChecked(false);
+                ((CheckBox) findViewById(R.id.checkBoxSmallPole)).setChecked(false);
+                ((CheckBox) findViewById(R.id.checkBoxMedPole)).setChecked(false);
+                ((CheckBox) findViewById(R.id.checkBoxStandard)).setChecked(false);
+                ((CheckBox) findViewById(R.id.checkBoxVeteran)).setChecked(false);
 
                 data.saplingPresent = 0;
                 data.smallPolePresent = 0;
@@ -1098,26 +1087,16 @@ public class MainActivity extends AppCompatActivity {
                 data.standardPresent = 0;
                 data.veteranPresent = 0;
 
-                data.addTreeToDominantSapling1 = (TextView) findViewById(R.id.dominantSapling1);
-                data.addTreeToDominantSapling1.setText("");
-                data.addTreeToDominantSmallPole1 = (TextView) findViewById(R.id.dominantSmallPole1);
-                data.addTreeToDominantSmallPole1.setText("");
-                data.addTreeToDominantMedPole1 = (TextView) findViewById(R.id.dominantMedPole1);
-                data.addTreeToDominantMedPole1.setText("");
-                data.addTreeToDominantStandard1 = (TextView) findViewById(R.id.dominantStandard1);
-                data.addTreeToDominantStandard1.setText("");
-                data.addTreeToDominantVeteran1 = (TextView) findViewById(R.id.dominantVeteran1);
-                data.addTreeToDominantVeteran1.setText("");
-                data.addTreeToDominantSapling2 = (TextView) findViewById(R.id.dominantSapling2);
-                data.addTreeToDominantSapling2.setText("");
-                data.addTreeToDominantSmallPole2 = (TextView) findViewById(R.id.dominantSmallPole2);
-                data.addTreeToDominantSmallPole2.setText("");
-                data.addTreeToDominantMedPole2 = (TextView) findViewById(R.id.dominantMedPole2);
-                data.addTreeToDominantMedPole2.setText("");
-                data.addTreeToDominantStandard2 = (TextView) findViewById(R.id.dominantStandard2);
-                data.addTreeToDominantStandard2.setText("");
-                data.addTreeToDominantVeteran2 = (TextView) findViewById(R.id.dominantVeteran2);
-                data.addTreeToDominantVeteran2.setText("");
+                ((TextView) findViewById(R.id.dominantSapling1)).setText("");
+                ((TextView) findViewById(R.id.dominantSmallPole1)).setText("");
+                ((TextView) findViewById(R.id.dominantMedPole1)).setText("");
+                ((TextView) findViewById(R.id.dominantStandard1)).setText("");
+                ((TextView) findViewById(R.id.dominantVeteran1)).setText("");
+                ((TextView) findViewById(R.id.dominantSapling2)).setText("");
+                ((TextView) findViewById(R.id.dominantSmallPole2)).setText("");
+                ((TextView) findViewById(R.id.dominantMedPole2)).setText("");
+                ((TextView) findViewById(R.id.dominantStandard2)).setText("");
+                ((TextView) findViewById(R.id.dominantVeteran2)).setText("");
             }
         });
 
@@ -1127,7 +1106,7 @@ public class MainActivity extends AppCompatActivity {
                 data.addTreeToDominantSapling1 = (TextView) findViewById(R.id.dominantSapling1);
                 data.dominantSapling1 = data.selectedAgeClass;
                 data.addTreeToDominantSapling1.setText(data.selectedAgeClass);
-                data.sapling.setChecked(true);
+                ((CheckBox)findViewById(R.id.checkBoxSapling)).setChecked(true);
                 data.saplingPresent = 1;
             }
         });
@@ -1138,7 +1117,7 @@ public class MainActivity extends AppCompatActivity {
                 data.addTreeToDominantSapling2 = (TextView) findViewById(R.id.dominantSapling2);
                 data.dominantSapling2 = data.selectedAgeClass;
                 data.addTreeToDominantSapling2.setText(data.selectedAgeClass);
-                data.sapling.setChecked(true);
+                ((CheckBox)findViewById(R.id.checkBoxSapling)).setChecked(true);
                 data.saplingPresent = 1;
             }
         });
@@ -1149,7 +1128,7 @@ public class MainActivity extends AppCompatActivity {
                 data.addTreeToDominantSmallPole1 = (TextView) findViewById(R.id.dominantSmallPole1);
                 data.dominantSmallPole1 = data.selectedAgeClass;
                 data.addTreeToDominantSmallPole1.setText(data.selectedAgeClass);
-                data.smallPole.setChecked(true);
+                ((CheckBox)findViewById(R.id.checkBoxSmallPole)).setChecked(true);
                 data.smallPolePresent = 1;
             }
         });
@@ -1160,7 +1139,7 @@ public class MainActivity extends AppCompatActivity {
                 data.addTreeToDominantSmallPole2 = (TextView) findViewById(R.id.dominantSmallPole2);
                 data.dominantSmallPole2 = data.selectedAgeClass;
                 data.addTreeToDominantSmallPole2.setText(data.selectedAgeClass);
-                data.smallPole.setChecked(true);
+                ((CheckBox)findViewById(R.id.checkBoxSmallPole)).setChecked(true);
                 data.smallPolePresent = 1;
             }
         });
@@ -1171,7 +1150,7 @@ public class MainActivity extends AppCompatActivity {
                 data.addTreeToDominantMedPole1 = (TextView) findViewById(R.id.dominantMedPole1);
                 data.dominantMedPole1 = data.selectedAgeClass;
                 data.addTreeToDominantMedPole1.setText(data.selectedAgeClass);
-                data.medPole.setChecked(true);
+                ((CheckBox)findViewById(R.id.checkBoxMedPole)).setChecked(true);
                 data.medPolePresent = 1;
             }
         });
@@ -1182,7 +1161,7 @@ public class MainActivity extends AppCompatActivity {
                 data.addTreeToDominantMedPole2 = (TextView) findViewById(R.id.dominantMedPole2);
                 data.dominantMedPole2 = data.selectedAgeClass;
                 data.addTreeToDominantMedPole2.setText(data.selectedAgeClass);
-                data.medPole.setChecked(true);
+                ((CheckBox)findViewById(R.id.checkBoxMedPole)).setChecked(true);
                 data.medPolePresent = 1;
             }
         });
@@ -1193,7 +1172,7 @@ public class MainActivity extends AppCompatActivity {
                 data.addTreeToDominantStandard1 = (TextView) findViewById(R.id.dominantStandard1);
                 data.dominantStandardPole1 = data.selectedAgeClass;
                 data.addTreeToDominantStandard1.setText(data.selectedAgeClass);
-                data.standard.setChecked(true);
+                ((CheckBox)findViewById(R.id.checkBoxStandard)).setChecked(true);
                 data.standardPresent = 1;
             }
         });
@@ -1204,7 +1183,7 @@ public class MainActivity extends AppCompatActivity {
                 data.addTreeToDominantStandard2 = (TextView) findViewById(R.id.dominantStandard2);
                 data.dominantStandardPole2 = data.selectedAgeClass;
                 data.addTreeToDominantStandard2.setText(data.selectedAgeClass);
-                data.standard.setChecked(true);
+                ((CheckBox)findViewById(R.id.checkBoxStandard)).setChecked(true);
                 data.standardPresent = 1;
             }
         });
@@ -1215,7 +1194,7 @@ public class MainActivity extends AppCompatActivity {
                 data.addTreeToDominantVeteran1 = (TextView) findViewById(R.id.dominantVeteran1);
                 data.dominantVeteran1 = data.selectedAgeClass;
                 data.addTreeToDominantVeteran1.setText(data.selectedAgeClass);
-                data.veteran.setChecked(true);
+                ((CheckBox)findViewById(R.id.checkBoxVeteran)).setChecked(true);
                 data.veteranPresent = 1;
             }
         });
@@ -1226,7 +1205,7 @@ public class MainActivity extends AppCompatActivity {
                 data.addTreeToDominantVeteran2 = (TextView) findViewById(R.id.dominantVeteran2);
                 data.dominantVeteran2 = data.selectedAgeClass;
                 data.addTreeToDominantVeteran2.setText(data.selectedAgeClass);
-                data.veteran.setChecked(true);
+                ((CheckBox)findViewById(R.id.checkBoxVeteran)).setChecked(true);
                 data.veteranPresent = 1;
             }
         });
@@ -1261,15 +1240,15 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBeechPresent = ((CheckBox) findViewById(R.id.beechPresent)).isChecked();
 
                 if (isCheckedBeechPresent == false) {
-                    data.beechNone.setChecked(true);
-                    data.beechLow.setChecked(false);
-                    data.beechMedium.setChecked(false);
-                    data.beechHigh.setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechNone)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.beechLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechMedium)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechHigh)).setChecked(false);
                     data.beech = 0;
                     data.beechAbundance = "None";
                 } else {
-                    data.beechNone.setChecked(false);
-                    data.beechLow.setChecked(true);
+                    ((CheckBox) findViewById(R.id.beechNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechLow)).setChecked(true);
                     data.beech = 1;
                     data.beechAbundance = "Low";
                 }
@@ -1281,10 +1260,10 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBeechNone = ((CheckBox) findViewById(R.id.beechNone)).isChecked();
 
                 if (isCheckedBeechNone == true) {
-                    data.beechPresent.setChecked(false);
-                    data.beechLow.setChecked(false);
-                    data.beechMedium.setChecked(false);
-                    data.beechHigh.setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechPresent)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechMedium)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechHigh)).setChecked(false);
                     data.beech = 0;
                     data.beechAbundance = "None";
                 }
@@ -1297,16 +1276,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBeechLow = ((CheckBox) findViewById(R.id.beechLow)).isChecked();
 
                 if (isCheckedBeechPresent == true && isCheckedBeechLow == true) {
-                    data.beechNone.setChecked(false);
-                    data.beechMedium.setChecked(false);
-                    data.beechHigh.setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechMedium)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechHigh)).setChecked(false);
                     data.beech = 1;
                     data.beechAbundance = "Low";
                 } else if (isCheckedBeechPresent == false && isCheckedBeechLow == true) {
-                    data.beechNone.setChecked(false);
-                    data.beechMedium.setChecked(false);
-                    data.beechHigh.setChecked(false);
-                    data.beechPresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.beechNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechMedium)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechHigh)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechPresent)).setChecked(true);
                     data.beech = 1;
                     data.beechAbundance = "Low";
                 }
@@ -1319,16 +1298,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBeechMedium = ((CheckBox) findViewById(R.id.beechMedium)).isChecked();
 
                 if (isCheckedBeechPresent == true && isCheckedBeechMedium == true) {
-                    data.beechNone.setChecked(false);
-                    data.beechLow.setChecked(false);
-                    data.beechHigh.setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechHigh)).setChecked(false);
                     data.beech = 1;
                     data.beechAbundance = "Medium";
                 } else if (isCheckedBeechPresent == false && isCheckedBeechMedium == true) {
-                    data.beechNone.setChecked(false);
-                    data.beechLow.setChecked(false);
-                    data.beechHigh.setChecked(false);
-                    data.beechPresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.beechNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechHigh)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechPresent)).setChecked(true);
                     data.beech = 1;
                     data.beechAbundance = "Medium";
                 }
@@ -1341,16 +1320,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBeechHigh = ((CheckBox) findViewById(R.id.beechHigh)).isChecked();
 
                 if (isCheckedBeechPresent == true && isCheckedBeechHigh == true) {
-                    data.beechNone.setChecked(false);
-                    data.beechMedium.setChecked(false);
-                    data.beechLow.setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechMedium)).setChecked(false);
                     data.beech = 1;
                     data.beechAbundance = "High";
                 } else if (isCheckedBeechPresent == false && isCheckedBeechHigh == true) {
-                    data.beechNone.setChecked(false);
-                    data.beechMedium.setChecked(false);
-                    data.beechLow.setChecked(false);
-                    data.beechPresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.beechNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechMedium)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.beechPresent)).setChecked(true);
                     data.beech = 1;
                     data.beechAbundance = "High";
                 }
@@ -2983,6 +2962,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void updateSheet(RUFASheetData d) {
+        this.data = d;
         ((EditText) findViewById(R.id.cell_input)).setText(d.cell);
         ((EditText) findViewById(R.id.date_input)).setText(d.date);
         ((EditText) findViewById(R.id.scorer_input)).setText(d.scorers);
