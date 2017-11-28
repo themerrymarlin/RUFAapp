@@ -2217,6 +2217,8 @@ public class MainActivity extends AppCompatActivity {
     public String getDateValue() {
         data.dateValue = (EditText) findViewById(R.id.date_input);
         String date = data.dateValue.getText().toString();
+        date = date.replace('/','-');
+        date = date.replace('\\','-');
         return date;
     }
 
