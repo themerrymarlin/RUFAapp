@@ -161,7 +161,7 @@
     <string name="eab">EAB Present?</string>
     <string name="eastern_hemlock_tree">EAHE Present?</string>
     <string name="hemlock_woolly_adelgid">HWA Present?</string>
-    <string name="load">Load</string>
+    <string name="load">Load Prev.</string>
     <string name="saveCSV">Save to SD Card</string>
     <string name="clear_all">Clear All</string>
     <string name="notes">Additional Notes</string>

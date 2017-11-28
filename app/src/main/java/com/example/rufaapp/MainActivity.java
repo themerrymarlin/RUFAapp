@@ -22,6 +22,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.view.View.OnClickListener;
+import android.widget.Toast;
 
 
 import com.google.gson.JsonObject;
@@ -38,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
     //Save button
     private Button saveButton;
     //load button
-    private Button loadButton;
+    private Button loadButtonBottom;
+    private Button loadButtonTop;
     //save to csv button
     private Button saveToSDCard;
     //file selection
@@ -58,8 +60,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        loadButton = (Button) findViewById(R.id.loadData);
-        loadButton.setOnClickListener(new View.OnClickListener() {
+        loadButtonBottom = (Button) findViewById(R.id.loadDataBottom);
+        loadButtonBottom.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                loadSheetData(v);
+            }
+        });
+
+        loadButtonTop = (Button) findViewById(R.id.loadDataTop);
+        loadButtonTop.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 loadSheetData(v);
             }
@@ -2921,6 +2930,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i("int", name);
         try {
             InternalStorageAccessor.writeToFile(getApplicationContext(), name, jsonString);
+            Toast.makeText(getApplicationContext(), "Save Successful!", Toast.LENGTH_LONG).show();
             return true;
         } catch (IOException e) {
 
@@ -2953,6 +2963,7 @@ public class MainActivity extends AppCompatActivity {
                     Log.i("load", "data loaded");
                     //TODO checkboxes and the like
                     updateSheet(loadData);
+                    Toast.makeText(getApplicationContext(), "Load Successful!", Toast.LENGTH_LONG).show();
                 } catch (IOException e) {
                     e.printStackTrace();
                     Log.e("load", "io exception", e);
@@ -3291,6 +3302,7 @@ public class MainActivity extends AppCompatActivity {
         if (ea.isStorageWriteable()) {
             try {
                 ea.writeToCsv(getApplicationContext(), RUFAdbOpenHelper.getKeyList(), getValues());
+                Toast.makeText(getApplicationContext(), "Saved to SD!", Toast.LENGTH_LONG).show();
                 return true;
             } catch (IOException e) {
                 return false;

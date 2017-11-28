@@ -42,7 +42,7 @@
                         android:id="@+id/cell"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="0dp"
                         android:text="@string/cell_value"
                         android:textAlignment="textStart"
                         android:textColor="@android:color/black"
@@ -61,7 +61,7 @@
                         android:id="@+id/date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="0dp"
                         android:text="@string/date"
                         android:textAlignment="center"
                         android:textColor="@android:color/black"
@@ -79,7 +79,7 @@
                         android:id="@+id/scorer"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
+                        android:layout_marginLeft="0dp"
                         android:text="@string/scorer"
                         android:textColor="@android:color/black"
                         android:textSize="18sp" />
@@ -93,6 +93,12 @@
                         android:selectAllOnFocus="false"
                         android:textAlignment="center" />
 
+                    <Button
+                        android:id="@+id/loadDataTop"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:text="@string/load" />
                 </TableRow>
 
                 <View
@@ -4370,7 +4376,7 @@
                 android:layout_height="match_parent" >
 
                 <Button
-                    android:id="@+id/loadData"
+                    android:id="@+id/loadDataBottom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="0dp"
@@ -4380,7 +4386,7 @@
                     android:id="@+id/saveData"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginLeft="230dp"
                     android:text="@string/save" />
 
                 <Button
