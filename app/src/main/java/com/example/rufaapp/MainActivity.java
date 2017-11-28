@@ -1342,15 +1342,15 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBldPresent = ((CheckBox) findViewById(R.id.bldPresent)).isChecked();
 
                 if (isCheckedBldPresent == false) {
-                    data.bldNone.setChecked(true);
-                    data.bldLow.setChecked(false);
-                    data.bldModerate.setChecked(false);
-                    data.bldSevere.setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldNone)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.bldLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldModerate)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldSevere)).setChecked(false);
                     data.bld = 0;
                     data.bldSeverity = "None";
                 } else {
-                    data.bldNone.setChecked(false);
-                    data.bldLow.setChecked(true);
+                    ((CheckBox) findViewById(R.id.bldNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldLow)).setChecked(true);
                     data.bld = 1;
                     data.bldSeverity = "Low";
                 }
@@ -1362,10 +1362,10 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBldNone = ((CheckBox) findViewById(R.id.bldNone)).isChecked();
 
                 if (isCheckedBldNone == true) {
-                    data.bldPresent.setChecked(false);
-                    data.bldLow.setChecked(false);
-                    data.bldModerate.setChecked(false);
-                    data.bldSevere.setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldPresent)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldModerate)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldSevere)).setChecked(false);
                     data.bld = 0;
                     data.bldSeverity = "None";
                 }
@@ -1378,16 +1378,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBldLow = ((CheckBox) findViewById(R.id.bldLow)).isChecked();
 
                 if (isCheckedBldPresent == true && isCheckedBldLow == true) {
-                    data.bldNone.setChecked(false);
-                    data.bldModerate.setChecked(false);
-                    data.bldSevere.setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldModerate)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldSevere)).setChecked(false);
                     data.bld = 1;
                     data.bldSeverity = "Low";
                 } else if (isCheckedBldPresent == false && isCheckedBldLow == true) {
-                    data.bldNone.setChecked(false);
-                    data.bldModerate.setChecked(false);
-                    data.bldSevere.setChecked(false);
-                    data.bldPresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.bldPresent)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.bldNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldModerate)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldSevere)).setChecked(false);
                     data.bld = 1;
                     data.bldSeverity = "Low";
                 }
@@ -1400,16 +1400,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBldModerate = ((CheckBox) findViewById(R.id.bldModerate)).isChecked();
 
                 if (isCheckedBldPresent == true && isCheckedBldModerate == true) {
-                    data.bldNone.setChecked(false);
-                    data.bldLow.setChecked(false);
-                    data.bldSevere.setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldSevere)).setChecked(false);
                     data.bld = 1;
                     data.bldSeverity = "Moderate";
                 } else if (isCheckedBldPresent == false && isCheckedBldModerate == true) {
-                    data.bldNone.setChecked(false);
-                    data.bldLow.setChecked(false);
-                    data.bldSevere.setChecked(false);
-                    data.bldPresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.bldPresent)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.bldNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldSevere)).setChecked(false);
                     data.bld = 1;
                     data.bldSeverity = "Moderate";
                 }
@@ -1422,16 +1422,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedBldSevere = ((CheckBox) findViewById(R.id.bldSevere)).isChecked();
 
                 if (isCheckedBldPresent == true && isCheckedBldSevere == true) {
-                    data.bldNone.setChecked(false);
-                    data.bldModerate.setChecked(false);
-                    data.bldLow.setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldModerate)).setChecked(false);
                     data.bld = 1;
                     data.bldSeverity = "Severe";
                 } else if (isCheckedBldPresent == false && isCheckedBldSevere == true) {
-                    data.bldNone.setChecked(false);
-                    data.bldModerate.setChecked(false);
-                    data.bldLow.setChecked(false);
-                    data.bldPresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.bldPresent)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.bldNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.bldModerate)).setChecked(false);
                     data.bld = 1;
                     data.bldSeverity = "Severe";
                 }
@@ -1444,15 +1444,15 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedashPresent = ((CheckBox) findViewById(R.id.ashPresent)).isChecked();
 
                 if (isCheckedashPresent == false) {
-                    data.ashNone.setChecked(true);
-                    data.ashLow.setChecked(false);
-                    data.ashMedium.setChecked(false);
-                    data.ashHigh.setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashNone)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.ashLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashMedium)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashHigh)).setChecked(false);
                     data.ash = 0;
                     data.ashAbundance = "None";
                 } else {
-                    data.ashNone.setChecked(false);
-                    data.ashLow.setChecked(true);
+                    ((CheckBox) findViewById(R.id.ashNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashLow)).setChecked(true);
                     data.ash = 1;
                     data.ashAbundance = "Low";
                 }
@@ -1464,10 +1464,10 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedashNone = ((CheckBox) findViewById(R.id.ashNone)).isChecked();
 
                 if (isCheckedashNone == true) {
-                    data.ashPresent.setChecked(false);
-                    data.ashLow.setChecked(false);
-                    data.ashMedium.setChecked(false);
-                    data.ashHigh.setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashPresent)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashMedium)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashHigh)).setChecked(false);
                     data.ash = 0;
                     data.ashAbundance = "None";
                 }
@@ -1480,16 +1480,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedashLow = ((CheckBox) findViewById(R.id.ashLow)).isChecked();
 
                 if (isCheckedashPresent == true && isCheckedashLow == true) {
-                    data.ashNone.setChecked(false);
-                    data.ashMedium.setChecked(false);
-                    data.ashHigh.setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashMedium)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashHigh)).setChecked(false);
                     data.ash = 1;
                     data.ashAbundance = "Low";
                 } else if (isCheckedashPresent == false && isCheckedashLow == true) {
-                    data.ashNone.setChecked(false);
-                    data.ashMedium.setChecked(false);
-                    data.ashHigh.setChecked(false);
-                    data.ashPresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.ashPresent)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.ashNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashMedium)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashHigh)).setChecked(false);
                     data.ash = 1;
                     data.ashAbundance = "Low";
                 }
@@ -1502,16 +1502,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedashMedium = ((CheckBox) findViewById(R.id.ashMedium)).isChecked();
 
                 if (isCheckedashPresent == true && isCheckedashMedium == true) {
-                    data.ashNone.setChecked(false);
-                    data.ashLow.setChecked(false);
-                    data.ashHigh.setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashHigh)).setChecked(false);
                     data.ash = 1;
                     data.ashAbundance = "Medium";
                 } else if (isCheckedashPresent == false && isCheckedashMedium == true) {
-                    data.ashNone.setChecked(false);
-                    data.ashLow.setChecked(false);
-                    data.ashHigh.setChecked(false);
-                    data.ashPresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.ashPresent)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.ashNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashHigh)).setChecked(false);
                     data.ash = 1;
                     data.ashAbundance = "Medium";
                 }
@@ -1524,16 +1524,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedashHigh = ((CheckBox) findViewById(R.id.ashHigh)).isChecked();
 
                 if (isCheckedashPresent == true && isCheckedashHigh == true) {
-                    data.ashNone.setChecked(false);
-                    data.ashMedium.setChecked(false);
-                    data.ashLow.setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashMedium)).setChecked(false);
                     data.ash = 1;
                     data.ashAbundance = "High";
                 } else if (isCheckedashPresent == false && isCheckedashHigh == true) {
-                    data.ashNone.setChecked(false);
-                    data.ashMedium.setChecked(false);
-                    data.ashLow.setChecked(false);
-                    data.ashPresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.ashPresent)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.ashNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.ashMedium)).setChecked(false);
                     data.ash = 1;
                     data.ashAbundance = "High";
                 }
@@ -1546,15 +1546,15 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeabPresent = ((CheckBox) findViewById(R.id.eabPresent)).isChecked();
 
                 if (isCheckedeabPresent == false) {
-                    data.eabNone.setChecked(true);
-                    data.eabLow.setChecked(false);
-                    data.eabModerate.setChecked(false);
-                    data.eabSevere.setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabNone)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.eabLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabModerate)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabSevere)).setChecked(false);
                     data.eab = 0;
                     data.eabSeverity = "None";
                 } else {
-                    data.eabNone.setChecked(false);
-                    data.eabLow.setChecked(true);
+                    ((CheckBox) findViewById(R.id.eabNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabLow)).setChecked(true);
                     data.eab = 1;
                     data.eabSeverity = "Low";
                 }
@@ -1566,10 +1566,10 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeabNone = ((CheckBox) findViewById(R.id.eabNone)).isChecked();
 
                 if (isCheckedeabNone == true) {
-                    data.eabPresent.setChecked(false);
-                    data.eabLow.setChecked(false);
-                    data.eabModerate.setChecked(false);
-                    data.eabSevere.setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabPresent)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabModerate)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabSevere)).setChecked(false);
                     data.eab = 0;
                     data.eabSeverity = "None";
                 }
@@ -1582,16 +1582,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeabLow = ((CheckBox) findViewById(R.id.eabLow)).isChecked();
 
                 if (isCheckedeabPresent == true && isCheckedeabLow == true) {
-                    data.eabNone.setChecked(false);
-                    data.eabModerate.setChecked(false);
-                    data.eabSevere.setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabModerate)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabSevere)).setChecked(false);
                     data.eab = 1;
                     data.eabSeverity = "Low";
                 } else if (isCheckedeabPresent == false && isCheckedeabLow == true) {
-                    data.eabNone.setChecked(false);
-                    data.eabModerate.setChecked(false);
-                    data.eabSevere.setChecked(false);
-                    data.eabPresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.eabPresent)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.eabNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabModerate)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabSevere)).setChecked(false);
                     data.eab = 1;
                     data.eabSeverity = "Low";
                 }
@@ -1604,16 +1604,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeabModerate = ((CheckBox) findViewById(R.id.eabModerate)).isChecked();
 
                 if (isCheckedeabPresent == true && isCheckedeabModerate == true) {
-                    data.eabNone.setChecked(false);
-                    data.eabLow.setChecked(false);
-                    data.eabSevere.setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabSevere)).setChecked(false);
                     data.eab = 1;
                     data.eabSeverity = "Moderate";
                 } else if (isCheckedeabPresent == false && isCheckedeabModerate == true) {
-                    data.eabNone.setChecked(false);
-                    data.eabLow.setChecked(false);
-                    data.eabSevere.setChecked(false);
-                    data.eabPresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.eabPresent)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.eabNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabSevere)).setChecked(false);
                     data.eab = 1;
                     data.eabSeverity = "Moderate";
                 }
@@ -1626,16 +1626,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeabSevere = ((CheckBox) findViewById(R.id.eabSevere)).isChecked();
 
                 if (isCheckedeabPresent == true && isCheckedeabSevere == true) {
-                    data.eabNone.setChecked(false);
-                    data.eabModerate.setChecked(false);
-                    data.eabLow.setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabModerate)).setChecked(false);
                     data.eab = 1;
                     data.eabSeverity = "Severe";
                 } else if (isCheckedeabPresent == false && isCheckedeabSevere == true) {
-                    data.eabNone.setChecked(false);
-                    data.eabModerate.setChecked(false);
-                    data.eabLow.setChecked(false);
-                    data.eabPresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.eabPresent)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.eabNone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabLow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.eabModerate)).setChecked(false);
                     data.eab = 1;
                     data.eabSeverity = "Severe";
                 }
@@ -1648,15 +1648,15 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeahePresent = ((CheckBox) findViewById(R.id.EAHEPresent)).isChecked();
 
                 if (isCheckedeahePresent == false) {
-                    data.eaheNone.setChecked(true);
-                    data.eaheLow.setChecked(false);
-                    data.eaheMedium.setChecked(false);
-                    data.eaheHigh.setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHENone)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.EAHELow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHEMedium)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHEHigh)).setChecked(false);
                     data.eahe = 0;
                     data.eaheAbundance = "None";
                 } else {
-                    data.eaheNone.setChecked(false);
-                    data.eaheLow.setChecked(true);
+                    ((CheckBox) findViewById(R.id.EAHENone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHELow)).setChecked(true);
                     data.eahe = 1;
                     data.eaheAbundance = "Low";
                 }
@@ -1668,10 +1668,10 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedashNone = ((CheckBox) findViewById(R.id.EAHENone)).isChecked();
 
                 if (isCheckedashNone == true) {
-                    data.eahePresent.setChecked(false);
-                    data.eaheLow.setChecked(false);
-                    data.eaheMedium.setChecked(false);
-                    data.eaheHigh.setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHEPresent)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHELow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHEMedium)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHEHigh)).setChecked(false);
                     data.eahe = 0;
                     data.eaheAbundance = "None";
                 }
@@ -1684,16 +1684,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeaheLow = ((CheckBox) findViewById(R.id.EAHELow)).isChecked();
 
                 if (isCheckedeahePresent == true && isCheckedeaheLow == true) {
-                    data.eaheNone.setChecked(false);
-                    data.eaheMedium.setChecked(false);
-                    data.eaheHigh.setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHENone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHEMedium)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHEHigh)).setChecked(false);
                     data.eahe = 1;
                     data.eaheAbundance = "Low";
                 } else if (isCheckedeahePresent == false && isCheckedeaheLow == true) {
-                    data.eaheNone.setChecked(false);
-                    data.eaheMedium.setChecked(false);
-                    data.eaheHigh.setChecked(false);
-                    data.eahePresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.EAHEPresent)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.EAHENone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHEMedium)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHEHigh)).setChecked(false);
                     data.eahe = 1;
                     data.eaheAbundance = "Low";
                 }
@@ -1706,16 +1706,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeaheMedium = ((CheckBox) findViewById(R.id.EAHEMedium)).isChecked();
 
                 if (isCheckedeahePresent == true && isCheckedeaheMedium == true) {
-                    data.eaheNone.setChecked(false);
-                    data.eaheLow.setChecked(false);
-                    data.eaheHigh.setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHENone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHELow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHEHigh)).setChecked(false);
                     data.eahe = 1;
                     data.eaheAbundance = "Medium";
                 } else if (isCheckedeahePresent == false && isCheckedeaheMedium == true) {
-                    data.eaheNone.setChecked(false);
-                    data.eaheLow.setChecked(false);
-                    data.eaheHigh.setChecked(false);
-                    data.eahePresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.EAHEPresent)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.EAHENone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHELow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHEHigh)).setChecked(false);
                     data.eahe = 1;
                     data.eaheAbundance = "Medium";
                 }
@@ -1728,16 +1728,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeaheHigh = ((CheckBox) findViewById(R.id.EAHEHigh)).isChecked();
 
                 if (isCheckedeahePresent == true && isCheckedeaheHigh == true) {
-                    data.eaheNone.setChecked(false);
-                    data.eaheMedium.setChecked(false);
-                    data.eaheLow.setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHENone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHELow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHEMedium)).setChecked(false);
                     data.eahe = 1;
                     data.eaheAbundance = "High";
                 } else if (isCheckedeahePresent == false && isCheckedeaheHigh == true) {
-                    data.eaheNone.setChecked(false);
-                    data.eaheMedium.setChecked(false);
-                    data.eaheLow.setChecked(false);
-                    data.eahePresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.EAHEPresent)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.EAHENone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHELow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.EAHEMedium)).setChecked(false);
                     data.eahe = 1;
                     data.eaheAbundance = "High";
                 }
@@ -1750,15 +1750,15 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedhwaPresent = ((CheckBox) findViewById(R.id.HWAPresent)).isChecked();
 
                 if (isCheckedhwaPresent == false) {
-                    data.hwaNone.setChecked(true);
-                    data.hwaLow.setChecked(false);
-                    data.hwaModerate.setChecked(false);
-                    data.hwaSevere.setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWANone)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.HWALow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWAModerate)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWASevere)).setChecked(false);
                     data.hwa = 0;
                     data.hwaSeverity = "None";
                 } else {
-                    data.hwaNone.setChecked(false);
-                    data.hwaLow.setChecked(true);
+                    ((CheckBox) findViewById(R.id.HWANone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWALow)).setChecked(true);
                     data.hwa = 1;
                     data.hwaSeverity = "Low";
                 }
@@ -1770,10 +1770,10 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedeabNone = ((CheckBox) findViewById(R.id.HWANone)).isChecked();
 
                 if (isCheckedeabNone == true) {
-                    data.hwaPresent.setChecked(false);
-                    data.hwaLow.setChecked(false);
-                    data.hwaModerate.setChecked(false);
-                    data.hwaSevere.setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWAPresent)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWALow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWAModerate)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWASevere)).setChecked(false);
                     data.hwa = 0;
                     data.hwaSeverity = "None";
                 }
@@ -1786,16 +1786,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedhwaLow = ((CheckBox) findViewById(R.id.HWALow)).isChecked();
 
                 if (isCheckedhwaPresent == true && isCheckedhwaLow == true) {
-                    data.hwaNone.setChecked(false);
-                    data.hwaModerate.setChecked(false);
-                    data.hwaSevere.setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWANone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWAModerate)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWASevere)).setChecked(false);
                     data.hwa = 1;
                     data.hwaSeverity = "Low";
                 } else if (isCheckedhwaPresent == false && isCheckedhwaLow == true) {
-                    data.hwaNone.setChecked(false);
-                    data.hwaModerate.setChecked(false);
-                    data.hwaSevere.setChecked(false);
-                    data.hwaPresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.HWAPresent)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.HWANone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWAModerate)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWASevere)).setChecked(false);
                     data.hwa = 1;
                     data.hwaSeverity = "Low";
                 }
@@ -1808,16 +1808,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedhwaModerate = ((CheckBox) findViewById(R.id.HWAModerate)).isChecked();
 
                 if (isCheckedhwaPresent == true && isCheckedhwaModerate == true) {
-                    data.hwaNone.setChecked(false);
-                    data.hwaLow.setChecked(false);
-                    data.hwaSevere.setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWANone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWALow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWASevere)).setChecked(false);
                     data.hwa = 1;
                     data.hwaSeverity = "Moderate";
                 } else if (isCheckedhwaPresent == false && isCheckedhwaModerate == true) {
-                    data.hwaNone.setChecked(false);
-                    data.hwaLow.setChecked(false);
-                    data.hwaSevere.setChecked(false);
-                    data.hwaPresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.HWAPresent)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.HWANone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWALow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWASevere)).setChecked(false);
                     data.hwa = 1;
                     data.hwaSeverity = "Moderate";
                 }
@@ -1830,16 +1830,16 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedhwaSevere = ((CheckBox) findViewById(R.id.HWASevere)).isChecked();
 
                 if (isCheckedhwaPresent == true && isCheckedhwaSevere == true) {
-                    data.hwaNone.setChecked(false);
-                    data.hwaModerate.setChecked(false);
-                    data.hwaLow.setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWANone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWALow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWAModerate)).setChecked(false);
                     data.hwa = 1;
                     data.hwaSeverity = "Severe";
                 } else if (isCheckedhwaPresent == false && isCheckedhwaSevere == true) {
-                    data.hwaNone.setChecked(false);
-                    data.hwaModerate.setChecked(false);
-                    data.hwaLow.setChecked(false);
-                    data.hwaPresent.setChecked(true);
+                    ((CheckBox) findViewById(R.id.HWAPresent)).setChecked(true);
+                    ((CheckBox) findViewById(R.id.HWANone)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWALow)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.HWAModerate)).setChecked(false);
                     data.hwa = 1;
                     data.hwaSeverity = "Severe";
                 }
@@ -1853,11 +1853,11 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedTen = ((CheckBox) findViewById(R.id.checkBoxTen)).isChecked();
 
                 if (isCheckedTen == true) {
-                    data.tenTwentyFive.setChecked(false);
-                    data.twentyFiveFifty.setChecked(false);
-                    data.fiftySeventyFive.setChecked(false);
-                    data.seventyFiveNinety.setChecked(false);
-                    data.ninety.setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxTenTwentyFive)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxTwentyFiveFifty)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxFiftySeventyFive)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxSeventyFiveNinety)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxNinety)).setChecked(false);
                     data.seedlingCover = "<10%";
                 }
             }
@@ -1869,11 +1869,11 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedtenTwentyFive = ((CheckBox) findViewById(R.id.checkBoxTenTwentyFive)).isChecked();
 
                 if (isCheckedtenTwentyFive == true) {
-                    data.ten.setChecked(false);
-                    data.twentyFiveFifty.setChecked(false);
-                    data.fiftySeventyFive.setChecked(false);
-                    data.seventyFiveNinety.setChecked(false);
-                    data.ninety.setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxTen)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxTwentyFiveFifty)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxFiftySeventyFive)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxSeventyFiveNinety)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxNinety)).setChecked(false);
                     data.seedlingCover = "10-25%";
                 }
             }
@@ -1885,11 +1885,11 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedtwentyFiveFifty = ((CheckBox) findViewById(R.id.checkBoxTwentyFiveFifty)).isChecked();
 
                 if (isCheckedtwentyFiveFifty == true) {
-                    data.ten.setChecked(false);
-                    data.tenTwentyFive.setChecked(false);
-                    data.fiftySeventyFive.setChecked(false);
-                    data.seventyFiveNinety.setChecked(false);
-                    data.ninety.setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxTen)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxTenTwentyFive)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxFiftySeventyFive)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxSeventyFiveNinety)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxNinety)).setChecked(false);
                     data.seedlingCover = "25-50%";
                 }
             }
@@ -1901,11 +1901,11 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedfiftySeventyFive = ((CheckBox) findViewById(R.id.checkBoxFiftySeventyFive)).isChecked();
 
                 if (isCheckedfiftySeventyFive == true) {
-                    data.ten.setChecked(false);
-                    data.tenTwentyFive.setChecked(false);
-                    data.twentyFiveFifty.setChecked(false);
-                    data.seventyFiveNinety.setChecked(false);
-                    data.ninety.setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxTen)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxTenTwentyFive)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxTwentyFiveFifty)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxSeventyFiveNinety)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxNinety)).setChecked(false);
                     data.seedlingCover = "50-75%";
                 }
             }
@@ -1917,11 +1917,11 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedseventyFiveNinety = ((CheckBox) findViewById(R.id.checkBoxSeventyFiveNinety)).isChecked();
 
                 if (isCheckedseventyFiveNinety == true) {
-                    data.ten.setChecked(false);
-                    data.tenTwentyFive.setChecked(false);
-                    data.twentyFiveFifty.setChecked(false);
-                    data.fiftySeventyFive.setChecked(false);
-                    data.ninety.setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxTen)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxTenTwentyFive)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxTwentyFiveFifty)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxFiftySeventyFive)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxNinety)).setChecked(false);
                     data.seedlingCover = "75-90%";
                 }
             }
@@ -1933,11 +1933,11 @@ public class MainActivity extends AppCompatActivity {
                 boolean isCheckedninety = ((CheckBox) findViewById(R.id.checkBoxNinety)).isChecked();
 
                 if (isCheckedninety == true) {
-                    data.ten.setChecked(false);
-                    data.tenTwentyFive.setChecked(false);
-                    data.twentyFiveFifty.setChecked(false);
-                    data.fiftySeventyFive.setChecked(false);
-                    data.seventyFiveNinety.setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxTen)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxTenTwentyFive)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxTwentyFiveFifty)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxFiftySeventyFive)).setChecked(false);
+                    ((CheckBox) findViewById(R.id.checkBoxSeventyFiveNinety)).setChecked(false);
                     data.seedlingCover = ">90%";
                 }
             }
