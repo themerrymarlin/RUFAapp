@@ -280,8 +280,8 @@ public class RUFASheetData {
 
     //Plant Community
     transient TextView addTreeToListPlantCommunity;
-    transient String modifyCommunityType;
-    String selectedPlantCommunity;
+    transient String selectedPlantCommunity;
+    String plantCommunity;
     transient Spinner plant_community;
     transient Button addPlantCommunity;
     transient Button clearPlantCommunity;

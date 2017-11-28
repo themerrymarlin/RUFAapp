@@ -642,7 +642,7 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     data.addTreeToListPlantCommunity.setVisibility(View.VISIBLE);
                     data.otherPlantCommunity.setVisibility(View.INVISIBLE);
-                    data.modifyCommunityType = data.addTreeToListPlantCommunity.getText().toString();
+                    data.plantCommunity = data.selectedPlantCommunity;
                     data.addTreeToListPlantCommunity.setText(data.selectedPlantCommunity);
                 }
             }
@@ -656,7 +656,7 @@ public class MainActivity extends AppCompatActivity {
                 data.otherPlantCommunity.setVisibility(View.INVISIBLE);
                 data.addTreeToListPlantCommunity.setVisibility(View.INVISIBLE);
                 data.otherPlantCommunity.setText("");
-                data.selectedPlantCommunity = "";
+                data.plantCommunity = "";
             }
         });
 
@@ -671,7 +671,7 @@ public class MainActivity extends AppCompatActivity {
                     data.selectedPlantCommunity = "Beech-Maple";
                     data.otherPlantCommunity.setVisibility(View.INVISIBLE);
                     data.addTreeToListPlantCommunity.setVisibility(View.INVISIBLE);
-                } else {
+                } else{
                     data.selectedPlantCommunity = adapterView.getSelectedItem().toString();
                 }
             }
@@ -2163,7 +2163,7 @@ public class MainActivity extends AppCompatActivity {
 
         //plant community
         if (data.selectedPlantCommunity.equals("Other")) {
-            data.selectedPlantCommunity = data.otherPlantCommunity.getText().toString();
+            data.plantCommunity = data.otherPlantCommunity.getText().toString();
         }
 
         //bearing changes saved
@@ -3104,11 +3104,11 @@ public class MainActivity extends AppCompatActivity {
         if (d.selectedPlantCommunity.equalsIgnoreCase("other")) {
             ((Spinner) findViewById(R.id.community_type_spinner)).setSelection(7);
             findViewById(R.id.otherPlantCommunity).setVisibility(View.VISIBLE);
-            ((EditText) findViewById(R.id.otherPlantCommunity)).setText(d.selectedPlantCommunity);
+            ((EditText) findViewById(R.id.otherPlantCommunity)).setText(d.plantCommunity);
         } else {
             ((Spinner) findViewById(R.id.community_type_spinner)).setSelection(0);
             findViewById(R.id.community_type_value).setVisibility(View.VISIBLE);
-            ((TextView) findViewById(R.id.community_type_value)).setText(d.selectedPlantCommunity);
+            ((TextView) findViewById(R.id.community_type_value)).setText(d.plantCommunity);
         }
 
         //bearing changes
@@ -3378,6 +3378,7 @@ public class MainActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.listOfTrees3B)).setText(empty);
         ((TextView) findViewById(R.id.point3BVal)).setText(empty);
         ((TextView) findViewById(R.id.sum3BVal)).setText(empty);
+        data.selected3B = "AMBE";
         //SECTION 4A
         ((EditText) findViewById(R.id.NW4A)).setText(empty);
         ((EditText) findViewById(R.id.NE4A)).setText(empty);
@@ -3391,6 +3392,7 @@ public class MainActivity extends AppCompatActivity {
         ((TextView) findViewById(R.id.listOfTrees4B)).setText(empty);
         ((TextView) findViewById(R.id.point4BVal)).setText(empty);
         ((TextView) findViewById(R.id.sum4BVal)).setText(empty);
+        data.selected4B = "AMBE";
         //SECTION 5
         ((EditText) findViewById(R.id.NW5A)).setText(empty);
         ((EditText) findViewById(R.id.NE5A)).setText(empty);
@@ -3447,6 +3449,8 @@ public class MainActivity extends AppCompatActivity {
         //plant community
         ((CheckBox) findViewById(R.id.checkBoxPreviouslyConfirmed)).setChecked(false);
         ((CheckBox) findViewById(R.id.checkBoxGroundTruthed)).setChecked(false);
+        data.selectedPlantCommunity = "Beech-Maple";
+
         //fill in other text if other
         ((Spinner) findViewById(R.id.community_type_spinner)).setSelection(0);
         ((TextView) findViewById(R.id.community_type_value)).setText(empty);
@@ -3500,6 +3504,7 @@ public class MainActivity extends AppCompatActivity {
         ((CheckBox) findViewById(R.id.checkBoxVeteran)).setChecked(false);
         ((TextView) findViewById(R.id.dominantVeteran1)).setText(empty);
         ((TextView) findViewById(R.id.dominantVeteran2)).setText(empty);
+        data.selectedAgeClass = "AMBE";
         //pests and pathogens
         //beech abundance
         ((CheckBox) findViewById(R.id.beechPresent)).setChecked(false);
