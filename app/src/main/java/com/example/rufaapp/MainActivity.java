@@ -3161,9 +3161,6 @@ public class MainActivity extends AppCompatActivity {
         ((CheckBox) findViewById(R.id.beechPresent)).setChecked(d.beech == 1);
         if (d.beech == 1) {
             switch (d.beechAbundance) {
-                case "None":
-                    ((CheckBox) findViewById(R.id.beechNone)).setChecked(true);
-                    break;
                 case "Low":
                     ((CheckBox) findViewById(R.id.beechLow)).setChecked(true);
                     break;
@@ -3175,13 +3172,13 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
+        else{
+            ((CheckBox) findViewById(R.id.beechNone)).setChecked(true);
+        }
         //bld severity
         ((CheckBox) findViewById(R.id.bldPresent)).setChecked(d.bld == 1);
         if (d.bld == 1) {
             switch (d.bldSeverity) {
-                case "None":
-                    ((CheckBox) findViewById(R.id.bldNone)).setChecked(true);
-                    break;
                 case "Low":
                     ((CheckBox) findViewById(R.id.bldLow)).setChecked(true);
                     break;
@@ -3193,13 +3190,13 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
+        else{
+            ((CheckBox) findViewById(R.id.bldNone)).setChecked(true);
+        }
         //ash abundance
         ((CheckBox) findViewById(R.id.ashPresent)).setChecked(d.ash == 1);
         if (d.ash == 1) {
             switch (d.ashAbundance) {
-                case "None":
-                    ((CheckBox) findViewById(R.id.ashNone)).setChecked(true);
-                    break;
                 case "Low":
                     ((CheckBox) findViewById(R.id.ashLow)).setChecked(true);
                     break;
@@ -3211,13 +3208,13 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
+        else{
+            ((CheckBox) findViewById(R.id.ashNone)).setChecked(true);
+        }
         //eab severity
         ((CheckBox) findViewById(R.id.eabPresent)).setChecked(d.eab == 1);
         if (d.eab == 1) {
             switch (d.eabSeverity) {
-                case "None":
-                    ((CheckBox) findViewById(R.id.eabNone)).setChecked(true);
-                    break;
                 case "Low":
                     ((CheckBox) findViewById(R.id.eabLow)).setChecked(true);
                     break;
@@ -3229,13 +3226,13 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
+        else{
+            ((CheckBox) findViewById(R.id.eabNone)).setChecked(true);
+        }
         //EAHE abundance
         ((CheckBox) findViewById(R.id.EAHEPresent)).setChecked(d.eahe == 1);
         if (d.eahe == 1) {
             switch (d.eaheAbundance) {
-                case "None":
-                    ((CheckBox) findViewById(R.id.EAHENone)).setChecked(true);
-                    break;
                 case "Low":
                     ((CheckBox) findViewById(R.id.EAHELow)).setChecked(true);
                     break;
@@ -3247,13 +3244,13 @@ public class MainActivity extends AppCompatActivity {
                     break;
             }
         }
+        else{
+            ((CheckBox) findViewById(R.id.EAHENone)).setChecked(true);
+        }
         //HWA severity
         ((CheckBox) findViewById(R.id.HWAPresent)).setChecked(d.hwa == 1);
         if (d.hwa == 1) {
             switch (d.hwaSeverity) {
-                case "None":
-                    ((CheckBox) findViewById(R.id.HWANone)).setChecked(true);
-                    break;
                 case "Low":
                     ((CheckBox) findViewById(R.id.HWALow)).setChecked(true);
                     break;
@@ -3264,6 +3261,9 @@ public class MainActivity extends AppCompatActivity {
                     ((CheckBox) findViewById(R.id.HWASevere)).setChecked(true);
                     break;
             }
+        }
+        else{
+            ((CheckBox) findViewById(R.id.HWANone)).setChecked(true);
         }
         //seedling cover
 
