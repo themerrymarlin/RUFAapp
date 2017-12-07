@@ -261,11 +261,11 @@ public class RUFASheetData {
     transient String modifyTextSum12;
     transient TextView point12Val;
     transient String modifyTextPoint12;
-    int pointBoxA;
-    int pointBoxB;
-    int pointBoxC;
-    int pointBoxD;
-    int pointBoxE;
+    int leafFragmentTransectA;
+    int leafFragmentTransectB;
+    int leafFragmentTransectC;
+    int leafFragmentTransectD;
+    int leafFragmentTransectE;
     transient CheckBox a12;
     transient CheckBox b12;
     transient CheckBox c12;
@@ -296,7 +296,7 @@ public class RUFASheetData {
     transient CheckBox noBearingChanges;
     int bearingChange;
     transient EditText bearingChangeAndRationale;
-    String changeAndRationale;
+    String bearingChangedAndRationale;
 
     //light gaps
     int diameterAVal;
@@ -346,7 +346,7 @@ public class RUFASheetData {
     int dumpSiteval;
     int oldRoadval;
     int improvedTrailval;
-    int otherval;
+    int otherLandUseEvidenceVal;
     transient EditText otherInput;
     String otherLandUseEvidence;
 

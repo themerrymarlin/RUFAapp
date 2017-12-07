@@ -925,7 +925,7 @@ public class MainActivity extends AppCompatActivity {
                     data.dumpSiteval = 0;
                     data.oldRoadval = 0;
                     data.improvedTrailval = 0;
-                    data.otherval = 0;
+                    data.otherLandUseEvidenceVal = 0;
                 }
             }
         });
@@ -1003,7 +1003,7 @@ public class MainActivity extends AppCompatActivity {
                 if (isCheckedOther == true) {
                     ((CheckBox) findViewById(R.id.checkBoxNone)).setChecked(false);
                     data.noneEvidentval = 0;
-                    data.otherval = 1;
+                    data.otherLandUseEvidenceVal = 1;
                 }
             }
         });
@@ -2198,7 +2198,7 @@ public class MainActivity extends AppCompatActivity {
 
         //bearing changes saved
         data.bearingChangeAndRationale = (EditText) findViewById(R.id.bearings_rationale_input);
-        data.changeAndRationale = data.bearingChangeAndRationale.getText().toString();
+        data.bearingChangedAndRationale = data.bearingChangeAndRationale.getText().toString();
 
         //light gaps
         data.diameterA = (EditText) findViewById(R.id.lightGapInputA);
@@ -2799,31 +2799,31 @@ public class MainActivity extends AppCompatActivity {
         boolean isCheckedD = ((CheckBox) findViewById(R.id.checkBox12D)).isChecked();
         boolean isCheckedE = ((CheckBox) findViewById(R.id.checkBox12E)).isChecked();
         if (isCheckedA == true) {
-            data.pointBoxA = 1;
+            data.leafFragmentTransectA = 1;
         } else {
-            data.pointBoxA = 0;
+            data.leafFragmentTransectA = 0;
         }
         if (isCheckedB == true) {
-            data.pointBoxB = 1;
+            data.leafFragmentTransectB = 1;
         } else {
-            data.pointBoxB = 0;
+            data.leafFragmentTransectB = 0;
         }
         if (isCheckedC == true) {
-            data.pointBoxC = 1;
+            data.leafFragmentTransectC = 1;
         } else {
-            data.pointBoxC = 0;
+            data.leafFragmentTransectC = 0;
         }
         if (isCheckedD == true) {
-            data.pointBoxD = 1;
+            data.leafFragmentTransectD = 1;
         } else {
-            data.pointBoxD = 0;
+            data.leafFragmentTransectD = 0;
         }
         if (isCheckedE == true) {
-            data.pointBoxE = 1;
+            data.leafFragmentTransectE = 1;
         } else {
-            data.pointBoxE = 0;
+            data.leafFragmentTransectE = 0;
         }
-        data.total12 = data.pointBoxA + data.pointBoxB + data.pointBoxC + data.pointBoxD + data.pointBoxE;
+        data.total12 = data.leafFragmentTransectA + data.leafFragmentTransectB + data.leafFragmentTransectC + data.leafFragmentTransectD + data.leafFragmentTransectE;
 
         if (data.total12 >= 4) {
             data.point12 = 1;
@@ -2927,11 +2927,11 @@ public class MainActivity extends AppCompatActivity {
         list.add(new Holder<Object>(data.point9, 1));
         list.add(new Holder<Object>(data.point10, 1));
         list.add(new Holder<Object>(data.point11, 1));
-        list.add(new Holder<Object>(data.pointBoxA, 1));
-        list.add(new Holder<Object>(data.pointBoxB, 1));
-        list.add(new Holder<Object>(data.pointBoxD, 1));
-        list.add(new Holder<Object>(data.pointBoxC, 1));
-        list.add(new Holder<Object>(data.pointBoxE, 1));
+        list.add(new Holder<Object>(data.leafFragmentTransectA, 1));
+        list.add(new Holder<Object>(data.leafFragmentTransectB, 1));
+        list.add(new Holder<Object>(data.leafFragmentTransectC, 1));
+        list.add(new Holder<Object>(data.leafFragmentTransectD, 1));
+        list.add(new Holder<Object>(data.leafFragmentTransectE, 1));
         list.add(new Holder<Object>(data.total12, 1));
         list.add(new Holder<Object>(data.point12, 1));
         list.add(new Holder<Object>(data.total, 1));
@@ -3118,11 +3118,11 @@ public class MainActivity extends AppCompatActivity {
         ((CheckBox) findViewById(R.id.checkBox11)).setChecked(d.point11 == 1);
         ((TextView) findViewById(R.id.point11Val)).setText(Integer.toString(d.point11));
         //section 12
-        ((CheckBox) findViewById(R.id.checkBox12A)).setChecked(d.pointBoxA == 1);
-        ((CheckBox) findViewById(R.id.checkBox12B)).setChecked(d.pointBoxB == 1);
-        ((CheckBox) findViewById(R.id.checkBox12C)).setChecked(d.pointBoxC == 1);
-        ((CheckBox) findViewById(R.id.checkBox12D)).setChecked(d.pointBoxD == 1);
-        ((CheckBox) findViewById(R.id.checkBox12E)).setChecked(d.pointBoxE == 1);
+        ((CheckBox) findViewById(R.id.checkBox12A)).setChecked(d.leafFragmentTransectA == 1);
+        ((CheckBox) findViewById(R.id.checkBox12B)).setChecked(d.leafFragmentTransectB == 1);
+        ((CheckBox) findViewById(R.id.checkBox12C)).setChecked(d.leafFragmentTransectC == 1);
+        ((CheckBox) findViewById(R.id.checkBox12D)).setChecked(d.leafFragmentTransectD == 1);
+        ((CheckBox) findViewById(R.id.checkBox12E)).setChecked(d.leafFragmentTransectE == 1);
         ((TextView) findViewById(R.id.total12Val)).setText(Integer.toString(d.total12));
         ((TextView) findViewById(R.id.point12Val)).setText(Integer.toString(d.point12));
         //Total and Rank
@@ -3147,7 +3147,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             ((CheckBox) findViewById(R.id.checkBoxNoBearingChange)).setChecked(true);
         }
-        ((EditText) findViewById(R.id.bearings_rationale_input)).setText(d.changeAndRationale);
+        ((EditText) findViewById(R.id.bearings_rationale_input)).setText(d.bearingChangedAndRationale);
         //light gaps
         ((EditText) findViewById(R.id.lightGapInputA)).setText(Integer.toString(d.diameterAVal));
         ((CheckBox) findViewById(R.id.checkBoxInvadedA)).setChecked(d.invadedAVal == 1);
@@ -3172,7 +3172,7 @@ public class MainActivity extends AppCompatActivity {
         ((CheckBox) findViewById(R.id.checkBoxDumpSite)).setChecked(d.dumpSiteval == 1);
         ((CheckBox) findViewById(R.id.checkBoxoldRoad)).setChecked(d.oldRoadval == 1);
         ((CheckBox) findViewById(R.id.checkBoxImprovedTrail)).setChecked(d.improvedTrailval == 1);
-        ((CheckBox) findViewById(R.id.checkBoxOther)).setChecked(d.otherval == 1);
+        ((CheckBox) findViewById(R.id.checkBoxOther)).setChecked(d.otherLandUseEvidenceVal == 1);
         ((EditText) findViewById(R.id.other_landUse_input)).setText(d.otherLandUseEvidence);
         //canopy
         if (d.canopy == 1) {
