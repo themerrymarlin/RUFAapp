@@ -72,8 +72,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:ems="5"
-                        android:inputType="date"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:clickable="true"
+                        android:editable="false"/>
 
                     <TextView
                         android:id="@+id/scorer"
@@ -132,7 +133,8 @@
                     android:ems="4"
                     android:hint="@string/northwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6" />
 
                 <View
                     android:layout_width="0.5dip"
@@ -146,7 +148,8 @@
                     android:ems="4"
                     android:hint="@string/northeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -201,7 +204,8 @@
                     android:ems="4"
                     android:hint="@string/southwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -215,7 +219,8 @@
                     android:ems="4"
                     android:hint="@string/southeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -269,7 +274,8 @@
                     android:ems="4"
                     android:hint="@string/northwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -283,7 +289,8 @@
                     android:ems="4"
                     android:hint="@string/northeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -341,7 +348,8 @@
                     android:ems="4"
                     android:hint="@string/southwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -355,7 +363,8 @@
                     android:ems="4"
                     android:hint="@string/southeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -409,7 +418,8 @@
                     android:ems="4"
                     android:hint="@string/northwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -423,7 +433,8 @@
                     android:ems="4"
                     android:hint="@string/northeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -476,7 +487,8 @@
                     android:ems="4"
                     android:hint="@string/southwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -490,7 +502,8 @@
                     android:ems="4"
                     android:hint="@string/southeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -544,7 +557,8 @@
                     android:ems="4"
                     android:hint="@string/northwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -558,7 +572,8 @@
                     android:ems="4"
                     android:hint="@string/northeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -610,7 +625,8 @@
                     android:ems="4"
                     android:hint="@string/southwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -624,7 +640,8 @@
                     android:ems="4"
                     android:hint="@string/southeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -677,7 +694,8 @@
                     android:ems="4"
                     android:hint="@string/northwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -691,7 +709,8 @@
                     android:ems="4"
                     android:hint="@string/northeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -743,7 +762,8 @@
                     android:ems="4"
                     android:hint="@string/southwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -757,7 +777,8 @@
                     android:ems="4"
                     android:hint="@string/southeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -951,7 +972,8 @@
                     android:ems="4"
                     android:hint="@string/northwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -965,7 +987,8 @@
                     android:ems="4"
                     android:hint="@string/northeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -1017,7 +1040,8 @@
                     android:ems="4"
                     android:hint="@string/southwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -1031,7 +1055,8 @@
                     android:ems="4"
                     android:hint="@string/southeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -1230,7 +1255,8 @@
                     android:ems="4"
                     android:hint="@string/northwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -1244,7 +1270,8 @@
                     android:ems="4"
                     android:hint="@string/northeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -1296,7 +1323,8 @@
                     android:ems="4"
                     android:hint="@string/southwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -1310,7 +1338,8 @@
                     android:ems="4"
                     android:hint="@string/southeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -1363,7 +1392,8 @@
                     android:ems="4"
                     android:hint="@string/northwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -1377,7 +1407,8 @@
                     android:ems="4"
                     android:hint="@string/northeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -1429,7 +1460,8 @@
                     android:ems="4"
                     android:hint="@string/southwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -1443,7 +1475,8 @@
                     android:ems="4"
                     android:hint="@string/southeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -1501,7 +1534,8 @@
                     android:ems="4"
                     android:hint="@string/northwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -1515,7 +1549,8 @@
                     android:ems="4"
                     android:hint="@string/northeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -1567,7 +1602,8 @@
                     android:ems="4"
                     android:hint="@string/southwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -1581,7 +1617,8 @@
                     android:ems="4"
                     android:hint="@string/southeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -1634,7 +1671,8 @@
                     android:ems="4"
                     android:hint="@string/northwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -1648,7 +1686,8 @@
                     android:ems="4"
                     android:hint="@string/northeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -1700,7 +1739,8 @@
                     android:ems="4"
                     android:hint="@string/southwest"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="0.5dip"
@@ -1714,7 +1754,8 @@
                     android:ems="4"
                     android:hint="@string/southeast"
                     android:inputType="number"
-                    android:textAlignment="center" />
+                    android:textAlignment="center"
+                    android:maxLength="6"/>
 
                 <View
                     android:layout_width="2dip"
@@ -2400,7 +2441,8 @@
                     android:ems="5"
                     android:inputType="number"
                     android:textAlignment="center"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    android:maxLength="3"/>
 
                 <EditText
                     android:id="@+id/lightGapInputB"
@@ -2411,7 +2453,8 @@
                     android:ems="5"
                     android:inputType="number"
                     android:textAlignment="center"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    android:maxLength="3"/>
 
                 <EditText
                     android:id="@+id/lightGapInputC"
@@ -2422,7 +2465,8 @@
                     android:ems="5"
                     android:inputType="number"
                     android:textAlignment="center"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    android:maxLength="3"/>
 
                 <EditText
                     android:id="@+id/lightGapInputD"
@@ -2433,7 +2477,8 @@
                     android:ems="5"
                     android:inputType="number"
                     android:textAlignment="center"
-                    android:textAllCaps="false" />
+                    android:textAllCaps="false"
+                    android:maxLength="3"/>
 
 
             </TableRow>

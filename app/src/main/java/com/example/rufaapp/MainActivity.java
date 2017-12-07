@@ -1,16 +1,20 @@
 package com.example.rufaapp;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Entity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +22,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -30,6 +35,7 @@ import com.google.gson.JsonObject;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Objects;
 import java.util.jar.Manifest;
 
@@ -46,11 +52,35 @@ public class MainActivity extends AppCompatActivity {
     //file selection
     private String fileName;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        data.dateValue = (EditText) findViewById(R.id.date_input);
+        data.dateValue.setInputType(InputType.TYPE_NULL);
+        data.dateValue.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+
+                final Calendar calendar = Calendar.getInstance();
+                int yy = calendar.get(Calendar.YEAR);
+                int mm = calendar.get(Calendar.MONTH);
+                int dd = calendar.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog datePicker = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        data.date = String.valueOf(monthOfYear+1) + "/" + String.valueOf(dayOfMonth)
+                                + "/" + String.valueOf(year);
+                        data.dateValue = (EditText) findViewById(R.id.date_input);
+                        data.dateValue.setText(data.date);
+                    }
+                }, yy, mm, dd);
+                datePicker.show();
+            }
+        });
 
         saveButton = (Button) findViewById(R.id.saveData);
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -3095,7 +3125,7 @@ public class MainActivity extends AppCompatActivity {
         ((CheckBox) findViewById(R.id.checkBox12E)).setChecked(d.pointBoxE == 1);
         ((TextView) findViewById(R.id.total12Val)).setText(Integer.toString(d.total12));
         ((TextView) findViewById(R.id.point12Val)).setText(Integer.toString(d.point12));
-        //Total and Rank -- blank for now
+        //Total and Rank
         ((TextView) findViewById(R.id.totalPoints)).setText("Points:" + " " + Integer.toString(d.total) + "   " + "Integrity Rank:" + " " + d.qualityRank);
         //plant community
         ((CheckBox) findViewById(R.id.checkBoxPreviouslyConfirmed)).setChecked(d.prevConfirmed == 1);

@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 public class RUFASheetData {
     // define variables
-    int threshold;
+    transient int threshold;
 
     //Scorer input
     transient EditText cellValue;
