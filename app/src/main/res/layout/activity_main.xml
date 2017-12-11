@@ -4381,34 +4381,14 @@
                     android:background="#FF000000" />
 
                 <EditText
-                    android:id="@+id/notesInput1"
+                    android:id="@+id/notes"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="0dp"
-                    android:layout_marginTop="0dp"
-                    android:ems="5"
-                    android:inputType="text"
-                    android:textAllCaps="false" />
-
-                <EditText
-                    android:id="@+id/notesInput2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="-580dp"
-                    android:layout_marginTop="40dp"
-                    android:ems="5"
-                    android:inputType="text"
-                    android:textAllCaps="false" />
-
-                <EditText
-                    android:id="@+id/notesInput3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="-580dp"
-                    android:layout_marginTop="80dp"
-                    android:ems="5"
-                    android:inputType="text"
-                    android:textAllCaps="false" />
+                    android:ems="10"
+                    android:inputType="textMultiLine"
+                    android:lines="6"
+                    android:maxLines="6"
+                    android:layout_gravity="bottom"/>
 
             </TableRow>
 

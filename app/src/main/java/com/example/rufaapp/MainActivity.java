@@ -2247,10 +2247,10 @@ public class MainActivity extends AppCompatActivity {
         data.otherLandUseEvidence = data.otherInput.getText().toString();
 
         //notes saved
-        data.notes1 = (EditText) findViewById(R.id.notesInput1);
-        data.notes2 = (EditText) findViewById(R.id.notesInput2);
-        data.notes3 = (EditText) findViewById(R.id.notesInput3);
-        data.notes = data.notes1.getText().toString() + " " + data.notes2.getText().toString() + " " + data.notes3.getText().toString();
+        //data.notes1 = (EditText) findViewById(R.id.notesInput1);
+        //data.notes2 = (EditText) findViewById(R.id.notesInput2);
+        data.notes = ((EditText) findViewById(R.id.notes)).getText().toString();
+        //data.notes = data.notes1.getText().toString() + " " + data.notes2.getText().toString() + " " + data.notes3.getText().toString();
     }
 
     //get Cell value
@@ -3327,7 +3327,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         //additional notes
-        ((EditText) findViewById(R.id.notesInput1)).setText(d.notes);
+        ((EditText) findViewById(R.id.notes)).setText(d.notes);
     }
 
     public boolean saveToCSV() {
@@ -3589,7 +3589,7 @@ public class MainActivity extends AppCompatActivity {
         ((CheckBox) findViewById(R.id.checkBoxSeventyFiveNinety)).setChecked(false);
         ((CheckBox) findViewById(R.id.checkBoxNinety)).setChecked(false);
         //additional notes
-        ((EditText) findViewById(R.id.notesInput1)).setText(empty);
+        ((EditText) findViewById(R.id.notes)).setText(empty);
 
     }
 }
