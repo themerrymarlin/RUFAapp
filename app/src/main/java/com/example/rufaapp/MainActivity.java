@@ -116,7 +116,10 @@ public class MainActivity extends AppCompatActivity {
                 int permCheck = ContextCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.WRITE_EXTERNAL_STORAGE);
                 int permGranted = PackageManager.PERMISSION_GRANTED;
                 if (permCheck != permGranted) {
-                    ActivityCompat.requestPermissions(getParent(), new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 5);
+                    //ActivityCompat.requestPermissions(getParent(), new String[]{android.Manifest.permission.WRITE_EXTERNAL_STORAGE}, 5);
+                    updateButtonPressed();
+                    saveToCSV();
+                    Toast.makeText(getApplicationContext(), "Saved to SD!", Toast.LENGTH_LONG).show();
                 } else {
                     updateButtonPressed();
                     saveToCSV();

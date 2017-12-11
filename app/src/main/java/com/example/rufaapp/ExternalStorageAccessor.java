@@ -4,6 +4,7 @@ import android.content.Context;
 import android.media.MediaScannerConnection;
 import android.os.Environment;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.opencsv.CSVWriter;
 
@@ -42,8 +43,13 @@ public class ExternalStorageAccessor {
         Log.i("csv","writable: " + isStorageWriteable());
         File[] fs = context.getExternalFilesDirs(null);
         if(fs != null && fs.length > 1){
-            dir = fs[1].getAbsolutePath();
-            Log.i("csv",dir);
+            for(int i = 1; i < fs.length; i ++) {
+                if(fs[i] != null && fs[i].canWrite()) {
+                    dir = fs[i].getAbsolutePath();
+                    Log.i("csv", dir);
+                    break;
+                }
+            }
         }else{
             dir = "/";
             Log.i("csv","path fail");
