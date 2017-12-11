@@ -74,6 +74,7 @@
                         android:ems="5"
                         android:textAlignment="center"
                         android:clickable="true"
+                        android:focusableInTouchMode="false"
                         android:editable="false"/>
 
                     <TextView
@@ -4393,7 +4394,7 @@
                     android:id="@+id/notesInput2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="-380dp"
+                    android:layout_marginLeft="-580dp"
                     android:layout_marginTop="40dp"
                     android:ems="5"
                     android:inputType="text"
@@ -4403,7 +4404,7 @@
                     android:id="@+id/notesInput3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="-380dp"
+                    android:layout_marginLeft="-580dp"
                     android:layout_marginTop="80dp"
                     android:ems="5"
                     android:inputType="text"
