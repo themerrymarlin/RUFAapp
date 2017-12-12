@@ -3339,9 +3339,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Saved to SD!", Toast.LENGTH_LONG).show();
                 return true;
             } catch (IOException e) {
+                Toast.makeText(getApplicationContext(),"IO exception", Toast.LENGTH_LONG).show();
                 return false;
             }
         } else {
+            Toast.makeText(getApplicationContext(),"storage not writable",Toast.LENGTH_LONG).show();
             return false;
         }
     }
